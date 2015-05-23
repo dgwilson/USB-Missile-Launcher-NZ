@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>Troubleshooting the USB Missile Launcher NZ software</title>
+
+
+</head>
+
+
+<body>
+
+<h2>Troubleshooting the Launcher software</h2>
+
+<br>
+
+This documentation describes some potential known problems with the USB Missile Launcher NZ software and what you can do to avoid / fix / help diagnose the issues so that they can be fixed.<br>
+
+<br>
+
+<br>
+<span style="font-weight: bold;">DreamCheeky Launcher</span><br style="font-weight: bold;">
+It seems that you must connect the DreamCheeky Launcher to a USB 2 card. The DreamCheeky launcher will not operate correctly unless it is connected to a USB 2 card. I purchased a relatively cheep PCI USB 2 card and installed it, no additional software installation was required. 
+
+With out the card installed, USB transaction timeouts are reported in the System.log or Console.log files. I initially thought this was a CPU speed related issue, I don't believe so any more.
+<br>
+<p></p>
+<span style="font-weight: bold;">Striker II</span><br style="font-weight: bold;">
+WARNING - You cannot have the the Original Missile Launcher and the Striker II connected to the Missile Launcher NZ software at the same time.
+<p></p>
+For Those wishing to use the Striker II, you need to go to the preferences (launcher panel) and change the drop down menu from OrigLauncher to StrikerII, click the Apply button. Then quit and restart the application.
+<p></p>
+Some problems were experienced during the testing process that have not yet been completely resolved. To setup your Striker II access the Launcher preference pane. Make sure that the Vendor ID = 4400 and the Product ID = 514 and set the Launcher Type to StrikerII. You then must click the Apply button and quit and restart the launcher program. The unresolved issue is that the Striker II may have to be in the Launcher 1 slot in the preferences or that the Origional Launcher is left undefined.
+<br>
+<p></p>
+<span style="font-weight: bold;">Joysticks</span><br style="font-weight: bold;">
+A new feature in version 1.4f I have been able to test the software with only a limited number of joysticks. So far my testing has met with a 75% success. The joystick that did not work as rather old. I have not been able to undertake more testing with this particular device. Your milage may vary.
+<br>
+<p></p>
+<span style="font-weight: bold;">Diagnostics</span><br style="font-weight: bold;">
+For the more adventurous program output can be found in the console.log (run the console program in the utilities folder to see the messages emitted by the program). Depending on what has been included at compile time with the program, the amount of output here will vary. I use this output as a debugging tool. You can copy the output or console.log file and send it to me along with a description of the issue you are having.
+<br>
+<p></p>
+
+
+
+</body>
+</html>

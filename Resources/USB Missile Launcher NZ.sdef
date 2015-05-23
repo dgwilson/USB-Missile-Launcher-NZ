@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<!--
+	This is USB Missile Launcher NZ terminology recast as an sdef.
+-->
+<dictionary title="USB Missile Launcher NZ Terminology">
+	<!--
+		STANDARD SUITE
+	-->
+	<suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+		<class name="application" code="capp" description="The application&apos;s top-level scripting object.">
+			<cocoa class="NSApplication"/>
+			<property name="name" code="pnam" description="The name of the application." type="text" access="r"/>
+			<property name="frontmost" code="pisf" description="Is this the frontmost (active) application?" type="boolean" access="r">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="version" code="vers" description="The version of the application." type="text" access="r"/>
+			<responds-to name="quit">
+				<cocoa method="handleQuitScriptCommand:"/>
+			</responds-to>
+		</class>
+		<command name="quit" code="aevtquit" description="Quit the application.">
+			<cocoa class="NSQuitCommand"/>
+		</command>
+	</suite>
+	<!--
+		MISSILE LAUNCHER NZ SUITE
+	-->
+	<suite name="USB Missile Launcher NZ Suite" code="mlNZ" description="Commands and classes for controlling the USB Missile Launcher NZ.">
+		<enumeration name="direction" code="dire" description="Direction to move launcher in">
+			<enumerator name="left" code="mvle" description="move the launcher left"/>
+			<enumerator name="right" code="mvri" description="move the launcher right"/>
+			<enumerator name="up" code="mvup" description="move the launcher up"/>
+			<enumerator name="down" code="mvdn" description="move the launcher down"/>
+			<enumerator name="upleft" code="mvul" description="move the launcher up and to the left"/>
+			<enumerator name="upright" code="mvur" description="move the launcher up and to the right"/>
+			<enumerator name="downleft" code="mvdl" description="move the launcher down and to the left"/>
+			<enumerator name="downright" code="mvdr" description="move the launcher down and to the right"/>
+		</enumeration>
+		<class name="missilelauncher" code="mlNZ" description="Missile Launcher Commands">
+			<cocoa class="MissileResponder"/>
+			<responds-to name="xunlock">
+				<cocoa method="ASToggleLock:"/>
+			</responds-to>
+		</class>
+		<!-- Commands -->
+		<command name="abort" code="mlNZabor" description="Abort launcher commands.">
+			<cocoa class="ASAbort"/>
+		</command>
+		<command name="unlock" code="mlNZuloc" description="Disengage the launcher safety lock.">
+			<cocoa class="ASToggleLock"/>
+		</command>
+		<command name="lock" code="mlNZlock" description="Engage the launcher safety lock.">
+			<cocoa class="ASToggleLock"/>
+		</command>
+		<command name="fire" code="mlNZfire" description="Fire Missile. When you use this command you must also code in AppleScript a &apos;delay x&apos; command after it, or the missile fire will be aborted.">
+			<cocoa class="ASFire"/>
+		</command>
+		<command name="move" code="mlNZmove" description="Move the launcher.">
+			<cocoa class="ASMoveParameter"/>
+			<direct-parameter type="direction"/>
+			<parameter name="seconds" code="seco" description="Seconds that the launcher should move" type="real">
+				<cocoa key="moveTimerSeconds"/>
+			</parameter>
+		</command>
+	</suite>
+</dictionary>

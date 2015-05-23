@@ -1,0 +1,75 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                addAudioTrack = id; 
+                addVideoTrack = id; 
+                browseCaptureFile = id; 
+                checkForUpdates = id; 
+                doAudioSettings = id; 
+                doChannelSettings = id; 
+                recordPause = id; 
+                setDreamCheekyIcon = id; 
+                setMissileLauncherIcon = id; 
+                setVideoPreviewFrameRate = id; 
+                setVideoPreviewQuality = id; 
+                showDeveloperMessage = id; 
+                showPrefs = id; 
+                stop = id; 
+            }; 
+            CLASS = AppController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                mAddAudioButton = NSButton; 
+                mAddVideoButton = NSButton; 
+                mBrowseButton = NSButton; 
+                mCaptureToField = NSTextField; 
+                mMessagesField = NSTextField; 
+                mRecordPauseButton = NSButton; 
+                mStopButton = NSButton; 
+                mVideoWindow = NSWindow; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {"cancel_Button" = id; "send_Button" = id; }; 
+            CLASS = FeedbackWindow; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {feedbackField = NSTextView; }; 
+            SUPERCLASS = NSWindowController; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                "btn_ABORT" = id; 
+                "btn_dgw" = id; 
+                "btn_down" = id; 
+                "btn_downLeft" = id; 
+                "btn_downRight" = id; 
+                "btn_fire" = id; 
+                "btn_fire3" = id; 
+                "btn_laser" = id; 
+                "btn_left" = id; 
+                "btn_park" = id; 
+                "btn_right" = id; 
+                "btn_safety" = id; 
+                "btn_test" = id; 
+                "btn_up" = id; 
+                "btn_upLeft" = id; 
+                "btn_upRight" = id; 
+                "menu_safety" = id; 
+                playKlaxon = id; 
+            }; 
+            CLASS = MissileResponder; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                "btn_safety_value" = id; 
+                buttonControlPanel = NSDrawer; 
+                launcherMessage = id; 
+                launcherStatus = id; 
+            }; 
+            SUPERCLASS = NSResponder; 
+        }
+    ); 
+    IBVersion = 1; 
+}

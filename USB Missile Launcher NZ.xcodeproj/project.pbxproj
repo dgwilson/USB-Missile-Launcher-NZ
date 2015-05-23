@@ -1,0 +1,1682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E00443050A7DF55F00DEA1B5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E00443040A7DF55F00DEA1B5 /* Credits.rtf */; };
+		E006E4AE0A441E3500A77A11 /* SS_PrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006E4AD0A441E3500A77A11 /* SS_PrefsController.m */; };
+		E006E4BB0A44206500A77A11 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006E4BA0A44206500A77A11 /* AppController.m */; };
+		E00F94CF14B59B0400E206F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E00F94CD14B59B0400E206F0 /* InfoPlist.strings */; };
+		E00F94EC14B59E4E00E206F0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00F94EB14B59E4E00E206F0 /* Cocoa.framework */; };
+		E00F94F514B59E4E00E206F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E00F94F314B59E4E00E206F0 /* InfoPlist.strings */; };
+		E00F94FB14B59E4E00E206F0 /* GeneralPrefs.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E00F94FA14B59E4E00E206F0 /* GeneralPrefs.tiff */; };
+		E00F950414B59E8500E206F0 /* GeneralPaneView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E00F950214B59E8500E206F0 /* GeneralPaneView.nib */; };
+		E00F950914B59EBB00E206F0 /* SS_PreferencePaneProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E00F950614B59EBB00E206F0 /* SS_PreferencePaneProtocol.h */; };
+		E00F950A14B59EBB00E206F0 /* GeneralController.h in Headers */ = {isa = PBXBuildFile; fileRef = E00F950714B59EBB00E206F0 /* GeneralController.h */; };
+		E00F950B14B59EBB00E206F0 /* GeneralController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00F950814B59EBB00E206F0 /* GeneralController.m */; };
+		E01260471335F898006EC92E /* DreamCheeky IOC Launcher No Shadow.psd in Resources */ = {isa = PBXBuildFile; fileRef = E01260461335F898006EC92E /* DreamCheeky IOC Launcher No Shadow.psd */; };
+		E01260491335F8CB006EC92E /* DreamCheeky IOC Launcher No Shadow.icns in Resources */ = {isa = PBXBuildFile; fileRef = E01260481335F8CB006EC92E /* DreamCheeky IOC Launcher No Shadow.icns */; };
+		E01569D20A97D6EC00A17E8B /* Nuclear Silo Launch Klaxon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01569D10A97D6EC00A17E8B /* Nuclear Silo Launch Klaxon.mp3 */; };
+		E0163E870DC3499500C6EBEE /* VideoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E0163E860DC3499500C6EBEE /* VideoWindow.m */; };
+		E0172D9E14BEB8DA00C16FBA /* USB_Missile_Launcher_All_Drivers.c in Sources */ = {isa = PBXBuildFile; fileRef = E0172D9D14BEB8DA00C16FBA /* USB_Missile_Launcher_All_Drivers.c */; };
+		E02CDEF70A7C4DFF00379BE0 /* USBLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CDEF60A7C4DFF00379BE0 /* USBLauncher.m */; };
+		E032E8BF14B5A0D3001D7460 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00F94EB14B59E4E00E206F0 /* Cocoa.framework */; };
+		E032E8C614B5A0D3001D7460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E032E8C414B5A0D3001D7460 /* InfoPlist.strings */; };
+		E032E8D614B5A0F8001D7460 /* JoystickController.h in Headers */ = {isa = PBXBuildFile; fileRef = E032E8D314B5A0F8001D7460 /* JoystickController.h */; };
+		E032E8D714B5A0F9001D7460 /* JoystickController.m in Sources */ = {isa = PBXBuildFile; fileRef = E032E8D414B5A0F8001D7460 /* JoystickController.m */; };
+		E032E8D814B5A0F9001D7460 /* SS_PreferencePaneProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E032E8D514B5A0F8001D7460 /* SS_PreferencePaneProtocol.h */; };
+		E032E8DB14B5A111001D7460 /* JoystickPrefs.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E032E8D914B5A111001D7460 /* JoystickPrefs.tiff */; };
+		E032E8DC14B5A111001D7460 /* JoystickPaneView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E032E8DA14B5A111001D7460 /* JoystickPaneView.nib */; };
+		E032E8E714B5A1AE001D7460 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00F94EB14B59E4E00E206F0 /* Cocoa.framework */; };
+		E032E8EE14B5A1AF001D7460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E032E8EC14B5A1AF001D7460 /* InfoPlist.strings */; };
+		E032E8FE14B5A1CE001D7460 /* LauncherController.h in Headers */ = {isa = PBXBuildFile; fileRef = E032E8FB14B5A1CE001D7460 /* LauncherController.h */; };
+		E032E8FF14B5A1CE001D7460 /* LauncherController.m in Sources */ = {isa = PBXBuildFile; fileRef = E032E8FC14B5A1CE001D7460 /* LauncherController.m */; };
+		E032E90014B5A1CE001D7460 /* SS_PreferencePaneProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E032E8FD14B5A1CE001D7460 /* SS_PreferencePaneProtocol.h */; };
+		E032E90314B5A1E1001D7460 /* LauncherPrefs.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E032E90114B5A1E1001D7460 /* LauncherPrefs.tiff */; };
+		E032E90414B5A1E1001D7460 /* LauncherPaneView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E032E90214B5A1E1001D7460 /* LauncherPaneView.nib */; };
+		E032E91014B5A243001D7460 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00F94EB14B59E4E00E206F0 /* Cocoa.framework */; };
+		E032E91714B5A243001D7460 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E032E91514B5A243001D7460 /* InfoPlist.strings */; };
+		E032E92714B5A25C001D7460 /* SoundController.h in Headers */ = {isa = PBXBuildFile; fileRef = E032E92414B5A25C001D7460 /* SoundController.h */; };
+		E032E92814B5A25C001D7460 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = E032E92514B5A25C001D7460 /* SoundController.m */; };
+		E032E92914B5A25C001D7460 /* SS_PreferencePaneProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = E032E92614B5A25C001D7460 /* SS_PreferencePaneProtocol.h */; };
+		E032E92C14B5A276001D7460 /* SoundPaneView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E032E92A14B5A276001D7460 /* SoundPaneView.nib */; };
+		E032E92D14B5A276001D7460 /* SoundPrefs.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E032E92B14B5A276001D7460 /* SoundPrefs.tiff */; };
+		E032E93214B5A3AC001D7460 /* GeneralPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E00F94EA14B59E4E00E206F0 /* GeneralPrefs.preferencePane */; };
+		E032E93314B5A3B3001D7460 /* JoystickPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E032E8BE14B5A0D3001D7460 /* JoystickPrefs.preferencePane */; };
+		E032E93414B5A3BA001D7460 /* LauncherPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E032E8E614B5A1AE001D7460 /* LauncherPrefs.preferencePane */; };
+		E032E93514B5A3C3001D7460 /* SoundPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E032E90F14B5A243001D7460 /* SoundPrefs.preferencePane */; };
+		E032E93614B5A3CA001D7460 /* USB Missile Launcher All Drivers.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = E00F94C814B59B0300E206F0 /* USB Missile Launcher All Drivers.kext */; };
+		E03780460BAC873B00724518 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E03780450BAC873B00724518 /* Localizable.strings */; };
+		E04940450BC99FA900B71710 /* USB Missile Launcher NZ.sdef in Resources */ = {isa = PBXBuildFile; fileRef = E04940440BC99FA900B71710 /* USB Missile Launcher NZ.sdef */; };
+		E04944630BCCDB7200B71710 /* ASAbort.m in Sources */ = {isa = PBXBuildFile; fileRef = E04944590BCCDB7200B71710 /* ASAbort.m */; };
+		E04944650BCCDB7200B71710 /* ASToggleLock.m in Sources */ = {isa = PBXBuildFile; fileRef = E049445E0BCCDB7200B71710 /* ASToggleLock.m */; };
+		E049447E0BCCDC9D00B71710 /* ASFire.m in Sources */ = {isa = PBXBuildFile; fileRef = E049447D0BCCDC9D00B71710 /* ASFire.m */; };
+		E04B421C0B747C8D00603C52 /* USBJoyStickControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E04B421B0B747C8D00603C52 /* USBJoyStickControl.m */; };
+		E04CADC6132DD71A0002F03E /* Gun Sight 5b Input Image.psd in Resources */ = {isa = PBXBuildFile; fileRef = E04CADC4132DD71A0002F03E /* Gun Sight 5b Input Image.psd */; };
+		E04CADC7132DD71A0002F03E /* Gun Sight 5b Mask.psd in Resources */ = {isa = PBXBuildFile; fileRef = E04CADC5132DD71A0002F03E /* Gun Sight 5b Mask.psd */; };
+		E04F624D0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd in Resources */ = {isa = PBXBuildFile; fileRef = E04F624C0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd */; };
+		E0565A7E0A4007FB003B8400 /* USBMissileLauncher.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0565A7D0A4007FB003B8400 /* USBMissileLauncher.psd */; };
+		E05B2F300BD231110073507C /* ASMoveParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = E05B2F2F0BD231110073507C /* ASMoveParameter.m */; };
+		E05DCD8A0A3C1E1600EAE605 /* USBMissileControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E05DCD890A3C1E1600EAE605 /* USBMissileControl.m */; };
+		E060AD340AEDF788009CAD05 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E060AD330AEDF788009CAD05 /* SystemConfiguration.framework */; };
+		E064078E14B639180034B2D7 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064078D14B639180034B2D7 /* AboutWindowController.m */; };
+		E064079014B639610034B2D7 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E064078F14B639610034B2D7 /* AboutWindow.xib */; };
+		E064079414B677B50034B2D7 /* ShellTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E064079314B677B50034B2D7 /* ShellTask.m */; };
+		E064079614B687470034B2D7 /* FeedbackWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E064079514B687470034B2D7 /* FeedbackWindow.xib */; };
+		E06407A314B6BBA10034B2D7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06407A214B6BBA10034B2D7 /* ScriptingBridge.framework */; };
+		E06407A614B6BF3C0034B2D7 /* Mail.app in Resources */ = {isa = PBXBuildFile; fileRef = E06407A514B6BF3B0034B2D7 /* Mail.app */; };
+		E06407A714B6C05F0034B2D7 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = E06407A514B6BF3B0034B2D7 /* Mail.app */; };
+		E06B2952131653CA0060C13B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06B2950131653CA0060C13B /* MainMenu.xib */; };
+		E0926EAE0AECA57500DE43FF /* Help in Resources */ = {isa = PBXBuildFile; fileRef = E0926EAA0AECA57500DE43FF /* Help */; };
+		E093214B0A7A357600B16B0F /* Fire3.psd in Resources */ = {isa = PBXBuildFile; fileRef = E093214A0A7A357600B16B0F /* Fire3.psd */; };
+		E09321590A7A382F00B16B0F /* Fire.psd in Resources */ = {isa = PBXBuildFile; fileRef = E09321580A7A382F00B16B0F /* Fire.psd */; };
+		E0946F1513176BE500BFA8A1 /* background-down-left.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0313176BE500BFA8A1 /* background-down-left.psd */; };
+		E0946F1613176BE500BFA8A1 /* background-down-right.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0413176BE500BFA8A1 /* background-down-right.psd */; };
+		E0946F1713176BE500BFA8A1 /* background-down.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0513176BE500BFA8A1 /* background-down.psd */; };
+		E0946F1813176BE500BFA8A1 /* background-fire.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0613176BE500BFA8A1 /* background-fire.psd */; };
+		E0946F1913176BE500BFA8A1 /* background-left.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0713176BE500BFA8A1 /* background-left.psd */; };
+		E0946F1A13176BE500BFA8A1 /* background-right.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0813176BE500BFA8A1 /* background-right.psd */; };
+		E0946F1B13176BE500BFA8A1 /* background-up-left.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0913176BE500BFA8A1 /* background-up-left.psd */; };
+		E0946F1C13176BE500BFA8A1 /* background-up-right.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0A13176BE500BFA8A1 /* background-up-right.psd */; };
+		E0946F1D13176BE500BFA8A1 /* background-up.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0B13176BE500BFA8A1 /* background-up.psd */; };
+		E0946F1E13176BE500BFA8A1 /* foreground-down-left.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0C13176BE500BFA8A1 /* foreground-down-left.psd */; };
+		E0946F1F13176BE500BFA8A1 /* foreground-down-right.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0D13176BE500BFA8A1 /* foreground-down-right.psd */; };
+		E0946F2013176BE500BFA8A1 /* foreground-down.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0E13176BE500BFA8A1 /* foreground-down.psd */; };
+		E0946F2113176BE500BFA8A1 /* foreground-fire.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F0F13176BE500BFA8A1 /* foreground-fire.psd */; };
+		E0946F2213176BE500BFA8A1 /* foreground-left.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F1013176BE500BFA8A1 /* foreground-left.psd */; };
+		E0946F2313176BE500BFA8A1 /* foreground-right.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F1113176BE500BFA8A1 /* foreground-right.psd */; };
+		E0946F2413176BE500BFA8A1 /* foreground-up-left.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F1213176BE500BFA8A1 /* foreground-up-left.psd */; };
+		E0946F2513176BE500BFA8A1 /* foreground-up-right.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F1313176BE500BFA8A1 /* foreground-up-right.psd */; };
+		E0946F2613176BE500BFA8A1 /* foreground-up.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F1413176BE500BFA8A1 /* foreground-up.psd */; };
+		E097335D0A3FFA8200CED98F /* RocketLaunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E097335C0A3FFA8200CED98F /* RocketLaunch.wav */; };
+		E0A2E3BE12F3F22200F8C4F4 /* Background-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */; };
+		E0A2E3C212F3F53600F8C4F4 /* Background-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */; };
+		E0A2E3C412F3F91200F8C4F4 /* FireButton.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3C312F3F91200F8C4F4 /* FireButton.psd */; };
+		E0A2E3C612F3FC2900F8C4F4 /* Btn-Down.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3C512F3FC2900F8C4F4 /* Btn-Down.psd */; };
+		E0B07F7A0DC9C42000BE1BD8 /* MissileControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B07F790DC9C42000BE1BD8 /* MissileControlView.m */; };
+		E0C134810A3D79F20054CD82 /* MissileResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C134800A3D79F20054CD82 /* MissileResponder.m */; };
+		E0CD12FD168400A4002C2B3C /* AVRecorderDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CD12FC168400A4002C2B3C /* AVRecorderDocument.m */; };
+		E0CD12FF16840532002C2B3C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CD12FE16840532002C2B3C /* AVFoundation.framework */; };
+		E0CD130116840587002C2B3C /* AVRecorderDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CD130016840587002C2B3C /* AVRecorderDocument.xib */; };
+		E0CE3FAB0F7F589100425DA9 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CE3FA60F7F589100425DA9 /* AsyncSocket.m */; };
+		E0CE3FAC0F7F589100425DA9 /* MTMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CE3FA80F7F589100425DA9 /* MTMessage.m */; };
+		E0CE3FAD0F7F589100425DA9 /* MTMessageBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CE3FAA0F7F589100425DA9 /* MTMessageBroker.m */; };
+		E0D6FB280ADED257005BB6C2 /* Gun Sight 5a Input Image.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0D6FB260ADED256005BB6C2 /* Gun Sight 5a Input Image.psd */; };
+		E0D6FB290ADED257005BB6C2 /* Gun Sight 5a Mask.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0D6FB270ADED256005BB6C2 /* Gun Sight 5a Mask.psd */; };
+		E0E055B60AE07DD500ABBF6F /* MissileLauncher_shooting_72.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */; };
+		E0E326010A3C26D200A4F1ED /* MissileLauncher.icns in Resources */ = {isa = PBXBuildFile; fileRef = E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */; };
+		E0E902950ACFA7FB008C30AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902940ACFA7FB008C30AC /* QuartzCore.framework */; };
+		E0E902990ACFA81B008C30AC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902980ACFA81B008C30AC /* OpenGL.framework */; };
+		E0E9029D0ACFA833008C30AC /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E9029C0ACFA833008C30AC /* CoreAudioKit.framework */; };
+		E0E902A10ACFA851008C30AC /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902A00ACFA851008C30AC /* QuickTime.framework */; };
+		E0E902F80ACFACF1008C30AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902F70ACFACF1008C30AC /* AudioToolbox.framework */; };
+		E0E902FA0ACFAD03008C30AC /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902F90ACFAD03008C30AC /* AudioUnit.framework */; };
+		E0E903E00ACFB480008C30AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97325FDCFA39411CA2CEA /* Foundation.framework */; };
+		E0E903E10ACFB481008C30AC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E42FB307B3F0F600E4EEF1 /* CoreData.framework */; };
+		E0E903E20ACFB482008C30AC /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
+		E0E9046A0ACFBF13008C30AC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E904690ACFBF13008C30AC /* Quartz.framework */; };
+		E0ED38920A3C11AC0013C96A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0ED38910A3C11AC0013C96A /* IOKit.framework */; };
+		E0F4D08312D8520D009A4A67 /* Nevigate.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F4D08212D8520D009A4A67 /* Nevigate.png */; };
+		E0FF2A1D12F01C9C006E9C54 /* Black Button.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		E06407A414B6BC310034B2D7 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		E064077314B5AF5C0034B2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E00F94C714B59B0300E206F0;
+			remoteInfo = "USB Missile Launcher All Drivers";
+		};
+		E064077514B5AF630034B2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E00F94E914B59E4E00E206F0;
+			remoteInfo = GeneralPrefs;
+		};
+		E064077714B5AF670034B2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E032E8BD14B5A0D3001D7460;
+			remoteInfo = JoystickPrefs;
+		};
+		E064077914B5AF6B0034B2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E032E8E514B5A1AE001D7460;
+			remoteInfo = LauncherPrefs;
+		};
+		E064077B14B5AF700034B2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E032E90E14B5A243001D7460;
+			remoteInfo = SoundPrefs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E032E93114B5A387001D7460 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E032E93614B5A3CA001D7460 /* USB Missile Launcher All Drivers.kext in CopyFiles */,
+				E032E93514B5A3C3001D7460 /* SoundPrefs.preferencePane in CopyFiles */,
+				E032E93414B5A3BA001D7460 /* LauncherPrefs.preferencePane in CopyFiles */,
+				E032E93314B5A3B3001D7460 /* JoystickPrefs.preferencePane in CopyFiles */,
+				E032E93214B5A3AC001D7460 /* GeneralPrefs.preferencePane in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* USB Missile Launcher NZ_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "USB Missile Launcher NZ_Prefix.pch"; path = "Classes/USB Missile Launcher NZ_Prefix.pch"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* USB Missile Launcher NZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "USB Missile Launcher NZ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00443040A7DF55F00DEA1B5 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		E0056E7E0AEC613A00A60D58 /* FeedbackWindowController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FeedbackWindowController.h; path = Classes/FeedbackWindowController.h; sourceTree = "<group>"; };
+		E0056E7F0AEC613A00A60D58 /* FeedbackWindowController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = FeedbackWindowController.m; path = Classes/FeedbackWindowController.m; sourceTree = "<group>"; };
+		E006E4AB0A441E3500A77A11 /* SS_PreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SS_PreferencePaneProtocol.h; path = Classes/SS_PreferencePaneProtocol.h; sourceTree = "<group>"; };
+		E006E4AC0A441E3500A77A11 /* SS_PrefsController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SS_PrefsController.h; path = Classes/SS_PrefsController.h; sourceTree = "<group>"; };
+		E006E4AD0A441E3500A77A11 /* SS_PrefsController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SS_PrefsController.m; path = Classes/SS_PrefsController.m; sourceTree = "<group>"; };
+		E006E4B90A44206500A77A11 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = Classes/AppController.h; sourceTree = "<group>"; };
+		E006E4BA0A44206500A77A11 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = Classes/AppController.m; sourceTree = "<group>"; };
+		E00F94C814B59B0300E206F0 /* USB Missile Launcher All Drivers.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "USB Missile Launcher All Drivers.kext"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00F94C914B59B0400E206F0 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		E00F94CC14B59B0400E206F0 /* USB Missile Launcher All Drivers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "USB Missile Launcher All Drivers-Info.plist"; sourceTree = "<group>"; };
+		E00F94CE14B59B0400E206F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E00F94D314B59B0400E206F0 /* USB Missile Launcher All Drivers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USB Missile Launcher All Drivers-Prefix.pch"; sourceTree = "<group>"; };
+		E00F94EA14B59E4E00E206F0 /* GeneralPrefs.preferencePane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeneralPrefs.preferencePane; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00F94EB14B59E4E00E206F0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E00F94ED14B59E4E00E206F0 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		E00F94EF14B59E4E00E206F0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E00F94F214B59E4E00E206F0 /* GeneralPrefs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GeneralPrefs-Info.plist"; sourceTree = "<group>"; };
+		E00F94F414B59E4E00E206F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E00F94F614B59E4E00E206F0 /* GeneralPrefs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeneralPrefs-Prefix.pch"; sourceTree = "<group>"; };
+		E00F94FA14B59E4E00E206F0 /* GeneralPrefs.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = GeneralPrefs.tiff; sourceTree = "<group>"; };
+		E00F950214B59E8500E206F0 /* GeneralPaneView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = GeneralPaneView.nib; sourceTree = "<group>"; };
+		E00F950614B59EBB00E206F0 /* SS_PreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SS_PreferencePaneProtocol.h; sourceTree = "<group>"; };
+		E00F950714B59EBB00E206F0 /* GeneralController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralController.h; sourceTree = "<group>"; };
+		E00F950814B59EBB00E206F0 /* GeneralController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralController.m; sourceTree = "<group>"; };
+		E01066F814BED71800411A31 /* USB Missile Launcher All Drivers-Info Copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "USB Missile Launcher All Drivers-Info Copy.plist"; sourceTree = "<group>"; };
+		E01260461335F898006EC92E /* DreamCheeky IOC Launcher No Shadow.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DreamCheeky IOC Launcher No Shadow.psd"; path = "Resources/DreamCheeky IOC Launcher No Shadow.psd"; sourceTree = "<group>"; };
+		E01260481335F8CB006EC92E /* DreamCheeky IOC Launcher No Shadow.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "DreamCheeky IOC Launcher No Shadow.icns"; path = "Resources/DreamCheeky IOC Launcher No Shadow.icns"; sourceTree = "<group>"; };
+		E01569D10A97D6EC00A17E8B /* Nuclear Silo Launch Klaxon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Nuclear Silo Launch Klaxon.mp3"; path = "Resources/Nuclear Silo Launch Klaxon.mp3"; sourceTree = "<group>"; };
+		E0163E850DC3499500C6EBEE /* VideoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoWindow.h; path = ClassesVideo/VideoWindow.h; sourceTree = "<group>"; };
+		E0163E860DC3499500C6EBEE /* VideoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoWindow.m; path = ClassesVideo/VideoWindow.m; sourceTree = "<group>"; };
+		E0172D9D14BEB8DA00C16FBA /* USB_Missile_Launcher_All_Drivers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = USB_Missile_Launcher_All_Drivers.c; sourceTree = "<group>"; };
+		E02CDEF50A7C4DFF00379BE0 /* USBLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USBLauncher.h; path = Classes/USBLauncher.h; sourceTree = "<group>"; };
+		E02CDEF60A7C4DFF00379BE0 /* USBLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USBLauncher.m; path = Classes/USBLauncher.m; sourceTree = "<group>"; };
+		E032E8BE14B5A0D3001D7460 /* JoystickPrefs.preferencePane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoystickPrefs.preferencePane; sourceTree = BUILT_PRODUCTS_DIR; };
+		E032E8C314B5A0D3001D7460 /* JoystickPrefs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JoystickPrefs-Info.plist"; sourceTree = "<group>"; };
+		E032E8C514B5A0D3001D7460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E032E8C714B5A0D3001D7460 /* JoystickPrefs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JoystickPrefs-Prefix.pch"; sourceTree = "<group>"; };
+		E032E8D314B5A0F8001D7460 /* JoystickController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoystickController.h; sourceTree = "<group>"; };
+		E032E8D414B5A0F8001D7460 /* JoystickController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoystickController.m; sourceTree = "<group>"; };
+		E032E8D514B5A0F8001D7460 /* SS_PreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SS_PreferencePaneProtocol.h; sourceTree = "<group>"; };
+		E032E8D914B5A111001D7460 /* JoystickPrefs.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = JoystickPrefs.tiff; sourceTree = "<group>"; };
+		E032E8DA14B5A111001D7460 /* JoystickPaneView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = JoystickPaneView.nib; sourceTree = "<group>"; };
+		E032E8E614B5A1AE001D7460 /* LauncherPrefs.preferencePane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LauncherPrefs.preferencePane; sourceTree = BUILT_PRODUCTS_DIR; };
+		E032E8EB14B5A1AF001D7460 /* LauncherPrefs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LauncherPrefs-Info.plist"; sourceTree = "<group>"; };
+		E032E8ED14B5A1AF001D7460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E032E8EF14B5A1AF001D7460 /* LauncherPrefs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LauncherPrefs-Prefix.pch"; sourceTree = "<group>"; };
+		E032E8FB14B5A1CE001D7460 /* LauncherController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherController.h; sourceTree = "<group>"; };
+		E032E8FC14B5A1CE001D7460 /* LauncherController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherController.m; sourceTree = "<group>"; };
+		E032E8FD14B5A1CE001D7460 /* SS_PreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SS_PreferencePaneProtocol.h; sourceTree = "<group>"; };
+		E032E90114B5A1E1001D7460 /* LauncherPrefs.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = LauncherPrefs.tiff; sourceTree = "<group>"; };
+		E032E90214B5A1E1001D7460 /* LauncherPaneView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = LauncherPaneView.nib; sourceTree = "<group>"; };
+		E032E90F14B5A243001D7460 /* SoundPrefs.preferencePane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundPrefs.preferencePane; sourceTree = BUILT_PRODUCTS_DIR; };
+		E032E91414B5A243001D7460 /* SoundPrefs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SoundPrefs-Info.plist"; sourceTree = "<group>"; };
+		E032E91614B5A243001D7460 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E032E91814B5A243001D7460 /* SoundPrefs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoundPrefs-Prefix.pch"; sourceTree = "<group>"; };
+		E032E92414B5A25C001D7460 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundController.h; sourceTree = "<group>"; };
+		E032E92514B5A25C001D7460 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundController.m; sourceTree = "<group>"; };
+		E032E92614B5A25C001D7460 /* SS_PreferencePaneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SS_PreferencePaneProtocol.h; sourceTree = "<group>"; };
+		E032E92A14B5A276001D7460 /* SoundPaneView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = SoundPaneView.nib; sourceTree = "<group>"; };
+		E032E92B14B5A276001D7460 /* SoundPrefs.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SoundPrefs.tiff; sourceTree = "<group>"; };
+		E03780410BAC870900724518 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E03780470BAC875100724518 /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E04940440BC99FA900B71710 /* USB Missile Launcher NZ.sdef */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; name = "USB Missile Launcher NZ.sdef"; path = "Resources/USB Missile Launcher NZ.sdef"; sourceTree = "<group>"; };
+		E04944590BCCDB7200B71710 /* ASAbort.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = ASAbort.m; path = "Classes/AppleScript Support/ASAbort.m"; sourceTree = "<group>"; };
+		E049445A0BCCDB7200B71710 /* ASToggleLock.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ASToggleLock.h; path = "Classes/AppleScript Support/ASToggleLock.h"; sourceTree = "<group>"; };
+		E049445D0BCCDB7200B71710 /* ASAbort.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ASAbort.h; path = "Classes/AppleScript Support/ASAbort.h"; sourceTree = "<group>"; };
+		E049445E0BCCDB7200B71710 /* ASToggleLock.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = ASToggleLock.m; path = "Classes/AppleScript Support/ASToggleLock.m"; sourceTree = "<group>"; };
+		E049447C0BCCDC9D00B71710 /* ASFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASFire.h; path = "Classes/AppleScript Support/ASFire.h"; sourceTree = "<group>"; };
+		E049447D0BCCDC9D00B71710 /* ASFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASFire.m; path = "Classes/AppleScript Support/ASFire.m"; sourceTree = "<group>"; };
+		E04B421A0B747C8D00603C52 /* USBJoyStickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USBJoyStickControl.h; path = Classes/USBJoyStickControl.h; sourceTree = "<group>"; };
+		E04B421B0B747C8D00603C52 /* USBJoyStickControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USBJoyStickControl.m; path = Classes/USBJoyStickControl.m; sourceTree = "<group>"; };
+		E04CADC4132DD71A0002F03E /* Gun Sight 5b Input Image.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gun Sight 5b Input Image.psd"; path = "Resources/Gun Sight 5b Input Image.psd"; sourceTree = "<group>"; };
+		E04CADC5132DD71A0002F03E /* Gun Sight 5b Mask.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gun Sight 5b Mask.psd"; path = "Resources/Gun Sight 5b Mask.psd"; sourceTree = "<group>"; };
+		E04F3C940AEC76A7007555D4 /* Message.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Message.framework; path = /System/Library/Frameworks/Message.framework; sourceTree = "<absolute>"; };
+		E04F624C0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = DreamCheeky_Launcher.psd; path = Resources/DreamCheeky_Launcher.psd; sourceTree = "<group>"; };
+		E0565A7D0A4007FB003B8400 /* USBMissileLauncher.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = USBMissileLauncher.psd; path = Resources/USBMissileLauncher.psd; sourceTree = "<group>"; };
+		E05B2F2E0BD231110073507C /* ASMoveParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASMoveParameter.h; path = "Classes/AppleScript Support/ASMoveParameter.h"; sourceTree = "<group>"; };
+		E05B2F2F0BD231110073507C /* ASMoveParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASMoveParameter.m; path = "Classes/AppleScript Support/ASMoveParameter.m"; sourceTree = "<group>"; };
+		E05DCD880A3C1E1600EAE605 /* USBMissileControl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = USBMissileControl.h; path = Classes/USBMissileControl.h; sourceTree = "<group>"; };
+		E05DCD890A3C1E1600EAE605 /* USBMissileControl.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = USBMissileControl.m; path = Classes/USBMissileControl.m; sourceTree = "<group>"; };
+		E060AD330AEDF788009CAD05 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		E064078014B5C63C0034B2D7 /* README.TXT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.TXT; sourceTree = "<group>"; };
+		E064078C14B639180034B2D7 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
+		E064078D14B639180034B2D7 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
+		E064078F14B639610034B2D7 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+		E064079214B677B50034B2D7 /* ShellTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShellTask.h; sourceTree = "<group>"; };
+		E064079314B677B50034B2D7 /* ShellTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShellTask.m; sourceTree = "<group>"; };
+		E064079514B687470034B2D7 /* FeedbackWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedbackWindow.xib; path = Resources/FeedbackWindow.xib; sourceTree = "<group>"; };
+		E06407A214B6BBA10034B2D7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		E06407A514B6BF3B0034B2D7 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = ../../../../../../Applications/Mail.app; sourceTree = "<group>"; };
+		E06B2951131653CA0060C13B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E0926EAA0AECA57500DE43FF /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Help; path = Resources/Help; sourceTree = "<group>"; };
+		E093214A0A7A357600B16B0F /* Fire3.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fire3.psd; path = Resources/Fire3.psd; sourceTree = "<group>"; };
+		E09321580A7A382F00B16B0F /* Fire.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fire.psd; path = Resources/Fire.psd; sourceTree = "<group>"; };
+		E0946F0313176BE500BFA8A1 /* background-down-left.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-down-left.psd"; path = "Resources/Button UI/background-down-left.psd"; sourceTree = "<group>"; };
+		E0946F0413176BE500BFA8A1 /* background-down-right.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-down-right.psd"; path = "Resources/Button UI/background-down-right.psd"; sourceTree = "<group>"; };
+		E0946F0513176BE500BFA8A1 /* background-down.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-down.psd"; path = "Resources/Button UI/background-down.psd"; sourceTree = "<group>"; };
+		E0946F0613176BE500BFA8A1 /* background-fire.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-fire.psd"; path = "Resources/Button UI/background-fire.psd"; sourceTree = "<group>"; };
+		E0946F0713176BE500BFA8A1 /* background-left.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-left.psd"; path = "Resources/Button UI/background-left.psd"; sourceTree = "<group>"; };
+		E0946F0813176BE500BFA8A1 /* background-right.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-right.psd"; path = "Resources/Button UI/background-right.psd"; sourceTree = "<group>"; };
+		E0946F0913176BE500BFA8A1 /* background-up-left.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-up-left.psd"; path = "Resources/Button UI/background-up-left.psd"; sourceTree = "<group>"; };
+		E0946F0A13176BE500BFA8A1 /* background-up-right.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-up-right.psd"; path = "Resources/Button UI/background-up-right.psd"; sourceTree = "<group>"; };
+		E0946F0B13176BE500BFA8A1 /* background-up.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-up.psd"; path = "Resources/Button UI/background-up.psd"; sourceTree = "<group>"; };
+		E0946F0C13176BE500BFA8A1 /* foreground-down-left.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-down-left.psd"; path = "Resources/Button UI/foreground-down-left.psd"; sourceTree = "<group>"; };
+		E0946F0D13176BE500BFA8A1 /* foreground-down-right.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-down-right.psd"; path = "Resources/Button UI/foreground-down-right.psd"; sourceTree = "<group>"; };
+		E0946F0E13176BE500BFA8A1 /* foreground-down.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-down.psd"; path = "Resources/Button UI/foreground-down.psd"; sourceTree = "<group>"; };
+		E0946F0F13176BE500BFA8A1 /* foreground-fire.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-fire.psd"; path = "Resources/Button UI/foreground-fire.psd"; sourceTree = "<group>"; };
+		E0946F1013176BE500BFA8A1 /* foreground-left.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-left.psd"; path = "Resources/Button UI/foreground-left.psd"; sourceTree = "<group>"; };
+		E0946F1113176BE500BFA8A1 /* foreground-right.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-right.psd"; path = "Resources/Button UI/foreground-right.psd"; sourceTree = "<group>"; };
+		E0946F1213176BE500BFA8A1 /* foreground-up-left.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-up-left.psd"; path = "Resources/Button UI/foreground-up-left.psd"; sourceTree = "<group>"; };
+		E0946F1313176BE500BFA8A1 /* foreground-up-right.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-up-right.psd"; path = "Resources/Button UI/foreground-up-right.psd"; sourceTree = "<group>"; };
+		E0946F1413176BE500BFA8A1 /* foreground-up.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-up.psd"; path = "Resources/Button UI/foreground-up.psd"; sourceTree = "<group>"; };
+		E097335C0A3FFA8200CED98F /* RocketLaunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = RocketLaunch.wav; path = Resources/RocketLaunch.wav; sourceTree = "<group>"; };
+		E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-Top.png"; path = "Resources/DreamCheeky Graphics/Background-Top.png"; sourceTree = "<group>"; };
+		E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-Bottom.png"; path = "Resources/DreamCheeky Graphics/Background-Bottom.png"; sourceTree = "<group>"; };
+		E0A2E3C312F3F91200F8C4F4 /* FireButton.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = FireButton.psd; path = "Resources/DreamCheeky Graphics/FireButton.psd"; sourceTree = "<group>"; };
+		E0A2E3C512F3FC2900F8C4F4 /* Btn-Down.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Btn-Down.psd"; path = "Resources/DreamCheeky Graphics/Btn-Down.psd"; sourceTree = "<group>"; };
+		E0B07F780DC9C42000BE1BD8 /* MissileControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissileControlView.h; path = Classes/MissileControlView.h; sourceTree = "<group>"; };
+		E0B07F790DC9C42000BE1BD8 /* MissileControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MissileControlView.m; path = Classes/MissileControlView.m; sourceTree = "<group>"; };
+		E0B9D1060AD707E7009C03A0 /* VideoDebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = VideoDebugMacros.h; path = ClassesVideo/VideoDebugMacros.h; sourceTree = "<group>"; };
+		E0C1347F0A3D79F20054CD82 /* MissileResponder.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = MissileResponder.h; path = Classes/MissileResponder.h; sourceTree = "<group>"; };
+		E0C134800A3D79F20054CD82 /* MissileResponder.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = MissileResponder.m; path = Classes/MissileResponder.m; sourceTree = "<group>"; };
+		E0CD12FB168400A4002C2B3C /* AVRecorderDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVRecorderDocument.h; sourceTree = "<group>"; };
+		E0CD12FC168400A4002C2B3C /* AVRecorderDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVRecorderDocument.m; sourceTree = "<group>"; };
+		E0CD12FE16840532002C2B3C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E0CD130016840587002C2B3C /* AVRecorderDocument.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AVRecorderDocument.xib; sourceTree = "<group>"; };
+		E0CE3FA50F7F589000425DA9 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = Classes/AsyncSocket.h; sourceTree = "<group>"; };
+		E0CE3FA60F7F589100425DA9 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = Classes/AsyncSocket.m; sourceTree = "<group>"; };
+		E0CE3FA70F7F589100425DA9 /* MTMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTMessage.h; path = Classes/MTMessage.h; sourceTree = "<group>"; };
+		E0CE3FA80F7F589100425DA9 /* MTMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTMessage.m; path = Classes/MTMessage.m; sourceTree = "<group>"; };
+		E0CE3FA90F7F589100425DA9 /* MTMessageBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTMessageBroker.h; path = Classes/MTMessageBroker.h; sourceTree = "<group>"; };
+		E0CE3FAA0F7F589100425DA9 /* MTMessageBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTMessageBroker.m; path = Classes/MTMessageBroker.m; sourceTree = "<group>"; };
+		E0D6FB260ADED256005BB6C2 /* Gun Sight 5a Input Image.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gun Sight 5a Input Image.psd"; path = "Resources/Gun Sight 5a Input Image.psd"; sourceTree = "<group>"; };
+		E0D6FB270ADED256005BB6C2 /* Gun Sight 5a Mask.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gun Sight 5a Mask.psd"; path = "Resources/Gun Sight 5a Mask.psd"; sourceTree = "<group>"; };
+		E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MissileLauncher_shooting_72.png; path = Resources/MissileLauncher_shooting_72.png; sourceTree = "<group>"; };
+		E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = MissileLauncher.icns; path = Resources/MissileLauncher.icns; sourceTree = "<group>"; };
+		E0E902940ACFA7FB008C30AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		E0E902980ACFA81B008C30AC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		E0E9029C0ACFA833008C30AC /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = /System/Library/Frameworks/CoreAudioKit.framework; sourceTree = "<absolute>"; };
+		E0E902A00ACFA851008C30AC /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		E0E902F70ACFACF1008C30AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		E0E902F90ACFAD03008C30AC /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = /System/Library/Frameworks/AudioUnit.framework; sourceTree = "<absolute>"; };
+		E0E904690ACFBF13008C30AC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
+		E0ED38910A3C11AC0013C96A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		E0F4D08212D8520D009A4A67 /* Nevigate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nevigate.png; path = Resources/Nevigate.png; sourceTree = "<group>"; };
+		E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Black Button.psd"; path = "Resources/Graphics/Black Button.psd"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0CD12FF16840532002C2B3C /* AVFoundation.framework in Frameworks */,
+				E06407A314B6BBA10034B2D7 /* ScriptingBridge.framework in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				E0ED38920A3C11AC0013C96A /* IOKit.framework in Frameworks */,
+				E0E902950ACFA7FB008C30AC /* QuartzCore.framework in Frameworks */,
+				E0E902990ACFA81B008C30AC /* OpenGL.framework in Frameworks */,
+				E0E9029D0ACFA833008C30AC /* CoreAudioKit.framework in Frameworks */,
+				E0E902A10ACFA851008C30AC /* QuickTime.framework in Frameworks */,
+				E0E902F80ACFACF1008C30AC /* AudioToolbox.framework in Frameworks */,
+				E0E902FA0ACFAD03008C30AC /* AudioUnit.framework in Frameworks */,
+				E0E903E00ACFB480008C30AC /* Foundation.framework in Frameworks */,
+				E0E903E10ACFB481008C30AC /* CoreData.framework in Frameworks */,
+				E0E903E20ACFB482008C30AC /* AppKit.framework in Frameworks */,
+				E0E9046A0ACFBF13008C30AC /* Quartz.framework in Frameworks */,
+				E060AD340AEDF788009CAD05 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94C314B59B0300E206F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94E514B59E4E00E206F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E00F94EC14B59E4E00E206F0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8B914B5A0D3001D7460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8BF14B5A0D3001D7460 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8E114B5A1AE001D7460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8E714B5A1AE001D7460 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E90A14B5A243001D7460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E91014B5A243001D7460 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E064078C14B639180034B2D7 /* AboutWindowController.h */,
+				E064078D14B639180034B2D7 /* AboutWindowController.m */,
+				E0056E7E0AEC613A00A60D58 /* FeedbackWindowController.h */,
+				E0056E7F0AEC613A00A60D58 /* FeedbackWindowController.m */,
+				E064079214B677B50034B2D7 /* ShellTask.h */,
+				E064079314B677B50034B2D7 /* ShellTask.m */,
+				E0CE3FA50F7F589000425DA9 /* AsyncSocket.h */,
+				E0CE3FA60F7F589100425DA9 /* AsyncSocket.m */,
+				E0CE3FA70F7F589100425DA9 /* MTMessage.h */,
+				E0CE3FA80F7F589100425DA9 /* MTMessage.m */,
+				E0CE3FA90F7F589100425DA9 /* MTMessageBroker.h */,
+				E0CE3FAA0F7F589100425DA9 /* MTMessageBroker.m */,
+				E04944490BCCDB4C00B71710 /* AppleScript */,
+				E0B9D1060AD707E7009C03A0 /* VideoDebugMacros.h */,
+				E0CD12FB168400A4002C2B3C /* AVRecorderDocument.h */,
+				E0CD12FC168400A4002C2B3C /* AVRecorderDocument.m */,
+				E0163E850DC3499500C6EBEE /* VideoWindow.h */,
+				E0163E860DC3499500C6EBEE /* VideoWindow.m */,
+				E006E4B90A44206500A77A11 /* AppController.h */,
+				E006E4BA0A44206500A77A11 /* AppController.m */,
+				E0C1347F0A3D79F20054CD82 /* MissileResponder.h */,
+				E0C134800A3D79F20054CD82 /* MissileResponder.m */,
+				E006E4AB0A441E3500A77A11 /* SS_PreferencePaneProtocol.h */,
+				E006E4AC0A441E3500A77A11 /* SS_PrefsController.h */,
+				E006E4AD0A441E3500A77A11 /* SS_PrefsController.m */,
+				E02CDEF50A7C4DFF00379BE0 /* USBLauncher.h */,
+				E02CDEF60A7C4DFF00379BE0 /* USBLauncher.m */,
+				E04B421A0B747C8D00603C52 /* USBJoyStickControl.h */,
+				E04B421B0B747C8D00603C52 /* USBJoyStickControl.m */,
+				E05DCD880A3C1E1600EAE605 /* USBMissileControl.h */,
+				E05DCD890A3C1E1600EAE605 /* USBMissileControl.m */,
+				E0B07F780DC9C42000BE1BD8 /* MissileControlView.h */,
+				E0B07F790DC9C42000BE1BD8 /* MissileControlView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0CD12FE16840532002C2B3C /* AVFoundation.framework */,
+				E06407A214B6BBA10034B2D7 /* ScriptingBridge.framework */,
+				E060AD330AEDF788009CAD05 /* SystemConfiguration.framework */,
+				E04F3C940AEC76A7007555D4 /* Message.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				E0E902F90ACFAD03008C30AC /* AudioUnit.framework */,
+				E0E902F70ACFACF1008C30AC /* AudioToolbox.framework */,
+				E0E904690ACFBF13008C30AC /* Quartz.framework */,
+				E0ED38910A3C11AC0013C96A /* IOKit.framework */,
+				E0E902A00ACFA851008C30AC /* QuickTime.framework */,
+				E0E9029C0ACFA833008C30AC /* CoreAudioKit.framework */,
+				E0E902980ACFA81B008C30AC /* OpenGL.framework */,
+				E0E902940ACFA7FB008C30AC /* QuartzCore.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				E00F94C914B59B0400E206F0 /* Kernel.framework */,
+				E00F94EF14B59E4E00E206F0 /* CoreData.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* USB Missile Launcher NZ.app */,
+				E00F94C814B59B0300E206F0 /* USB Missile Launcher All Drivers.kext */,
+				E00F94EA14B59E4E00E206F0 /* GeneralPrefs.preferencePane */,
+				E032E8BE14B5A0D3001D7460 /* JoystickPrefs.preferencePane */,
+				E032E8E614B5A1AE001D7460 /* LauncherPrefs.preferencePane */,
+				E032E90F14B5A243001D7460 /* SoundPrefs.preferencePane */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* USB Missile Launcher NZ */ = {
+			isa = PBXGroup;
+			children = (
+				E064078014B5C63C0034B2D7 /* README.TXT */,
+				E06407A514B6BF3B0034B2D7 /* Mail.app */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				E00F94CA14B59B0400E206F0 /* USB Missile Launcher All Drivers KEXT */,
+				E00F94F014B59E4E00E206F0 /* GeneralPrefs */,
+				E032E8C114B5A0D3001D7460 /* JoystickPrefs */,
+				E032E8E914B5A1AF001D7460 /* LauncherPrefs */,
+				E032E91214B5A243001D7460 /* SoundPrefs */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = "USB Missile Launcher NZ";
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				32CA4F630368D1EE00C91783 /* USB Missile Launcher NZ_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E09CAD4316840CE5002C5891 /* Icons */,
+				E09CAD4216840CDB002C5891 /* Sounds */,
+				E09CAD4116840C2D002C5891 /* Graphics */,
+				E064079114B63E0C0034B2D7 /* NIBs */,
+				E00443040A7DF55F00DEA1B5 /* Credits.rtf */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				E03780450BAC873B00724518 /* Localizable.strings */,
+				E04940440BC99FA900B71710 /* USB Missile Launcher NZ.sdef */,
+				E0926EAA0AECA57500DE43FF /* Help */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				E00F94EB14B59E4E00E206F0 /* Cocoa.framework */,
+				E00F94ED14B59E4E00E206F0 /* PreferencePanes.framework */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E00F94CA14B59B0400E206F0 /* USB Missile Launcher All Drivers KEXT */ = {
+			isa = PBXGroup;
+			children = (
+				E0172D9D14BEB8DA00C16FBA /* USB_Missile_Launcher_All_Drivers.c */,
+				E00F94CB14B59B0400E206F0 /* Supporting Files */,
+			);
+			name = "USB Missile Launcher All Drivers KEXT";
+			path = "USB Missile Launcher All Drivers";
+			sourceTree = "<group>";
+		};
+		E00F94CB14B59B0400E206F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E00F94CC14B59B0400E206F0 /* USB Missile Launcher All Drivers-Info.plist */,
+				E01066F814BED71800411A31 /* USB Missile Launcher All Drivers-Info Copy.plist */,
+				E00F94CD14B59B0400E206F0 /* InfoPlist.strings */,
+				E00F94D314B59B0400E206F0 /* USB Missile Launcher All Drivers-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E00F94F014B59E4E00E206F0 /* GeneralPrefs */ = {
+			isa = PBXGroup;
+			children = (
+				E00F950614B59EBB00E206F0 /* SS_PreferencePaneProtocol.h */,
+				E00F950714B59EBB00E206F0 /* GeneralController.h */,
+				E00F950814B59EBB00E206F0 /* GeneralController.m */,
+				E00F94F114B59E4E00E206F0 /* Supporting Files */,
+			);
+			path = GeneralPrefs;
+			sourceTree = "<group>";
+		};
+		E00F94F114B59E4E00E206F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E00F950214B59E8500E206F0 /* GeneralPaneView.nib */,
+				E00F94FA14B59E4E00E206F0 /* GeneralPrefs.tiff */,
+				E00F94F214B59E4E00E206F0 /* GeneralPrefs-Info.plist */,
+				E00F94F314B59E4E00E206F0 /* InfoPlist.strings */,
+				E00F94F614B59E4E00E206F0 /* GeneralPrefs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E032E8C114B5A0D3001D7460 /* JoystickPrefs */ = {
+			isa = PBXGroup;
+			children = (
+				E032E8D314B5A0F8001D7460 /* JoystickController.h */,
+				E032E8D414B5A0F8001D7460 /* JoystickController.m */,
+				E032E8D514B5A0F8001D7460 /* SS_PreferencePaneProtocol.h */,
+				E032E8C214B5A0D3001D7460 /* Supporting Files */,
+			);
+			path = JoystickPrefs;
+			sourceTree = "<group>";
+		};
+		E032E8C214B5A0D3001D7460 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E032E8D914B5A111001D7460 /* JoystickPrefs.tiff */,
+				E032E8DA14B5A111001D7460 /* JoystickPaneView.nib */,
+				E032E8C314B5A0D3001D7460 /* JoystickPrefs-Info.plist */,
+				E032E8C414B5A0D3001D7460 /* InfoPlist.strings */,
+				E032E8C714B5A0D3001D7460 /* JoystickPrefs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E032E8E914B5A1AF001D7460 /* LauncherPrefs */ = {
+			isa = PBXGroup;
+			children = (
+				E032E8FB14B5A1CE001D7460 /* LauncherController.h */,
+				E032E8FC14B5A1CE001D7460 /* LauncherController.m */,
+				E032E8FD14B5A1CE001D7460 /* SS_PreferencePaneProtocol.h */,
+				E032E8EA14B5A1AF001D7460 /* Supporting Files */,
+			);
+			path = LauncherPrefs;
+			sourceTree = "<group>";
+		};
+		E032E8EA14B5A1AF001D7460 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E032E90114B5A1E1001D7460 /* LauncherPrefs.tiff */,
+				E032E90214B5A1E1001D7460 /* LauncherPaneView.nib */,
+				E032E8EB14B5A1AF001D7460 /* LauncherPrefs-Info.plist */,
+				E032E8EC14B5A1AF001D7460 /* InfoPlist.strings */,
+				E032E8EF14B5A1AF001D7460 /* LauncherPrefs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E032E91214B5A243001D7460 /* SoundPrefs */ = {
+			isa = PBXGroup;
+			children = (
+				E032E92414B5A25C001D7460 /* SoundController.h */,
+				E032E92514B5A25C001D7460 /* SoundController.m */,
+				E032E92614B5A25C001D7460 /* SS_PreferencePaneProtocol.h */,
+				E032E91314B5A243001D7460 /* Supporting Files */,
+			);
+			path = SoundPrefs;
+			sourceTree = "<group>";
+		};
+		E032E91314B5A243001D7460 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E032E92A14B5A276001D7460 /* SoundPaneView.nib */,
+				E032E92B14B5A276001D7460 /* SoundPrefs.tiff */,
+				E032E91414B5A243001D7460 /* SoundPrefs-Info.plist */,
+				E032E91514B5A243001D7460 /* InfoPlist.strings */,
+				E032E91814B5A243001D7460 /* SoundPrefs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E04944490BCCDB4C00B71710 /* AppleScript */ = {
+			isa = PBXGroup;
+			children = (
+				E049445D0BCCDB7200B71710 /* ASAbort.h */,
+				E04944590BCCDB7200B71710 /* ASAbort.m */,
+				E049445A0BCCDB7200B71710 /* ASToggleLock.h */,
+				E049445E0BCCDB7200B71710 /* ASToggleLock.m */,
+				E049447C0BCCDC9D00B71710 /* ASFire.h */,
+				E049447D0BCCDC9D00B71710 /* ASFire.m */,
+				E05B2F2E0BD231110073507C /* ASMoveParameter.h */,
+				E05B2F2F0BD231110073507C /* ASMoveParameter.m */,
+			);
+			name = AppleScript;
+			sourceTree = "<group>";
+		};
+		E064079114B63E0C0034B2D7 /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				E0CD130016840587002C2B3C /* AVRecorderDocument.xib */,
+				E064078F14B639610034B2D7 /* AboutWindow.xib */,
+				E064079514B687470034B2D7 /* FeedbackWindow.xib */,
+				E06B2950131653CA0060C13B /* MainMenu.xib */,
+			);
+			name = NIBs;
+			sourceTree = "<group>";
+		};
+		E09CAD4116840C2D002C5891 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				E093214A0A7A357600B16B0F /* Fire3.psd */,
+				E09321580A7A382F00B16B0F /* Fire.psd */,
+				E0565A7D0A4007FB003B8400 /* USBMissileLauncher.psd */,
+				E04F624C0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd */,
+				E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */,
+				E0D6FB260ADED256005BB6C2 /* Gun Sight 5a Input Image.psd */,
+				E0D6FB270ADED256005BB6C2 /* Gun Sight 5a Mask.psd */,
+				E04CADC4132DD71A0002F03E /* Gun Sight 5b Input Image.psd */,
+				E04CADC5132DD71A0002F03E /* Gun Sight 5b Mask.psd */,
+				E0946F0313176BE500BFA8A1 /* background-down-left.psd */,
+				E0946F0413176BE500BFA8A1 /* background-down-right.psd */,
+				E0946F0513176BE500BFA8A1 /* background-down.psd */,
+				E0946F0613176BE500BFA8A1 /* background-fire.psd */,
+				E0946F0713176BE500BFA8A1 /* background-left.psd */,
+				E0946F0813176BE500BFA8A1 /* background-right.psd */,
+				E0946F0913176BE500BFA8A1 /* background-up-left.psd */,
+				E0946F0A13176BE500BFA8A1 /* background-up-right.psd */,
+				E0946F0B13176BE500BFA8A1 /* background-up.psd */,
+				E0946F0C13176BE500BFA8A1 /* foreground-down-left.psd */,
+				E0946F0D13176BE500BFA8A1 /* foreground-down-right.psd */,
+				E0946F0E13176BE500BFA8A1 /* foreground-down.psd */,
+				E0946F0F13176BE500BFA8A1 /* foreground-fire.psd */,
+				E0946F1013176BE500BFA8A1 /* foreground-left.psd */,
+				E0946F1113176BE500BFA8A1 /* foreground-right.psd */,
+				E0946F1213176BE500BFA8A1 /* foreground-up-left.psd */,
+				E0946F1313176BE500BFA8A1 /* foreground-up-right.psd */,
+				E0946F1413176BE500BFA8A1 /* foreground-up.psd */,
+				E0A2E3C512F3FC2900F8C4F4 /* Btn-Down.psd */,
+				E0A2E3C312F3F91200F8C4F4 /* FireButton.psd */,
+				E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */,
+				E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */,
+				E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */,
+				E0F4D08212D8520D009A4A67 /* Nevigate.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		E09CAD4216840CDB002C5891 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E01569D10A97D6EC00A17E8B /* Nuclear Silo Launch Klaxon.mp3 */,
+				E097335C0A3FFA8200CED98F /* RocketLaunch.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		E09CAD4316840CE5002C5891 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */,
+				E01260481335F8CB006EC92E /* DreamCheeky IOC Launcher No Shadow.icns */,
+				E01260461335F898006EC92E /* DreamCheeky IOC Launcher No Shadow.psd */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E00F94C414B59B0300E206F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94E614B59E4E00E206F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E00F950914B59EBB00E206F0 /* SS_PreferencePaneProtocol.h in Headers */,
+				E00F950A14B59EBB00E206F0 /* GeneralController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8BA14B5A0D3001D7460 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8D614B5A0F8001D7460 /* JoystickController.h in Headers */,
+				E032E8D814B5A0F9001D7460 /* SS_PreferencePaneProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8E214B5A1AE001D7460 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8FE14B5A1CE001D7460 /* LauncherController.h in Headers */,
+				E032E90014B5A1CE001D7460 /* SS_PreferencePaneProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E90B14B5A243001D7460 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E92714B5A25C001D7460 /* SoundController.h in Headers */,
+				E032E92914B5A25C001D7460 /* SS_PreferencePaneProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* USB Missile Launcher NZ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "USB Missile Launcher NZ" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				E032E93114B5A387001D7460 /* CopyFiles */,
+			);
+			buildRules = (
+				E06407A414B6BC310034B2D7 /* PBXBuildRule */,
+			);
+			comments = "${MY_BUILD_NO}\n\n";
+			dependencies = (
+				E064077C14B5AF700034B2D7 /* PBXTargetDependency */,
+				E064077A14B5AF6B0034B2D7 /* PBXTargetDependency */,
+				E064077814B5AF670034B2D7 /* PBXTargetDependency */,
+				E064077614B5AF630034B2D7 /* PBXTargetDependency */,
+				E064077414B5AF5C0034B2D7 /* PBXTargetDependency */,
+			);
+			name = "USB Missile Launcher NZ";
+			productInstallPath = "$(HOME)/Applications";
+			productName = "USB Missile Launcher NZ";
+			productReference = 8D1107320486CEB800E47090 /* USB Missile Launcher NZ.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E00F94C714B59B0300E206F0 /* USB Missile Launcher All Drivers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E00F94D414B59B0400E206F0 /* Build configuration list for PBXNativeTarget "USB Missile Launcher All Drivers" */;
+			buildPhases = (
+				E00F94C214B59B0300E206F0 /* Sources */,
+				E00F94C314B59B0300E206F0 /* Frameworks */,
+				E00F94C414B59B0300E206F0 /* Headers */,
+				E00F94C514B59B0300E206F0 /* Resources */,
+				E00F94C614B59B0300E206F0 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "USB Missile Launcher All Drivers";
+			productName = "USB Missile Launcher All Drivers";
+			productReference = E00F94C814B59B0300E206F0 /* USB Missile Launcher All Drivers.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+		E00F94E914B59E4E00E206F0 /* GeneralPrefs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E00F950114B59E4E00E206F0 /* Build configuration list for PBXNativeTarget "GeneralPrefs" */;
+			buildPhases = (
+				E00F94E414B59E4E00E206F0 /* Sources */,
+				E00F94E514B59E4E00E206F0 /* Frameworks */,
+				E00F94E614B59E4E00E206F0 /* Headers */,
+				E00F94E714B59E4E00E206F0 /* Resources */,
+				E00F94E814B59E4E00E206F0 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeneralPrefs;
+			productName = GeneralPrefs;
+			productReference = E00F94EA14B59E4E00E206F0 /* GeneralPrefs.preferencePane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E032E8BD14B5A0D3001D7460 /* JoystickPrefs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E032E8D014B5A0D3001D7460 /* Build configuration list for PBXNativeTarget "JoystickPrefs" */;
+			buildPhases = (
+				E032E8B814B5A0D3001D7460 /* Sources */,
+				E032E8B914B5A0D3001D7460 /* Frameworks */,
+				E032E8BA14B5A0D3001D7460 /* Headers */,
+				E032E8BB14B5A0D3001D7460 /* Resources */,
+				E032E8BC14B5A0D3001D7460 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoystickPrefs;
+			productName = JoystickPrefs;
+			productReference = E032E8BE14B5A0D3001D7460 /* JoystickPrefs.preferencePane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E032E8E514B5A1AE001D7460 /* LauncherPrefs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E032E8F814B5A1AF001D7460 /* Build configuration list for PBXNativeTarget "LauncherPrefs" */;
+			buildPhases = (
+				E032E8E014B5A1AE001D7460 /* Sources */,
+				E032E8E114B5A1AE001D7460 /* Frameworks */,
+				E032E8E214B5A1AE001D7460 /* Headers */,
+				E032E8E314B5A1AE001D7460 /* Resources */,
+				E032E8E414B5A1AE001D7460 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherPrefs;
+			productName = LauncherPrefs;
+			productReference = E032E8E614B5A1AE001D7460 /* LauncherPrefs.preferencePane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E032E90E14B5A243001D7460 /* SoundPrefs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E032E92114B5A243001D7460 /* Build configuration list for PBXNativeTarget "SoundPrefs" */;
+			buildPhases = (
+				E032E90914B5A243001D7460 /* Sources */,
+				E032E90A14B5A243001D7460 /* Frameworks */,
+				E032E90B14B5A243001D7460 /* Headers */,
+				E032E90C14B5A243001D7460 /* Resources */,
+				E032E90D14B5A243001D7460 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundPrefs;
+			productName = SoundPrefs;
+			productReference = E032E90F14B5A243001D7460 /* SoundPrefs.preferencePane */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "David G. Wilson";
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "USB Missile Launcher NZ" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* USB Missile Launcher NZ */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* USB Missile Launcher NZ */,
+				E00F94C714B59B0300E206F0 /* USB Missile Launcher All Drivers */,
+				E00F94E914B59E4E00E206F0 /* GeneralPrefs */,
+				E032E8BD14B5A0D3001D7460 /* JoystickPrefs */,
+				E032E8E514B5A1AE001D7460 /* LauncherPrefs */,
+				E032E90E14B5A243001D7460 /* SoundPrefs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0E326010A3C26D200A4F1ED /* MissileLauncher.icns in Resources */,
+				E097335D0A3FFA8200CED98F /* RocketLaunch.wav in Resources */,
+				E0565A7E0A4007FB003B8400 /* USBMissileLauncher.psd in Resources */,
+				E093214B0A7A357600B16B0F /* Fire3.psd in Resources */,
+				E09321590A7A382F00B16B0F /* Fire.psd in Resources */,
+				E00443050A7DF55F00DEA1B5 /* Credits.rtf in Resources */,
+				E01569D20A97D6EC00A17E8B /* Nuclear Silo Launch Klaxon.mp3 in Resources */,
+				E0D6FB280ADED257005BB6C2 /* Gun Sight 5a Input Image.psd in Resources */,
+				E0D6FB290ADED257005BB6C2 /* Gun Sight 5a Mask.psd in Resources */,
+				E0E055B60AE07DD500ABBF6F /* MissileLauncher_shooting_72.png in Resources */,
+				E0926EAE0AECA57500DE43FF /* Help in Resources */,
+				E04F624D0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd in Resources */,
+				E03780460BAC873B00724518 /* Localizable.strings in Resources */,
+				E04940450BC99FA900B71710 /* USB Missile Launcher NZ.sdef in Resources */,
+				E0F4D08312D8520D009A4A67 /* Nevigate.png in Resources */,
+				E0FF2A1D12F01C9C006E9C54 /* Black Button.psd in Resources */,
+				E0A2E3BE12F3F22200F8C4F4 /* Background-Top.png in Resources */,
+				E0A2E3C212F3F53600F8C4F4 /* Background-Bottom.png in Resources */,
+				E0A2E3C412F3F91200F8C4F4 /* FireButton.psd in Resources */,
+				E0A2E3C612F3FC2900F8C4F4 /* Btn-Down.psd in Resources */,
+				E06B2952131653CA0060C13B /* MainMenu.xib in Resources */,
+				E0946F1513176BE500BFA8A1 /* background-down-left.psd in Resources */,
+				E0946F1613176BE500BFA8A1 /* background-down-right.psd in Resources */,
+				E0946F1713176BE500BFA8A1 /* background-down.psd in Resources */,
+				E0946F1813176BE500BFA8A1 /* background-fire.psd in Resources */,
+				E0946F1913176BE500BFA8A1 /* background-left.psd in Resources */,
+				E0946F1A13176BE500BFA8A1 /* background-right.psd in Resources */,
+				E0946F1B13176BE500BFA8A1 /* background-up-left.psd in Resources */,
+				E0946F1C13176BE500BFA8A1 /* background-up-right.psd in Resources */,
+				E0946F1D13176BE500BFA8A1 /* background-up.psd in Resources */,
+				E0946F1E13176BE500BFA8A1 /* foreground-down-left.psd in Resources */,
+				E0946F1F13176BE500BFA8A1 /* foreground-down-right.psd in Resources */,
+				E0946F2013176BE500BFA8A1 /* foreground-down.psd in Resources */,
+				E0946F2113176BE500BFA8A1 /* foreground-fire.psd in Resources */,
+				E0946F2213176BE500BFA8A1 /* foreground-left.psd in Resources */,
+				E0946F2313176BE500BFA8A1 /* foreground-right.psd in Resources */,
+				E0946F2413176BE500BFA8A1 /* foreground-up-left.psd in Resources */,
+				E0946F2513176BE500BFA8A1 /* foreground-up-right.psd in Resources */,
+				E0946F2613176BE500BFA8A1 /* foreground-up.psd in Resources */,
+				E04CADC6132DD71A0002F03E /* Gun Sight 5b Input Image.psd in Resources */,
+				E04CADC7132DD71A0002F03E /* Gun Sight 5b Mask.psd in Resources */,
+				E01260471335F898006EC92E /* DreamCheeky IOC Launcher No Shadow.psd in Resources */,
+				E01260491335F8CB006EC92E /* DreamCheeky IOC Launcher No Shadow.icns in Resources */,
+				E064079014B639610034B2D7 /* AboutWindow.xib in Resources */,
+				E064079614B687470034B2D7 /* FeedbackWindow.xib in Resources */,
+				E06407A614B6BF3C0034B2D7 /* Mail.app in Resources */,
+				E0CD130116840587002C2B3C /* AVRecorderDocument.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94C514B59B0300E206F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E00F94CF14B59B0400E206F0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94E714B59E4E00E206F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E00F94F514B59E4E00E206F0 /* InfoPlist.strings in Resources */,
+				E00F94FB14B59E4E00E206F0 /* GeneralPrefs.tiff in Resources */,
+				E00F950414B59E8500E206F0 /* GeneralPaneView.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8BB14B5A0D3001D7460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8C614B5A0D3001D7460 /* InfoPlist.strings in Resources */,
+				E032E8DB14B5A111001D7460 /* JoystickPrefs.tiff in Resources */,
+				E032E8DC14B5A111001D7460 /* JoystickPaneView.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8E314B5A1AE001D7460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8EE14B5A1AF001D7460 /* InfoPlist.strings in Resources */,
+				E032E90314B5A1E1001D7460 /* LauncherPrefs.tiff in Resources */,
+				E032E90414B5A1E1001D7460 /* LauncherPaneView.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E90C14B5A243001D7460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E91714B5A243001D7460 /* InfoPlist.strings in Resources */,
+				E032E92C14B5A276001D7460 /* SoundPaneView.nib in Resources */,
+				E032E92D14B5A276001D7460 /* SoundPrefs.tiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		E00F94C614B59B0300E206F0 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94E814B59E4E00E206F0 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8BC14B5A0D3001D7460 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8E414B5A1AE001D7460 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E90D14B5A243001D7460 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E06407A714B6C05F0034B2D7 /* Mail.app in Sources */,
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				E05DCD8A0A3C1E1600EAE605 /* USBMissileControl.m in Sources */,
+				E0C134810A3D79F20054CD82 /* MissileResponder.m in Sources */,
+				E006E4AE0A441E3500A77A11 /* SS_PrefsController.m in Sources */,
+				E006E4BB0A44206500A77A11 /* AppController.m in Sources */,
+				E02CDEF70A7C4DFF00379BE0 /* USBLauncher.m in Sources */,
+				E04B421C0B747C8D00603C52 /* USBJoyStickControl.m in Sources */,
+				E04944630BCCDB7200B71710 /* ASAbort.m in Sources */,
+				E04944650BCCDB7200B71710 /* ASToggleLock.m in Sources */,
+				E049447E0BCCDC9D00B71710 /* ASFire.m in Sources */,
+				E05B2F300BD231110073507C /* ASMoveParameter.m in Sources */,
+				E0163E870DC3499500C6EBEE /* VideoWindow.m in Sources */,
+				E0B07F7A0DC9C42000BE1BD8 /* MissileControlView.m in Sources */,
+				E0CE3FAB0F7F589100425DA9 /* AsyncSocket.m in Sources */,
+				E0CE3FAC0F7F589100425DA9 /* MTMessage.m in Sources */,
+				E0CE3FAD0F7F589100425DA9 /* MTMessageBroker.m in Sources */,
+				E064078E14B639180034B2D7 /* AboutWindowController.m in Sources */,
+				E064079414B677B50034B2D7 /* ShellTask.m in Sources */,
+				E0CD12FD168400A4002C2B3C /* AVRecorderDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94C214B59B0300E206F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0172D9E14BEB8DA00C16FBA /* USB_Missile_Launcher_All_Drivers.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00F94E414B59E4E00E206F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E00F950B14B59EBB00E206F0 /* GeneralController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8B814B5A0D3001D7460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8D714B5A0F9001D7460 /* JoystickController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E8E014B5A1AE001D7460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E8FF14B5A1CE001D7460 /* LauncherController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E032E90914B5A243001D7460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E032E92814B5A25C001D7460 /* SoundController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E064077414B5AF5C0034B2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E00F94C714B59B0300E206F0 /* USB Missile Launcher All Drivers */;
+			targetProxy = E064077314B5AF5C0034B2D7 /* PBXContainerItemProxy */;
+		};
+		E064077614B5AF630034B2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E00F94E914B59E4E00E206F0 /* GeneralPrefs */;
+			targetProxy = E064077514B5AF630034B2D7 /* PBXContainerItemProxy */;
+		};
+		E064077814B5AF670034B2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E032E8BD14B5A0D3001D7460 /* JoystickPrefs */;
+			targetProxy = E064077714B5AF670034B2D7 /* PBXContainerItemProxy */;
+		};
+		E064077A14B5AF6B0034B2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E032E8E514B5A1AE001D7460 /* LauncherPrefs */;
+			targetProxy = E064077914B5AF6B0034B2D7 /* PBXContainerItemProxy */;
+		};
+		E064077C14B5AF700034B2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E032E90E14B5A243001D7460 /* SoundPrefs */;
+			targetProxy = E064077B14B5AF700034B2D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E00F94CD14B59B0400E206F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00F94CE14B59B0400E206F0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E00F94F314B59E4E00E206F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E00F94F414B59E4E00E206F0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E032E8C414B5A0D3001D7460 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E032E8C514B5A0D3001D7460 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E032E8EC14B5A1AF001D7460 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E032E8ED14B5A1AF001D7460 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E032E91514B5A243001D7460 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E032E91614B5A243001D7460 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E03780450BAC873B00724518 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E03780410BAC870900724518 /* English */,
+				E03780470BAC875100724518 /* German */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E06B2950131653CA0060C13B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E06B2951131653CA0060C13B /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "Classes/USB Missile Launcher NZ_Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PREFIX_HEADER = "Classes/USB Missile Launcher NZ_Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INSTALL_PATH = "$(HOME)/Applications";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_VERSION = "1.8.2 build 165";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBC_WARNINGS = NO;
+				INFOPLIST_FILE = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "USB Missile Launcher NZ";
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_VERSION = "1.8.2 build 165";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBC_WARNINGS = NO;
+				INFOPLIST_FILE = Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "USB Missile Launcher NZ";
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E00F94D514B59B0400E206F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.0.0d2;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "USB Missile Launcher All Drivers/USB Missile Launcher All Drivers-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "USB Missile Launcher All Drivers/USB Missile Launcher All Drivers-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MODULE_NAME = nz.org.mactcp.USB_Missile_Launcher_All_Drivers;
+				MODULE_START = USB_Missile_Launcher_All_Drivers_start;
+				MODULE_STOP = USB_Missile_Launcher_All_Drivers_stop;
+				MODULE_VERSION = 1.0.0d2;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		E00F94D614B59B0400E206F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d2;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "USB Missile Launcher All Drivers/USB Missile Launcher All Drivers-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "USB Missile Launcher All Drivers/USB Missile Launcher All Drivers-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MODULE_NAME = nz.org.mactcp.USB_Missile_Launcher_All_Drivers;
+				MODULE_START = USB_Missile_Launcher_All_Drivers_start;
+				MODULE_STOP = USB_Missile_Launcher_All_Drivers_stop;
+				MODULE_VERSION = 1.0.0d2;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+		E00F94FF14B59E4E00E206F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GeneralPrefs/GeneralPrefs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "GeneralPrefs/GeneralPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Debug;
+		};
+		E00F950014B59E4E00E206F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GeneralPrefs/GeneralPrefs-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "GeneralPrefs/GeneralPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Release;
+		};
+		E032E8D114B5A0D3001D7460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoystickPrefs/JoystickPrefs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "JoystickPrefs/JoystickPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Debug;
+		};
+		E032E8D214B5A0D3001D7460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoystickPrefs/JoystickPrefs-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "JoystickPrefs/JoystickPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Release;
+		};
+		E032E8F914B5A1AF001D7460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LauncherPrefs/LauncherPrefs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "LauncherPrefs/LauncherPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Debug;
+		};
+		E032E8FA14B5A1AF001D7460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LauncherPrefs/LauncherPrefs-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "LauncherPrefs/LauncherPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Release;
+		};
+		E032E92214B5A243001D7460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoundPrefs/SoundPrefs-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "SoundPrefs/SoundPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Debug;
+		};
+		E032E92314B5A243001D7460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SoundPrefs/SoundPrefs-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				INFOPLIST_FILE = "SoundPrefs/SoundPrefs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = preferencePane;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "USB Missile Launcher NZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "USB Missile Launcher NZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E00F94D414B59B0400E206F0 /* Build configuration list for PBXNativeTarget "USB Missile Launcher All Drivers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E00F94D514B59B0400E206F0 /* Debug */,
+				E00F94D614B59B0400E206F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E00F950114B59E4E00E206F0 /* Build configuration list for PBXNativeTarget "GeneralPrefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E00F94FF14B59E4E00E206F0 /* Debug */,
+				E00F950014B59E4E00E206F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E032E8D014B5A0D3001D7460 /* Build configuration list for PBXNativeTarget "JoystickPrefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E032E8D114B5A0D3001D7460 /* Debug */,
+				E032E8D214B5A0D3001D7460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E032E8F814B5A1AF001D7460 /* Build configuration list for PBXNativeTarget "LauncherPrefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E032E8F914B5A1AF001D7460 /* Debug */,
+				E032E8FA14B5A1AF001D7460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E032E92114B5A243001D7460 /* Build configuration list for PBXNativeTarget "SoundPrefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E032E92214B5A243001D7460 /* Debug */,
+				E032E92314B5A243001D7460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

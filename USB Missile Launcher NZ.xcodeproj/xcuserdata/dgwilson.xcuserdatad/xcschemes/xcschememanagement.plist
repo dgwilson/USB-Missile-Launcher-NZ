@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>GeneralPrefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>JoystickPrefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>LauncherPrefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>SoundPrefs.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>USB Missile Launcher All Drivers.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>USB Missile Launcher NZ.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8D1107260486CEB800E47090</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E00F94C714B59B0300E206F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E00F94E914B59E4E00E206F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0172D8E14BEB6D200C16FBA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E032E8BD14B5A0D3001D7460</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E032E8E514B5A1AE001D7460</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E032E90E14B5A243001D7460</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

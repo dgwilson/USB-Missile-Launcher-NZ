@@ -1,0 +1,13 @@
+//
+// Prefix header for all source files of the 'USB Missile Launcher NZ' target in the 'USB Missile Launcher NZ' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+	#import <QuickTime/QuickTime.h>
+    #import <AudioUnit/AudioUnit.h>
+    #import <AudioToolbox/AudioToolbox.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <OpenGL/OpenGL.h>
+    #import <CoreAudioKit/CoreAudioKit.h>
+#endif
