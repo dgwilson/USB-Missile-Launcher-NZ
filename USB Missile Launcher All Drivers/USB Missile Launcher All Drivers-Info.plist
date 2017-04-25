@@ -9,7 +9,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string>USB Device Driver Shield - USB Missile Launcher NZ - 32/64bit</string>
 	<key>CFBundleIdentifier</key>
-	<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -22,57 +22,59 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
-	<key>OSBundleRequired</key>
-	<string>Local-Root</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>DreamCheeky_1st_DeviceDriver</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>32801</integer>
-			<key>idVendor</key>
-			<integer>6465</integer>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>idProduct</key>
+			<integer>32801</integer>
+			<key>idVendor</key>
+			<integer>6465</integer>
 		</dict>
 		<key>DreamCheeky_1st_Interface</key>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceNumber</key>
 			<integer>0</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>idProduct</key>
 			<integer>32801</integer>
 			<key>idVendor</key>
 			<integer>6465</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
 		</dict>
 		<key>DreamCheeky_IOC_DeviceDriver</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>4112</integer>
-			<key>idVendor</key>
-			<integer>8483</integer>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>idProduct</key>
+			<integer>4112</integer>
+			<key>idVendor</key>
+			<integer>8483</integer>
 		</dict>
 		<key>DreamCheeky_IOC_Interface</key>
 		<dict>
-			<key>bcdDevice</key>
-			<integer>1</integer>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceClass</key>
@@ -83,178 +85,174 @@
 			<integer>0</integer>
 			<key>bInterfaceSubClass</key>
 			<integer>0</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>bcdDevice</key>
+			<integer>1</integer>
 			<key>idProduct</key>
 			<integer>4112</integer>
 			<key>idVendor</key>
 			<integer>8483</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
 		</dict>
 		<key>DreamCheeky_IR_DeviceDriver</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>65281</integer>
-			<key>idVendor</key>
-			<integer>2689</integer>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>idProduct</key>
+			<integer>65281</integer>
+			<key>idVendor</key>
+			<integer>2689</integer>
 		</dict>
 		<key>DreamCheeky_IR_Interface</key>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceNumber</key>
 			<integer>0</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>idProduct</key>
 			<integer>65281</integer>
 			<key>idVendor</key>
 			<integer>2689</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
 		</dict>
 		<key>DreamCheeky_RB_DeviceDriver</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>1793</integer>
-			<key>idVendor</key>
-			<integer>2689</integer>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>idProduct</key>
+			<integer>1793</integer>
+			<key>idVendor</key>
+			<integer>2689</integer>
 		</dict>
 		<key>DreamCheeky_RB_Interface</key>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceNumber</key>
 			<integer>0</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>idProduct</key>
 			<integer>1793</integer>
 			<key>idVendor</key>
 			<integer>2689</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
 		</dict>
 		<key>GreyFrenchCHIC_Interface0</key>
 		<dict>
-			<key>bConfigurationValue</key>
-			<integer>1</integer>
-			<key>bInterfaceNumber</key>
-			<integer>0</integer>
 			<key>CFBundleIdentifier</key>
 			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>6488</integer>
-			<key>idVendor</key>
-			<integer>1534</integer>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>bConfigurationValue</key>
+			<integer>1</integer>
+			<key>bInterfaceNumber</key>
+			<integer>0</integer>
+			<key>idProduct</key>
+			<integer>6488</integer>
+			<key>idVendor</key>
+			<integer>1534</integer>
 		</dict>
 		<key>GreyFrenchCHIC_Interface1</key>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceNumber</key>
 			<integer>1</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>idProduct</key>
 			<integer>6488</integer>
 			<key>idVendor</key>
 			<integer>1534</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
 		</dict>
 		<key>OriginalLauncher_Interface0</key>
 		<dict>
-			<key>bConfigurationValue</key>
-			<integer>1</integer>
-			<key>bInterfaceNumber</key>
-			<integer>0</integer>
 			<key>CFBundleIdentifier</key>
 			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>514</integer>
-			<key>idVendor</key>
-			<integer>4400</integer>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>bConfigurationValue</key>
+			<integer>1</integer>
+			<key>bInterfaceNumber</key>
+			<integer>0</integer>
+			<key>idProduct</key>
+			<integer>514</integer>
+			<key>idVendor</key>
+			<integer>4400</integer>
 		</dict>
 		<key>OriginalLauncher_Interface1</key>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceNumber</key>
 			<integer>1</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>idProduct</key>
 			<integer>514</integer>
 			<key>idVendor</key>
 			<integer>4400</integer>
+		</dict>
+		<key>OriginalLauncher_WinBond_Interface1</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>IOClass</key>
 			<string>IOService</string>
 			<key>IOProviderClass</key>
 			<string>IOUSBInterface</string>
+			<key>bConfigurationValue</key>
+			<integer>1</integer>
+			<key>bInterfaceNumber</key>
+			<integer>1</integer>
+			<key>idProduct</key>
+			<integer>37777</integer>
+			<key>idVendor</key>
+			<integer>1046</integer>
 		</dict>
 		<key>OriginalLauncher_winBond_Interface0</key>
 		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
+			<key>IOClass</key>
+			<string>IOService</string>
+			<key>IOProviderClass</key>
+			<string>IOUSBInterface</string>
 			<key>bConfigurationValue</key>
 			<integer>1</integer>
 			<key>bInterfaceNumber</key>
 			<integer>0</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
 			<key>idProduct</key>
 			<integer>37777</integer>
 			<key>idVendor</key>
 			<integer>1046</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
-		</dict>
-		<key>OriginalLauncher_WinBond_Interface1</key>
-		<dict>
-			<key>bConfigurationValue</key>
-			<integer>1</integer>
-			<key>bInterfaceNumber</key>
-			<integer>1</integer>
-			<key>CFBundleIdentifier</key>
-			<string>nz.org.mactcp.iokit.usbmissilelaunchernz</string>
-			<key>idProduct</key>
-			<integer>37777</integer>
-			<key>idVendor</key>
-			<integer>1046</integer>
-			<key>IOClass</key>
-			<string>IOService</string>
-			<key>IOProviderClass</key>
-			<string>IOUSBInterface</string>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
@@ -304,5 +302,7 @@
 		<key>com.apple.kpi.mach</key>
 		<string>8.0.0</string>
 	</dict>
+	<key>OSBundleRequired</key>
+	<string>Local-Root</string>
 </dict>
 </plist>

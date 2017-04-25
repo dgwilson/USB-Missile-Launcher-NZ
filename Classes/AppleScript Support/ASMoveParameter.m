@@ -42,7 +42,7 @@
 //	NSLog(@"ALLeftParameter moveTimerSeconds = %@", moveTimerSeconds);
 
 	NSDictionary*  userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithInt:[moveTimerSeconds longValue]], @"moveTimerSeconds", nil];
+		[NSNumber numberWithInt:[moveTimerSeconds intValue]], @"moveTimerSeconds", nil];
 	
 	if ( [moveTimerSeconds isKindOfClass:[NSNumber class]] != NO )
 	{

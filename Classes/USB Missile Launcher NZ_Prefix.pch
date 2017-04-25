@@ -4,7 +4,7 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
-	#import <QuickTime/QuickTime.h>
+//	#import <QuickTime/QuickTime.h>
     #import <AudioUnit/AudioUnit.h>
     #import <AudioToolbox/AudioToolbox.h>
     #import <QuartzCore/QuartzCore.h>

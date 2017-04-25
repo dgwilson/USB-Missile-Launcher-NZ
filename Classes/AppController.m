@@ -382,7 +382,7 @@ fail:
 				//NSString * myMessage = [NSString stringWithFormat:NSLocalizedString(@"A new version of USB Missile Launcher NZ is available (version %@). Would you like to download the new version now?", nil), latestVersionNumber];
 				NSString * myMessage = [NSLocalizedString(@"A new version of USB Missile Launcher NZ is available (version %@). Would you like to download the new version now?", nil) stringByReplacingOccurrencesOfString:@"%@" withString:latestVersionNumber];
 				
-				int button = NSRunAlertPanel(NSLocalizedString(@"A New Version is Available", nil),
+				NSUInteger button = NSRunAlertPanel(NSLocalizedString(@"A New Version is Available", nil),
 											 @"%@",
 											 NSLocalizedString(@"OK", @"OK"),
 											 NSLocalizedString(@"Cancel", @"Cancel"), nil, myMessage);
@@ -422,7 +422,7 @@ fail:
     NSArray *partsB = [self splitVersion:versionB];
     
     NSString *partA, *partB;
-    int i, n, typeA, typeB, intA, intB;
+    NSUInteger i, n, typeA, typeB, intA, intB;
     
     n = MIN([partsA count], [partsB count]);
     for (i = 0; i < n; ++i) {

@@ -10,7 +10,7 @@
 // ************************************************
 
 
-+ (int)version
++ (long)version
 {
     // Version 1 was released on 28th June 2003.
     // Version 2 was released on 14th November 2007.

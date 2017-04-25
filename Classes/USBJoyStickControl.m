@@ -238,7 +238,7 @@ void HIDDeviceAdded(void *refCon, io_iterator_t iterator)
 
             result = (*(hidDataRef->hidDeviceInterface))->open (hidDataRef->hidDeviceInterface, 0);
 			if (result != 0)
-				printf("USBJoyStickControl: Error returned from open %ld", result);
+				printf("USBJoyStickControl: Error returned from open %d", (int)result);
 			// typedef SInt32 HRESULT;
 			// HRESULT result;
 			
@@ -250,7 +250,7 @@ void HIDDeviceAdded(void *refCon, io_iterator_t iterator)
 			
             result = (*(hidDataRef->hidDeviceInterface))->createAsyncEventSource(hidDataRef->hidDeviceInterface, &hidDataRef->eventSource);
 			if (result != 0)
-				printf("USBJoyStickControl: Error returned from createAsyncEventSource %ld", result);
+				printf("USBJoyStickControl: Error returned from createAsyncEventSource %d", (int)result);
             
 			result = (*(hidDataRef->hidDeviceInterface))->setInterruptReportHandlerCallback(
 																				hidDataRef->hidDeviceInterface, 
@@ -260,7 +260,7 @@ void HIDDeviceAdded(void *refCon, io_iterator_t iterator)
 																				NULL, 
 																				hidDataRef);
 			if (result != 0)
-				printf("USBJoyStickControl: Error returned from setInterruptReportHandlerCallback %ld", result);
+				printf("USBJoyStickControl: Error returned from setInterruptReportHandlerCallback %d", (int)result);
 			
 //          result = (*(hidDataRef->hidDeviceInterface))->startAllQueues(hidDataRef->hidDeviceInterface);
 			

@@ -491,7 +491,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 			[privateDataRef setLauncherType:launcher3_type];
 		}
 
-		NSLog(@"USBMissileControl: DeviceAdded: usbVendorID: %ld(0x%ld) usbProductID: %ld(0x%ld) : %@", usbVendorID, usbVendorID, usbProductID, usbProductID, [privateDataRef getLauncherType]);
+		NSLog(@"USBMissileControl: DeviceAdded: usbVendorID: %d(0x%d) usbProductID: %d(0x%d) : %@", (int)usbVendorID, (int)usbVendorID, (int)usbProductID, (int)usbProductID, [privateDataRef getLauncherType]);
 
         // Get the USB device's name.
         kr = IORegistryEntryGetName(usbDevice, deviceName);
@@ -750,7 +750,7 @@ IOReturn FindInterfaces(IOUSBDeviceInterface **device)
 	debugCommands = [prefs floatForKey:@"debugCommands"];
 	
 	
-	NSLog(@"USBMissileControl: FindInterfaces: [launcherDevice count] = %d", [launcherDevice count]);
+	NSLog(@"USBMissileControl: FindInterfaces: [launcherDevice count] = %lu", (unsigned long)[launcherDevice count]);
 	privateDataRef = [launcherDevice objectAtIndex:[launcherDevice count] -1 ];
 	
 //	NSLog(@"USBMissileControl: FindInterfaces: Finding IOUSBInterfaceInterface for IOUSBDeviceInterface    (0x%08x)", [privateDataRef deviceInterface]);
@@ -1045,7 +1045,7 @@ void DeviceNotification( void *refCon,
 			IOObjectRelease([privateDataRef notification]);
 			
 			// Launcher needs to be removed from launcherDevice array!
-			int numItems = [launcherDevice count];
+			NSUInteger numItems = [launcherDevice count];
 			for (i = 0; i < numItems; i++)
 			{
 				//launcherDataRef = [[USBLauncher alloc] init];
@@ -1166,7 +1166,7 @@ void DeviceNotification( void *refCon,
 		default:
 		{
 			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) UNKNOWN!!!!", service);
-			NSLog(@"%lu %lu", iokit_family_msg(sub_iokit_usb, 0x0A), iokit_family_msg(sub_iokit_usb, 0x11));
+			NSLog(@"%u %u", (unsigned int)iokit_family_msg(sub_iokit_usb, 0x0A), (unsigned int)iokit_family_msg(sub_iokit_usb, 0x11));
 			break;
 		}
 	}	
@@ -1214,10 +1214,10 @@ void DeviceNotification( void *refCon,
 
 	
 	//NSLog(@"USBMissileControl: MissileControl");
-	int numItems = [launcherDevice count];
+	NSInteger numItems = [launcherDevice count];
 	if (debugCommands)
 	{
-		NSLog(@"USBMissileControl: MissileControl: Launchers to control = %d", numItems);
+		NSLog(@"USBMissileControl: MissileControl: Launchers to control = %ld", (long)numItems);
 	}
 	
 	for (launcherDeviceNum = 0; launcherDeviceNum < numItems; launcherDeviceNum++)
@@ -1285,8 +1285,8 @@ void DeviceNotification( void *refCon,
 			if (debugCommands)
 			{
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -1537,8 +1537,8 @@ void DeviceNotification( void *refCon,
 			if (debugCommands)
 			{
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -1727,8 +1727,8 @@ void DeviceNotification( void *refCon,
 			if (debugCommands)
 			{
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -1942,8 +1942,8 @@ void DeviceNotification( void *refCon,
 			if (debugCommands)
 			{
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -2028,8 +2028,8 @@ void DeviceNotification( void *refCon,
 			if (debugCommands)
 			{
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -2426,8 +2426,8 @@ void DeviceNotification( void *refCon,
 			if (debugCommands)
 			{
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -2749,8 +2749,8 @@ void DeviceNotification( void *refCon,
 			{
 				NSLog(@"USBMissileControl: -------------- new command instruction --------------");
 				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %ld (0x%ld)", [privateDataRef getusbVendorID], [privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %ld (0x%ld)", [privateDataRef getusbProductID], [privateDataRef getusbProductID]);
+				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
 //				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
 				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
 			}
@@ -3133,7 +3133,7 @@ IOReturn DreamCheekyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfac
 	//	NSLog(@"USBMissileControl: DreamCheekyReadPipe: value of rBuffer bytesRead %x", bytesRead);
 	
 	if (debugCommands)
-		NSLog(@"USBMissileControl: DreamCheekyReadPipe: ReadPipe -> bytesRead setup=%lu", bytesRead);
+		NSLog(@"USBMissileControl: DreamCheekyReadPipe: ReadPipe -> bytesRead setup=%u", (unsigned int)bytesRead);
 	kr = (*missileInterface)->ReadPipe(missileInterface, 1, rBuffer, &bytesRead);
 	if (kr != kIOReturnSuccess)
 	{
@@ -3443,7 +3443,7 @@ IOReturn DreamCheekyWritePipe(int dataRefIndex, char *wBuffer)
 	bytesToWrite = sizeof(gBuffer);
 	
 	NSLog(@"USBMissileControl: DreamCheekyWritePipe: WritePipe");
-	NSLog(@"USBMissileControl: DreamCheekyWritePipe: gBuffer %d, %d, %d -- %lu", gBuffer[0], gBuffer[1], gBuffer[2], bytesToWrite);
+	NSLog(@"USBMissileControl: DreamCheekyWritePipe: gBuffer %d, %d, %d -- %u", gBuffer[0], gBuffer[1], gBuffer[2], (unsigned int)bytesToWrite);
 	kr = (*missileInterface)->WritePipe(missileInterface, 1, gBuffer, bytesToWrite);
 	//kIOReturnBadArgument (0xe00002c2) - There is an invalid argument.
 	
@@ -3857,7 +3857,7 @@ void ClearStalledPipe(IOUSBInterfaceInterface **missileInterface_param)
 	int							i;
 	IOUSBDeviceInterface        **missileDevice = NULL;
 	
-	int numItems = [launcherDevice count];	
+	NSUInteger numItems = [launcherDevice count];
 	for (i = 0; i < numItems; i++)
 	{
 //		privateDataRef = [[[USBLauncher alloc] init] retain];
@@ -4021,20 +4021,20 @@ void printInterpretedError(char *s, IOReturn err)
     {
         if(sub == err_get_sub(sub_iokit_usb))
         {
-            fprintf(stderr, "USB error %ld(0x%lX) ", code, code);
+            fprintf(stderr, "USB error %u(0x%X) ", (unsigned int)code, (unsigned int)code);
         }
         else if(sub == err_get_sub(sub_iokit_common))
         {
-            fprintf(stderr, "IOKit common error %ld(0x%lX) ", code, code);
+            fprintf(stderr, "IOKit common error %u(0x%X) ", (unsigned int)code, (unsigned int)code);
         }
         else
         {
-            fprintf(stderr, "IOKit error %ld(0x%lX) from subsytem %ld(0x%lX) ", code, code, sub, sub);
+            fprintf(stderr, "IOKit error %u(0x%X) from subsytem %u(0x%X) ", (unsigned int)code, (unsigned int)code, (unsigned int)sub, (unsigned int)sub);
         }
     }
     else
     {
-        fprintf(stderr, "error %ld(0x%lX) from system %ld(0x%lX) - subsytem %ld(0x%lX) ", code, code, system, system, sub, sub);
+        fprintf(stderr, "error %u(0x%X) from system %u(0x%X) - subsytem %u(0x%X) ", (unsigned int)code, (unsigned int)code, (unsigned int)system, (unsigned int)system, (unsigned int)sub, (unsigned int)sub);
     }
 	fprintf(stderr, "\n");
 }

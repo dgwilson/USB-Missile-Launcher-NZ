@@ -13,9 +13,20 @@
 #import "MTMessageBroker.h"
 #import "MTMessage.h"
 
+#import "USBMissileControl.h"
+#import "USBJoyStickControl.h"
+
 
 #define kDefaultLaunchPath		@"RocketLaunch.wav"
 #define kDefaultKlaxonPath		@"Nuclear Silo Launch Klaxon.mp3"
+
+@interface MissileResponder ()
+{
+    USBMissileControl * USBLauncherControl;
+    USBJoyStickControl * USBJoystickController;
+}
+
+@end
 
 @implementation MissileResponder
 
@@ -33,7 +44,7 @@
 {
 //	NSLog(@"MissileResponder:awakeFromNib");
 	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
-	int preferencesVersion;
+	NSUInteger preferencesVersion;
 	preferencesVersion = [prefs integerForKey:@"preferencesVersion"];
 	if (preferencesVersion == 14)
 	{

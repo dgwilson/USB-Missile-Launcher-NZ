@@ -7,8 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "USBMissileControl.h"
-#import "USBJoystickControl.h"
 
 @class AsyncSocket;
 @class MTMessageBroker;
@@ -16,8 +14,8 @@
 @interface MissileResponder : NSWindow <NSNetServiceDelegate>
 {
 
-	USBMissileControl * USBLauncherControl;
-	USBJoyStickControl * USBJoystickController; 
+//	USBMissileControl * USBLauncherControl;
+//	USBJoyStickControl * USBJoystickController; 
 	Boolean			    launcherLocked;
 	NSTimer			  * timer;
 	float				timerDurationFromAppleScript;

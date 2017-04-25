@@ -15,7 +15,7 @@
 	<key>CFBundleIconFile</key>
 	<string>DreamCheeky IOC Launcher No Shadow.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.david.USBMissileLauncherNZ</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -40,5 +40,10 @@
 	<string>NSApplication</string>
 	<key>OSAScriptingDefinition</key>
 	<string>USB Missile Launcher NZ.sdef</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
