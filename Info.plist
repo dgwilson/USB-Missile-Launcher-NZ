@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>${APPLICATION_VERSION} Copyright 2012 David G. Wilson</string>
+	<string>${APPLICATION_VERSION} Copyright 2017 David G. Wilson</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -29,11 +29,11 @@
 	<key>CFBundleVersion</key>
 	<string>${APPLICATION_VERSION}</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.5</string>
+	<string>10.6</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>YES</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© David G. Wilson 2012</string>
+	<string>© David G. Wilson 2017</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

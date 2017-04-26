@@ -152,13 +152,26 @@
 	[openPanel setFloatingPanel:YES];
 	[openPanel setAllowsMultipleSelection:NO];
 
-	[openPanel beginForDirectory:nil
-							file:nil
-						   types:fileTypes
-				//modalForWindow:configW
-				modelessDelegate:self
-				  didEndSelector:@selector(DGWlaunchPanelDidEnd:returnCode:contextInfo:)
-					 contextInfo:nil];
+    [openPanel beginWithCompletionHandler:^(NSInteger result) {
+        if (result == NSOKButton)
+        {
+            myPath = [[NSString alloc] init];
+            myPath = [[openPanel URL] path];
+            myPath = [myPath stringByStandardizingPath];
+            //NSLog(@"DGWlaunchPanelDidEnd - %@", myPath);
+            
+            [launchSoundPath setStringValue:myPath];
+            //NSLog(@"DGWlaunchPanelDidEnd - %@", [launchSoundPath stringValue]);
+        }
+    }];
+
+//	[openPanel beginForDirectory:nil
+//							file:nil
+//						   types:fileTypes
+//				//modalForWindow:configW
+//				modelessDelegate:self
+//				  didEndSelector:@selector(DGWlaunchPanelDidEnd:returnCode:contextInfo:)
+//					 contextInfo:nil];
 	
 	//NSLog(@"findLaunchSound returned from file dialog box");
 	return;
@@ -197,49 +210,68 @@
 	[openPanel setFloatingPanel:YES];
 	[openPanel setAllowsMultipleSelection:NO];
 
-	[openPanel beginForDirectory:nil
-							file:nil
-						   types:fileTypes
-				//modalForWindow:configW
-				modelessDelegate:self
-				  didEndSelector:@selector(DGWklaxonPanelDidEnd:returnCode:contextInfo:)
-					 contextInfo:nil];
+    /* Use -beginWithCompletionHandler: instead.
+     Set the -directoryURL property instead of passing in a 'path'.
+     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
+     */
+//    - (void)beginForDirectory:(nullable NSString *)path file:(nullable NSString *)name types:(nullable NSArray *)fileTypes modelessDelegate:(nullable id)delegate didEndSelector:(nullable SEL)didEndSelector contextInfo:(nullable void *)contextInfo  NS_DEPRECATED_MAC(10_0, 10_6);
+
+    [openPanel beginWithCompletionHandler:^(NSInteger result) {
+        if (result == NSOKButton)
+        {
+            myPath = [[NSString alloc] init];
+            myPath = [[openPanel URL] path];
+            myPath = [myPath stringByStandardizingPath];
+            //NSLog(@"DGWklaxonPanelDidEnd - %@", myPath);
+            
+            [klaxonSoundPath setStringValue:myPath];
+            //NSLog(@"DGWklaxonPanelDidEnd - %@", [klaxonSoundPath stringValue]);
+        }
+    }];
+    
+//	[openPanel beginForDirectory:nil
+//							file:nil
+//						   types:fileTypes
+//				//modalForWindow:configW
+//				modelessDelegate:self
+//				  didEndSelector:@selector(DGWklaxonPanelDidEnd:returnCode:contextInfo:)
+//					 contextInfo:nil];
 	
 	//NSLog(@"findLaunchSound returned from file dialog box");
 	return;
 }
 
-- (void)DGWlaunchPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	//NSLog(@"DGWlaunchPanelDidEnd - called");
-	if (returnCode == NSOKButton) 
-	{
-		myPath = [[NSString alloc] init]; 
-		myPath = [panel filename];
-		myPath = [myPath stringByStandardizingPath];
-		//NSLog(@"DGWlaunchPanelDidEnd - %@", myPath);
+//- (void)DGWlaunchPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
+//{
+//	//NSLog(@"DGWlaunchPanelDidEnd - called");
+//	if (returnCode == NSOKButton) 
+//	{
+//		myPath = [[NSString alloc] init]; 
+//		myPath = [[panel URL] path];
+//		myPath = [myPath stringByStandardizingPath];
+//		//NSLog(@"DGWlaunchPanelDidEnd - %@", myPath);
+//
+//		[launchSoundPath setStringValue:myPath];
+//		//NSLog(@"DGWlaunchPanelDidEnd - %@", [launchSoundPath stringValue]);
+//	}
+//	return;
+//}
 
-		[launchSoundPath setStringValue:myPath];
-		//NSLog(@"DGWlaunchPanelDidEnd - %@", [launchSoundPath stringValue]);
-	}
-	return;
-}
-
-- (void)DGWklaxonPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	//NSLog(@"DGWklaxonPanelDidEnd - called");
-	if (returnCode == NSOKButton) 
-	{
-		myPath = [[NSString alloc] init];
-		myPath = [panel filename];
-		myPath = [myPath stringByStandardizingPath];
-		//NSLog(@"DGWklaxonPanelDidEnd - %@", myPath);
-		
-		[klaxonSoundPath setStringValue:myPath];
-		//NSLog(@"DGWklaxonPanelDidEnd - %@", [klaxonSoundPath stringValue]);
-	}
-	return;
-}
+//- (void)DGWklaxonPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo
+//{
+//	//NSLog(@"DGWklaxonPanelDidEnd - called");
+//	if (returnCode == NSOKButton) 
+//	{
+//		myPath = [[NSString alloc] init];
+//		myPath = [[panel URL] path];
+//		myPath = [myPath stringByStandardizingPath];
+//		//NSLog(@"DGWklaxonPanelDidEnd - %@", myPath);
+//		
+//		[klaxonSoundPath setStringValue:myPath];
+//		//NSLog(@"DGWklaxonPanelDidEnd - %@", [klaxonSoundPath stringValue]);
+//	}
+//	return;
+//}
 
 - (IBAction)playLaunch:(id)sender;
 {

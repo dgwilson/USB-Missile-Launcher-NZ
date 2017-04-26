@@ -23,7 +23,7 @@
 - (IBAction)playKlaxon:(id)sender;
 - (void)loadPrefsValues;
 
-- (void)DGWlaunchPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo;
-- (void)DGWklaxonPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo;
+//- (void)DGWlaunchPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo;
+//- (void)DGWklaxonPanelDidEnd:(NSOpenPanel *)panel returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 
 @end

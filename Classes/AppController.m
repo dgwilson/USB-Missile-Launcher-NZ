@@ -134,7 +134,6 @@ enum {
     return self;
 }
 
-#pragma mark -
 #pragma mark - system version
 
 - (void)getSystemVersionMajor:(unsigned *)major
@@ -170,8 +169,7 @@ fail:
     if (bugFix) *bugFix = 0;
 }
 
-#pragma mark -
-#pragma mark About
+#pragma mark - About
 
 - (IBAction)showAbout:(id)sender; 
 {
@@ -184,8 +182,7 @@ fail:
 } // end showTheWindow
 
 
-#pragma mark -
-#pragma mark open Video window
+#pragma mark - open Video window
 
 - (IBAction)openVideoDocument:(id)sender
 {
@@ -208,8 +205,7 @@ fail:
 	}
 }
 
-#pragma mark -
-#pragma mark Feedback
+#pragma mark - Feedback
 
 - (IBAction)showFeedback:(id)sender; 
 {
@@ -221,8 +217,7 @@ fail:
 	
 } // end showTheWindow
 
-#pragma mark -
-#pragma mark Icon changes
+#pragma mark - Icon changes
 
 - (void)setDreamCheekyIcon:(id)sender;
 {
@@ -245,8 +240,7 @@ fail:
 	[NSApp setApplicationIconImage: myImage];
 }
 		
-#pragma mark -
-#pragma mark Developer Message
+#pragma mark - Developer Message
 
 - (IBAction)showDeveloperMessage:(id)sender;
 {
@@ -254,8 +248,7 @@ fail:
 					@"Please see the built in HELP or README file for details on how to configure this software to work with your launcher. You must set your launcher preferences for USB VendorID and USB ProductID and launcher type, then quit and restart this application.", nil, nil, nil);
 }
 
-#pragma mark -
-#pragma mark Preferences
+#pragma mark - Preferences
 
 - (IBAction)showPrefs:(id)sender
 {
@@ -274,8 +267,7 @@ fail:
 }
 
 
-#pragma mark -
-#pragma mark Application Stuff 
+#pragma mark - Application Stuff
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -290,13 +282,16 @@ fail:
 
 }
 
+- (void)applicationWillTerminate:(NSNotification *)aNotification {
+    // Insert code here to tear down your application
+}
+
 - (BOOL)windowShouldClose:(id)sender
 {
 	return NO;
 }
 
-#pragma mark -
-#pragma mark Application Version Checking
+#pragma mark - Application Version Checking
 
 - (IBAction)checkForUpdates:(id)sender;
 {
@@ -562,21 +557,28 @@ fail:
     }
 }
 
-#pragma mark -
-#pragma mark Application cleanup
+#pragma mark - Application cleanup
 
 - (void)dealloc
 {
 	[videoDocument release];
-
 	[prefs release];
-	
 	[super dealloc];
 }
 
+
+#pragma mark - AppleScript stuff
+
+//@interface NSObject(NSApplicationScriptingDelegation)
+//
+//// Return YES if the receiving delegate object can respond to key value coding messages for a specific keyed attribute, to-one relationship, or to-many relationship.  Return NO otherwise.
+//- (BOOL)application:(NSApplication *)sender delegateHandlesKey:(NSString *)key;
+//
+//@end
+
 - (BOOL)application:(NSApplication *)sender delegateHandlesKey:(NSString *)key;
 {
-	NSLog(@"delegateHandlesKey %@", key);
+//	NSLog(@"delegateHandlesKey %@", key);
     if ([key isEqual:@"lockToggle"]) {
         return YES;
     } else {

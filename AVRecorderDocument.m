@@ -197,7 +197,11 @@
 
 	NSImage *oldImage = [NSImage imageNamed:@"Gun Sight 5b Input Image.psd"];
 	CALayer *layer = [[CALayer alloc] init];
-	CGImageRef newImage = [[[oldImage representations] objectAtIndex:0] CGImage];
+//	CGImageRef newImage = [[[oldImage representations] objectAtIndex:0] CGImage];
+    
+    CGImageSourceRef source = CGImageSourceCreateWithData((CFDataRef)[oldImage TIFFRepresentation], NULL);
+    CGImageRef newImage =  CGImageSourceCreateImageAtIndex(source, 0, NULL);
+
 	[layer setContents:(id)newImage];
 	[layer setFrame:[previewViewLayer bounds]];
 	[layer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
