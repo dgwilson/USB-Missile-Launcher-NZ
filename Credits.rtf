@@ -13,7 +13,7 @@
 \
 Version 1.9.0 - build 166\
 \
-26 April 2017\
+4 Mayl 2017\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 \cf0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
@@ -153,7 +153,7 @@ We need to know what's going on under the hood. To investigate this, find the Co
 If you see an entry that looks like this "
 \f1\fs22 \cf6 \CocoaLigature0 USBMissileControl: FindInterfaces: kIOReturnExclusiveAccess (some other task has the device opened already) - Unable to open interface
 \f0\fs24 \cf0 \CocoaLigature1 " then we've got a challenge. Essentially this means that the operating system got it's hands on the launcher before we did and this is no good to us. Actually this is the reason the KEXT file exists - it's a kernel extension usually for printer drivers or other low level devices - only in our case the KEXT has no actual program code it just tells the operating system via a plist to ignore the devices. "
-\f2\b\fs22 /System/Library/Extensions/USB Missile Launcher All Drivers.kext
+\f2\b\fs22 /Library/Extensions/USB Missile Launcher All Drivers.kext
 \f0\b0\fs24 ".\
 \
 Great! Now what - my launcher still isn't working - well I need some diagnostic information sent to me that can be used to figure out what's going on - this may not be easy.\
@@ -175,8 +175,10 @@ Great! Now what - my launcher still isn't working - well I need some diagnostic 
 {\field{\*\fldinst{HYPERLINK "http://dgwilson.wordpress.com"}}{\fldrslt 
 \b0\fs24 \cf0 http://dgwilson.wordpress.com}}
 \b0\fs24  (BLOG)\
-{\field{\*\fldinst{HYPERLINK "http://homepages.paradise.net.nz/dgwilson"}}{\fldrslt http://homepages.paradise.net.nz/dgwilson}} (homepage)\
-{\field{\*\fldinst{HYPERLINK "https://order.kagi.com/cgi-bin/store.cgi?storeID=6FASD"}}{\fldrslt https://order.kagi.com/cgi-bin/store.cgi?storeID=6FASD}}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://homepages.paradise.net.nz/dgwilson"}}{\fldrslt \cf0 http://homepages.paradise.net.nz/dgwilson}} (homepage)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://order.kagi.com/cgi-bin/store.cgi?storeID=6FASD"}}{\fldrslt \cf0 https://order.kagi.com/cgi-bin/store.cgi?storeID=6FASD}}\
 \
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -257,7 +259,10 @@ Depending on how you develop your applescripts you can also use the abort comman
 Version History\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\b0\fs24 \cf0 1.8.2 build 165 - 5 January 2013\
+\b0\fs24 \cf0 1.9.0\
+- Kext USB driver now stored in /Library/Extensions\
+\
+1.8.2 build 165 - 5 January 2013\
 - Control code update for Satzuma launcher\
 \
 1.8.2 build 163 - 31 December 2012\

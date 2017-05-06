@@ -5,7 +5,7 @@
 
 + (NSArray *)preferencePanes
 {
-    return [NSArray arrayWithObjects:[[[GeneralController alloc] init] autorelease], nil];
+    return [NSArray arrayWithObjects:[[GeneralController alloc] init], nil];
 }
 
 
@@ -34,8 +34,7 @@
 
 - (NSImage *)paneIcon
 {
-    return [[[NSImage alloc] initWithContentsOfFile:
-        [[NSBundle bundleForClass:[self class]] pathForImageResource:@"GeneralPrefs"]] autorelease];
+    return [[NSImage alloc] initWithContentsOfFile: [[NSBundle bundleForClass:[self class]] pathForImageResource:@"GeneralPrefs"]];
 }
 
 
@@ -58,14 +57,13 @@
 
 - (IBAction)applyPrefs:(id)sender
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
 	[prefs setFloat:[autoLockInterval floatValue] forKey:@"autoLockInterval"];
 	[prefs setBool:[cameraDisabled state] forKey:@"cameraDisabled"];
 	[prefs setBool:[reverseArrowKeys state] forKey:@"reverseArrowKeys"];
 	[prefs setBool:[debugCommands state] forKey:@"debugCommands"];
     [prefs synchronize];
-	[prefs release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"PrefsChanged" object: nil];
 }

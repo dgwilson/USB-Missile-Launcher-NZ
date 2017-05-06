@@ -20,7 +20,7 @@
 
 + (NSTask *)taskForShellCommand:(NSString *)command
 {
-	NSTask *task = [[[NSTask alloc] init] autorelease]; 
+	NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"]; //we are launching sh, it is what will process the command
 	[task setStandardInput:[NSFileHandle fileHandleWithNullDevice]]; //stdin is directed to /dev/null
 	
@@ -44,7 +44,7 @@
 {
 	NSLog(@"%@ with command:%@", NSStringFromSelector(_cmd), command);
 	
-	NSTask *task = [[self taskForShellCommand:command] retain];
+	NSTask *task = [self taskForShellCommand:command];
 	
 	//we pipe stdout and stderr into a file handle that we read 
     NSPipe *outputPipe = [NSPipe pipe];
@@ -57,9 +57,8 @@
 	NSData * data;
 	data = [outputFileHandle readDataToEndOfFile];
 	
-	NSString * output = [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+	NSString * output = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 	//	NSLog(@"%@ output = %@", NSStringFromSelector(_cmd), output);
-	[task release];
 	return output;
 }
 

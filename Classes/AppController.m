@@ -53,13 +53,13 @@ enum {
 //		NSLog(@"Unable to obtain USB version: %ld", (long)err);
 	
 	
-	if ([[NSWorkspace sharedWorkspace] isFilePackageAtPath:@"/System/Library/Extensions/USB Missile Launcher All Drivers.kext"])
+	if ([[NSWorkspace sharedWorkspace] isFilePackageAtPath:@"/Library/Extensions/USB Missile Launcher All Drivers.kext"])
 	{
 		b_kext_Present = true;
-		NSLog(@"Found - /System/Library/Extensions/USB Missile Launcher All Drivers.kext");
+		NSLog(@"Found - /Library/Extensions/USB Missile Launcher All Drivers.kext");
 	} else {
 		b_kext_Present = false;
-		NSLog(@"WARNING: Critical Support file not found - /System/Library/Extensions/USB Missile Launcher All Drivers.kext");
+		NSLog(@"WARNING: Critical Support file not found - /Library/Extensions/USB Missile Launcher All Drivers.kext");
 	}
 
 	if (!b_kext_Present)
@@ -102,7 +102,6 @@ enum {
 			videoDocument = [[AVRecorderDocument alloc] init];
 			[videoDocument makeWindowControllers];
 			[videoDocument showWindows];
-			[videoDocument release];
 		}
 	}
 		
@@ -191,7 +190,6 @@ fail:
 		videoDocument = [[AVRecorderDocument alloc] init];
 		[videoDocument makeWindowControllers];
 		[videoDocument showWindows];
-		[videoDocument release];
 	}
 	else
 	{
@@ -254,7 +252,7 @@ fail:
 {
 #pragma unused(sender)
     if (!prefs) {
-        prefs = [[[SS_PrefsController alloc] init] retain];
+        prefs = [[SS_PrefsController alloc] init];
         // Set which panes are included, and their order.
 		//[prefs setDebug:YES];
 		[prefs setAlwaysShowsToolbar:YES];
@@ -555,15 +553,6 @@ fail:
     } else {
         return kStringType;
     }
-}
-
-#pragma mark - Application cleanup
-
-- (void)dealloc
-{
-	[videoDocument release];
-	[prefs release];
-	[super dealloc];
 }
 
 

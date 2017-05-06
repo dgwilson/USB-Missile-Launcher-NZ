@@ -20,25 +20,25 @@
 
 + (id)preferencesWithPanesSearchPath:(NSString*)path bundleExtension:(NSString *)ext
 {
-    return [[[SS_PrefsController alloc] initWithPanesSearchPath:path bundleExtension:ext] autorelease];
+    return [[SS_PrefsController alloc] initWithPanesSearchPath:path bundleExtension:ext];
 }
 
 
 + (id)preferencesWithBundleExtension:(NSString *)ext
 {
-    return [[[SS_PrefsController alloc] initWithBundleExtension:ext] autorelease];
+    return [[SS_PrefsController alloc] initWithBundleExtension:ext];
 }
 
 
 + (id)preferencesWithPanesSearchPath:(NSString*)path
 {
-    return [[[SS_PrefsController alloc] initWithPanesSearchPath:path] autorelease];
+    return [[SS_PrefsController alloc] initWithPanesSearchPath:path];
 }
 
 
 + (id)preferences
 {
-    return [[[SS_PrefsController alloc] init] autorelease];
+    return [[SS_PrefsController alloc] init];
 }
 
 
@@ -77,15 +77,15 @@
         [self setAlwaysOpensCentered:YES];
         
         if (!ext || [ext isEqualToString:@""]) {
-            bundleExtension = [[NSString alloc] initWithString:@"preferencePane"];
+            bundleExtension = @"preferencePane";
         } else {
-            bundleExtension = [ext retain];
+            bundleExtension = ext;
         }
         
         if (!path || [path isEqualToString:@""]) {
             searchPath = [[NSString alloc] initWithString:[[NSBundle mainBundle] resourcePath]];
         } else {
-            searchPath = [path retain];
+            searchPath = path;
         }
         
         // Read PreferencePanes
@@ -102,31 +102,31 @@
 }
 
 
-- (void)dealloc
-{
-    if (prefsWindow) {
-        [prefsWindow release];
-    }
-    if (prefsToolbar) {
-        [prefsToolbar release];
-    }
-    if (prefsToolbarItems) {
-        [prefsToolbarItems release];
-    }
-    if (preferencePanes) {
-        [preferencePanes release];
-    }
-    if (panesOrder) {
-        [panesOrder release];
-    }
-    if (bundleExtension) {
-        [bundleExtension release];
-    }
-    if (searchPath) {
-        [searchPath release];
-    }
-    [super dealloc];
-}
+//- (void)dealloc
+//{
+//    if (prefsWindow) {
+//        [prefsWindow release];
+//    }
+//    if (prefsToolbar) {
+//        [prefsToolbar release];
+//    }
+//    if (prefsToolbarItems) {
+//        [prefsToolbarItems release];
+//    }
+//    if (preferencePanes) {
+//        [preferencePanes release];
+//    }
+//    if (panesOrder) {
+//        [panesOrder release];
+//    }
+//    if (bundleExtension) {
+//        [bundleExtension release];
+//    }
+//    if (searchPath) {
+//        [searchPath release];
+//    }
+//    [super dealloc];
+//}
 
 
 // ************************************************
@@ -214,16 +214,12 @@
                     @"OK",
                     nil,
                     nil, appName);
-    [prefsWindow release];
     prefsWindow = nil;
 }
 
 
 - (void)destroyPreferencesWindow
 {
-    if (prefsWindow) {
-        [prefsWindow release];
-    }
     prefsWindow = nil;
 }
 
@@ -303,7 +299,6 @@
     if (disp) {
         NSView *tempView = [[NSView alloc] initWithFrame:[[prefsWindow contentView] frame]];
         [prefsWindow setContentView:tempView];
-        [tempView release];
     }
     
     // Preserve upper left point of window during resize.
@@ -408,7 +403,6 @@ float ToolbarHeightForWindow(NSWindow *window)
             [item setTarget:self];
             [item setAction:@selector(prefsToolbarItemClicked:)]; // action called when item is clicked
             [prefsToolbarItems setObject:item forKey:name]; // add to items
-            [item release];
         } else {
             [self debugLog:[NSString stringWithFormat:@"Could not create toolbar item for preference pane \"%@\", because that pane does not exist.", name]];
         }

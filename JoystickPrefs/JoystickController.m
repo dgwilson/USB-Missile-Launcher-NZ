@@ -5,7 +5,7 @@
 
 + (NSArray *)preferencePanes
 {
-    return [NSArray arrayWithObjects:[[[JoystickController alloc] init] autorelease], nil];
+    return [NSArray arrayWithObjects:[[JoystickController alloc] init], nil];
 }
 
 
@@ -34,8 +34,7 @@
 
 - (NSImage *)paneIcon
 {
-    return [[[NSImage alloc] initWithContentsOfFile:
-        [[NSBundle bundleForClass:[self class]] pathForImageResource:@"JoystickPrefs"]] autorelease];
+    return [[NSImage alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForImageResource:@"JoystickPrefs"]];
 }
 
 
@@ -58,7 +57,7 @@
 
 - (IBAction)applyPrefs:(id)sender
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
 	// preference options
 	//   +/- 5 = joystick sensitity
@@ -71,7 +70,6 @@
 	[prefs setBool:[reverseXAxis state] forKey:@"reverseXAxis"];
 	[prefs setBool:[reverseYAxis state] forKey:@"reverseYAxis"];
     [prefs synchronize];
-	[prefs release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"PrefsChanged" object: nil];
 }

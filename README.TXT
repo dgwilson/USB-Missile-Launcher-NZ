@@ -17,6 +17,45 @@ The following command can be entered in the terminal to disable the camera funct
 defaults write com.david.USBMissileLauncherNZ cameraDisabled -boolean YES
 
 
+=============
+KEXT
+=============
+
+sudo kextutil "USB Missile Launcher All Drivers.kext"/
+Password:
+Diagnostics for /Library/Extensions/USB Missile Launcher All Drivers.kext:
+Warnings:
+Dependency lacks appropriate value for OSBundleRequired and may not be availalble during early boot:
+com.apple.iokit.IOSerialFamily - Safe Boot
+
+Code Signing Failure: code signature is invalid
+Warnings:
+Dependency lacks appropriate value for OSBundleRequired and may not be availalble during early boot:
+com.apple.iokit.IOSerialFamily - Safe Boot
+
+Untrusted kexts are not allowed
+ERROR: invalid signature for nz.org.mactcp.iokit.usbmissilelaunchernz, will not load
+
+
+csrutil disable - done while rebooted in recovery mode
+
+sudo kextutil "USB Missile Launcher All Drivers.kext"/
+Password:
+Diagnostics for /Library/Extensions/USB Missile Launcher All Drivers.kext:
+Warnings:
+Dependency lacks appropriate value for OSBundleRequired and may not be availalble during early boot:
+com.apple.iokit.IOSerialFamily - Safe Boot
+
+Code Signing Failure: code signature is invalid
+Warnings:
+Dependency lacks appropriate value for OSBundleRequired and may not be availalble during early boot:
+com.apple.iokit.IOSerialFamily - Safe Boot
+
+kext-dev-mode allowing invalid signature -67050 0xFFFFFFFFFFFEFA16 for kext "/Library/Extensions/USB Missile Launcher All Drivers.kext"
+kext signature failure override allowing invalid signature -67050 0xFFFFFFFFFFFEFA16 for kext "/Library/Extensions/USB Missile Launcher All Drivers.kext"
+
+
+
 SHA1 - hash generation
 
 for i in U* ; do ls -l "$i" ; openssl dgst -sha1 "$i" ; echo ; done

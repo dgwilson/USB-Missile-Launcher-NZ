@@ -175,7 +175,7 @@ static char							gBuffer[8];
 
 		
 		launcherCount = 0;
-		launcherDevice = [[[NSMutableArray alloc] init] retain];
+		launcherDevice = [[NSMutableArray alloc] init];
 	//	missileLauncherConnected = [self FindMissileLauncher];
 		
 		// set up USB detection code
@@ -518,7 +518,6 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         if ((kIOReturnSuccess != kr) || !plugInInterface)
         {
             NSLog(@"USBMissileControl: DeviceAdded: unable to create plugin. ret = %08x, iodev = %p", kr, plugInInterface);
-			[privateDataRef release];
 			CFRelease(deviceNameAsCFString);
             continue;
         }
@@ -531,7 +530,6 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         if (res || !deviceInterface)
         {
             NSLog(@"USBMissileControl: DeviceAdded: couldn't create a device interface %x(%08x)", (int)res, (int)res);
-			[privateDataRef release];
 			CFRelease(deviceNameAsCFString);
             continue;
         }
@@ -547,7 +545,6 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
         if (KERN_SUCCESS != kr)
         {
             NSLog(@"USBMissileControl: DeviceAdded: GetLocationID returned kr=(0x%08x)", kr);
-			[privateDataRef release];
 			CFRelease(deviceNameAsCFString);
             continue;
         }
@@ -587,7 +584,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
                                                usbDevice,			// service
                                                kIOGeneralInterest,  // interestType
                                                DeviceNotification,  // callback
-                                               privateDataRef,      // refCon
+                                               (__bridge void *)(privateDataRef),      // refCon
                                                &notification		// notification
                                                );
 		// USBMissileControl: IOServiceAddInterestNotification returned 10000003
@@ -617,7 +614,6 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 		if ([privateDataRef missileInterface] == nil)
 		{
 			NSLog(@"USBMissileControl: DeviceAdded: We have a problem. [privateDataRef missileInterface] is nil, means that FindInterfaces has not been able to find the deviceInterface, recommend kext investigation at this point");
-			[privateDataRef release];
 			CFRelease(deviceNameAsCFString);
 			[[NSNotificationCenter defaultCenter] postNotificationName: @"usbConnectIssue" object: nil];
 			continue;
@@ -704,7 +700,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 			// kr == kIOReturnExclusiveAccess
 			NSLog(@"USBMissileControl: DeviceAdded: FAILURE - FindInterfaces(deviceInterface)");
 			NSLog(@"USBMissileControl: DeviceAdded: FAILURE - Make sure software has been installed using the installer application");
-			NSLog(@"USBMissileControl: DeviceAdded: FAILURE - Possibly missing KEXT file in /System/Library/Extensions");
+			NSLog(@"USBMissileControl: DeviceAdded: FAILURE - Possibly missing KEXT file in /Library/Extensions");
 			
 			// send a connection error to the main aplication window
 			[[NSNotificationCenter defaultCenter] postNotificationName: @"usbError" object: nil];
@@ -717,7 +713,6 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 //			NSLog(@"USBMissileControl: DeviceAdded: IOUSBInterfaceInterface (0x%08x)", [privateDataRef missileInterface]);
 //		}
 		
-		[privateDataRef release];
 		CFRelease(deviceNameAsCFString);
     }
 	
@@ -994,47 +989,58 @@ void DeviceNotification( void *refCon,
                          void *messageArgument )
 {
 //    kern_return_t				kr;
-    USBLauncher					*privateDataRef = (USBLauncher *) refCon;
+//    USBLauncher					*privateDataRef = (USBLauncher *)CFBridgingRelease(refCon);
+//    USBLauncher					*privateDataRef = refCon;
 	IOUSBDeviceInterface        **missileDevice = NULL;
 	int							i;
 	USBLauncher					*launcherDataRef;
 	IOUSBDeviceInterface        **launcherMissileDevice = NULL;
 	
-	//		kIOMessageServiceIsSuspended
-	//		kIOMessageServiceIsResumed
-	//		kIOMessageServiceIsRequestingClose
-	//		kIOMessageServiceIsAttemptingOpen
-	//		kIOMessageServiceWasClosed
-	//		kIOMessageServiceBusyStateChange
-	//		kIOMessageServicePropertyChange
-	//		kIOMessageCanDevicePowerOff
-	//		kIOMessageDeviceWillPowerOff
-	//		kIOMessageDeviceWillNotPowerOff
-	//		kIOMessageDeviceHasPoweredOn
-	//		kIOMessageCanSystemPowerOff
-	//		kIOMessageSystemWillPowerOff
-	//		kIOMessageSystemWillNotPowerOff
-	//		kIOMessageCanSystemSleep
-	//		kIOMessageSystemWillSleep
-	//		kIOMessageSystemWillNotSleep
-	//		kIOMessageSystemHasPoweredOn
-	//		kIOMessageSystemWillRestart
-	//		kIOMessageSystemWillPowerOn
-	
+//#define kIOMessageServiceIsTerminated      iokit_common_msg(0x010)    y
+//#define kIOMessageServiceIsSuspended       iokit_common_msg(0x020)    y
+//#define kIOMessageServiceIsResumed         iokit_common_msg(0x030)    y
+//#define kIOMessageServiceIsRequestingClose iokit_common_msg(0x100)    y
+//#define kIOMessageServiceIsAttemptingOpen  iokit_common_msg(0x101)    y
+//#define kIOMessageServiceWasClosed         iokit_common_msg(0x110)    y
+//#define kIOMessageServiceBusyStateChange   iokit_common_msg(0x120)    y
+//#define kIOMessageConsoleSecurityChange    iokit_common_msg(0x128)    y
+//#define kIOMessageServicePropertyChange    iokit_common_msg(0x130)    Y
+//#define kIOMessageCopyClientID             iokit_common_msg(0x330)    y
+//#define kIOMessageSystemCapabilityChange   iokit_common_msg(0x340)    y
+//#define kIOMessageDeviceSignaledWakeup     iokit_common_msg(0x350)    y
+//#define kIOMessageDeviceWillPowerOff       iokit_common_msg(0x210)    y   ???
+//#define kIOMessageDeviceHasPoweredOn       iokit_common_msg(0x230)    y
+//#define kIOMessageSystemWillPowerOff       iokit_common_msg(0x250)    y
+//#define kIOMessageSystemWillRestart        iokit_common_msg(0x310)    y
+//#define kIOMessageSystemPagingOff          iokit_common_msg(0x255)    y
+//#define kIOMessageCanSystemSleep           iokit_common_msg(0x270)    y
+//#define kIOMessageSystemWillNotSleep       iokit_common_msg(0x290)    y
+//#define kIOMessageSystemWillSleep          iokit_common_msg(0x280)    y
+//#define kIOMessageSystemWillPowerOn        iokit_common_msg(0x320)    y
+//#define kIOMessageSystemHasPoweredOn       iokit_common_msg(0x300)    y
+//#define kIOMessageCanDevicePowerOff        iokit_common_msg(0x200)    y
+//#define kIOMessageDeviceWillNotPowerOff    iokit_common_msg(0x220)    y
+//#define kIOMessageSystemWillNotPowerOff    iokit_common_msg(0x260)    y
+//#define kIOMessageCanSystemPowerOff        iokit_common_msg(0x240)    y
+//#define kIOMessageDeviceWillPowerOn        iokit_common_msg(0x215)    y
+//#define kIOMessageDeviceHasPoweredOff      iokit_common_msg(0x225)    y
+
 	
 	switch (messageType)
 	{	
 		case kIOMessageServiceIsTerminated:
 		{
-			NSLog(@"USBMissileControl: DeviceNotification: (0x%08x) REMOVED", service);
+			NSLog(@"USBMissileControl: DeviceNotification: messageType:(0x%08x) service:(0x%08x) REMOVED", messageType, service);
 			
 			// Dump our private data to stderr just to see what it looks like.
 			//NSLog(@"USBMissileControl: Device Name: %@", [privateDataRef deviceName]);
 			
 			// Free the data we're no longer using now that the device is going away
 			//CFRelease([privateDataRef->deviceName);
-			missileDevice = [privateDataRef deviceInterface];
-			
+            
+            //TODO: crashes when launcher is disconnected - 2017 May 05
+//			missileDevice = [privateDataRef deviceInterface];
+            missileDevice = [(__bridge USBLauncher *)refCon deviceInterface];
 			if (missileDevice)
 			{
 //				kr = (*missileDevice)->Release(missileDevice);
@@ -1042,7 +1048,8 @@ void DeviceNotification( void *refCon,
 			}
 			
 //			kr = IOObjectRelease([privateDataRef notification]);
-			IOObjectRelease([privateDataRef notification]);
+//			IOObjectRelease([privateDataRef notification]);
+            IOObjectRelease([(__bridge USBLauncher *)refCon notification]);
 			
 			// Launcher needs to be removed from launcherDevice array!
 			NSUInteger numItems = [launcherDevice count];
@@ -1065,111 +1072,148 @@ void DeviceNotification( void *refCon,
 		}
 		case kIOMessageServiceIsSuspended:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServiceIsSuspended", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServiceIsSuspended", messageType, service);
 			break;
 		}
 		case kIOMessageServiceIsResumed:		
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServiceIsResumed", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServiceIsResumed", messageType, service);
 			break;
 		}
 		case kIOMessageServiceIsRequestingClose:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServiceIsRequestingClose", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServiceIsRequestingClose", messageType, service);
 			break;
 		}
 		case kIOMessageServiceIsAttemptingOpen:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServiceIsAttemptingOpen", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServiceIsAttemptingOpen", messageType, service);
 			break;
 		}
 		case kIOMessageServiceWasClosed:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServiceWasClosed", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServiceWasClosed", messageType, service);
 			break;
 		}
 		case kIOMessageServiceBusyStateChange:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServiceBusyStateChange", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServiceBusyStateChange", messageType, service);
 			break;
 		}
 		case kIOMessageServicePropertyChange:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageServicePropertyChange", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageServicePropertyChange", messageType, service);
 			break;
 		}
 		case kIOMessageCanDevicePowerOff:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageCanDevicePowerOff", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageCanDevicePowerOff", messageType, service);
 			break;
 		}
 		case kIOMessageDeviceWillPowerOff:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageDeviceWillPowerOff", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageDeviceWillPowerOff", messageType, service);
 			break;
 		}
 		case kIOMessageDeviceWillNotPowerOff:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageDeviceWillNotPowerOff", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageDeviceWillNotPowerOff", messageType, service);
 			break;
 		}
 		case kIOMessageDeviceHasPoweredOn:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageDeviceHasPoweredOn", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageDeviceHasPoweredOn", messageType, service);
 			break;
 		}
 		case kIOMessageCanSystemPowerOff:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageCanSystemPowerOff", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageCanSystemPowerOff", messageType, service);
 			break;
 		}
 		case kIOMessageSystemWillPowerOff:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemWillPowerOff", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemWillPowerOff", messageType, service);
 			break;
 		}
 		case kIOMessageSystemWillNotPowerOff:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemWillNotPowerOff", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemWillNotPowerOff", messageType, service);
 			break;
 		}
 		case kIOMessageCanSystemSleep:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageCanSystemSleep", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageCanSystemSleep", messageType, service);
 			break;
 		}
 		case kIOMessageSystemWillSleep:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemWillSleep", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemWillSleep", messageType, service);
 			break;
 		}
 		case kIOMessageSystemWillNotSleep:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemWillNotSleep", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemWillNotSleep", messageType, service);
 			break;
 		}
 		case kIOMessageSystemHasPoweredOn:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemHasPoweredOn", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemHasPoweredOn", messageType, service);
 			break;
 		}
 		case kIOMessageSystemWillRestart:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemWillRestart", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemWillRestart", messageType, service);
 			break;
 		}
 		case kIOMessageSystemWillPowerOn:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) kIOMessageSystemWillPowerOn", service);
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemWillPowerOn", messageType, service);
 			break;
 		}
+        case kIOMessageConsoleSecurityChange:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageConsoleSecurityChange", messageType, service);
+            break;
+        }
+        case kIOMessageCopyClientID:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageCopyClientID", messageType, service);
+            break;
+        }
+        case kIOMessageSystemCapabilityChange:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemCapabilityChange", messageType, service);
+            break;
+        }
+        case kIOMessageDeviceSignaledWakeup:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageDeviceSignaledWakeup", messageType, service);
+            break;
+        }
+        case kIOMessageSystemPagingOff:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageSystemPagingOff", messageType, service);
+            break;
+        }
+        case kIOMessageDeviceWillPowerOn:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageDeviceWillPowerOn", messageType, service);
+            break;
+        }
+        case kIOMessageDeviceHasPoweredOff:
+        {
+            NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) kIOMessageDeviceHasPoweredOff", messageType, service);
+            break;
+        }
+
+
 		default:
 		{
-			NSLog(@"USBMissileControl : DeviceNotification: (0x%08x) UNKNOWN!!!!", service);
-			NSLog(@"%u %u", (unsigned int)iokit_family_msg(sub_iokit_usb, 0x0A), (unsigned int)iokit_family_msg(sub_iokit_usb, 0x11));
+			NSLog(@"USBMissileControl : DeviceNotification: messageType:(0x%08x) service:(0x%08x) UNKNOWN!!!!", messageType, service);
+//			NSLog(@"%u %u", (unsigned int)iokit_family_msg(sub_iokit_usb, 0x0A), (unsigned int)iokit_family_msg(sub_iokit_usb, 0x11));
 			break;
 		}
-	}	
+	}
 	
 
 }
@@ -1183,13 +1227,6 @@ void DeviceNotification( void *refCon,
 	}
 	
 	return NO;
-}
-
-- (void)dealloc;
-{
-	[self ReleaseMissileLauncher];
-	[launcherDevice release];
-	[super dealloc];
 }
 
 - (id)MissileControl:(UInt8)controlBits;
@@ -1496,7 +1533,7 @@ void DeviceNotification( void *refCon,
 			//			[privateDataRef getusbProductID] == kUSBMissileProductID)
 
 		
-#pragma mark - StrikerII
+#pragma mark StrikerII
 
 		if ([[privateDataRef getLauncherType] isEqualToString:@"StrikerII"])
 		{

@@ -5,7 +5,7 @@
 
 + (NSArray *)preferencePanes
 {
-    return [NSArray arrayWithObjects:[[[LauncherController alloc] init] autorelease], nil];
+    return [NSArray arrayWithObjects:[[LauncherController alloc] init], nil];
 	
 }
 
@@ -35,8 +35,7 @@
 
 - (NSImage *)paneIcon
 {
-    return [[[NSImage alloc] initWithContentsOfFile:
-        [[NSBundle bundleForClass:[self class]] pathForImageResource:@"LauncherPrefs"]] autorelease];
+    return [[NSImage alloc] initWithContentsOfFile: [[NSBundle bundleForClass:[self class]] pathForImageResource:@"LauncherPrefs"]];
 }
 
 
@@ -59,7 +58,7 @@
 
 - (IBAction)defaultPrefs:(id)sender;
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 
     //USB Missile Launcher - Original Launcher - also code for the Striker II (includes the Laser)
 	// #define kUSBMissileVendorID		0x1130	4400
@@ -83,7 +82,6 @@
 	[prefs setObject:@"DreamRocketII" forKey:@"launcher3_type"];
 	
     [prefs synchronize];
-	[prefs release];
     [self loadPrefsValues];
 	
     [[NSNotificationCenter defaultCenter] postNotificationName: @"PrefsChanged" object: nil];
@@ -92,7 +90,7 @@
 
 - (IBAction)applyPrefs:(id)sender
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
 	[prefs setObject:[launcher1_VendorId stringValue] forKey:@"launcher1_VendorId"];
 	[prefs setObject:[launcher1_ProductId stringValue] forKey:@"launcher1_ProductId"];
@@ -107,7 +105,6 @@
 	[prefs setObject:[launcher3_type titleOfSelectedItem] forKey:@"launcher3_type"];
 	
     [prefs synchronize];
-	[prefs release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"PrefsChanged" object: nil];
 }

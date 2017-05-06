@@ -122,7 +122,6 @@
 		E0E903E20ACFB482008C30AC /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
 		E0E9046A0ACFBF13008C30AC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E904690ACFBF13008C30AC /* Quartz.framework */; };
 		E0ED38920A3C11AC0013C96A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0ED38910A3C11AC0013C96A /* IOKit.framework */; };
-		E0F4D08312D8520D009A4A67 /* Nevigate.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F4D08212D8520D009A4A67 /* Nevigate.png */; };
 		E0FF2A1D12F01C9C006E9C54 /* Black Button.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */; };
 /* End PBXBuildFile section */
 
@@ -350,7 +349,6 @@
 		E0E902F90ACFAD03008C30AC /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = /System/Library/Frameworks/AudioUnit.framework; sourceTree = "<absolute>"; };
 		E0E904690ACFBF13008C30AC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = /System/Library/Frameworks/Quartz.framework; sourceTree = "<absolute>"; };
 		E0ED38910A3C11AC0013C96A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-		E0F4D08212D8520D009A4A67 /* Nevigate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Nevigate.png; path = Resources/Nevigate.png; sourceTree = "<group>"; };
 		E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Black Button.psd"; path = "Resources/Graphics/Black Button.psd"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -734,7 +732,6 @@
 				E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */,
 				E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */,
 				E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */,
-				E0F4D08212D8520D009A4A67 /* Nevigate.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -987,7 +984,6 @@
 				E04F624D0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd in Resources */,
 				E03780460BAC873B00724518 /* Localizable.strings in Resources */,
 				E04940450BC99FA900B71710 /* USB Missile Launcher NZ.sdef in Resources */,
-				E0F4D08312D8520D009A4A67 /* Nevigate.png in Resources */,
 				E0FF2A1D12F01C9C006E9C54 /* Black Button.psd in Resources */,
 				E0A2E3BE12F3F22200F8C4F4 /* Background-Top.png in Resources */,
 				E0A2E3C212F3F53600F8C4F4 /* Background-Bottom.png in Resources */,
@@ -1309,6 +1305,7 @@
 			buildSettings = {
 				APPLICATION_VERSION = "1.8.2 build 165";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1344,6 +1341,7 @@
 			buildSettings = {
 				APPLICATION_VERSION = "1.8.2 build 165";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;

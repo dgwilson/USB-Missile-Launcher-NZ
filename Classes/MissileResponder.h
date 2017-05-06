@@ -19,8 +19,6 @@
 	Boolean			    launcherLocked;
 	NSTimer			  * timer;
 	float				timerDurationFromAppleScript;
-	NSSound			  * rocketSound;
-	NSSound			  * nuclearKlaxon;
 	IBOutlet NSDrawer * buttonControlPanel;
 	//NSWindow		  * mainWindow;
 	NSTimer		      * reLockTime;
@@ -53,7 +51,6 @@
     AsyncSocket *listeningSocket;
     AsyncSocket *connectionSocket;
     MTMessageBroker *messageBroker;
-	
 }
 
 @property (readwrite, retain) AsyncSocket *listeningSocket;

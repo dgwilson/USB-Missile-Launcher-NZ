@@ -27,7 +27,6 @@
 
 - (id)init;
 - (id)initWithNotify:(io_object_t)newNotification device:(IOUSBDeviceInterface **)newDeviceInterface name:(CFStringRef)newDeviceName location:(UInt32)newLocationID;
-- (void)dealloc;
 
 - (io_object_t)notification;
 - (IOUSBDeviceInterface **)deviceInterface;

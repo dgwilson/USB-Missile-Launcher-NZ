@@ -5,7 +5,7 @@
 
 + (NSArray *)preferencePanes
 {
-    return [NSArray arrayWithObjects:[[[SoundController alloc] init] autorelease], nil];
+    return [NSArray arrayWithObjects:[[SoundController alloc] init], nil];
 }
 
 
@@ -35,8 +35,7 @@
 
 - (NSImage *)paneIcon
 {
-    return [[[NSImage alloc] initWithContentsOfFile:
-        [[NSBundle bundleForClass:[self class]] pathForImageResource:@"SoundPrefs"]] autorelease];
+    return [[NSImage alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForImageResource:@"SoundPrefs"]];
 }
 
 
@@ -59,7 +58,7 @@
 
 - (IBAction)applyPrefs:(id)sender
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
 	//[prefs setFloat:[autoLockInterval floatValue] forKey:@"autoLockInterval"];
 	[prefs setBool:[soundOn state] forKey:@"soundOn"];
@@ -67,7 +66,6 @@
 	[prefs setObject:[klaxonSoundPath stringValue] forKey:@"klaxonSound"];
 
     [prefs synchronize];
-	[prefs release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"PrefsChanged" object: nil];
 }
@@ -104,7 +102,7 @@
 
 - (IBAction)defaultPrefs:(id)sender;
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     
 	//[prefs setFloat:[autoLockInterval floatValue] forKey:@"autoLockInterval"];
 	[prefs setBool:TRUE forKey:@"soundOn"];
@@ -112,7 +110,6 @@
 	[prefs setObject:@"" forKey:@"klaxonSound"];
 	
     [prefs synchronize];
-	[prefs release];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: @"PrefsChanged" object: nil];
 	
@@ -148,7 +145,7 @@
 	[fileTypes addObject:@"m4a"];
 	[fileTypes addObject:@"m4v"];
 		
-	NSOpenPanel *openPanel = [[NSOpenPanel openPanel] retain];
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setFloatingPanel:YES];
 	[openPanel setAllowsMultipleSelection:NO];
 
@@ -206,7 +203,7 @@
 	[fileTypes addObject:@"m4a"];
 	[fileTypes addObject:@"m4v"];
 	
-	NSOpenPanel *openPanel = [[NSOpenPanel openPanel] retain];
+	NSOpenPanel *openPanel = [NSOpenPanel openPanel];
 	[openPanel setFloatingPanel:YES];
 	[openPanel setAllowsMultipleSelection:NO];
 
@@ -278,7 +275,6 @@
 	NSSound		*launchSound;
 	launchSound = [[NSSound alloc] initWithContentsOfFile:[launchSoundPath stringValue] byReference:NO];
 	[launchSound play];
-	[launchSound release];
 }
 
 - (IBAction)playKlaxon:(id)sender;
@@ -286,7 +282,6 @@
 	NSSound		*klaxonSound;
 	klaxonSound = [[NSSound alloc] initWithContentsOfFile:[klaxonSoundPath stringValue] byReference:NO];
 	[klaxonSound play];
-	[klaxonSound release];
 }
 
 

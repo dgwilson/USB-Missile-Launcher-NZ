@@ -52,7 +52,6 @@
 	// Load and display Application Icon
 	[applicationIcon setImage:[NSImage imageNamed:@"NSApplicationIcon"]];
 
-	[theTextView release];
 }
 
 @end

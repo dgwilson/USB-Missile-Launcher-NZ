@@ -42,26 +42,17 @@ static const float SocketTimeout = -1.0;
 -(id)initWithAsyncSocket:(AsyncSocket *)newSocket {
     if ( self = [super init] ) {
         if ( [newSocket canSafelySetDelegate] ) {
-            socket = [newSocket retain];
+            socket = newSocket;
             [newSocket setDelegate:self];
             messageQueue = [NSMutableArray new];
             [socket readDataToLength:MessageHeaderSize withTimeout:SocketTimeout tag:0];
         }
         else {
             NSLog(@"Could not change delegate of socket");
-            [self release];
             self = nil;
         }
     }
     return self;
-}
-
--(void)dealloc {
-    [socket setDelegate:nil];
-    if ( [socket isConnected] ) [socket disconnect];
-    [socket release];
-    [messageQueue release];
-    [super dealloc];
 }
 
 -(id)delegate {
@@ -73,7 +64,7 @@ static const float SocketTimeout = -1.0;
 }
 
 -(AsyncSocket *)socket {
-    return [[socket retain] autorelease];
+    return socket;
 }
 
 -(void)setIsPaused:(BOOL)yn {
@@ -140,7 +131,7 @@ static const float SocketTimeout = -1.0;
 -(void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
     if ( tag == 1 ) {
         // If the message is now complete, remove from queue, and tell the delegate
-        MTMessage *message = [[[messageQueue objectAtIndex:0] retain] autorelease];
+        MTMessage *message = [messageQueue objectAtIndex:0];
         [messageQueue removeObjectAtIndex:0];
         if ( delegate && [delegate respondsToSelector:@selector(messageBroker:didSendMessage:)] ) {
             [delegate messageBroker:self didSendMessage:message];

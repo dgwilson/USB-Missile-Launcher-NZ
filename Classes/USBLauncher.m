@@ -20,11 +20,11 @@
 	return self;
 }
 
-- (void)dealloc 
-{
-	[launcherType release];
-	[super dealloc];
-}
+//- (void)dealloc 
+//{
+//	[launcherType release];
+//	[super dealloc];
+//}
 
 - (id)initWithNotify:(io_object_t)newNotification device:(IOUSBDeviceInterface **)newDeviceInterface name:(CFStringRef)newDeviceName location:(UInt32)newLocationID;
 {
@@ -119,8 +119,6 @@
 }
 - (void)setLauncherType:(NSString *)newLauncherType;
 {
-	[newLauncherType retain];
-	[launcherType release];
 	launcherType = newLauncherType;
 }
 @end

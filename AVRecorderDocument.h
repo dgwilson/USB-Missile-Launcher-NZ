@@ -71,7 +71,7 @@
 	NSArray						*videoDevices;
 	NSArray						*audioDevices;
 	
-	NSTimer						*audioLevelTimer;
+//	NSTimer						*audioLevelTimer;
 	
 	NSArray						*observers;
 }
@@ -89,9 +89,9 @@
 @property (assign,getter=isRecording) BOOL recording;
 
 #pragma mark Preview
-@property (assign) IBOutlet NSView *previewView;
+@property (nonatomic, strong) IBOutlet NSView *previewView;
 @property (assign) float previewVolume;
-@property (assign) IBOutlet NSLevelIndicator *audioLevelMeter;
+@property (nonatomic, strong) IBOutlet NSLevelIndicator *audioLevelMeter;
 
 #pragma mark Transport Controls
 @property (readonly,getter=isPlaying) BOOL playing;

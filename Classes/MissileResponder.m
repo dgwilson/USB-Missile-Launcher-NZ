@@ -26,6 +26,9 @@
     USBJoyStickControl * USBJoystickController;
 }
 
+@property (nonatomic, strong) NSSound			  * rocketSound;
+@property (nonatomic, strong) NSSound			  * nuclearKlaxon;
+
 @end
 
 @implementation MissileResponder
@@ -43,14 +46,13 @@
 - (void)awakeFromNib 
 {
 //	NSLog(@"MissileResponder:awakeFromNib");
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 	NSUInteger preferencesVersion;
 	preferencesVersion = [prefs integerForKey:@"preferencesVersion"];
 	if (preferencesVersion == 14)
 	{
 		NSLog(@"Preference Version OK");
-		[prefs release];
-	} else 
+	} else
 	{
 		if (preferencesVersion == 13)
 		{
@@ -63,7 +65,6 @@
 			NSLog(@"No preferences exist - Creating");
 		}
 		
-		[prefs release];
 		[self prefsCreate];
 	}
 
@@ -210,7 +211,7 @@
 
 - (void)prefsCreate;
 {
-	NSUserDefaults* prefs = [[NSUserDefaults standardUserDefaults] retain];
+	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 
 	// what would be best would be to call this routine in each of the preferences modules
 	// - (IBAction)defaultPrefs:(id)sender;
@@ -246,7 +247,6 @@
 	[prefs setObject:@"DreamRocketII" forKey:@"launcher3_type"];
 	
     [prefs synchronize];
-	[prefs release];
 }
 
 - (void)prefsChanged;
@@ -262,22 +262,22 @@
 	// setup the rocket launch sound!
 	if (([launchSoundPath isEqualToString:@""]) || (launchSoundPath == nil))
 	{
-		rocketSound = [NSSound soundNamed:kDefaultLaunchPath];
+		self.rocketSound = [NSSound soundNamed:kDefaultLaunchPath];
 		//NSLog(@"rocketSound - builtin loaded");
 	} else {
 		//rocketSound = [NSSound soundNamed:launchSoundPath];
-		rocketSound = [[NSSound alloc] initWithContentsOfFile:launchSoundPath byReference:NO];
+		self.rocketSound = [[NSSound alloc] initWithContentsOfFile:launchSoundPath byReference:NO];
 		//NSLog(@"rocketSound - loaded");
 	}
 		
 	// setup the klaxon sound
 	if (([klaxonSoundPath isEqualToString:@""]) || (klaxonSoundPath == nil))
 	{
-		nuclearKlaxon = [NSSound soundNamed:kDefaultKlaxonPath];
+		self.nuclearKlaxon = [NSSound soundNamed:kDefaultKlaxonPath];
 		//NSLog(@"nuclearKlaxon - builtin loaded");
 	} else {
 		//nuclearKlaxon = [NSSound soundNamed:klaxonSoundPath];
-		nuclearKlaxon = [[NSSound alloc] initWithContentsOfFile:klaxonSoundPath byReference:NO];
+		self.nuclearKlaxon = [[NSSound alloc] initWithContentsOfFile:klaxonSoundPath byReference:NO];
 		//NSLog(@"nuclearKlaxon - loaded");
 	}
 
@@ -292,8 +292,7 @@
 	
 }
 
-#pragma mark -
-#pragma mark Message Window Updates
+#pragma mark - Message Window Updates
 
 - (void)usbConnect;
 {
@@ -314,8 +313,7 @@
 	[launcherMessage setStringValue:NSLocalizedString(@"USB connection error - launcher disconnected, please refer to the console log for more details", nil)];
 }
 
-#pragma mark -
-#pragma mark Window Draw Handling
+#pragma mark - Window Draw Handling
 
 - (BOOL)needsPanelToBecomeKey
 {
@@ -441,7 +439,7 @@
 	} else {
 		if (soundOn)
 		{
-			[rocketSound play];
+			[self.rocketSound play];
 		}
 		[USBLauncherControl controlLauncher:[NSNumber numberWithInt:launcherFire]];
 		[self resetLockTimer];
@@ -454,7 +452,7 @@
 		[self LauncherDisabledMessage];
 	} else {
 		[launcherMessage setStringValue:NSLocalizedString(@"Triple Fire Engaged", nil)];
-		[nuclearKlaxon play];
+		[self.nuclearKlaxon play];
 		[self performSelector:@selector(btn_fire:) withObject:self afterDelay:0.0];
 		[self performSelector:@selector(btn_fire:) withObject:self afterDelay:7.0];
 		[self performSelector:@selector(btn_fire:) withObject:self afterDelay:14.0];
@@ -561,7 +559,6 @@
 				if ([reLockTime isValid])
 				{
 					[reLockTime invalidate];
-					[reLockTime release];
 					reLockTime = nil;
 				}
 			}
@@ -698,7 +695,7 @@
 	if (soundOn) 
 	{
 		//NSLog(@"Make Klaxon noise!");
-		[nuclearKlaxon play];
+		[self.nuclearKlaxon play];
 	}
 }
 
@@ -709,18 +706,17 @@
 		if ([reLockTime isValid])
 		{
 			[reLockTime invalidate];
-			[reLockTime release];
 			reLockTime = nil;
 		}
 	}
 	if (autoLockInterval > 0) 
 	{
 		autoLockTime = autoLockInterval;
-		reLockTime = [[NSTimer scheduledTimerWithTimeInterval:autoLockTime
+		reLockTime = [NSTimer scheduledTimerWithTimeInterval:autoLockTime
 											 target:self
 										   selector:@selector(setSafety)
 										   userInfo:nil
-											repeats:NO] retain];
+											repeats:NO];
 	} else {
 		[launcherMessage setStringValue:@"AutoLocking disabled"];
 	}
@@ -801,7 +797,7 @@
 				[USBLauncherControl controlLauncher:[NSNumber numberWithInt:launcherFire]];
 				if (soundOn)
 				{
-					[rocketSound play];
+					[self.rocketSound play];
 				}
 				break;
 			case 63235: //Right arrow
@@ -961,8 +957,7 @@
 	
 }
 
-#pragma mark -
-#pragma mark AppleScript routines
+#pragma mark - AppleScript routines
 
 // AppleScript Commands
 
@@ -1081,13 +1076,12 @@
 	return nil;
 }
 
-#pragma mark -
-#pragma mark Bonjour Networking and Message Handling
+#pragma mark - Bonjour Networking and Message Handling
 
 -(void)startService {
     // Start listening socket
     NSError *error;
-    self.listeningSocket = [[[AsyncSocket alloc]initWithDelegate:self] autorelease];
+    self.listeningSocket = [[AsyncSocket alloc]initWithDelegate:self];
     if ( ![self.listeningSocket acceptOnPort:0 error:&error] ) {
         NSLog(@"Failed to create listening socket");
         return;
@@ -1107,20 +1101,14 @@
     self.messageBroker.delegate = nil;
     self.messageBroker = nil;
     [netService stop]; 
-    [netService release];    
-    [super dealloc];
 }
 
--(void)dealloc {
-    [self stopService];
-    [super dealloc];
-}
 
 -(void)sendAcknowledgement:(NSString *)response
 {
 	//    NSLog(@"%@ : %@", NSStringFromSelector(_cmd), command);
     NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
-    MTMessage *newMessage = [[[MTMessage alloc] init] autorelease];
+    MTMessage *newMessage = [[MTMessage alloc] init];
     newMessage.tag = 101;
     newMessage.dataContent = data;
     [self.messageBroker sendMessage:newMessage];	
@@ -1146,7 +1134,7 @@
 
 -(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    MTMessageBroker *newBroker = [[[MTMessageBroker alloc] initWithAsyncSocket:sock] autorelease];
+    MTMessageBroker *newBroker = [[MTMessageBroker alloc] initWithAsyncSocket:sock];
     newBroker.delegate = self;
     self.messageBroker = newBroker;
 	[self sendAcknowledgement:@"Communications acknowledged. Your missles are ready for Launch."];
@@ -1165,7 +1153,7 @@
 //	NSLog(@"%@", NSStringFromSelector(_cmd));
     if ( message.tag == 100 ) {
 //        textView.string = [[[NSString alloc] initWithData:message.dataContent encoding:NSUTF8StringEncoding] autorelease];
-		NSString * remoteCommand = [[[NSString alloc] initWithData:message.dataContent encoding:NSUTF8StringEncoding] autorelease];
+		NSString * remoteCommand = [[NSString alloc] initWithData:message.dataContent encoding:NSUTF8StringEncoding];
 //		NSLog(@"%@ --> incoming Command >%@<", NSStringFromSelector(_cmd), remoteCommand);
 		
 		// if there is no launcher connected, then there's not much point trying to execute a command against a launcher.

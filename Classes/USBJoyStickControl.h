@@ -76,21 +76,21 @@ typedef HIDElement *			HIDElementRef;
 // Methods
 //---------------------------------------------------------------------------
 - (id)initHIDNotifications;
-static void HIDDeviceAdded(void *refCon, io_iterator_t iterator);
-static void DeviceNotificationJoystick(void *refCon, io_service_t service, natural_t messageType, void *messageArgument);
-static bool FindHIDElements(HIDDataRef hidDataRef);
-static bool SetupQueue(HIDDataRef hidDataRef);
-static void QueueCallbackFunction(
-								void * 			target, 
-								IOReturn 		result, 
-								void * 			refcon, 
-								void * 			sender);
-static void InterruptReportCallbackFunction(
-								void *	 		target,
-								IOReturn 		result,
-								void *			refcon,
-								void *			sender,
-								uint32_t		bufferSize);
+//static void HIDDeviceAdded(void *refCon, io_iterator_t iterator);
+//static void DeviceNotificationJoystick(void *refCon, io_service_t service, natural_t messageType, void *messageArgument);
+//static bool FindHIDElements(HIDDataRef hidDataRef);
+//static bool SetupQueue(HIDDataRef hidDataRef);
+//static void QueueCallbackFunction(
+//								void * 			target, 
+//								IOReturn 		result, 
+//								void * 			refcon, 
+//								void * 			sender);
+//static void InterruptReportCallbackFunction(
+//								void *	 		target,
+//								IOReturn 		result,
+//								void *			refcon,
+//								void *			sender,
+//								uint32_t		bufferSize);
 
 
 @end

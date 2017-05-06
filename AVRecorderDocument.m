@@ -59,7 +59,7 @@
 @property (retain) AVCaptureAudioPreviewOutput *audioPreviewOutput;
 @property (retain) AVCaptureMovieFileOutput *movieFileOutput;
 @property (retain) AVCaptureVideoPreviewLayer *previewLayer;
-@property (assign) NSTimer *audioLevelTimer;
+@property (nonatomic, strong) NSTimer *audioLevelTimer;
 @property (retain) NSArray *observers;
 
 // Methods for internal use
@@ -165,21 +165,6 @@
 	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
 	for (id observer in [self observers])
 		[notificationCenter removeObserver:observer];
-	[observers release];
-}
-
-- (void)dealloc
-{
-	[videoDevices release];
-	[audioDevices release];
-	[session release];
-	[audioPreviewOutput release];
-	[movieFileOutput release];
-	[previewLayer release];
-	[videoDeviceInput release];
-	[audioDeviceInput release];
-	
-	[super dealloc];
 }
 
 - (NSString *)windowNibName
@@ -202,7 +187,7 @@
     CGImageSourceRef source = CGImageSourceCreateWithData((CFDataRef)[oldImage TIFFRepresentation], NULL);
     CGImageRef newImage =  CGImageSourceCreateImageAtIndex(source, 0, NULL);
 
-	[layer setContents:(id)newImage];
+	[layer setContents:(__bridge id)newImage];
 	[layer setFrame:[previewViewLayer bounds]];
 	[layer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
 
@@ -213,8 +198,6 @@
 	
 	[previewViewLayer addSublayer:layer];
 	[self setPreviewLayer:newPreviewLayer];
-	[newPreviewLayer release];
-	[layer release];
 	
 	// Gun Sight 5b Input Image.psd
 	
@@ -398,7 +381,7 @@
 	if (record) {
 		// Record to a temporary file, which the user will relocate when recording is finished
 		char *tempNameBytes = tempnam([NSTemporaryDirectory() fileSystemRepresentation], "AVRecorder_");
-		NSString *tempName = [[[NSString alloc] initWithBytesNoCopy:tempNameBytes length:strlen(tempNameBytes) encoding:NSUTF8StringEncoding freeWhenDone:YES] autorelease];
+		NSString *tempName = [[NSString alloc] initWithBytesNoCopy:tempNameBytes length:strlen(tempNameBytes) encoding:NSUTF8StringEncoding freeWhenDone:YES];
 		
 		[[self movieFileOutput] startRecordingToOutputFileURL:[NSURL fileURLWithPath:[tempName stringByAppendingPathExtension:@"mov"]]
 											recordingDelegate:self];

@@ -36,7 +36,7 @@
 -(id)initWithCoder:(NSCoder *)coder {
     if ( self = [super init] ) {
         tag = [coder decodeIntForKey:@"tag"];
-        dataContent = [[coder decodeObjectForKey:@"dataContent"] retain];
+        dataContent = [coder decodeObjectForKey:@"dataContent"];
     }
     return self;
 }
@@ -44,11 +44,6 @@
 -(void)encodeWithCoder:(NSCoder *)coder {
     [coder encodeInt:tag forKey:@"tag"];
     [coder encodeObject:dataContent forKey:@"dataContent"];
-}
-
--(void)dealloc {
-    [dataContent release];
-    [super dealloc];
 }
 
 -(int)tag {
@@ -60,12 +55,11 @@
 }
 
 -(NSData *)dataContent {
-    return [[dataContent retain] autorelease];
+    return dataContent;
 }
 
 -(void)setDataContent:(NSData *)value {
     if (dataContent != value) {
-        [dataContent release];
         dataContent = [value copy];
     }
 }
