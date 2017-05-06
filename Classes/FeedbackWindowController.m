@@ -132,11 +132,11 @@
 									  nil]];
 	/* Handle a nil value gracefully. */
     if(!theRecipient) {
-		[emailMessage release];
+//		[emailMessage release];
         return;
 	}
     [emailMessage.toRecipients addObject: theRecipient];
-    [theRecipient release];
+//    [theRecipient release];
 	
 	/* add an attachment, if one was specified */
 	if ([sendUSBCheckBox state] && getUSBBOOL)
@@ -171,9 +171,9 @@
 			/* add it to the list of attachments */
 			[[emailMessage.content attachments] addObject: theAttachment];
 			
-			[theAttachment release];
-			[ioregFilePath release];
-			[ioregZipPath release];
+//			[theAttachment release];
+//			[ioregFilePath release];
+//			[ioregZipPath release];
 		}
 	}
 	
@@ -209,20 +209,55 @@
 			/* add it to the list of attachments */
 			[[emailMessage.content attachments] addObject: theAttachment];
 			
-			[theAttachment release];
+//			[theAttachment release];
 			[outFile release];
-			[systemProfilerZipPath release];
-		}	
+//			[systemProfilerZipPath release];
+		}
 	}
 
 
 	/* send the message */
     [emailMessage send];
 	
-    [emailMessage release];
+//    [emailMessage release];
 
-	NSRunAlertPanel(appName, 
-					@"Your feedback has been sent to the author.\nFeedback is appreciated.\nThank you", nil, nil, nil);
+//	NSRunAlertPanel(appName, 
+//					@"Your feedback has been sent to the author.\nFeedback is appreciated.\nThank you", nil, nil, nil);
+    // http://www.knowstack.com/nsalert-cocoa-objective-c/
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Feedback"];
+    [alert setInformativeText:@"Your feedback has been sent to the author.\nFeedback is appreciated.\nThank you"];
+    [alert addButtonWithTitle:@"OK"];
+    //        [alert addButtonWithTitle:@"Cancel"];
+    [alert setAlertStyle:NSAlertStyleCritical];
+    
+    [alert runModal];
+    //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+    //            if (returnCode == NSOKButton)
+    //            {
+    ////                NSLog(@"(returnCode == NSOKButton)");
+    //            }
+    //            else if (returnCode == NSCancelButton)
+    //            {
+    ////                NSLog(@"(returnCode == NSCancelButton)");
+    //            }
+    //            else if(returnCode == NSAlertFirstButtonReturn)
+    //            {
+    ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+    //            }
+    //            else if (returnCode == NSAlertSecondButtonReturn)
+    //            {
+    ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+    //            }
+    //            else if (returnCode == NSAlertThirdButtonReturn)
+    //            {
+    ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+    //            }
+    //            else
+    //            {
+    ////                NSLog(@"All Other return code %d",returnCode);
+    //            }
+    //        }];
 	
 	
 
@@ -232,7 +267,7 @@
 //				if([NSMailDelivery deliverMessage:theBody subject:theSubject to:toMailAdd])
 //				{
 //					result = YES;
-//					NSRunAlertPanel(@"USB Missile Launcher NZ", 
+//					NSRunAlertPanel(@"USB Missile Launcher NZ",
 //									@"Your feedback has been sent to the author. Feedback is appreciated. Thank you", nil, nil, nil);
 //				}
 //			NS_HANDLER
@@ -251,7 +286,7 @@
 - (NSString *)zipFile:(NSString *)inFile
 {
 	// returns output filename
-	NSMutableString * zipCommand = [[[NSMutableString alloc] initWithString:@"zip -r "] autorelease];
+	NSMutableString * zipCommand = [[NSMutableString alloc] initWithString:@"zip -r "];
 	NSString * inFileZipPathtemp = [inFile stringByDeletingPathExtension];
 	NSString * inFileZipPath = [inFileZipPathtemp stringByAppendingPathExtension:@"zip"];
 	[zipCommand appendString:inFileZipPath];
@@ -297,7 +332,7 @@
 	[OSProgressIndicator startAnimation:self];
 	[self showHideSendButton];
 
-	NSTask *task = [[[NSTask alloc] init] autorelease]; 
+	NSTask *task = [[NSTask alloc] init]; 
 	[[NSNotificationCenter defaultCenter] addObserver:self 
 											 selector:@selector(taskFinished:)
 												 name:NSTaskDidTerminateNotification 

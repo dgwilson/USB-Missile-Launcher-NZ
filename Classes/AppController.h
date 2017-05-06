@@ -13,14 +13,14 @@
     SS_PrefsController			*prefs;
 	
 	AVRecorderDocument *			videoDocument;
-	NSTextField *		mCaptureToField;
-	NSTextField *		mMessagesField;
-	NSButton	*	videoWindowButton;
-	bool						bVideoAdded;
+	NSTextField *                   mCaptureToField;
+	NSTextField *                   mMessagesField;
+	NSButton	*                   videoWindowButton;
+	bool                            bVideoAdded;
 }
 
 @property (nonatomic, retain) AVRecorderDocument *			videoDocument;
-@property (nonatomic, retain) IBOutlet NSButton	*	videoWindowButton;
+@property (nonatomic, retain) IBOutlet NSButton	*           videoWindowButton;
 @property (nonatomic, retain) IBOutlet NSTextField *		mCaptureToField;
 @property (nonatomic, retain) IBOutlet NSTextField *		mMessagesField;
 

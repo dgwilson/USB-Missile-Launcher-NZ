@@ -55,7 +55,7 @@
 {
 	return deviceInterface;
 }
-- (IOUSBInterfaceInterface **)missileInterface;
+- (IOUSBInterfaceInterface183 **)missileInterface;
 {
 	return missileInterface;
 }
@@ -92,7 +92,7 @@
 {
 	deviceInterface = newDeviceInterface;
 }
-- (void)setMissileInterface:(IOUSBInterfaceInterface **)newMissileInterface;
+- (void)setMissileInterface:(IOUSBInterfaceInterface183 **)newMissileInterface;
 {
 	missileInterface = newMissileInterface;
 }

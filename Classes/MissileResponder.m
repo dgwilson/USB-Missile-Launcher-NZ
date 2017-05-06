@@ -57,9 +57,45 @@
 		if (preferencesVersion == 13)
 		{
 			NSLog(@"Preference Version change has occurred - Updating");
-			NSRunAlertPanel(NSLocalizedString(@"Preference version change.", @"Title of alert when a the preferences have changed or did not exist."),
-							NSLocalizedString(@"Please review the application preference settings. Thank you for downloading and running this software.", @"Alert text."),
-							NSLocalizedString(@"OK", @"OK"), nil, nil);		
+//			NSRunAlertPanel(NSLocalizedString(@"Preference version change.", @"Title of alert when a the preferences have changed or did not exist."),
+//							NSLocalizedString(@"Please review the application preference settings. Thank you for downloading and running this software.", @"Alert text."),
+//							NSLocalizedString(@"OK", @"OK"), nil, nil);
+            // http://www.knowstack.com/nsalert-cocoa-objective-c/
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert setMessageText:NSLocalizedString(@"Preference version change.", @"Title of alert when a the preferences have changed or did not exist.")];
+            [alert setInformativeText:NSLocalizedString(@"Please review the application preference settings. Thank you for downloading and running this software.", @"Alert text.")];
+            [alert addButtonWithTitle:@"OK"];
+            //        [alert addButtonWithTitle:@"Cancel"];
+            [alert setAlertStyle:NSAlertStyleCritical];
+            
+            [alert runModal];
+            //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+            //            if (returnCode == NSOKButton)
+            //            {
+            ////                NSLog(@"(returnCode == NSOKButton)");
+            //            }
+            //            else if (returnCode == NSCancelButton)
+            //            {
+            ////                NSLog(@"(returnCode == NSCancelButton)");
+            //            }
+            //            else if(returnCode == NSAlertFirstButtonReturn)
+            //            {
+            ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+            //            }
+            //            else if (returnCode == NSAlertSecondButtonReturn)
+            //            {
+            ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+            //            }
+            //            else if (returnCode == NSAlertThirdButtonReturn)
+            //            {
+            ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+            //            }
+            //            else
+            //            {
+            ////                NSLog(@"All Other return code %d",returnCode);
+            //            }
+            //        }];
+            
 		} else
 		{
 			NSLog(@"No preferences exist - Creating");

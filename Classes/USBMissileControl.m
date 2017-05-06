@@ -65,7 +65,7 @@ static io_iterator_t			gAddedRocketIter;
 static io_iterator_t			gAddedMissileIter;
 static CFRunLoopRef				gRunLoop;
 
-int						launcherCount;
+//int						launcherCount;
 NSMutableArray			*launcherDevice;
 
 
@@ -174,7 +174,7 @@ static char							gBuffer[8];
 	//	NSLog(@"USBMissileControl: launcher3_type = %@", launcher3_type);
 
 		
-		launcherCount = 0;
+//		launcherCount = 0;
 		launcherDevice = [[NSMutableArray alloc] init];
 	//	missileLauncherConnected = [self FindMissileLauncher];
 		
@@ -376,9 +376,38 @@ static char							gBuffer[8];
 		// Now done with the master_port
 		mach_port_deallocate(mach_task_self(), masterPort);
 		masterPort = 0;
+        
+        //Find HID devices
+        IOHIDManagerRef _hidManager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDManagerOptionNone);
+        NSArray* matchingDict = @[
+                                  @{@(kIOHIDVendorIDKey): @(0x2123), @(kIOHIDProductIDKey): @(0x1010)}//Dream Cheeky Storm O.I.C.
+                                  ];
+        IOHIDManagerSetDeviceMatchingMultiple(_hidManager, (__bridge CFArrayRef)matchingDict);
+        IOHIDManagerRegisterDeviceMatchingCallback(_hidManager, HIDDeviceAdded, (__bridge void*)self);
+        IOHIDManagerScheduleWithRunLoop(_hidManager, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+        IOHIDManagerOpen(_hidManager, kIOHIDManagerOptionNone);
+
 	}
 	
 	return self;
+}
+
+static void HIDDeviceAdded(void* context, IOReturn result, void* sender, IOHIDDeviceRef device) {
+    NSLog(@"HIDDeviceAdded");
+    IOHIDDeviceOpen(device, kIOHIDOptionsTypeSeizeDevice);
+    USBLauncher* privateDataRef = [[USBLauncher alloc] init];
+    [privateDataRef setHidDevice:device];
+    
+    //[privateDataRef setusbVendorID:usbVendorID];
+    //[privateDataRef setusbProductID:usbProductID];
+    [privateDataRef setLauncherType:@"HID"];
+    
+    [launcherDevice addObject:privateDataRef];
+    IOHIDDeviceRegisterRemovalCallback(device, HIDDeviceRemoved, (void*)privateDataRef);
+}
+
+void HIDDeviceRemoved(void* context, IOReturn result, void* sender) {
+    [launcherDevice removeObject:(__bridge USBLauncher*)context];
 }
 
 //================================================================================================
@@ -426,8 +455,8 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 		UInt8					hidDescBuf[255];
 
 		
-		launcherCount ++;
-		NSLog(@"USBMissileControl: DeviceAdded: Launcher Found Number %d", launcherCount);
+//		launcherCount ++;
+		NSLog(@"USBMissileControl: DeviceAdded: Launcher Found Number %lu", [launcherDevice count] + 1);
 		// NSLog(@"USBMissileControl: Device: (0x%08x) found", usbDevice);
         CFTypeRef temp1 = IORegistryEntryCreateCFProperty(usbDevice, CFSTR(kUSBVendorID), kCFAllocatorDefault, 0);
 		CFNumberGetValue(temp1, kCFNumberSInt32Type, &usbVendorID);
@@ -678,15 +707,15 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 #pragma mark Set Application ICON
 			
 			// Application icon is altered depending on what the first launcher is
-			if (launcherCount == 1 && [[privateDataRef getLauncherType] isEqualToString:@"DreamRocket"])
+			if ([launcherDevice count] == 0 && [[privateDataRef getLauncherType] isEqualToString:@"DreamRocket"])
 			{
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"setDreamCheekyIcon" object:nil userInfo:nil];
 			}
-			if (launcherCount == 1 && [[privateDataRef getLauncherType] isEqualToString:@"DreamRocketII"])
+			if ([launcherDevice count] == 0 && [[privateDataRef getLauncherType] isEqualToString:@"DreamRocketII"])
 			{
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"setDreamCheekyIcon" object:nil userInfo:nil];
 			}
-			if (launcherCount == 1 && [[privateDataRef getLauncherType] isEqualToString:@"OICStorm"])
+			if ([launcherDevice count] == 0 && [[privateDataRef getLauncherType] isEqualToString:@"OICStorm"])
 			{
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"setDreamCheekyIOCIcon" object:nil userInfo:nil];
 			}
@@ -710,7 +739,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 //		if (debugCommands)
 //		{
 //			NSLog(@"USBMissileControl: DeviceAdded: IOUSBDeviceInterface    (0x%08x)", [privateDataRef deviceInterface]);
-//			NSLog(@"USBMissileControl: DeviceAdded: IOUSBInterfaceInterface (0x%08x)", [privateDataRef missileInterface]);
+//			NSLog(@"USBMissileControl: DeviceAdded: IOUSBInterfaceInterface183 (0x%08x)", [privateDataRef missileInterface]);
 //		}
 		
 		CFRelease(deviceNameAsCFString);
@@ -727,7 +756,7 @@ IOReturn FindInterfaces(IOUSBDeviceInterface **device)
     io_iterator_t               iterator;
     io_service_t                usbInterface;
     IOCFPlugInInterface         **plugInInterface = NULL;
-    IOUSBInterfaceInterface     **missileInterface = NULL;
+    IOUSBInterfaceInterface183     **missileInterface = NULL;
     HRESULT                     result;
     SInt32                      score;
     UInt8                       interfaceClass;
@@ -792,7 +821,7 @@ IOReturn FindInterfaces(IOUSBDeviceInterface **device)
  
         //Now create the device interface for the interface
         result = (*plugInInterface)->QueryInterface(plugInInterface,
-                    CFUUIDGetUUIDBytes(kIOUSBInterfaceInterfaceID),
+                    CFUUIDGetUUIDBytes(kIOUSBInterfaceInterfaceID183),
                     (LPVOID) &missileInterface);
         //No longer need the intermediate plug-in
         kr = (*plugInInterface)->Release(plugInInterface);
@@ -802,8 +831,8 @@ IOReturn FindInterfaces(IOUSBDeviceInterface **device)
             NSLog(@"USBMissileControl: FindInterfaces: Couldn't create a device interface for the interface result (0x%08x)", (int)result);
             break;
         } else {
-			//NSLog(@"USBMissileControl: FindInterfaces: IOUSBInterfaceInterface (0x%08x)", missileInterface);
-			[privateDataRef setMissileInterface:missileInterface];	// IOUSBInterfaceInterface **missileInterface
+            //NSLog(@"USBMissileControl: FindInterfaces: IOUSBInterfaceInterface183 (0x%08x)", missileInterface);
+            [privateDataRef setMissileInterface:missileInterface];	// IOUSBInterfaceInterface183 **missileInterface
 		}
  
         //Get interface class and subclass
@@ -822,6 +851,7 @@ IOReturn FindInterfaces(IOUSBDeviceInterface **device)
 		// This establishes an exclusive link between the client's task and the actual interface device.
 		
         kr = (*missileInterface)->USBInterfaceOpen(missileInterface);
+        //kr = (*missileInterface)->USBInterfaceOpenSeize(missileInterface);
 		if (debugCommands)
 			NSLog(@"USBMissileControl: FindInterfaces: USBInterfaceOpen (%p) kr=(0x%08x)", missileInterface, kr);
         if (kr != kIOReturnSuccess)
@@ -1061,7 +1091,6 @@ void DeviceNotification( void *refCon,
 				if (launcherMissileDevice == missileDevice) {
 					NSLog(@"USBMissileControl: DeviceNotification: item at index %d remove from launcherDevice array", i);
 					[launcherDevice removeObjectAtIndex: i];
-					launcherCount --;
 					[[NSNotificationCenter defaultCenter] postNotificationName: @"usbDisConnect" object: nil];
 				}
 			}
@@ -1221,12 +1250,32 @@ void DeviceNotification( void *refCon,
 - (BOOL)confirmMissileLauncherConnected;
 {
 	//NSLog(@"USBMissileControl: confirmMissileLauncherConnected");
-	if (launcherCount > 0)
+	if ([launcherDevice count] > 0)
 	{
 		return YES;
 	}
 	
 	return NO;
+}
+
+#pragma mark - HID CONTROL of launcher - Dream Cheeky OIC Storm
+
+- (void)missileControlHID:(USBLauncher*)privateDataRef withBits:(UInt8)controlBits {
+    uint8_t report[8] = {0x02, 0, 0, 0, 0, 0, 0, 0};
+    
+    IOHIDDeviceRef device = [privateDataRef hidDevice];
+    NSLog(@"%02X", controlBits);
+    if (controlBits & 0x01) //Left
+        report[1] |= 0x04;
+    if (controlBits & 0x02) //Right
+        report[1] |= 0x08;
+    if (controlBits & 0x04) //Up
+        report[1] |= 0x02;
+    if (controlBits & 0x08) //Down
+        report[1] |= 0x01;
+    if (controlBits & 0x10) //Fire
+        report[1] |= 0x10;
+    IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, report, sizeof(report));
 }
 
 - (id)MissileControl:(UInt8)controlBits;
@@ -1237,7 +1286,7 @@ void DeviceNotification( void *refCon,
 	USBLauncher					*privateDataRef;
 	int							launcherDeviceNum;
 	IOUSBDeviceInterface        **missileDevice;
-	IOUSBInterfaceInterface		**missileInterface;
+    IOUSBInterfaceInterface183		**missileInterface;
 	UInt8						rBuffer[dreamCheekyMaxPacketSize];
 	UInt8						rbBuffer[rocketBabyMaxPacketSize]; // Rocket Baby
 	UInt8						sbBuffer[OICSTORMMaxPacketSize]; // OICStorm
@@ -1261,7 +1310,10 @@ void DeviceNotification( void *refCon,
 	{
 		//privateDataRef = [[USBLauncher alloc] init];
 		privateDataRef = [launcherDevice objectAtIndex: launcherDeviceNum];
-
+        if ([[privateDataRef getLauncherType] isEqualToString:@"HID"]) {
+            [self missileControlHID:privateDataRef withBits:controlBits];
+            continue;
+        }
 		missileDevice = [privateDataRef deviceInterface];
 		missileInterface = [privateDataRef missileInterface];
 		if (debugCommands)
@@ -3125,7 +3177,7 @@ void DeviceNotification( void *refCon,
 	return self;
 }
 
-IOReturn DreamCheekyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface **missileInterface, UInt8 *rBuffer)
+IOReturn DreamCheekyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface183 **missileInterface, UInt8 *rBuffer)
 {
     IOReturn                    kr;
     UInt32                      bytesRead;
@@ -3225,7 +3277,7 @@ IOReturn DreamCheekyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfac
 	return kr;
 }	
 
-IOReturn RocketBabyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface **missileInterface, UInt8 *rBuffer)
+IOReturn RocketBabyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface183 **missileInterface, UInt8 *rBuffer)
 {
     IOReturn                    kr;
     UInt32                      bytesRead;
@@ -3333,7 +3385,7 @@ IOReturn RocketBabyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterface
 	return kr;
 }	
 
-IOReturn OICStormReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface **missileInterface, UInt8 *rBuffer)
+IOReturn OICStormReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface183 **missileInterface, UInt8 *rBuffer)
 {
     IOReturn                    kr;
     UInt32                      bytesRead;
@@ -3450,7 +3502,7 @@ IOReturn DreamCheekyWritePipe(int dataRefIndex, char *wBuffer)
     UInt32                      bytesToWrite;
 	USBLauncher					*privateDataRef;
 	IOUSBDeviceInterface        **missileDevice;
-	IOUSBInterfaceInterface		**missileInterface;
+    IOUSBInterfaceInterface183		**missileInterface;
 		
 	privateDataRef	 = [launcherDevice objectAtIndex: dataRefIndex];
 	missileDevice	 = [privateDataRef deviceInterface];
@@ -3647,7 +3699,7 @@ The interface must be open for the pipe to exist.
  
 */
 
-void EvaluateUSBErrorCode(IOUSBDeviceInterface **deviceInterface_param, IOUSBInterfaceInterface **missileInterface_param, IOReturn kr)
+void EvaluateUSBErrorCode(IOUSBDeviceInterface **deviceInterface_param, IOUSBInterfaceInterface183 **missileInterface_param, IOReturn kr)
 {
 //	error code c/- usb.h
 //	IOUSBFamily error codes
@@ -3736,7 +3788,7 @@ void EvaluateUSBErrorCode(IOUSBDeviceInterface **deviceInterface_param, IOUSBInt
 	return;
 }
 
-void ClearStalledPipe(IOUSBInterfaceInterface **missileInterface_param)
+void ClearStalledPipe(IOUSBInterfaceInterface183 **missileInterface_param)
 {
 	IOReturn			kr;
 	Boolean				debugCommands;

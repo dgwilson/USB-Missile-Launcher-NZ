@@ -11,12 +11,13 @@
 #import <IOKit/IOMessage.h>
 #import <IOKit/IOCFPlugIn.h>
 #import <IOKit/usb/IOUSBLib.h>
+#import <IOKit/hid/IOHIDLib.h>
 
 @interface USBLauncher : NSObject 
 {
 	io_object_t				notification;
 	IOUSBDeviceInterface    **deviceInterface;
-	IOUSBInterfaceInterface **missileInterface;
+	IOUSBInterfaceInterface183 **missileInterface;
 	CFStringRef				deviceName;
 	UInt32					locationID;
 	SInt32					usbVendorID;
@@ -25,12 +26,15 @@
 	NSString				*launcherType;
 }
 
+@property (assign, nonatomic) IOHIDDeviceRef hidDevice;
+
+
 - (id)init;
 - (id)initWithNotify:(io_object_t)newNotification device:(IOUSBDeviceInterface **)newDeviceInterface name:(CFStringRef)newDeviceName location:(UInt32)newLocationID;
 
 - (io_object_t)notification;
 - (IOUSBDeviceInterface **)deviceInterface;
-- (IOUSBInterfaceInterface **)missileInterface;
+- (IOUSBInterfaceInterface183 **)missileInterface;
 - (CFStringRef)deviceName;
 - (UInt32)locationID;
 - (UInt8)interfaceNumEndpoints;
@@ -40,7 +44,7 @@
 
 - (void)setNotification:(io_object_t)newNotification;
 - (void)setDeviceInterface:(IOUSBDeviceInterface **)newDeviceInterface;
-- (void)setMissileInterface:(IOUSBInterfaceInterface **)newMissileInterface;
+- (void)setMissileInterface:(IOUSBInterfaceInterface183 **)newMissileInterface;
 - (void)setDeviceName:(CFStringRef)newDeviceName;
 - (void)setLocationID:(UInt32)newLocationID;
 - (void)setusbVendorID:(SInt32)newusbVendorID;

@@ -66,8 +66,44 @@ enum {
 	{
 		NSLog(@"WARNING: Critical Support file not found : Launcher performance may be degraded without these files");
 //		NSLog(@"WARNING: Critical Support file not found : Displaying warning message to user");
-		NSRunAlertPanel(@"USB Missile Launcher NZ",
-						@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected.", nil, nil, nil);
+//		NSRunAlertPanel(@"USB Missile Launcher NZ",
+//						@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected.", nil, nil, nil);
+        
+        // http://www.knowstack.com/nsalert-cocoa-objective-c/
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"Critical Launch Error"];
+        [alert setInformativeText:@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected"];
+        [alert addButtonWithTitle:@"OK"];
+//        [alert addButtonWithTitle:@"Cancel"];
+        [alert setAlertStyle:NSAlertStyleCritical];
+        
+        [alert runModal];
+//        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+//            if (returnCode == NSOKButton)
+//            {
+////                NSLog(@"(returnCode == NSOKButton)");
+//            }
+//            else if (returnCode == NSCancelButton)
+//            {
+////                NSLog(@"(returnCode == NSCancelButton)");
+//            }
+//            else if(returnCode == NSAlertFirstButtonReturn)
+//            {
+////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+//            }
+//            else if (returnCode == NSAlertSecondButtonReturn)
+//            {
+////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+//            }
+//            else if (returnCode == NSAlertThirdButtonReturn)
+//            {
+////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+//            }
+//            else
+//            {
+////                NSLog(@"All Other return code %d",returnCode);
+//            }
+//        }];
 	}
 
 	
@@ -242,8 +278,44 @@ fail:
 
 - (IBAction)showDeveloperMessage:(id)sender;
 {
-	NSRunAlertPanel(@"USB Missile Launcher NZ", 
-					@"Please see the built in HELP or README file for details on how to configure this software to work with your launcher. You must set your launcher preferences for USB VendorID and USB ProductID and launcher type, then quit and restart this application.", nil, nil, nil);
+//	NSRunAlertPanel(@"USB Missile Launcher NZ", 
+//					@"Please see the built in HELP or README file for details on how to configure this software to work with your launcher. You must set your launcher preferences for USB VendorID and USB ProductID and launcher type, then quit and restart this application.", nil, nil, nil);
+    
+    // http://www.knowstack.com/nsalert-cocoa-objective-c/
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Developer Message"];
+    [alert setInformativeText:@"Please see the built in HELP or README file for details on how to configure this software to work with your launcher. You must set your launcher preferences for USB VendorID and USB ProductID and launcher type, then quit and restart this application."];
+    [alert addButtonWithTitle:@"OK"];
+    //        [alert addButtonWithTitle:@"Cancel"];
+    [alert setAlertStyle:NSAlertStyleCritical];
+    
+    [alert runModal];
+    //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+    //            if (returnCode == NSOKButton)
+    //            {
+    ////                NSLog(@"(returnCode == NSOKButton)");
+    //            }
+    //            else if (returnCode == NSCancelButton)
+    //            {
+    ////                NSLog(@"(returnCode == NSCancelButton)");
+    //            }
+    //            else if(returnCode == NSAlertFirstButtonReturn)
+    //            {
+    ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+    //            }
+    //            else if (returnCode == NSAlertSecondButtonReturn)
+    //            {
+    ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+    //            }
+    //            else if (returnCode == NSAlertThirdButtonReturn)
+    //            {
+    ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+    //            }
+    //            else
+    //            {
+    ////                NSLog(@"All Other return code %d",returnCode);
+    //            }
+    //        }];
 }
 
 #pragma mark - Preferences
@@ -365,9 +437,45 @@ fail:
 			if((compareResult == NSOrderedSame) && (!quiet))
 			{
 				// tell user software is up to date
-				NSRunAlertPanel(NSLocalizedString(@"Your Software is up-to-date", @"Title of alert when a the user's software is up to date."),
-								NSLocalizedString(@"You have the most recent version of USB Missile Launcher NZ.", @"Alert text when the user's software is up to date."),
-								NSLocalizedString(@"OK", @"OK"), nil, nil);
+//				NSRunAlertPanel(NSLocalizedString(@"Your Software is up-to-date", @"Title of alert when a the user's software is up to date."),
+//								NSLocalizedString(@"You have the most recent version of USB Missile Launcher NZ.", @"Alert text when the user's software is up to date."),
+//								NSLocalizedString(@"OK", @"OK"), nil, nil);
+                
+                // http://www.knowstack.com/nsalert-cocoa-objective-c/
+                NSAlert *alert = [[NSAlert alloc] init];
+                [alert setMessageText:@"Check for Updates"];
+                [alert setInformativeText:NSLocalizedString(@"You have the most recent version of USB Missile Launcher NZ.", @"Alert text when the user's software is up to date.")];
+                [alert addButtonWithTitle:@"OK"];
+                //        [alert addButtonWithTitle:@"Cancel"];
+                [alert setAlertStyle:NSAlertStyleCritical];
+                
+                [alert runModal];
+                //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+                //            if (returnCode == NSOKButton)
+                //            {
+                ////                NSLog(@"(returnCode == NSOKButton)");
+                //            }
+                //            else if (returnCode == NSCancelButton)
+                //            {
+                ////                NSLog(@"(returnCode == NSCancelButton)");
+                //            }
+                //            else if(returnCode == NSAlertFirstButtonReturn)
+                //            {
+                ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+                //            }
+                //            else if (returnCode == NSAlertSecondButtonReturn)
+                //            {
+                ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+                //            }
+                //            else if (returnCode == NSAlertThirdButtonReturn)
+                //            {
+                ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+                //            }
+                //            else
+                //            {
+                ////                NSLog(@"All Other return code %d",returnCode);
+                //            }
+                //        }];
 			}
 			else if (compareResult == NSOrderedAscending)
 			{
@@ -385,13 +493,90 @@ fail:
 					
 					[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.versiontracker.com/dyn/moreinfo/macosx/30149"]];
 				}
+                
+                // http://www.knowstack.com/nsalert-cocoa-objective-c/
+                NSAlert *alert = [[NSAlert alloc] init];
+                [alert setMessageText:@"A new version is available"];
+                [alert setInformativeText:@"Choose OK to be taken to the download link for the new application release."];
+                [alert addButtonWithTitle:@"OK"];
+                [alert addButtonWithTitle:@"Cancel"];
+                [alert setAlertStyle:NSAlertStyleCritical];
+                
+                [alert runModal];
+                //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+                //            if (returnCode == NSOKButton)
+                //            {
+                ////                NSLog(@"(returnCode == NSOKButton)");
+                //[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://homepages.paradise.net.nz/dgwilson"]];
+                
+//                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.versiontracker.com/dyn/moreinfo/macosx/30149"]];
+
+                //            }
+                //            else if (returnCode == NSCancelButton)
+                //            {
+                ////                NSLog(@"(returnCode == NSCancelButton)");
+                //            }
+                //            else if(returnCode == NSAlertFirstButtonReturn)
+                //            {
+                ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+                //            }
+                //            else if (returnCode == NSAlertSecondButtonReturn)
+                //            {
+                ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+                //            }
+                //            else if (returnCode == NSAlertThirdButtonReturn)
+                //            {
+                ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+                //            }
+                //            else
+                //            {
+                ////                NSLog(@"All Other return code %d",returnCode);
+                //            }
+                //        }];
+
 			}
 		} else {
 			if (!quiet) {
 				// tell user error occured
-				NSRunAlertPanel(NSLocalizedString(@"Version Check has Failed", @"Title of alert when the version check has failed."),
-								NSLocalizedString(@"An error occurred whilst trying to retrieve the current version number from the internet.", @"Alert text when the when the version check has failed."),
-								NSLocalizedString(@"OK", @"OK"), nil, nil);
+//				NSRunAlertPanel(NSLocalizedString(@"Version Check has Failed", @"Title of alert when the version check has failed."),
+//								NSLocalizedString(@"An error occurred whilst trying to retrieve the current version number from the internet.", @"Alert text when the when the version check has failed."),
+//								NSLocalizedString(@"OK", @"OK"), nil, nil);
+                
+                // http://www.knowstack.com/nsalert-cocoa-objective-c/
+                NSAlert *alert = [[NSAlert alloc] init];
+                [alert setMessageText:@"Check for Updates"];
+                [alert setInformativeText:NSLocalizedString(@"An error occurred whilst trying to retrieve the current version number from the internet.", @"Alert text when the when the version check has failed.")];
+                [alert addButtonWithTitle:@"OK"];
+                //        [alert addButtonWithTitle:@"Cancel"];
+                [alert setAlertStyle:NSAlertStyleCritical];
+                
+                [alert runModal];
+                //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+                //            if (returnCode == NSOKButton)
+                //            {
+                ////                NSLog(@"(returnCode == NSOKButton)");
+                //            }
+                //            else if (returnCode == NSCancelButton)
+                //            {
+                ////                NSLog(@"(returnCode == NSCancelButton)");
+                //            }
+                //            else if(returnCode == NSAlertFirstButtonReturn)
+                //            {
+                ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+                //            }
+                //            else if (returnCode == NSAlertSecondButtonReturn)
+                //            {
+                ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+                //            }
+                //            else if (returnCode == NSAlertThirdButtonReturn)
+                //            {
+                ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+                //            }
+                //            else
+                //            {
+                ////                NSLog(@"All Other return code %d",returnCode);
+                //            }
+                //        }];
 			}
 		}
 	}
@@ -399,9 +584,45 @@ fail:
 	{
 		if (quiet == FALSE)
         {
-            NSRunAlertPanel(NSLocalizedString(@"There was an error connecting to the server.", nil),  
-							NSLocalizedString(@"Either you do not have the internet or the server is down for maintenance.", nil), 
-							NSLocalizedString(@"Close", nil), nil, nil); // Localize it if you want.
+//            NSRunAlertPanel(NSLocalizedString(@"There was an error connecting to the server.", nil),  
+//							NSLocalizedString(@"Either you do not have the internet or the server is down for maintenance.", nil), 
+//							NSLocalizedString(@"Close", nil), nil, nil); // Localize it if you want.
+            
+            // http://www.knowstack.com/nsalert-cocoa-objective-c/
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert setMessageText:@"There was an error connecting to the server."];
+            [alert setInformativeText:NSLocalizedString(@"Either you do not have the internet or the server is down for maintenance.", nil)];
+            [alert addButtonWithTitle:@"OK"];
+            //        [alert addButtonWithTitle:@"Cancel"];
+            [alert setAlertStyle:NSAlertStyleCritical];
+            
+            [alert runModal];
+            //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+            //            if (returnCode == NSOKButton)
+            //            {
+            ////                NSLog(@"(returnCode == NSOKButton)");
+            //            }
+            //            else if (returnCode == NSCancelButton)
+            //            {
+            ////                NSLog(@"(returnCode == NSCancelButton)");
+            //            }
+            //            else if(returnCode == NSAlertFirstButtonReturn)
+            //            {
+            ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+            //            }
+            //            else if (returnCode == NSAlertSecondButtonReturn)
+            //            {
+            ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+            //            }
+            //            else if (returnCode == NSAlertThirdButtonReturn)
+            //            {
+            ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+            //            }
+            //            else
+            //            {
+            ////                NSLog(@"All Other return code %d",returnCode);
+            //            }
+            //        }];
         }
 	}
 }

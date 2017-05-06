@@ -209,11 +209,48 @@
     [self debugLog:[NSString stringWithFormat:@"Could not load any valid preference panes. The preference pane bundle extension was \"%@\" and the search path was: %@", bundleExtension, searchPath]];
     
     // Show alert dialog.
-    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
-    NSRunAlertPanel(@"Preferences", @"Preferences are not available for %@.",
-                    @"OK",
-                    nil,
-                    nil, appName);
+//    NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+//    NSRunAlertPanel(@"Preferences", @"Preferences are not available for %@.",
+//                    @"OK",
+//                    nil,
+//                    nil, appName);
+    
+    // http://www.knowstack.com/nsalert-cocoa-objective-c/
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Preferences"];
+    [alert setInformativeText:@"Preferences are not available."];
+    [alert addButtonWithTitle:@"OK"];
+    //        [alert addButtonWithTitle:@"Cancel"];
+    [alert setAlertStyle:NSAlertStyleCritical];
+    
+    [alert runModal];
+    //        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+    //            if (returnCode == NSOKButton)
+    //            {
+    ////                NSLog(@"(returnCode == NSOKButton)");
+    //            }
+    //            else if (returnCode == NSCancelButton)
+    //            {
+    ////                NSLog(@"(returnCode == NSCancelButton)");
+    //            }
+    //            else if(returnCode == NSAlertFirstButtonReturn)
+    //            {
+    ////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+    //            }
+    //            else if (returnCode == NSAlertSecondButtonReturn)
+    //            {
+    ////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+    //            }
+    //            else if (returnCode == NSAlertThirdButtonReturn)
+    //            {
+    ////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+    //            }
+    //            else
+    //            {
+    ////                NSLog(@"All Other return code %d",returnCode);
+    //            }
+    //        }];
+
     prefsWindow = nil;
 }
 

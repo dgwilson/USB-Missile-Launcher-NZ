@@ -60,18 +60,18 @@ void DeviceNotification( void *refCon,
 - (BOOL)confirmMissileLauncherConnected;
 - (id)MissileControl:(UInt8)controlBits;
 //IOReturn DreamCheekyReadPipe(int dataRefIndex, UInt8 *rBuffer);
-IOReturn DreamCheekyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface **missileInterface, UInt8 *rBuffer);
+IOReturn DreamCheekyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface183 **missileInterface, UInt8 *rBuffer);
 //IOReturn RocketBabyReadPipe(int dataRefIndex, UInt8 *rBuffer);
-IOReturn RocketBabyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface **missileInterface, UInt8 *rBuffer);
-IOReturn OICStormReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface **missileInterface, UInt8 *rBuffer);
+IOReturn RocketBabyReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface183 **missileInterface, UInt8 *rBuffer);
+IOReturn OICStormReadPipe(IOUSBDeviceInterface **missileDevice, IOUSBInterfaceInterface183 **missileInterface, UInt8 *rBuffer);
 
 IOReturn DreamCheekyWritePipe(int dataRefIndex, char *wBuffer);
 	void WriteCompletion(void *refCon, IOReturn result, void *arg0);
 	void ReadCompletion(void *refCon, IOReturn result, void *arg0);
 
 //	IOReturn DreamCheekyReadPipe(IOUSBInterfaceInterface **missileInterface_param, char rBuffer[8]);
-void EvaluateUSBErrorCode(IOUSBDeviceInterface **deviceInterface_param, IOUSBInterfaceInterface **missileInterface_param, IOReturn kr);
-	void ClearStalledPipe(IOUSBInterfaceInterface **missileInterface_param);
+void EvaluateUSBErrorCode(IOUSBDeviceInterface **deviceInterface_param, IOUSBInterfaceInterface183 **missileInterface_param, IOReturn kr);
+	void ClearStalledPipe(IOUSBInterfaceInterface183 **missileInterface_param);
 
 - (void)DreamCheeky_Park;
 - (void)MissileLauncher_Park;
