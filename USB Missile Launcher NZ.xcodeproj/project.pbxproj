@@ -97,7 +97,6 @@
 		E0946F2613176BE500BFA8A1 /* foreground-up.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0946F1413176BE500BFA8A1 /* foreground-up.psd */; };
 		E097335D0A3FFA8200CED98F /* RocketLaunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E097335C0A3FFA8200CED98F /* RocketLaunch.wav */; };
 		E0A2E3BE12F3F22200F8C4F4 /* Background-Top.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */; };
-		E0A2E3C212F3F53600F8C4F4 /* Background-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */; };
 		E0A2E3C412F3F91200F8C4F4 /* FireButton.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3C312F3F91200F8C4F4 /* FireButton.psd */; };
 		E0A2E3C612F3FC2900F8C4F4 /* Btn-Down.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0A2E3C512F3FC2900F8C4F4 /* Btn-Down.psd */; };
 		E0B07F7A0DC9C42000BE1BD8 /* MissileControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B07F790DC9C42000BE1BD8 /* MissileControlView.m */; };
@@ -122,6 +121,7 @@
 		E0D7B3001EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */; };
 		E0E055B60AE07DD500ABBF6F /* MissileLauncher_shooting_72.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */; };
 		E0E326010A3C26D200A4F1ED /* MissileLauncher.icns in Resources */ = {isa = PBXBuildFile; fileRef = E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */; };
+		E0E54EAC1EE38346000CE596 /* Background-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E54EAB1EE38346000CE596 /* Background-Bottom.png */; };
 		E0E902950ACFA7FB008C30AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902940ACFA7FB008C30AC /* QuartzCore.framework */; };
 		E0E902990ACFA81B008C30AC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902980ACFA81B008C30AC /* OpenGL.framework */; };
 		E0E9029D0ACFA833008C30AC /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E9029C0ACFA833008C30AC /* CoreAudioKit.framework */; };
@@ -330,7 +330,6 @@
 		E0946F1413176BE500BFA8A1 /* foreground-up.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "foreground-up.psd"; path = "Resources/Button UI/foreground-up.psd"; sourceTree = "<group>"; };
 		E097335C0A3FFA8200CED98F /* RocketLaunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = RocketLaunch.wav; path = Resources/RocketLaunch.wav; sourceTree = "<group>"; };
 		E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-Top.png"; path = "Resources/DreamCheeky Graphics/Background-Top.png"; sourceTree = "<group>"; };
-		E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-Bottom.png"; path = "Resources/DreamCheeky Graphics/Background-Bottom.png"; sourceTree = "<group>"; };
 		E0A2E3C312F3F91200F8C4F4 /* FireButton.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = FireButton.psd; path = "Resources/DreamCheeky Graphics/FireButton.psd"; sourceTree = "<group>"; };
 		E0A2E3C512F3FC2900F8C4F4 /* Btn-Down.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Btn-Down.psd"; path = "Resources/DreamCheeky Graphics/Btn-Down.psd"; sourceTree = "<group>"; };
 		E0B07F780DC9C42000BE1BD8 /* MissileControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissileControlView.h; path = Classes/MissileControlView.h; sourceTree = "<group>"; };
@@ -372,6 +371,7 @@
 		E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_DreamRocketII.m; sourceTree = "<group>"; };
 		E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MissileLauncher_shooting_72.png; path = Resources/MissileLauncher_shooting_72.png; sourceTree = "<group>"; };
 		E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = MissileLauncher.icns; path = Resources/MissileLauncher.icns; sourceTree = "<group>"; };
+		E0E54EAB1EE38346000CE596 /* Background-Bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Background-Bottom.png"; path = "Resources/DreamCheeky Graphics/Background-Bottom.png"; sourceTree = "<group>"; };
 		E0E902940ACFA7FB008C30AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		E0E902980ACFA81B008C30AC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E0E9029C0ACFA833008C30AC /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = /System/Library/Frameworks/CoreAudioKit.framework; sourceTree = "<absolute>"; };
@@ -762,7 +762,7 @@
 				E0946F1413176BE500BFA8A1 /* foreground-up.psd */,
 				E0A2E3C512F3FC2900F8C4F4 /* Btn-Down.psd */,
 				E0A2E3C312F3F91200F8C4F4 /* FireButton.psd */,
-				E0A2E3C112F3F53600F8C4F4 /* Background-Bottom.png */,
+				E0E54EAB1EE38346000CE596 /* Background-Bottom.png */,
 				E0A2E3BD12F3F22200F8C4F4 /* Background-Top.png */,
 				E0FF2A1C12F01C9C006E9C54 /* Black Button.psd */,
 			);
@@ -1056,9 +1056,9 @@
 				E04F624D0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd in Resources */,
 				E03780460BAC873B00724518 /* Localizable.strings in Resources */,
 				E04940450BC99FA900B71710 /* USB Missile Launcher NZ.sdef in Resources */,
+				E0E54EAC1EE38346000CE596 /* Background-Bottom.png in Resources */,
 				E0FF2A1D12F01C9C006E9C54 /* Black Button.psd in Resources */,
 				E0A2E3BE12F3F22200F8C4F4 /* Background-Top.png in Resources */,
-				E0A2E3C212F3F53600F8C4F4 /* Background-Bottom.png in Resources */,
 				E0A2E3C412F3F91200F8C4F4 /* FireButton.psd in Resources */,
 				E0A2E3C612F3FC2900F8C4F4 /* Btn-Down.psd in Resources */,
 				E06B2952131653CA0060C13B /* MainMenu.xib in Resources */,
