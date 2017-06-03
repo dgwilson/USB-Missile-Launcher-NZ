@@ -484,22 +484,7 @@
 				E05DCD890A3C1E1600EAE605 /* USBMissileControl.m */,
 				E02CDEF50A7C4DFF00379BE0 /* USBLauncher.h */,
 				E02CDEF60A7C4DFF00379BE0 /* USBLauncher.m */,
-				E0D7B2E31EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.h */,
-				E0D7B2E41EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m */,
-				E0D7B2EF1EBEE36700A5A2AC /* USBLauncher_C_Enter.h */,
-				E0D7B2F01EBEE36700A5A2AC /* USBLauncher_C_Enter.m */,
-				E0D7B2F21EBEE48400A5A2AC /* USBLauncher_StrikerII.h */,
-				E0D7B2F31EBEE48400A5A2AC /* USBLauncher_StrikerII.m */,
-				E0D7B2F51EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.h */,
-				E0D7B2F61EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m */,
-				E0D7B2F81EBEE6E300A5A2AC /* USBLauncher_Satzuma.h */,
-				E0D7B2F91EBEE6E300A5A2AC /* USBLauncher_Satzuma.m */,
-				E0D7B2FB1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.h */,
-				E0D7B2FC1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m */,
-				E0D7B2FE1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.h */,
-				E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */,
-				E07C7DFB1EC3218D00B2C42F /* usbHIDDeviceElements.h */,
-				E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */,
+				E0E54EAA1EE37EDE000CE596 /* Launchers */,
 				E0D7B2EE1EBECC0500A5A2AC /* IOHIDManager - Local */,
 			);
 			name = Classes;
@@ -815,6 +800,29 @@
 			name = "IOHIDManager - Local";
 			sourceTree = "<group>";
 		};
+		E0E54EAA1EE37EDE000CE596 /* Launchers */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7B2E31EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.h */,
+				E0D7B2E41EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m */,
+				E0D7B2EF1EBEE36700A5A2AC /* USBLauncher_C_Enter.h */,
+				E0D7B2F01EBEE36700A5A2AC /* USBLauncher_C_Enter.m */,
+				E0D7B2F21EBEE48400A5A2AC /* USBLauncher_StrikerII.h */,
+				E0D7B2F31EBEE48400A5A2AC /* USBLauncher_StrikerII.m */,
+				E0D7B2F51EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.h */,
+				E0D7B2F61EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m */,
+				E0D7B2F81EBEE6E300A5A2AC /* USBLauncher_Satzuma.h */,
+				E0D7B2F91EBEE6E300A5A2AC /* USBLauncher_Satzuma.m */,
+				E0D7B2FB1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.h */,
+				E0D7B2FC1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m */,
+				E0D7B2FE1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.h */,
+				E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */,
+				E07C7DFB1EC3218D00B2C42F /* usbHIDDeviceElements.h */,
+				E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */,
+			);
+			name = Launchers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -994,6 +1002,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "David G. Wilson";
 				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = ZNVB52L2P6;
+						ProvisioningStyle = Manual;
+					};
 					E00F94C714B59B0300E206F0 = {
 						DevelopmentTeam = ZNVB52L2P6;
 						ProvisioningStyle = Automatic;
@@ -1339,8 +1351,9 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_VERSION = "1.9.0 build 166";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZNVB52L2P6;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1351,14 +1364,16 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.david.USBMissileLauncherNZ;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_VERSION = "1.9.0 build 166";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZNVB52L2P6;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PREFIX_HEADER = "Classes/USB Missile Launcher NZ_Prefix.pch";
 				GCC_VERSION = "";
@@ -1367,13 +1382,14 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.david.USBMissileLauncherNZ;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_VERSION = "1.8.2 build 165";
+				APPLICATION_VERSION = "1.9.0b1 build 167";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1409,7 +1425,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_VERSION = "1.8.2 build 165";
+				APPLICATION_VERSION = "1.9.0b1 build 167";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

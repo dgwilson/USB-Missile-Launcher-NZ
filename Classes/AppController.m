@@ -55,60 +55,63 @@ enum {
 //	}
 //	else
 //		NSLog(@"Unable to obtain USB version: %ld", (long)err);
-	
-	
-	if ([[NSWorkspace sharedWorkspace] isFilePackageAtPath:@"/Library/Extensions/USB Missile Launcher All Drivers.kext"])
-	{
-		b_kext_Present = true;
-		NSLog(@"Found - /Library/Extensions/USB Missile Launcher All Drivers.kext");
-	} else {
-		b_kext_Present = false;
-		NSLog(@"WARNING: Critical Support file not found - /Library/Extensions/USB Missile Launcher All Drivers.kext");
-	}
 
-	if (!b_kext_Present)
-	{
-		NSLog(@"WARNING: Critical Support file not found : Launcher performance may be degraded without these files");
-//		NSLog(@"WARNING: Critical Support file not found : Displaying warning message to user");
-//		NSRunAlertPanel(@"USB Missile Launcher NZ",
-//						@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected.", nil, nil, nil);
-        
-        // http://www.knowstack.com/nsalert-cocoa-objective-c/
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:@"Critical Launch Error"];
-        [alert setInformativeText:@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected"];
-        [alert addButtonWithTitle:@"OK"];
-//        [alert addButtonWithTitle:@"Cancel"];
-        [alert setAlertStyle:NSAlertStyleCritical];
-        
-        [alert runModal];
-//        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-//            if (returnCode == NSOKButton)
-//            {
-////                NSLog(@"(returnCode == NSOKButton)");
-//            }
-//            else if (returnCode == NSCancelButton)
-//            {
-////                NSLog(@"(returnCode == NSCancelButton)");
-//            }
-//            else if(returnCode == NSAlertFirstButtonReturn)
-//            {
-////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
-//            }
-//            else if (returnCode == NSAlertSecondButtonReturn)
-//            {
-////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
-//            }
-//            else if (returnCode == NSAlertThirdButtonReturn)
-//            {
-////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
-//            }
-//            else
-//            {
-////                NSLog(@"All Other return code %d",returnCode);
-//            }
-//        }];
-	}
+    
+	// version 1.9.0 removes the need for a a kext by switched to USB HID communications with all launchers.
+    // therefore we no longer need to check for the presence of this file.
+    
+//	if ([[NSWorkspace sharedWorkspace] isFilePackageAtPath:@"/Library/Extensions/USB Missile Launcher All Drivers.kext"])
+//	{
+//		b_kext_Present = true;
+//		NSLog(@"Found - /Library/Extensions/USB Missile Launcher All Drivers.kext");
+//	} else {
+//		b_kext_Present = false;
+//		NSLog(@"WARNING: Critical Support file not found - /Library/Extensions/USB Missile Launcher All Drivers.kext");
+//	}
+//
+//	if (!b_kext_Present)
+//	{
+//		NSLog(@"WARNING: Critical Support file not found : Launcher performance may be degraded without these files");
+////		NSLog(@"WARNING: Critical Support file not found : Displaying warning message to user");
+////		NSRunAlertPanel(@"USB Missile Launcher NZ",
+////						@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected.", nil, nil, nil);
+//        
+//        // http://www.knowstack.com/nsalert-cocoa-objective-c/
+//        NSAlert *alert = [[NSAlert alloc] init];
+//        [alert setMessageText:@"Critical Launch Error"];
+//        [alert setInformativeText:@"A critical support file was not found, details of the error can be found in the console.log file. To correct this error you should install this software using the application installer. If you continue to run this program, the launcher may not function as expected"];
+//        [alert addButtonWithTitle:@"OK"];
+////        [alert addButtonWithTitle:@"Cancel"];
+//        [alert setAlertStyle:NSAlertStyleCritical];
+//        
+//        [alert runModal];
+////        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+////            if (returnCode == NSOKButton)
+////            {
+//////                NSLog(@"(returnCode == NSOKButton)");
+////            }
+////            else if (returnCode == NSCancelButton)
+////            {
+//////                NSLog(@"(returnCode == NSCancelButton)");
+////            }
+////            else if(returnCode == NSAlertFirstButtonReturn)
+////            {
+//////                NSLog(@"if (returnCode == NSAlertFirstButtonReturn)");
+////            }
+////            else if (returnCode == NSAlertSecondButtonReturn)
+////            {
+//////                NSLog(@"else if (returnCode == NSAlertSecondButtonReturn)");
+////            }
+////            else if (returnCode == NSAlertThirdButtonReturn)
+////            {
+//////                NSLog(@"else if (returnCode == NSAlertThirdButtonReturn)");
+////            }
+////            else
+////            {
+//////                NSLog(@"All Other return code %d",returnCode);
+////            }
+////        }];
+//	}
 
 	
     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
@@ -345,7 +348,8 @@ fail:
 		//[prefs setDebug:YES];
 		[prefs setAlwaysShowsToolbar:YES];
 		//        [prefs setPanesOrder:[NSArray arrayWithObjects:@"General", @"Sound", @"Joystick", @"Launcher", @"Updating", nil]];
-        [prefs setPanesOrder:[NSArray arrayWithObjects:@"General", @"Sound", @"Joystick", @"Launcher", nil]];
+//        [prefs setPanesOrder:[NSArray arrayWithObjects:@"General", @"Sound", @"Joystick", @"Launcher", nil]];
+        [prefs setPanesOrder:[NSArray arrayWithObjects:@"General", @"Sound", @"Joystick", nil]];
     }
     
     // Show the preferences window.
