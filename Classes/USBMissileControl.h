@@ -40,8 +40,9 @@
 		launcherRightDown = 9,
 		launcherTest = 10,
 		launcherPark = 11,
-		launcherLaserToggle = 12,
-		launcherPrime = 13
+		launcherLaserToggleON = 12,
+        launcherLaserToggleOFF = 13,
+		launcherPrime = 14
 	} launcherID ;
 	
 }

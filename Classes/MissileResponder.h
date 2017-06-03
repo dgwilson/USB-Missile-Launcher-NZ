@@ -56,11 +56,11 @@
 @property (readwrite, retain) AsyncSocket *listeningSocket;
 @property (readwrite, retain) AsyncSocket *connectionSocket;
 @property (readwrite, retain) MTMessageBroker *messageBroker;
+@property (nonatomic, retain) IBOutlet NSButton * btn_lazerButton;
 
 - (void)awakeFromNib;
 - (void)prefsCreate;
 - (void)prefsChanged;
-- (void)usbConnect;
 - (void)usbConnectIssue;
 - (void)usbDisConnect;
 - (void)usbError;

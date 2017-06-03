@@ -12,6 +12,7 @@
 #import <IOKit/IOCFPlugIn.h>
 #import <IOKit/usb/IOUSBLib.h>
 #import <IOKit/hid/IOHIDLib.h>
+#import "usbHIDDeviceElements.h"
 
 @interface USBLauncher : NSObject 
 {
@@ -24,9 +25,12 @@
 	SInt32					usbProductID;
     UInt8                   interfaceNumEndpoints;
 	NSString				*launcherType;
+    NSString                *launcherName;
+    BOOL                    launcherHIDDeviceBOOL;
 }
 
 @property (assign, nonatomic) IOHIDDeviceRef hidDevice;
+@property (nonatomic, retain) NSMutableArray * deviceElementsArray;
 
 
 - (id)init;
@@ -41,6 +45,8 @@
 - (SInt32)getusbVendorID;
 - (SInt32)getusbProductID;
 - (NSString *)getLauncherType;
+- (NSString *)getLauncherName;
+- (BOOL)isLauncherHIDDevice;
 
 - (void)setNotification:(io_object_t)newNotification;
 - (void)setDeviceInterface:(IOUSBDeviceInterface **)newDeviceInterface;
@@ -51,6 +57,9 @@
 - (void)setusbProductID:(SInt32)newusbProductID;
 - (void)setInterfaceNumEndpoints:(UInt8)newInterfaceNumEndpoints;
 - (void)setLauncherType:(NSString *)newLauncherType;
+- (void)setLauncherName:(NSString *)newLauncherName;
+- (void)setLauncherHIDDeviceBOOL:(BOOL)hidDeviceBOOL;
 
+- (NSData *)USBHIDGetDataForElement:(NSUInteger)inElementIndex;
 
 @end

@@ -73,6 +73,7 @@
 		E06407A614B6BF3C0034B2D7 /* Mail.app in Resources */ = {isa = PBXBuildFile; fileRef = E06407A514B6BF3B0034B2D7 /* Mail.app */; };
 		E06407A714B6C05F0034B2D7 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = E06407A514B6BF3B0034B2D7 /* Mail.app */; };
 		E06B2952131653CA0060C13B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06B2950131653CA0060C13B /* MainMenu.xib */; };
+		E07C7DFD1EC3218D00B2C42F /* usbHIDDeviceElements.m in Sources */ = {isa = PBXBuildFile; fileRef = E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */; };
 		E0926EAE0AECA57500DE43FF /* Help in Resources */ = {isa = PBXBuildFile; fileRef = E0926EAA0AECA57500DE43FF /* Help */; };
 		E093214B0A7A357600B16B0F /* Fire3.psd in Resources */ = {isa = PBXBuildFile; fileRef = E093214A0A7A357600B16B0F /* Fire3.psd */; };
 		E09321590A7A382F00B16B0F /* Fire.psd in Resources */ = {isa = PBXBuildFile; fileRef = E09321580A7A382F00B16B0F /* Fire.psd */; };
@@ -110,6 +111,15 @@
 		E0D6FB280ADED257005BB6C2 /* Gun Sight 5a Input Image.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0D6FB260ADED256005BB6C2 /* Gun Sight 5a Input Image.psd */; };
 		E0D6FB290ADED257005BB6C2 /* Gun Sight 5a Mask.psd in Resources */ = {isa = PBXBuildFile; fileRef = E0D6FB270ADED256005BB6C2 /* Gun Sight 5a Mask.psd */; };
 		E0D75FF31EB086DF00DD2814 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D75FF21EB086DF00DD2814 /* AVKit.framework */; };
+		E0D7B2E51EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2E41EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m */; };
+		E0D7B2EC1EBECBFB00A5A2AC /* IOHIDDevice_.c in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2E71EBECBFB00A5A2AC /* IOHIDDevice_.c */; };
+		E0D7B2ED1EBECBFB00A5A2AC /* IOHIDElement_.c in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2E91EBECBFB00A5A2AC /* IOHIDElement_.c */; };
+		E0D7B2F11EBEE36700A5A2AC /* USBLauncher_C_Enter.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2F01EBEE36700A5A2AC /* USBLauncher_C_Enter.m */; };
+		E0D7B2F41EBEE48400A5A2AC /* USBLauncher_StrikerII.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2F31EBEE48400A5A2AC /* USBLauncher_StrikerII.m */; };
+		E0D7B2F71EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2F61EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m */; };
+		E0D7B2FA1EBEE6E300A5A2AC /* USBLauncher_Satzuma.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2F91EBEE6E300A5A2AC /* USBLauncher_Satzuma.m */; };
+		E0D7B2FD1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2FC1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m */; };
+		E0D7B3001EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */; };
 		E0E055B60AE07DD500ABBF6F /* MissileLauncher_shooting_72.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */; };
 		E0E326010A3C26D200A4F1ED /* MissileLauncher.icns in Resources */ = {isa = PBXBuildFile; fileRef = E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */; };
 		E0E902950ACFA7FB008C30AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902940ACFA7FB008C30AC /* QuartzCore.framework */; };
@@ -295,6 +305,8 @@
 		E06407A214B6BBA10034B2D7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		E06407A514B6BF3B0034B2D7 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = ../../../../../../Applications/Mail.app; sourceTree = "<group>"; };
 		E06B2951131653CA0060C13B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E07C7DFB1EC3218D00B2C42F /* usbHIDDeviceElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usbHIDDeviceElements.h; sourceTree = "<group>"; };
+		E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = usbHIDDeviceElements.m; sourceTree = "<group>"; };
 		E0926EAA0AECA57500DE43FF /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Help; path = Resources/Help; sourceTree = "<group>"; };
 		E093214A0A7A357600B16B0F /* Fire3.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fire3.psd; path = Resources/Fire3.psd; sourceTree = "<group>"; };
 		E09321580A7A382F00B16B0F /* Fire.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fire.psd; path = Resources/Fire.psd; sourceTree = "<group>"; };
@@ -339,6 +351,25 @@
 		E0D6FB260ADED256005BB6C2 /* Gun Sight 5a Input Image.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gun Sight 5a Input Image.psd"; path = "Resources/Gun Sight 5a Input Image.psd"; sourceTree = "<group>"; };
 		E0D6FB270ADED256005BB6C2 /* Gun Sight 5a Mask.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gun Sight 5a Mask.psd"; path = "Resources/Gun Sight 5a Mask.psd"; sourceTree = "<group>"; };
 		E0D75FF21EB086DF00DD2814 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		E0D7B2E31EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_DreamCheeky_OIC_Storm.h; sourceTree = "<group>"; };
+		E0D7B2E41EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_DreamCheeky_OIC_Storm.m; sourceTree = "<group>"; };
+		E0D7B2E71EBECBFB00A5A2AC /* IOHIDDevice_.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOHIDDevice_.c; sourceTree = "<group>"; };
+		E0D7B2E81EBECBFB00A5A2AC /* IOHIDDevice_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDDevice_.h; sourceTree = "<group>"; };
+		E0D7B2E91EBECBFB00A5A2AC /* IOHIDElement_.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOHIDElement_.c; sourceTree = "<group>"; };
+		E0D7B2EA1EBECBFB00A5A2AC /* IOHIDElement_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDElement_.h; sourceTree = "<group>"; };
+		E0D7B2EB1EBECBFB00A5A2AC /* IOHIDLib_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDLib_.h; sourceTree = "<group>"; };
+		E0D7B2EF1EBEE36700A5A2AC /* USBLauncher_C_Enter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_C_Enter.h; sourceTree = "<group>"; };
+		E0D7B2F01EBEE36700A5A2AC /* USBLauncher_C_Enter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_C_Enter.m; sourceTree = "<group>"; };
+		E0D7B2F21EBEE48400A5A2AC /* USBLauncher_StrikerII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_StrikerII.h; sourceTree = "<group>"; };
+		E0D7B2F31EBEE48400A5A2AC /* USBLauncher_StrikerII.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_StrikerII.m; sourceTree = "<group>"; };
+		E0D7B2F51EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_OrigLauncher.h; sourceTree = "<group>"; };
+		E0D7B2F61EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_OrigLauncher.m; sourceTree = "<group>"; };
+		E0D7B2F81EBEE6E300A5A2AC /* USBLauncher_Satzuma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_Satzuma.h; sourceTree = "<group>"; };
+		E0D7B2F91EBEE6E300A5A2AC /* USBLauncher_Satzuma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_Satzuma.m; sourceTree = "<group>"; };
+		E0D7B2FB1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_DreamRocket.h; sourceTree = "<group>"; };
+		E0D7B2FC1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_DreamRocket.m; sourceTree = "<group>"; };
+		E0D7B2FE1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USBLauncher_DreamRocketII.h; sourceTree = "<group>"; };
+		E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USBLauncher_DreamRocketII.m; sourceTree = "<group>"; };
 		E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MissileLauncher_shooting_72.png; path = Resources/MissileLauncher_shooting_72.png; sourceTree = "<group>"; };
 		E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = MissileLauncher.icns; path = Resources/MissileLauncher.icns; sourceTree = "<group>"; };
 		E0E902940ACFA7FB008C30AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
@@ -445,14 +476,31 @@
 				E006E4AB0A441E3500A77A11 /* SS_PreferencePaneProtocol.h */,
 				E006E4AC0A441E3500A77A11 /* SS_PrefsController.h */,
 				E006E4AD0A441E3500A77A11 /* SS_PrefsController.m */,
-				E02CDEF50A7C4DFF00379BE0 /* USBLauncher.h */,
-				E02CDEF60A7C4DFF00379BE0 /* USBLauncher.m */,
 				E04B421A0B747C8D00603C52 /* USBJoyStickControl.h */,
 				E04B421B0B747C8D00603C52 /* USBJoyStickControl.m */,
-				E05DCD880A3C1E1600EAE605 /* USBMissileControl.h */,
-				E05DCD890A3C1E1600EAE605 /* USBMissileControl.m */,
 				E0B07F780DC9C42000BE1BD8 /* MissileControlView.h */,
 				E0B07F790DC9C42000BE1BD8 /* MissileControlView.m */,
+				E05DCD880A3C1E1600EAE605 /* USBMissileControl.h */,
+				E05DCD890A3C1E1600EAE605 /* USBMissileControl.m */,
+				E02CDEF50A7C4DFF00379BE0 /* USBLauncher.h */,
+				E02CDEF60A7C4DFF00379BE0 /* USBLauncher.m */,
+				E0D7B2E31EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.h */,
+				E0D7B2E41EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m */,
+				E0D7B2EF1EBEE36700A5A2AC /* USBLauncher_C_Enter.h */,
+				E0D7B2F01EBEE36700A5A2AC /* USBLauncher_C_Enter.m */,
+				E0D7B2F21EBEE48400A5A2AC /* USBLauncher_StrikerII.h */,
+				E0D7B2F31EBEE48400A5A2AC /* USBLauncher_StrikerII.m */,
+				E0D7B2F51EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.h */,
+				E0D7B2F61EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m */,
+				E0D7B2F81EBEE6E300A5A2AC /* USBLauncher_Satzuma.h */,
+				E0D7B2F91EBEE6E300A5A2AC /* USBLauncher_Satzuma.m */,
+				E0D7B2FB1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.h */,
+				E0D7B2FC1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m */,
+				E0D7B2FE1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.h */,
+				E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */,
+				E07C7DFB1EC3218D00B2C42F /* usbHIDDeviceElements.h */,
+				E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */,
+				E0D7B2EE1EBECC0500A5A2AC /* IOHIDManager - Local */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -753,6 +801,18 @@
 				E01260461335F898006EC92E /* DreamCheeky IOC Launcher No Shadow.psd */,
 			);
 			name = Icons;
+			sourceTree = "<group>";
+		};
+		E0D7B2EE1EBECC0500A5A2AC /* IOHIDManager - Local */ = {
+			isa = PBXGroup;
+			children = (
+				E0D7B2E71EBECBFB00A5A2AC /* IOHIDDevice_.c */,
+				E0D7B2E81EBECBFB00A5A2AC /* IOHIDDevice_.h */,
+				E0D7B2E91EBECBFB00A5A2AC /* IOHIDElement_.c */,
+				E0D7B2EA1EBECBFB00A5A2AC /* IOHIDElement_.h */,
+				E0D7B2EB1EBECBFB00A5A2AC /* IOHIDLib_.h */,
+			);
+			name = "IOHIDManager - Local";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1112,16 +1172,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D7B2FD1EBEE6FF00A5A2AC /* USBLauncher_DreamRocket.m in Sources */,
 				E06407A714B6C05F0034B2D7 /* Mail.app in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				E05DCD8A0A3C1E1600EAE605 /* USBMissileControl.m in Sources */,
+				E0D7B2F41EBEE48400A5A2AC /* USBLauncher_StrikerII.m in Sources */,
+				E07C7DFD1EC3218D00B2C42F /* usbHIDDeviceElements.m in Sources */,
 				E0C134810A3D79F20054CD82 /* MissileResponder.m in Sources */,
 				E006E4AE0A441E3500A77A11 /* SS_PrefsController.m in Sources */,
 				E006E4BB0A44206500A77A11 /* AppController.m in Sources */,
+				E0D7B2E51EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m in Sources */,
 				E02CDEF70A7C4DFF00379BE0 /* USBLauncher.m in Sources */,
 				E04B421C0B747C8D00603C52 /* USBJoyStickControl.m in Sources */,
+				E0D7B2ED1EBECBFB00A5A2AC /* IOHIDElement_.c in Sources */,
 				E04944630BCCDB7200B71710 /* ASAbort.m in Sources */,
+				E0D7B2F11EBEE36700A5A2AC /* USBLauncher_C_Enter.m in Sources */,
+				E0D7B3001EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m in Sources */,
 				E04944650BCCDB7200B71710 /* ASToggleLock.m in Sources */,
+				E0D7B2EC1EBECBFB00A5A2AC /* IOHIDDevice_.c in Sources */,
 				E049447E0BCCDC9D00B71710 /* ASFire.m in Sources */,
 				E05B2F300BD231110073507C /* ASMoveParameter.m in Sources */,
 				E0163E870DC3499500C6EBEE /* VideoWindow.m in Sources */,
@@ -1132,6 +1200,8 @@
 				E064078E14B639180034B2D7 /* AboutWindowController.m in Sources */,
 				E064079414B677B50034B2D7 /* ShellTask.m in Sources */,
 				E0CD12FD168400A4002C2B3C /* AVRecorderDocument.m in Sources */,
+				E0D7B2F71EBEE6B500A5A2AC /* USBLauncher_OrigLauncher.m in Sources */,
+				E0D7B2FA1EBEE6E300A5A2AC /* USBLauncher_Satzuma.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

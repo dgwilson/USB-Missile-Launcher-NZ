@@ -134,7 +134,7 @@
 											   object: nil
 		];
 	[[NSNotificationCenter defaultCenter] addObserver: self
-											 selector: @selector(usbConnect)
+                                             selector: @selector(usbConnect:)
 												 name: @"usbConnect"
 											   object: nil
 	 ];
@@ -330,10 +330,13 @@
 
 #pragma mark - Message Window Updates
 
-- (void)usbConnect;
+- (void)usbConnect:(NSNotification *)notification;
 {
 //	NSLog(@"sending USB Launcher Connected to main window");
-	[launcherMessage setStringValue:NSLocalizedString(@"USB Launcher Connected", nil)];
+    
+    NSString * connectedlauncher = [notification object];
+    NSString * message = [NSString stringWithFormat:@"USB Launcher Connected: %@", connectedlauncher];
+	[launcherMessage setStringValue:message];
 }
 - (void)usbConnectIssue;
 {
@@ -343,6 +346,8 @@
 - (void)usbDisConnect;
 {
 	[launcherMessage setStringValue:NSLocalizedString(@"USB Launcher Disconnected", nil)];
+    [self setSafety];
+    //TODO: make sure the control sheet is also put away
 }
 - (void)usbError;
 {
@@ -363,8 +368,7 @@
     return YES;
 }
 
-#pragma mark -
-#pragma mark Event Handling
+#pragma mark - Event Handling
 
 - (void)DGWtimerSet;
 {
@@ -711,7 +715,11 @@
 	{
 		[self LauncherDisabledMessage];
 	} else {
-		[USBLauncherControl controlLauncher:[NSNumber numberWithInt:launcherLaserToggle]];
+        if ([self.btn_lazerButton state] == 1)
+            [USBLauncherControl controlLauncher:[NSNumber numberWithInt:launcherLaserToggleON]];
+        else
+            [USBLauncherControl controlLauncher:[NSNumber numberWithInt:launcherLaserToggleOFF]];
+        
 	}
 	[self resetLockTimer];
 	if (sender != self) 

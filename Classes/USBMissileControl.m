@@ -55,6 +55,15 @@ FRIENDS to help Debug
 */
 
 #import "USBMissileControl.h"
+#import "USBLauncher_DreamCheeky_OIC_Storm.h"
+#import "USBLauncher_C_Enter.h"
+#import "USBLauncher_StrikerII.h"
+#import "USBLauncher_OrigLauncher.h"
+#import "USBLauncher_Satzuma.h"
+#import "USBLauncher_DreamRocket.h"
+#import "USBLauncher_DreamRocketII.h"
+#import "IOHIDLib_.h"
+
 
 //================================================================================================
 //   Globals
@@ -65,9 +74,23 @@ static io_iterator_t			gAddedRocketIter;
 static io_iterator_t			gAddedMissileIter;
 static CFRunLoopRef				gRunLoop;
 
-//int						launcherCount;
 NSMutableArray			*launcherDevice;
 
+@interface USBMissileControl ()
+{
+    // Launcher details as set up in Preferences
+    NSString * launcher1_VendorId;
+    NSString * launcher1_ProductId;
+    NSString * launcher1_type;
+    NSString * launcher2_VendorId;
+    NSString * launcher2_ProductId;
+    NSString * launcher2_type;
+    NSString * launcher3_VendorId;
+    NSString * launcher3_ProductId;
+    NSString * launcher3_type;
+}
+
+@end
 
 //USB Missile Launcher
 //#define kUSBMissileVendorID		0x1130	// 4400
@@ -107,13 +130,6 @@ static char							gBuffer[8];
 //	SInt32					usbMissileProduct  = kUSBMissileProductID;
 	CFNumberRef				numberRef;
 	CFRunLoopSourceRef      runLoopSource;
-
-	NSString * launcher1_VendorId;
-	NSString * launcher1_ProductId;
-	NSString * launcher2_VendorId;
-	NSString * launcher2_ProductId;
-	NSString * launcher3_VendorId;
-	NSString * launcher3_ProductId;
 	
 	self = [super init];
 	if (self) {
@@ -127,54 +143,43 @@ static char							gBuffer[8];
 		// Yup, it may not work, but perhaps it's worth a go.
 		// DGW - 11 February 2007
 
-	//	launcher1_VendorId = [[[NSString alloc] init] retain];
-
-		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-		launcher1_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher1_VendorId"]];
-		launcher1_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher1_ProductId"]];
-
-		launcher2_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher2_VendorId"]];
-		launcher2_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher2_ProductId"]];
-
-		launcher3_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher3_VendorId"]];
-		launcher3_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher3_ProductId"]];
+        [self loadLauncherPreferenceValues];
 
 		
-	//	SInt32					usbRocketVendor    = kUSBRocketVendorID;
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbRocketProduct);
-
-		int launcher1_VendorId_num = [launcher1_VendorId intValue];
-	//	NSLog(@"USBMissileControl: launcher1_VendorID_num = %i", launcher1_VendorId_num);
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_VendorId_num);
-
-		int launcher1_ProductId_num = [launcher1_ProductId intValue];
-	//	NSLog(@"USBMissileControl: launcher1_ProductID_num = %i", launcher1_ProductId_num);
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_ProductId_num);
-
-	//	NSLog(@"USBMissileControl: launcher1_type = %@", launcher1_type);
-			  
-		int launcher2_VendorId_num = [launcher2_VendorId intValue];
-	//	NSLog(@"USBMissileControl: launcher2_VendorID_num = %i", launcher2_VendorId_num);
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_VendorId_num);
-
-		int launcher2_ProductId_num = [launcher2_ProductId intValue];
-	//	NSLog(@"USBMissileControl: launcher2_ProductID_num = %i", launcher2_ProductId_num);
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_ProductId_num);
-
-	//	NSLog(@"USBMissileControl: launcher2_type = %@", launcher2_type);
-
-		int launcher3_VendorId_num = [launcher3_VendorId intValue];
-	//	NSLog(@"USBMissileControl: launcher3_VendorID_num = %i", launcher3_VendorId_num);
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_VendorId_num);
-
-		int launcher3_ProductId_num = [launcher3_ProductId intValue];
-	//	NSLog(@"USBMissileControl: launcher3_ProductID_num = %i", launcher3_ProductId_num);
-	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_ProductId_num);
-
-	//	NSLog(@"USBMissileControl: launcher3_type = %@", launcher3_type);
+//	//	SInt32					usbRocketVendor    = kUSBRocketVendorID;
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbRocketProduct);
+//
+//		int launcher1_VendorId_num = [launcher1_VendorId intValue];
+//	//	NSLog(@"USBMissileControl: launcher1_VendorID_num = %i", launcher1_VendorId_num);
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_VendorId_num);
+//
+//		int launcher1_ProductId_num = [launcher1_ProductId intValue];
+//	//	NSLog(@"USBMissileControl: launcher1_ProductID_num = %i", launcher1_ProductId_num);
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_ProductId_num);
+//
+//	//	NSLog(@"USBMissileControl: launcher1_type = %@", launcher1_type);
+//			  
+//		int launcher2_VendorId_num = [launcher2_VendorId intValue];
+//	//	NSLog(@"USBMissileControl: launcher2_VendorID_num = %i", launcher2_VendorId_num);
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_VendorId_num);
+//
+//		int launcher2_ProductId_num = [launcher2_ProductId intValue];
+//	//	NSLog(@"USBMissileControl: launcher2_ProductID_num = %i", launcher2_ProductId_num);
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_ProductId_num);
+//
+//	//	NSLog(@"USBMissileControl: launcher2_type = %@", launcher2_type);
+//
+//		int launcher3_VendorId_num = [launcher3_VendorId intValue];
+//	//	NSLog(@"USBMissileControl: launcher3_VendorID_num = %i", launcher3_VendorId_num);
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_VendorId_num);
+//
+//		int launcher3_ProductId_num = [launcher3_ProductId intValue];
+//	//	NSLog(@"USBMissileControl: launcher3_ProductID_num = %i", launcher3_ProductId_num);
+//	//	numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_ProductId_num);
+//
+//	//	NSLog(@"USBMissileControl: launcher3_type = %@", launcher3_type);
 
 		
-//		launcherCount = 0;
 		launcherDevice = [[NSMutableArray alloc] init];
 	//	missileLauncherConnected = [self FindMissileLauncher];
 		
@@ -209,178 +214,221 @@ static char							gBuffer[8];
 		// bInterfaceNumber and bConfigurationValue.
 		//    
 		
-		matchingDictionary1 = IOServiceMatching(kIOUSBDeviceClassName);  // Interested in instances of class
-																		// IOUSBDevice and its subclasses
-																		// requires <IOKit/usb/IOUSBLib.h>
-		
-		// look up toll free bridge in apple documentation... 
-		// discusses Core Foundation vs. Cocoa types that are interchangeable.
-		
-		if (matchingDictionary1)
-		{
-			//
-			// Rocket Launcher
-			//
-			
-			// Create a CFNumber for the idVendor and set the value in the dictionary
-	//		numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbRocketVendor);
-			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_VendorId_num);
-			if (!numberRef) {
-				NSLog(@"USBMissileControl: could not create CFNumberRef for vendor");
-			}
-			CFDictionarySetValue(matchingDictionary1, CFSTR(kUSBVendorID), numberRef);
-			CFRelease(numberRef);
-			
-			// Create a CFNumber for the idProduct and set the value in the dictionary
-	//		numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbRocketProduct);
-			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_ProductId_num);
-			CFDictionarySetValue(matchingDictionary1, CFSTR(kUSBProductID), numberRef);
-			CFRelease(numberRef);
-			//numberRef = 0;
-			
-			// Create a notification port and add its run loop event source to our run loop
-			// This is how async notifications get set up.
-			// Now set up a notification to be called when a device is first matched by I/O Kit.
-	//		kr = IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
-	//											  kIOFirstMatchNotification,  // notificationType
-	//											  matchingDictionary1,        // matching
-	//											  DeviceAdded,				  // callback
-	//											  NULL,						  // refCon
-	//											  &gAddedRocketIter			  // notification
-	//											  );    
-			IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
-												  kIOFirstMatchNotification,  // notificationType
-												  matchingDictionary1,        // matching
-												  DeviceAdded,				  // callback
-												  NULL,						  // refCon
-												  &gAddedRocketIter			  // notification
-												  );    
-			
-			// Iterate once to get already-present devices and arm the notification    
-			DeviceAdded(NULL, gAddedRocketIter);  
-			
-			
-			matchingDictionary2 = IOServiceMatching(kIOUSBDeviceClassName);  // Interested in instances of class
-																			// IOUSBDevice and its subclasses
-																			// requires <IOKit/usb/IOUSBLib.h>
-
-		if (matchingDictionary2)
-			{
-				//
-				// Missile Launcher
-				//
-				
-				// Create a CFNumber for the idVendor and set the value in the dictionary
-	//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileVendor);
-				numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_VendorId_num);
-				if (!numberRef) {
-					NSLog(@"USBMissileControl: could not create CFNumberRef for vendor");
-				}
-				CFDictionarySetValue(matchingDictionary2, CFSTR(kUSBVendorID), numberRef);
-				CFRelease(numberRef);
-				
-				// Create a CFNumber for the idProduct and set the value in the dictionary
-	//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileProduct);
-				numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_ProductId_num);
-				CFDictionarySetValue(matchingDictionary2, CFSTR(kUSBProductID), numberRef);
-				CFRelease(numberRef);
-				//numberRef = 0;
-				
-				// Create a notification port and add its run loop event source to our run loop
-				// This is how async notifications get set up.
-				// Now set up a notification to be called when a device is first matched by I/O Kit.
-	//			kr = IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
-	//												  kIOFirstMatchNotification,  // notificationType
-	//												  matchingDictionary2,        // matching
-	//												  DeviceAdded,				  // callback
-	//												  NULL,						  // refCon
-	//												  &gAddedMissileIter		  // notification
-	//												  );    
-				IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
-													  kIOFirstMatchNotification,  // notificationType
-													  matchingDictionary2,        // matching
-													  DeviceAdded,				  // callback
-													  NULL,						  // refCon
-													  &gAddedMissileIter		  // notification
-													  );    
-				
-				// Iterate once to get already-present devices and arm the notification    
-				DeviceAdded(NULL, gAddedMissileIter);  
-				
-				
-				matchingDictionary3 = IOServiceMatching(kIOUSBDeviceClassName);  // Interested in instances of class
-																				 // IOUSBDevice and its subclasses
-																				 // requires <IOKit/usb/IOUSBLib.h>
-				
-				if (matchingDictionary3)
-				{
-					//
-					// Missile Launcher
-					//
-					
-					// Create a CFNumber for the idVendor and set the value in the dictionary
-					//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileVendor);
-					numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_VendorId_num);
-					if (!numberRef) {
-						NSLog(@"USBMissileControl: could not create CFNumberRef for vendor");
-					}
-					CFDictionarySetValue(matchingDictionary3, CFSTR(kUSBVendorID), numberRef);
-					CFRelease(numberRef);
-					
-					// Create a CFNumber for the idProduct and set the value in the dictionary
-					//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileProduct);
-					numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_ProductId_num);
-					CFDictionarySetValue(matchingDictionary3, CFSTR(kUSBProductID), numberRef);
-					CFRelease(numberRef);
-					//numberRef = 0;
-					
-					// Create a notification port and add its run loop event source to our run loop
-					// This is how async notifications get set up.
-					// Now set up a notification to be called when a device is first matched by I/O Kit.
-	//				kr = IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
-	//													  kIOFirstMatchNotification,  // notificationType
-	//													  matchingDictionary3,        // matching
-	//													  DeviceAdded,				  // callback
-	//													  NULL,						  // refCon
-	//													  &gAddedMissileIter		  // notification
-	//													  );    
-					IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
-														  kIOFirstMatchNotification,  // notificationType
-														  matchingDictionary3,        // matching
-														  DeviceAdded,				  // callback
-														  NULL,						  // refCon
-														  &gAddedMissileIter		  // notification
-														  );    
-					
-					// Iterate once to get already-present devices and arm the notification    
-					DeviceAdded(NULL, gAddedMissileIter);  
-
-				}		
-				else
-				{
-					NSLog(@"USBMissileControl: could not create matching dictionary3");
-				}
-				
-			}		
-			else
-			{
-				NSLog(@"USBMissileControl: could not create matching dictionary2");
-			}
-		} 
-		else
-		{
-			NSLog(@"USBMissileControl: could not create matching dictionary1");
-		}
-		
+//		matchingDictionary1 = IOServiceMatching(kIOUSBDeviceClassName);  // Interested in instances of class
+//																		// IOUSBDevice and its subclasses
+//																		// requires <IOKit/usb/IOUSBLib.h>
+//		
+//		// look up toll free bridge in apple documentation... 
+//		// discusses Core Foundation vs. Cocoa types that are interchangeable.
+//		
+//		if (matchingDictionary1)
+//		{
+//			//
+//			// Rocket Launcher
+//			//
+//			
+//			// Create a CFNumber for the idVendor and set the value in the dictionary
+//	//		numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbRocketVendor);
+//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_VendorId_num);
+//			if (!numberRef) {
+//				NSLog(@"USBMissileControl: could not create CFNumberRef for vendor");
+//			}
+//			CFDictionarySetValue(matchingDictionary1, CFSTR(kUSBVendorID), numberRef);
+//			CFRelease(numberRef);
+//			
+//			// Create a CFNumber for the idProduct and set the value in the dictionary
+//	//		numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbRocketProduct);
+//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher1_ProductId_num);
+//			CFDictionarySetValue(matchingDictionary1, CFSTR(kUSBProductID), numberRef);
+//			CFRelease(numberRef);
+//			//numberRef = 0;
+//			
+//			// Create a notification port and add its run loop event source to our run loop
+//			// This is how async notifications get set up.
+//			// Now set up a notification to be called when a device is first matched by I/O Kit.
+//	//		kr = IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
+//	//											  kIOFirstMatchNotification,  // notificationType
+//	//											  matchingDictionary1,        // matching
+//	//											  DeviceAdded,				  // callback
+//	//											  NULL,						  // refCon
+//	//											  &gAddedRocketIter			  // notification
+//	//											  );    
+//			IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
+//												  kIOFirstMatchNotification,  // notificationType
+//												  matchingDictionary1,        // matching
+//												  DeviceAdded,				  // callback
+//												  NULL,						  // refCon
+//												  &gAddedRocketIter			  // notification
+//												  );    
+//			
+//			// Iterate once to get already-present devices and arm the notification    
+//			DeviceAdded(NULL, gAddedRocketIter);  
+//			
+//			
+//			matchingDictionary2 = IOServiceMatching(kIOUSBDeviceClassName);  // Interested in instances of class
+//																			// IOUSBDevice and its subclasses
+//																			// requires <IOKit/usb/IOUSBLib.h>
+//
+//		if (matchingDictionary2)
+//			{
+//				//
+//				// Missile Launcher
+//				//
+//				
+//				// Create a CFNumber for the idVendor and set the value in the dictionary
+//	//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileVendor);
+//				numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_VendorId_num);
+//				if (!numberRef) {
+//					NSLog(@"USBMissileControl: could not create CFNumberRef for vendor");
+//				}
+//				CFDictionarySetValue(matchingDictionary2, CFSTR(kUSBVendorID), numberRef);
+//				CFRelease(numberRef);
+//				
+//				// Create a CFNumber for the idProduct and set the value in the dictionary
+//	//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileProduct);
+//				numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher2_ProductId_num);
+//				CFDictionarySetValue(matchingDictionary2, CFSTR(kUSBProductID), numberRef);
+//				CFRelease(numberRef);
+//				//numberRef = 0;
+//				
+//				// Create a notification port and add its run loop event source to our run loop
+//				// This is how async notifications get set up.
+//				// Now set up a notification to be called when a device is first matched by I/O Kit.
+//	//			kr = IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
+//	//												  kIOFirstMatchNotification,  // notificationType
+//	//												  matchingDictionary2,        // matching
+//	//												  DeviceAdded,				  // callback
+//	//												  NULL,						  // refCon
+//	//												  &gAddedMissileIter		  // notification
+//	//												  );    
+//				IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
+//													  kIOFirstMatchNotification,  // notificationType
+//													  matchingDictionary2,        // matching
+//													  DeviceAdded,				  // callback
+//													  NULL,						  // refCon
+//													  &gAddedMissileIter		  // notification
+//													  );    
+//				
+//				// Iterate once to get already-present devices and arm the notification    
+//				DeviceAdded(NULL, gAddedMissileIter);  
+//				
+//				
+//				matchingDictionary3 = IOServiceMatching(kIOUSBDeviceClassName);  // Interested in instances of class
+//																				 // IOUSBDevice and its subclasses
+//																				 // requires <IOKit/usb/IOUSBLib.h>
+//				
+//				if (matchingDictionary3)
+//				{
+//					//
+//					// Missile Launcher
+//					//
+//					
+//					// Create a CFNumber for the idVendor and set the value in the dictionary
+//					//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileVendor);
+//					numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_VendorId_num);
+//					if (!numberRef) {
+//						NSLog(@"USBMissileControl: could not create CFNumberRef for vendor");
+//					}
+//					CFDictionarySetValue(matchingDictionary3, CFSTR(kUSBVendorID), numberRef);
+//					CFRelease(numberRef);
+//					
+//					// Create a CFNumber for the idProduct and set the value in the dictionary
+//					//			numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &usbMissileProduct);
+//					numberRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &launcher3_ProductId_num);
+//					CFDictionarySetValue(matchingDictionary3, CFSTR(kUSBProductID), numberRef);
+//					CFRelease(numberRef);
+//					//numberRef = 0;
+//					
+//					// Create a notification port and add its run loop event source to our run loop
+//					// This is how async notifications get set up.
+//					// Now set up a notification to be called when a device is first matched by I/O Kit.
+//	//				kr = IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
+//	//													  kIOFirstMatchNotification,  // notificationType
+//	//													  matchingDictionary3,        // matching
+//	//													  DeviceAdded,				  // callback
+//	//													  NULL,						  // refCon
+//	//													  &gAddedMissileIter		  // notification
+//	//													  );    
+//					IOServiceAddMatchingNotification(gNotifyPort,				  // notifyPort
+//														  kIOFirstMatchNotification,  // notificationType
+//														  matchingDictionary3,        // matching
+//														  DeviceAdded,				  // callback
+//														  NULL,						  // refCon
+//														  &gAddedMissileIter		  // notification
+//														  );    
+//					
+//					// Iterate once to get already-present devices and arm the notification    
+//					DeviceAdded(NULL, gAddedMissileIter);  
+//
+//				}		
+//				else
+//				{
+//					NSLog(@"USBMissileControl: could not create matching dictionary3");
+//				}
+//				
+//			}		
+//			else
+//			{
+//				NSLog(@"USBMissileControl: could not create matching dictionary2");
+//			}
+//		} 
+//		else
+//		{
+//			NSLog(@"USBMissileControl: could not create matching dictionary1");
+//		}
+//		
 		
 		// Now done with the master_port
 		mach_port_deallocate(mach_task_self(), masterPort);
 		masterPort = 0;
         
+#pragma mark - HID Device detection
+
+//        Original Launcher (Grey)
+//        USB Vendor ID		0x1130	4400
+//        USB Product ID		0x0202	514
+//        
+//        StrikerII (Grey) includes laser
+//        USB Vendor ID		0x1130	4400
+//        USB Product ID		0x0202	514
+//        
+//        c-enter or PE-5858 or Satzuma Missile launcher (actually Winbond Electronics Corp. - also known as PE-5858)
+//        USB Vendor ID		0x416	1046
+//        USB Product ID		0x9391	37777
+//        
+//        [c-enter IS confirmed to work - development and testing by Markus Schüßler]
+//        [Satzuma is NOT confirmed to work - best web reference is http://www.linux-club.de/viewtopic.php?f=61&t=102729&start=0 - need actual launcher command set breakdown]
+//         
+//         DreamCheeky (Green and Black) - Assumption is that the Circus cannon works as well
+//         USB Vendor ID		0x1941	6465
+//         USB Product ID		0x8021	32801
+//         
+//         DreamCheeky (Green and Black) - known internally as RocketBaby (referred to by USB Missile Launcher NZ as DreamRocketII)
+//         USB Vendor ID		0xa81	2689
+//         USB Product ID		0x701	1793
+//         
+//         DreamCheeky IR (referred to by USB Missile Launcher NZ as DreamRocketII)
+//         USB Vendor ID		0x0a81	2689
+//         USB Product ID		0xff01	65281
+//         
+//         Chic Technology (first seen in France June 2009)
+//         USB Vendor ID		0x05FE	1534
+//         USB Product ID		0x1958	6488
+//         
+//         DreamCheeky OIC Storm (Grey with 4 x Missiles - includes built in camera)
+//         USB Vendor ID		0x2123	8483
+//         USB Product ID		0x1010	4112
+
         //Find HID devices
         IOHIDManagerRef _hidManager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDManagerOptionNone);
         NSArray* matchingDict = @[
-                                  @{@(kIOHIDVendorIDKey): @(0x2123), @(kIOHIDProductIDKey): @(0x1010)}//Dream Cheeky Storm O.I.C.
+                                  @{@(kIOHIDVendorIDKey): @(0x2123), @(kIOHIDProductIDKey): @(0x1010)},         //Dream Cheeky Storm O.I.C.
+                                  @{@(kIOHIDVendorIDKey): @(0x1130), @(kIOHIDProductIDKey): @(0x0202)},          //Original Launcher
+                                  @{@(kIOHIDVendorIDKey): @(0x1130), @(kIOHIDProductIDKey): @(0x0202)},          //Striker II
+                                  @{@(kIOHIDVendorIDKey): @(0x416), @(kIOHIDProductIDKey): @(0x9391)},          //c-enter
+                                  @{@(kIOHIDVendorIDKey): @(0x1941), @(kIOHIDProductIDKey): @(0x8021)},          //DreamRocket
+                                  @{@(kIOHIDVendorIDKey): @(0xa81), @(kIOHIDProductIDKey): @(0x701)},          //DreamRocket II
+                                  @{@(kIOHIDVendorIDKey): @(0xa81), @(kIOHIDProductIDKey): @(0xff01)},          //DreamRocket II
                                   ];
         IOHIDManagerSetDeviceMatchingMultiple(_hidManager, (__bridge CFArrayRef)matchingDict);
         IOHIDManagerRegisterDeviceMatchingCallback(_hidManager, HIDDeviceAdded, (__bridge void*)self);
@@ -392,23 +440,220 @@ static char							gBuffer[8];
 	return self;
 }
 
-static void HIDDeviceAdded(void* context, IOReturn result, void* sender, IOHIDDeviceRef device) {
+// usbVendorID: 6465(0x6465) usbProductID: 32801(0x32801) : DreamRocket
+
+- (void)loadLauncherPreferenceValues
+{
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+
+    launcher1_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher1_VendorId"]];
+    launcher1_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher1_ProductId"]];
+    launcher1_type = [NSString stringWithString:[prefs stringForKey:@"launcher1_type"]];
+    
+    launcher2_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher2_VendorId"]];
+    launcher2_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher2_ProductId"]];
+    launcher2_type = [NSString stringWithString:[prefs stringForKey:@"launcher2_type"]];
+    
+    launcher3_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher3_VendorId"]];
+    launcher3_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher3_ProductId"]];
+    launcher3_type = [NSString stringWithString:[prefs stringForKey:@"launcher3_type"]];
+
+}
+
+static void HIDDeviceAdded(void* context, IOReturn result, void* sender, IOHIDDeviceRef device)
+{
     NSLog(@"HIDDeviceAdded");
     IOHIDDeviceOpen(device, kIOHIDOptionsTypeSeizeDevice);
-    USBLauncher* privateDataRef = [[USBLauncher alloc] init];
-    [privateDataRef setHidDevice:device];
     
-    //[privateDataRef setusbVendorID:usbVendorID];
-    //[privateDataRef setusbProductID:usbProductID];
-    [privateDataRef setLauncherType:@"HID"];
+//    Based On the IOHIDDeviceRef i Fetch device details such as(Device ProductIDKey, Device VendorIDKey,Device ProductKey,Device Serial NumberKey,Device VersionNumberKey ect.)
+//    IOHIDDeviceOpen(),ie :Using IOHIDDeviceRef i opened Device;
+
+    long usbVendorID  = IOHIDDevice_GetVendorID(device);
+    long usbProductID = IOHIDDevice_GetProductID(device);
+
+    NSLog(@"HIDDeviceAdded vendorID = 0x%04lx   productID = 0x%04lx", usbVendorID, usbProductID);
+    //----- would like to get rid of this - rather - refer to variables outside of this routine
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    
+    NSString * launcher1_VendorId;
+    NSString * launcher1_ProductId;
+    NSString * launcher1_type;
+    NSString * launcher2_VendorId;
+    NSString * launcher2_ProductId;
+    NSString * launcher2_type;
+    NSString * launcher3_VendorId;
+    NSString * launcher3_ProductId;
+    NSString * launcher3_type;
+    
+    launcher1_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher1_VendorId"]];
+    launcher1_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher1_ProductId"]];
+    launcher1_type = [NSString stringWithString:[prefs stringForKey:@"launcher1_type"]];
+    
+    launcher2_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher2_VendorId"]];
+    launcher2_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher2_ProductId"]];
+    launcher2_type = [NSString stringWithString:[prefs stringForKey:@"launcher2_type"]];
+    
+    launcher3_VendorId = [NSString stringWithString:[prefs stringForKey:@"launcher3_VendorId"]];
+    launcher3_ProductId = [NSString stringWithString:[prefs stringForKey:@"launcher3_ProductId"]];
+    launcher3_type = [NSString stringWithString:[prefs stringForKey:@"launcher3_type"]];
+    //----- would like to get rid of this - rather - refer to variables outside of this routine
+
+    NSString * launcherType = @"";
+
+    if (usbVendorID == 0x1130  && usbProductID == 0x0202)
+    {
+        launcherType = @"OrigLauncher";
+    }
+    if (usbVendorID == 0x1130  && usbProductID == 0x0202)
+    {
+        launcherType = @"StrikerII";
+    }
+    if (usbVendorID == 0x416  && usbProductID == 0x9391)
+    {
+        launcherType = @"CEnter";
+    }
+    if (usbVendorID == 0x1941  && usbProductID == 0x8021)       // v1 - not a HID device - does not work  // v2 - is a HID device - confirmed working
+    {
+        launcherType = @"DreamRocket";
+    }
+    if (usbVendorID == 0xa81  && usbProductID == 0x701)         // HID device - confirmed working
+    {
+        launcherType = @"DreamRocketII";
+    }
+    if (usbVendorID == 0xa81  && usbProductID == 0xff01)
+    {
+        launcherType = @"DreamRocketII";
+    }
+    if (usbVendorID == 0x2123  && usbProductID == 0x1010)       // HID device - confirmed working & has built in camera
+    {
+        launcherType = @"OICStorm";
+    }
+    
+    //        Original Launcher (Grey)
+    //        USB Vendor ID		0x1130	4400
+    //        USB Product ID		0x0202	514
+    //
+    //        StrikerII (Grey) includes laser
+    //        USB Vendor ID		0x1130	4400
+    //        USB Product ID		0x0202	514
+    //
+    //        c-enter or PE-5858 or Satzuma Missile launcher (actually Winbond Electronics Corp. - also known as PE-5858)
+    //        USB Vendor ID		0x416	1046
+    //        USB Product ID		0x9391	37777
+    //
+    //        [c-enter IS confirmed to work - development and testing by Markus Schüßler]
+    //        [Satzuma is NOT confirmed to work - best web reference is http://www.linux-club.de/viewtopic.php?f=61&t=102729&start=0 - need actual launcher command set breakdown]
+    //
+    //         DreamCheeky (Green and Black) - Assumption is that the Circus cannon works as well
+    //         USB Vendor ID		0x1941	6465
+    //         USB Product ID		0x8021	32801
+    //
+    //         DreamCheeky (Green and Black) - known internally as RocketBaby (referred to by USB Missile Launcher NZ as DreamRocketII)
+    //         USB Vendor ID		0xa81	2689
+    //         USB Product ID		0x701	1793
+    //
+    //         DreamCheeky IR (referred to by USB Missile Launcher NZ as DreamRocketII)
+    //         USB Vendor ID		0x0a81	2689
+    //         USB Product ID		0xff01	65281
+    //
+    //         Chic Technology (first seen in France June 2009)
+    //         USB Vendor ID		0x05FE	1534
+    //         USB Product ID		0x1958	6488
+    //
+    //         DreamCheeky OIC Storm (Grey with 4 x Missiles - includes built in camera)
+    //         USB Vendor ID		0x2123	8483
+    //         USB Product ID		0x1010	4112
+
+    NSLog(@"HIDDeviceAdded Check1 - launcherType = %@", launcherType);
+    
+    if ([launcherType isEqualToString:@""])
+    {
+        if (usbVendorID == [launcher1_VendorId intValue]  && usbProductID == [launcher1_ProductId intValue])
+        {
+            launcherType = [NSString stringWithString:launcher1_type];
+        } else
+            if (usbVendorID == [launcher2_VendorId intValue] && usbProductID == [launcher2_ProductId intValue])
+            {
+                launcherType = [NSString stringWithString:launcher2_type];
+            } else
+                if (usbVendorID == [launcher3_VendorId intValue] && usbProductID == [launcher3_ProductId intValue])
+                {
+                    launcherType = [NSString stringWithString:launcher3_type];
+                }
+        NSLog(@"HIDDeviceAdded Check2 - launcherType = %@", launcherType);
+    }
+
+
+    USBLauncher * privateDataRef;
+
+    if ([launcherType isEqualToString:@"DreamRocket"])
+    {
+        privateDataRef = [[USBLauncher_DreamRocket alloc] init];
+        [privateDataRef setLauncherName:@"Dream Cheeky DreamRocket"];
+    }
+
+    if ([launcherType isEqualToString:@"DreamRocketII"])
+    {
+        privateDataRef = [[USBLauncher_DreamRocketII alloc] init];
+        [privateDataRef setLauncherName:@"Dream Cheeky DreamRocket II"];
+    }
+
+//    USBLauncher_DreamCheeky_OIC_Storm * privateDataRef = [[USBLauncher_DreamCheeky_OIC_Storm alloc] init];
+//    DreamCheeky OIC Storm (Grey with 4 x Missiles - includes built in camera)
+//    USB Vendor ID		0x2123	8483
+//    USB Product ID		0x1010	4112
+    
+    if ([launcherType isEqualToString:@"OICStorm"])
+    {
+        privateDataRef = [[USBLauncher_DreamCheeky_OIC_Storm alloc] init];
+        [privateDataRef setLauncherName:@"Dream Cheeky OIC Storm"];
+    }
+
+    if ([launcherType isEqualToString:@"OrigLauncher"])
+    {
+        privateDataRef = [[USBLauncher_OrigLauncher alloc] init];
+        [privateDataRef setLauncherName:@"Original Launcher"];
+    }
+
+    if ([launcherType isEqualToString:@"Satzuma"])
+    {
+        privateDataRef = [[USBLauncher_Satzuma alloc] init];
+        [privateDataRef setLauncherName:@"Satzuma"];
+    }
+
+    if ([launcherType isEqualToString:@"StrikerII"])
+    {
+        privateDataRef = [[USBLauncher_StrikerII alloc] init];
+        [privateDataRef setLauncherName:@"Striker II"];
+    }
+
+    if ([launcherType isEqualToString:@"CEnter"])
+    {
+        privateDataRef = [[USBLauncher_StrikerII alloc] init];
+        [privateDataRef setLauncherName:@"C Enter"];
+    }
+
+    [privateDataRef setHidDevice:device];
+    [privateDataRef setusbVendorID:(SInt32)usbVendorID];
+    [privateDataRef setusbProductID:(SInt32)usbProductID];
+    [privateDataRef setLauncherHIDDeviceBOOL:TRUE];
+    [privateDataRef setLauncherType:launcherType];
     
     [launcherDevice addObject:privateDataRef];
     IOHIDDeviceRegisterRemovalCallback(device, HIDDeviceRemoved, (void*)privateDataRef);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"usbConnect" object: [NSString stringWithFormat:@"%@", [privateDataRef getLauncherName]]];
 }
 
-void HIDDeviceRemoved(void* context, IOReturn result, void* sender) {
+void HIDDeviceRemoved(void* context, IOReturn result, void* sender)
+{
+    NSLog(@"HIDDeviceRemoved");
+
     [launcherDevice removeObject:(__bridge USBLauncher*)context];
+    [[NSNotificationCenter defaultCenter] postNotificationName: @"usbDisConnect" object: nil];
 }
+
+#pragma mark - non HID Device
 
 //================================================================================================
 //
@@ -476,6 +721,9 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 		
 		// Need to figure out what type of launcher it is - based on our preferences set
 		// Probably not the best way to do this, but it is quick at the moment to seee if it's going to work
+        
+//        [self loadLauncherPreferenceValues];  // nice idea, but cannot call self ????????
+        
 		NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
 		
 		NSString * launcher1_VendorId;
@@ -507,6 +755,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 		int launcher3_VendorId_num = [launcher3_VendorId intValue];
 		int launcher3_ProductId_num = [launcher3_ProductId intValue];
 
+#pragma mark - setLauncherType
 		if (usbVendorID == launcher1_VendorId_num && usbProductID == launcher1_ProductId_num)
 		{
 			[privateDataRef setLauncherType:launcher1_type];
@@ -716,6 +965,7 @@ void DeviceAdded(void *refCon, io_iterator_t iterator)
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"setDreamCheekyIcon" object:nil userInfo:nil];
 			}
 			if ([launcherDevice count] == 0 && [[privateDataRef getLauncherType] isEqualToString:@"OICStorm"])
+                // [[privateDataRef getLauncherName] isEqualToString:@"Dream Cheeky OIC Storm"]
 			{
 				[[NSNotificationCenter defaultCenter] postNotificationName: @"setDreamCheekyIOCIcon" object:nil userInfo:nil];
 			}
@@ -1258,25 +1508,7 @@ void DeviceNotification( void *refCon,
 	return NO;
 }
 
-#pragma mark - HID CONTROL of launcher - Dream Cheeky OIC Storm
-
-- (void)missileControlHID:(USBLauncher*)privateDataRef withBits:(UInt8)controlBits {
-    uint8_t report[8] = {0x02, 0, 0, 0, 0, 0, 0, 0};
-    
-    IOHIDDeviceRef device = [privateDataRef hidDevice];
-    NSLog(@"%02X", controlBits);
-    if (controlBits & 0x01) //Left
-        report[1] |= 0x04;
-    if (controlBits & 0x02) //Right
-        report[1] |= 0x08;
-    if (controlBits & 0x04) //Up
-        report[1] |= 0x02;
-    if (controlBits & 0x08) //Down
-        report[1] |= 0x01;
-    if (controlBits & 0x10) //Fire
-        report[1] |= 0x10;
-    IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, report, sizeof(report));
-}
+#pragma mark - CONTROL of launcher - Kext Required
 
 - (id)MissileControl:(UInt8)controlBits;
 {
@@ -1307,12 +1539,54 @@ void DeviceNotification( void *refCon,
 	}
 	
 	for (launcherDeviceNum = 0; launcherDeviceNum < numItems; launcherDeviceNum++)
-	{
-		//privateDataRef = [[USBLauncher alloc] init];
+    {
 		privateDataRef = [launcherDevice objectAtIndex: launcherDeviceNum];
-        if ([[privateDataRef getLauncherType] isEqualToString:@"HID"]) {
-            [self missileControlHID:privateDataRef withBits:controlBits];
-            continue;
+        
+#pragma mark - HID Launcher code
+        
+        if ([privateDataRef isLauncherHIDDevice]) {
+            
+//            NSLog(@"LauncherType = %@", [privateDataRef getLauncherType]);
+            
+            if ([[privateDataRef getLauncherType] isEqualToString:@"OICStorm"])
+            {
+                [(USBLauncher_DreamCheeky_OIC_Storm *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            if ([[privateDataRef getLauncherType] isEqualToString:@"DreamRocketII"])
+            {
+                [(USBLauncher_DreamRocketII *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            if ([[privateDataRef getLauncherType] isEqualToString:@"DreamRocket"])
+            {
+                [(USBLauncher_DreamRocket *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            if ([[privateDataRef getLauncherType] isEqualToString:@"OrigLauncher"])
+            {
+                [(USBLauncher_OrigLauncher *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            if ([[privateDataRef getLauncherType] isEqualToString:@"Satzuma"])
+            {
+                [(USBLauncher_Satzuma *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            if ([[privateDataRef getLauncherType] isEqualToString:@"StrikerII"])
+            {
+                [(USBLauncher_StrikerII *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            if ([[privateDataRef getLauncherType] isEqualToString:@"CEnter"])
+            {
+                [(USBLauncher_C_Enter *)privateDataRef missileControlWithBits:controlBits];
+                continue;
+            }
+            
+            
+            
+            
         }
 		missileDevice = [privateDataRef deviceInterface];
 		missileInterface = [privateDataRef missileInterface];
@@ -1333,1817 +1607,1135 @@ void DeviceNotification( void *refCon,
 //		if ([privateDataRef getusbVendorID] == kUSBMissileVendorID &&
 //			[privateDataRef getusbProductID] == kUSBMissileProductID)
 
-#pragma mark - c-enter
-		
-		if ([[privateDataRef getLauncherType] isEqualToString:@"c-enter"])
-		{
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self MissileLauncher_Park];
-				return self;
-			}
-			
-			/*
-			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request START
-			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
-			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
-			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
-			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
-			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
-			 2007-06-21 21:33:12.297 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
-			 
-			 --> here's the reason the laser goes off, this is being called twice...
-			 
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
-			 2007-06-21 21:33:12.299 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
-			 2007-06-21 21:33:12.300 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request FINISH
-			 */
-			
-			
-			// ===========================================================================
-			// Control of USB Missile Launcher - c-enter
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-			
-			/*
-			 USB Information (hexadecimal values): 
-			 Vendor Name: WinBond
-			 "idVendor" = 0x416
-			 "idProduct" = 0x9391
-
-			 Vendor ID: 1046
-			 Product ID: 37777 
-			 
-			 Ignore this little table for now, I'm just trying to reverse engineer
-			 what the launcher developers have done. not much help for up/left try activities
-			 like the other launchers support.
-			 |  16  | 8 | 4 | 2 | 1 |
-			 |------|---|---|---|---|
-			 |   0  | 1 | 0 | 1 | 0 |   10 - fire
-			 |   0  | 1 | 0 | 1 | 1 |   11 - laser
-			 |   0  | 1 | 1 | 0 | 0 |   12 - left
-			 |   0  | 1 | 1 | 0 | 1 |   13 - right
-			 |   0  | 1 | 1 | 1 | 0 |   14 - up
-			 |   0  | 1 | 1 | 1 | 1 |   15 - down
-			 |   1  | 0 | 1 | 0 | 0 |   20 - release
-			 
-			 Toy Command Bytes (hexadecimal values): 
-			 Fire Missile  = 0x0a	10
-			 Laser Toggle  = 0x0b	11
-			 Move Left = 0x0c		12
-			 Move Right = 0x0d		13
-			 Move Up = 0x0e			14
-			 Move Down  = 0x0f		15
-			 Release = 0x14			20
-			 
-			 
-			 This documentation from the supplier would appear to be WRONG!
-			 Actually bytes 0 and 1 need to be filled followed by zeros in the remaining bytes up to 8.
-			 This information was discovered by using SnoopyPro on a PC.
-			 
-			 Sending Toy Commands with Control Transfer (PC to Toy): 
-			 Byte 0: 0 
-			 Byte 1: toyCommandByte 
-			 Byte 2: toyCommandByte 
-			 
-			 Example Toy Command with Control Transfer: Move Left 
-			 Byte 0: 0 
-			 Byte 1: 0x0c 
-			 Byte 2: 0x0c  Send...  
-			 
-			 Byte 0: 0 
-			 Byte 1: 0x14 
-			 Byte 2: 0x14  Send...
-			 */
-			reqBuffer[0] = 0x5f;
-			reqBuffer[1] = 0x60;
-			if (controlBits & 1)
-				reqBuffer[1] = 0x68;//left
-			
-			if (controlBits & 2)
-				reqBuffer[1] = 0x64;//right
-			
-			if (controlBits & 4)
-				reqBuffer[1] = 0xa2;//up
-			
-			if (controlBits & 8)
-				reqBuffer[1] = 0xe1;//down
-			
-			if (controlBits & 16)
-				reqBuffer[1] = 0x70;//fire
-			
-			//			if (controlBits & 64)
-			//				reqBuffer[1] = 0x0b;//Laser Toggle
-			
-			//			if (reqBuffer[1] == 0)
-			//			{
-			//				reqBuffer[1] = 0x14;   // this is a guess. If I come back into this routine with a 0 controlBit
-			//				//reqBuffer[1] = 0x14;   // then perhaps I should send a "stop" or in this case a "release" to the launcher?
-			//			} else
-			//			{
-			//				reqBuffer[1] = reqBuffer[0];
-			//			}
-			reqBuffer[2] = 0xe0;
-			reqBuffer[3] = 0xff;
-			reqBuffer[4] = 0xfe;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = kUSBRqSetConfig; 
-			devRequest.wValue = kUSBConfDesc; 
-			devRequest.wIndex = 0; 
-			devRequest.wLength = 5; 
-			devRequest.pData = reqBuffer; 
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: c-enter reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
-			}
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-			}
-			
-			//			if (controlBits & 64)  //Laser Toggle
-			//			if ((controlBits & 16) || (controlBits & 64))
-            if (controlBits & 16)
-            {
-                // After firing one missile, wait some seconds and send clear command.
-                // Otherwise the launcher will keep on firing.
-                int delayCounter;
-				for (delayCounter = 0; delayCounter < 47; delayCounter ++)  // 4.7 seconds
-				{
-					[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
-				}
-                reqBuffer[0] = 0x5f;
-                reqBuffer[1] = 0x60;
-                reqBuffer[2] = 0xe0;
-                reqBuffer[3] = 0xff;
-                reqBuffer[4] = 0xfe;
-                devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-                devRequest.bRequest = kUSBRqSetConfig; 
-                devRequest.wValue = kUSBConfDesc; 
-                devRequest.wIndex = 0; 
-                devRequest.wLength = 5; 
-                devRequest.pData = reqBuffer; 
-                if (debugCommands)
-                {
-                    NSLog(@"USBMissileControl: c-enter reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
-                }
-                kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-                if (kr != kIOReturnSuccess)
-                {
-                    if (kr == kIOReturnNoDevice)
-                    {
-                        if (debugCommands) 
-                            NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-                    } else
-                        if (kr == kIOReturnNotOpen)
-                        {
-                            if (debugCommands) 
-                                NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-                        } else
-                        {
-                            EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-                        }
-                }
-
-            }
-			//			} else
-			//			{
-			//				reqBuffer[0] = 0x5f; // release
-			//				reqBuffer[1] = 0x60; // release
-			//                reqBuffer[2] = 0xe0;
-			//                reqBuffer[3] = 0xff;
-			//                reqBuffer[4] = 0xfe;
-			////				reqBuffer[5] = 0;
-			////				reqBuffer[6] = 0;
-			////				reqBuffer[7] = 0;
-			//				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			//				devRequest.bRequest = kUSBRqSetConfig; 
-			//				devRequest.wValue = kUSBConfDesc; 
-			////				devRequest.wIndex = 0;  // Switched this to 1 after mail from Erik Mason - 1 May 2007
-			//				devRequest.wIndex = 1;  // having this as 1 may cause a problem with the "release" command
-			//										// Erik Mason reported that movement doesn't stop until launcher reaches end of travel
-			//				devRequest.wLength = 5; 
-			//				devRequest.pData = reqBuffer; 
-			//				if (debugCommands)
-			//				{
-			//					NSLog(@"USBMissileControl: STRIKER II reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
-			//				}
-			//				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			//				if (kr != kIOReturnSuccess)
-			//				{
-			//					if (kr == kIOReturnNoDevice)
-			//					{
-			//						if (debugCommands) 
-			//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-			//					} else
-			//						if (kr == kIOReturnNotOpen)
-			//						{
-			//							if (debugCommands) 
-			//								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-			//						} else
-			//						{
-			//							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-			//						}
-			//				}
-			//			}
-			
-			// ===========================================================================
-			// END OF Control of USB Missile Launcher - c-enter
-			// ===========================================================================
-			
-		}
-		else
-			//		if ([privateDataRef getusbVendorID] == kUSBMissileVendorID &&
-			//			[privateDataRef getusbProductID] == kUSBMissileProductID)
-
-		
-#pragma mark StrikerII
-
-		if ([[privateDataRef getLauncherType] isEqualToString:@"StrikerII"])
-		{
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self MissileLauncher_Park];
-				return self;
-			}
-			
-			/*
-			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request START
-			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
-			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
-			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
-			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
-			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
-			 2007-06-21 21:33:12.297 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
-			 
-			 --> here's the reason the laser goes off, this is being called twice...
-			 
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
-			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
-			 2007-06-21 21:33:12.299 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
-			 2007-06-21 21:33:12.300 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request FINISH
-			 */
-			
-			
-			// ===========================================================================
-			// Control of USB Missile Launcher - Striker II
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-		
-/*
-			USB Information (hexadecimal values): 
-			Vendor ID: 1130 
-			Product ID: 0202 
-			
-			Ignore this little table for now, I'm just trying to reverse engineer
-			what the launcher developers have done. not much help for up/left try activities
-			like the other launchers support.
-			|  16  | 8 | 4 | 2 | 1 |
-			|------|---|---|---|---|
-			|   0  | 1 | 0 | 1 | 0 |   10 - fire
-			|   0  | 1 | 0 | 1 | 1 |   11 - laser
-			|   0  | 1 | 1 | 0 | 0 |   12 - left
-			|   0  | 1 | 1 | 0 | 1 |   13 - right
-			|   0  | 1 | 1 | 1 | 0 |   14 - up
-			|   0  | 1 | 1 | 1 | 1 |   15 - down
-			|   1  | 0 | 1 | 0 | 0 |   20 - release
- 
-			Toy Command Bytes (hexadecimal values): 
-			Fire Missile  = 0x0a	10
-			Laser Toggle  = 0x0b	11
-			Move Left = 0x0c		12
-			Move Right = 0x0d		13
-			Move Up = 0x0e			14
-			Move Down  = 0x0f		15
-			Release = 0x14			20
-
- 
-			This documentation from the supplier would appear to be WRONG!
-			Actually bytes 0 and 1 need to be filled followed by zeros in the remaining bytes up to 8.
-			This information was discovered by using SnoopyPro on a PC.
- 
-			Sending Toy Commands with Control Transfer (PC to Toy): 
-			Byte 0: 0 
-			Byte 1: toyCommandByte 
-			Byte 2: toyCommandByte 
-			
-			Example Toy Command with Control Transfer: Move Left 
-			Byte 0: 0 
-			Byte 1: 0x0c 
-			Byte 2: 0x0c  Send...  
-			
-			Byte 0: 0 
-			Byte 1: 0x14 
-			Byte 2: 0x14  Send...
-*/
-			reqBuffer[0] = 0;
-			if (controlBits & 1)
-				reqBuffer[0] = 0x0c;//left
-
-			if (controlBits & 2)
-				reqBuffer[0] = 0x0d;//right
-			
-			if (controlBits & 4)
-				reqBuffer[0] = 0x0e;//up
-			
-			if (controlBits & 8)
-				reqBuffer[0] = 0x0f;//down
-			
-			if (controlBits & 16)
-				reqBuffer[0] = 0x0a;//fire
-
-			if (controlBits & 64)
-				reqBuffer[0] = 0x0b;//Laser Toggle
-				
-			if (reqBuffer[0] == 0)
-			{
-				reqBuffer[0] = 0x14;   // this is a guess. If I come back into this routine with a 0 controlBit
-				reqBuffer[1] = 0x14;   // then perhaps I should send a "stop" or in this case a "release" to the launcher?
-			} else
-			{
-				reqBuffer[1] = reqBuffer[0];
-			}
-			reqBuffer[2] = 0;
-			reqBuffer[3] = 0;
-			reqBuffer[4] = 0;
-			reqBuffer[5] = 0;
-			reqBuffer[6] = 0;
-			reqBuffer[7] = 0;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = kUSBRqSetConfig; 
-			devRequest.wValue = kUSBConfDesc; 
-			devRequest.wIndex = 0; 
-			devRequest.wLength = 8; 
-			devRequest.pData = reqBuffer; 
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: STRIKER II reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
-			}
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-			}
-
-//			if (controlBits & 64)  //Laser Toggle
-//			if ((controlBits & 16) || (controlBits & 64))
-			if (controlBits & 16)
-			{
-				// after the fire comand, we can't send the "release" to the launcher	
-				// so, NO OPP
-			} else
-			{
-				reqBuffer[0] = 0x14; // release
-				reqBuffer[1] = 0x14; // release
-				reqBuffer[2] = 0;
-				reqBuffer[3] = 0;
-				reqBuffer[4] = 0;
-				reqBuffer[5] = 0;
-				reqBuffer[6] = 0;
-				reqBuffer[7] = 0;
-				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-				devRequest.bRequest = kUSBRqSetConfig; 
-				devRequest.wValue = kUSBConfDesc; 
-//				devRequest.wIndex = 0;  // Switched this to 1 after mail from Erik Mason - 1 May 2007
-				devRequest.wIndex = 1;  // having this as 1 may cause a problem with the "release" command
-										// Erik Mason reported that movement doesn't stop until launcher reaches end of travel
-				devRequest.wLength = 8; 
-				devRequest.pData = reqBuffer; 
-				if (debugCommands)
-				{
-					NSLog(@"USBMissileControl: STRIKER II reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
-				}
-				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-				if (kr != kIOReturnSuccess)
-				{
-					if (kr == kIOReturnNoDevice)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-					} else
-						if (kr == kIOReturnNotOpen)
-						{
-							if (debugCommands) 
-								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-						} else
-						{
-							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-						}
-				}
-			}
-			
-			// ===========================================================================
-			// END OF Control of USB Missile Launcher - Striker II
-			// ===========================================================================
-			
-		}
-		else
-		//		if ([privateDataRef getusbVendorID] == kUSBMissileVendorID &&
-		//			[privateDataRef getusbProductID] == kUSBMissileProductID)
-			
-#pragma mark OrigLauncher
-
-		if ([[privateDataRef getLauncherType] isEqualToString:@"OrigLauncher"])
-		{
-			
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self MissileLauncher_Park];
-				return self;
-			}
-			
-			// ===========================================================================
-			// Control of USB Missile Launcher - Original Launcher
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-			
-			reqBuffer[0] = 'U';
-			reqBuffer[1] = 'S';
-			reqBuffer[2] = 'B';
-			reqBuffer[3] = 'C';
-			reqBuffer[4] = 0;
-			reqBuffer[5] = 0;
-			reqBuffer[6] = 4;
-			reqBuffer[7] = 0;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = kUSBRqSetConfig; 
-			devRequest.wValue = kUSBConfDesc; 
-			devRequest.wIndex = 1;
-			devRequest.wLength = 8; 
-			devRequest.pData = reqBuffer; 
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-			}
-			
-			reqBuffer[0] = 'U';
-			reqBuffer[1] = 'S';
-			reqBuffer[2] = 'B';
-			reqBuffer[3] = 'C';
-			reqBuffer[4] = 0;
-			reqBuffer[5] = 64;
-			reqBuffer[6] = 2;
-			reqBuffer[7] = 0;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = kUSBRqSetConfig; 
-			devRequest.wValue = kUSBConfDesc; 
-			devRequest.wIndex = 1;
-			devRequest.wLength = 8; 
-			devRequest.pData = reqBuffer; 
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-			}
-			
-			reqBuffer[0] = 0;
-			if (controlBits & 1)
-				reqBuffer[1] = 1;//left
-			else
-				reqBuffer[1] = 0;
-			
-			if (controlBits & 2)
-				reqBuffer[2] = 1;//right
-			else
-				reqBuffer[2] = 0;//right
-				
-			if (controlBits & 4)
-				reqBuffer[3] = 1;//up
-			else
-				reqBuffer[3] = 0;//up
-				
-			if (controlBits & 8)
-				reqBuffer[4] = 1;//down
-			else
-				reqBuffer[4] = 0;//down
-				
-			if (controlBits & 16)
-				reqBuffer[5] = 1;//fire
-			else
-				reqBuffer[5] = 0;//fire
-				
-			reqBuffer[6] = 8;
-			reqBuffer[7] = 8;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = kUSBRqSetConfig; 
-			devRequest.wValue = kUSBConfDesc; 
-			devRequest.wIndex = 0;
-			devRequest.wLength = 64; 
-			devRequest.pData = reqBuffer; 
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-			}
-			
-			// ===========================================================================
-			// END OF Control of USB Missile Launcher
-			// ===========================================================================
-			
-		}
-		
-		else 
-//			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
-//				[privateDataRef getusbProductID] == kUSBRocketProductID)
-			
-			// http://forum.codecall.net/visual-basic-programming/23869-programming-hardware-3.html
-
-//			StrikerII (Grey) includes laser
-//			USB Vendor ID		0x1130	4400
-//			USB Product ID		0x0202	514
-			
-//			Class MissileDevice:
-//			INITA     = (85, 83, 66, 67,  0,  0,  4,  0)
-//			INITB     = (85, 83, 66, 67,  0, 64,  2,  0)
-//			CMDFILL   = ( 8,  8,
-//						 0,  0,  0,  0,  0,  0,  0,  0,
-//						 0,  0,  0,  0,  0,  0,  0,  0,
-//						 0,  0,  0,  0,  0,  0,  0,  0,
-//						 0,  0,  0,  0,  0,  0,  0,  0,
-//						 0,  0,  0,  0,  0,  0,  0,  0,
-//						 0,  0,  0,  0,  0,  0,  0,  0,
-//						 0,  0,  0,  0,  0,  0,  0,  0)
-//			STOP      = ( 0,  0,  0,  0,  0,  0)
-//			LEFT      = ( 0,  1,  0,  0,  0,  0)
-//			RIGHT     = ( 0,  0,  1,  0,  0,  0)
-//			UP        = ( 0,  0,  0,  1,  0,  0)
-//			DOWN      = ( 0,  0,  0,  0,  1,  0)
-//			LEFTUP    = ( 0,  1,  0,  1,  0,  0)
-//			RIGHTUP   = ( 0,  0,  1,  1,  0,  0)
-//			LEFTDOWN  = ( 0,  1,  0,  0,  1,  0)
-//			RIGHTDOWN = ( 0,  0,  1,  0,  1,  0)
-//			FIRE      = ( 0,  0,  0,  0,  0,  1)
-//			
-//			def __init__(self, battery):
-//			try:
-//			self.dev=UsbDevice(0x1130, 0x0202, battery)
-//			self.dev.open()
-//			self.dev.handle.reset()
-//			except NoMissilesError, e:
-//			raise NoMissilesError()
-//			
-//			def move(self, direction):
-//			self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
-//			self.dev.handle.controlMsg(0x21, 0x09, self.INITB, 0x02, 0x01)
-//			self.dev.handle.controlMsg(0x21, 0x09, direction+self.CMDFILL, 0x02, 0x01)
-
-			
-			
-			
-			
-#pragma mark Satzuma
-
-//	Satzuma Missile launcher (actually Winbond Electronics Corp.)
-//	USB Vendor ID		0x416	1046
-//	USB Product ID		0x9391	37777
-	
- 
-// STOP      = 0x0
-// LEFT      = 0x8
-// RIGHT     = 0x4
-// UP        = 0x2
-// DOWN      = 0x1
-// LEFTUP    = LEFT + UP
-// RIGHTUP   = RIGHT + UP
-// LEFTDOWN  = LEFT + DOWN
-// RIGHTDOWN = RIGHT + DOWN
-// FIRE      = 0x10
-
-			
-		if ([[privateDataRef getLauncherType] isEqualToString:@"Satzuma"])
-		{
-			
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self MissileLauncher_Park];
-				return self;
-			}
-			
-			// ===========================================================================
-			// Control of USB Missile Launcher - Original Launcher NOT CHANGED YET NOT CHANGED YET NOT CHANGED YET
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-			
-			reqBuffer[0] = 0x5f;
-			reqBuffer[1] = 0x00;
-			reqBuffer[2] = 0xe0;
-			reqBuffer[3] = 0xff;
-			reqBuffer[4] = 0xfe;
-			reqBuffer[5] = 0x0300;
-			reqBuffer[6] = 0x00;
-			reqBuffer[7] = 0x00;
-			
-			if (controlBits & 1)
-				reqBuffer[1] = 0x08;//left
-			
-			if (controlBits & 2)
-				reqBuffer[1] = 0x04;//right
-			
-			if (controlBits & 4)
-				reqBuffer[1] = 0x02;//up
-			
-			if (controlBits & 8)
-				reqBuffer[1] = 0x01;//down
-			
-			if (controlBits & 16)
-				reqBuffer[1] = 0x10;//fire
-			
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = kUSBRqSetConfig; 
-			devRequest.wValue = kUSBConfDesc; 
-			devRequest.wIndex = 0;
-			devRequest.wLength = 5; 
-			devRequest.pData = reqBuffer; 
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-			}
-			
-			// ===========================================================================
-			// END OF Control of USB Missile Launcher
-			// ===========================================================================
-			
-		}
-	
-		else 
-				//			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
-				//				[privateDataRef getusbProductID] == kUSBRocketProductID)
-				
-#pragma mark DreamRocket
-			
-		if ([[privateDataRef getLauncherType] isEqualToString:@"DreamRocket"])
-
-		{
-
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - DreamCheeky Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self DreamCheeky_Park];
-				return self;
-			}
-			
-			// ===========================================================================
-			// Control of USB Rocket Launcher - DreamCheeky
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-				
-			// Control of the launcher works on a binary code - see the table below for an explanation
-			//
-			//     |  16  | 8 | 4 | 2 | 1 |
-			//     |------|---|---|---|---|
-			//     |   0  | 0 | 0 | 0 | 1 |    1 - Up
-			//     |   0  | 0 | 0 | 1 | 0 |    2 - Down
-			//     |   0  | 0 | 0 | 1 | 1 |    3 - nothing
-			//     |   0  | 0 | 1 | 0 | 0 |    4 - Left
-			//     |   0  | 0 | 1 | 0 | 1 |    5 - Up / Left
-			//     |   0  | 0 | 1 | 1 | 0 |    6 - Down / left
-			//     |   0  | 0 | 1 | 1 | 1 |    7 - Slow left
-			//     |   0  | 1 | 0 | 0 | 0 |    8 - Right
-			//     |   0  | 1 | 0 | 0 | 1 |    9 - Up / Right
-			//     |   0  | 1 | 0 | 1 | 0 |   10 - Down / Right
-			//     |   0  | 1 | 0 | 1 | 1 |   11 - Slow Right
-			//     |   0  | 1 | 1 | 0 | 0 |   12 - nothing
-			//     |   0  | 1 | 1 | 0 | 1 |   13 - Slow Up
-			//     |   0  | 1 | 1 | 1 | 0 |   14 - Slow Down
-			//     |   0  | 1 | 1 | 1 | 1 |   15 - nothing
-			//     |   1  | 0 | 0 | 0 | 0 |   16 - Fire
-			//
-			//     | Fire |RT |LT |DN |UP |
-			//
-			//		Thanks to Brandon Heyer for the following:
-			//      the DreamCheeky Launcher will return the following codes
-			//	
-			//		00 04 00 00 00 00 00 00 - All the way left
-			//		00 08 00 00 00 00 00 00 - All the way right
-			//		40 00 00 00 00 00 00 00 - All the way down
-			//		80 00 00 00 00 00 00 00 - All the way up 
-			//		00 80 00 00 00 00 00 00 - Fire Has completed 
-			//		00 84 00 00 00 00 00 00 - Fire Has completed and we're all the way left
-			//		00 88 00 00 00 00 00 00 - Fire Has completed and we're all the way right
-			
-			//		They also OR together when you are in the corners, 
-			//		I'd imagine cool patrol sequences (box, figure eight) could be made if these are analyzed while the turret moves. 
-			//	Note the definition of the readbuffer (a definition of char doesn't cut the mustard Colonel!)
-			//			UInt8						rBuffer[dreamCheekyMaxPacketSize];
-
-			// Lets see if we have reached the end of a travel direction
-			// If we have, we need to discontinue moving in that direction
-			// So we have likely received a request to move up for example, so lets cancel that.
-			kr = DreamCheekyReadPipe(missileDevice, missileInterface, rBuffer);
-			if (kr != kIOReturnSuccess)
-			{
-				if (debugCommands)
-					NSLog(@"USBMissileControl: ERROR returned from DreamCheekyReadPipe kr=(0x%08x)", kr);
-			} else
-			{	
-				if (debugCommands)
-					NSLog(@"USBMissileControl: return from DreamCheekyReadPipe (0x%02x) (0x%02x) ", rBuffer[0], rBuffer[1]);
-			}
-				
-//			Left		controlBits |= 1;
-//			Right		controlBits |= 2;
-//			Up			controlBits |= 4;
-//			Down		controlBits |= 8;
-//			Fire		controlBits |= 16;
-//			NSLog(@"USBMissileControl: controlBits %d", controlBits);
-
-			if (rBuffer[0] == 0x40)
-			{
-				if (controlBits & 8)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional down request");
-					controlBits = controlBits ^8;
-				}
-			} else 
-			if (rBuffer[0] == 0x80)
-			{
-				if (controlBits & 4)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional up request");
-					controlBits = controlBits ^4;
-				}
-			}
-			if ((rBuffer[1] == 0x04) || (rBuffer[1] == 0x84)) // this command response can get mixed up with Fire
-			{
-				if (controlBits & 1)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional left request");
-					controlBits = controlBits ^1;
-				}
-			} else 
-			if ((rBuffer[1] == 0x08) || (rBuffer[1] == 0x88)) // this command response can get mixed up with Fire
-			{
-				if (controlBits & 2)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional right request");
-					controlBits = controlBits ^2;
-				}
-			}
-			if (debugCommands)
-				NSLog(@"USBMissileControl: controlBits %d", controlBits);
-/*			
-			// send the first package - NULL
-			reqBuffer[0] = 0;
-			reqBuffer[1] = 0;
-			reqBuffer[2] = 0;
-			reqBuffer[3] = 0;
-			reqBuffer[4] = 0;
-			reqBuffer[5] = 0;
-			reqBuffer[6] = 0;
-			reqBuffer[7] = 0;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = 0x09; 
-			devRequest.wValue = 0x0000200;
-			devRequest.wIndex = 0;
-			devRequest.wLength = 1;
-			devRequest.pData = reqBuffer; 
-			if (debugCommands)
-			{
-				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-				NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
-			}
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (debugCommands) 
-			{
-				if (kr != kIOReturnSuccess)
-				{
-					if (kr == kIOReturnNoDevice)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-					} else
-						if (kr == kIOReturnNotOpen)
-						{
-							if (debugCommands) 
-								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-						} else
-						{
-							NSLog(@"USBMissileControl: ERROR sending the first package - NULL");
-							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-						}
-				}
-			}
- 
- */
-			
-			// send the second package - contains actual instruction
-			reqBuffer[0] = 0x00;
-			gBuffer[0] = 0x00;
-			if (controlBits & 1)   // left
-			{
-				reqBuffer[0] |= 4;
-				gBuffer[0]   |= 4;  // added for WritePipe support 27Jan2007
-			}
-			if (controlBits & 2)   // right
-			{
-				reqBuffer[0] |= 8;
-				gBuffer[0]   |= 8;  // added for WritePipe support 27Jan2007
-			}
-			if (controlBits & 4)   // up
-			{
-				reqBuffer[0] |= 1;
-				gBuffer[0]   |= 1;  // added for WritePipe support 27Jan2007
-			}
-			if (controlBits & 8)   // down
-			{
-				reqBuffer[0] |= 2;
-				gBuffer[0]   |= 2;  // added for WritePipe support 27Jan2007
-			}
-			if ((controlBits & 16) || (controlBits & 128))  // Fire
-			{
-				reqBuffer[0] |= 16;
-				gBuffer[0]   |= 16;  // added for WritePipe support 27Jan2007
-				if (debugCommands)
-				{
-					NSLog(@"USBMissileControl: MissileControl - DreamCheeky Fire initiated");
-				}
-			}
-			
-			reqBuffer[1] = 0x00;
-			reqBuffer[2] = 0x00;
-			reqBuffer[3] = 0x00;
-			reqBuffer[4] = 0x00;
-			reqBuffer[5] = 0x00;
-			reqBuffer[6] = 0x00;
-			reqBuffer[7] = 0x00;
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = 0x09; 
-			devRequest.wValue = 0x0000200;
-			devRequest.wIndex = 0;
-			devRequest.wLength = 1;
-			devRequest.pData = reqBuffer; 
-			if (debugCommands)
-			{
-				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-				NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
-			}
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (debugCommands)
-			{
-				if (kr != kIOReturnSuccess)
-				{
-					if (kr == kIOReturnNoDevice)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-					} else
-						if (kr == kIOReturnNotOpen)
-						{
-							if (debugCommands) 
-								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-						} else
-						{   // Error seems to be generated from this and I can't figure out why
-							// USBMissileControl: EvaluateUSBErrorCode: kIOReturnOverrun (0xe00002e8) - There has been a data overrun.
-							// It all seems to still work, so I'm going to ignore it.
-							
-						//	NSLog(@"USBMissileControl: ERROR delivering command package");
-						//	EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-						}
-				}
-			}
-						
-			if (controlBits & 16)
-			{
-				// Need to stop the fire sequence - otherwise it continues without stopping
-				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
-				//
-				// readPipe: message: 00 00 00 00 00 00 00 00 
-				// readPipe: message: 00 80 00 00 00 00 00 00 
-				// readPipe: message: 00 00 00 00 00 00 00 00 
-				//
-				// byte #2 is the fire acknowledgement
-
-				//[self DGWScheduleCancelLauncherCommand:5.500]; // this was the old code before the launcher feedback was being read
-
-				int delayCounter;
-				for (delayCounter = 0; delayCounter < 70; delayCounter ++)
-				{
-					[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.100]];
-//					kr = DreamCheekyReadPipe(missileDevice, missileInterface, rBuffer);
-					DreamCheekyReadPipe(missileDevice, missileInterface, rBuffer);
-					if (rBuffer[1] >= 0x80)
-					{
-						// The 0x80 status doesn't always mean that firing has occurred, but it will be very close
-						// - wait at least 500ms before sending the NULL after receiving 0x80
-						[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.000]];
-						// Fire command completed
-						// send the third package - NULL
-						reqBuffer[0] = 0;
-						reqBuffer[1] = 0;
-						reqBuffer[2] = 0;
-						reqBuffer[3] = 0;
-						reqBuffer[4] = 0;
-						reqBuffer[5] = 0;
-						reqBuffer[6] = 0;
-						reqBuffer[7] = 0;
-						devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-						devRequest.bRequest = 0x09; 
-						devRequest.wValue = 0x0000200;
-						devRequest.wIndex = 0;
-						devRequest.wLength = 8;
-						devRequest.pData = reqBuffer; 
-						if (debugCommands)
-						{
-							NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-							NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-							NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-							NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-							NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-							NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
-						}
-						kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-						if (debugCommands)
-						{
-							if (kr != kIOReturnSuccess)
-							{
-								if (kr == kIOReturnNoDevice)
-								{
-									if (debugCommands) 
-										NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-								} else
-								if (kr == kIOReturnNotOpen)
-								{
-									if (debugCommands) 
-										NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-								} else
-								{
-									EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-								}
-							}	
-						}
-						
-						break;
-					}
-
-				}
-				
-			}
-
-			if (controlBits & 128)
-			{
-				// Need to stop the fire sequence - otherwise it continues without stopping
-				// What we're trying to do here is prime the launcher for firing
-				// So we don't actually want to FIRE
-				
-				int delayCounter;
-				for (delayCounter = 0; delayCounter < 35; delayCounter ++)  // 3.5 seconds
-				{
-					[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
-				}
-				
-				// send a NULL package to shut things down.
-				reqBuffer[0] = 0;
-				reqBuffer[1] = 0;
-				reqBuffer[2] = 0;
-				reqBuffer[3] = 0;
-				reqBuffer[4] = 0;
-				reqBuffer[5] = 0;
-				reqBuffer[6] = 0;
-				reqBuffer[7] = 0;
-				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-				devRequest.bRequest = 0x09; 
-				devRequest.wValue = 0x0000200;
-				devRequest.wIndex = 0;
-				devRequest.wLength = 8;
-				devRequest.pData = reqBuffer; 
-				if (debugCommands)
-				{
-					NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-					NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-					NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-					NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-					NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-					NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
-				}
-				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-				if (debugCommands)
-				{
-					if (kr != kIOReturnSuccess)
-					{
-						if (kr == kIOReturnNoDevice)
-						{
-							if (debugCommands) 
-								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-						} else
-						if (kr == kIOReturnNotOpen)
-						{
-							if (debugCommands) 
-								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-						} else
-						{
-							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-						}
-					}	
-				}
-			}			
-			
-			// ===========================================================================
-			// END OF USB Rocket Launcher - DreamCheeky
-			// ===========================================================================
-		}			
-
-		else 
-//			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
-//				[privateDataRef getusbProductID] == kUSBRocketProductID)
-			
-#pragma mark DreamRocketII
-			
-		if ([[privateDataRef getLauncherType] isEqualToString:@"DreamRocketII"])
-		{
-
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - DreamCheeky Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self DreamCheeky_Park];
-				return self;
-			}
-			
-			// ===========================================================================
-			// Control of USB Rocket Launcher - DreamCheeky II  (Rocket Baby)
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-			
-			// USBVendorID  = 2689 (0xa81)
-			// USBProductID = 1793 (0x701)
-
-			// Control of the launcher works on a binary code - see the table below for an explanation
-			//
-// Set up Packet - 21 09 00 02 00 00 00 00
-//
-// 0x01  - down
-// 0x02  - up
-// 0x04  - left
-// 0x08  - right
-// 0x10  - fire
-// 0x20  - stop
-// 0x40  - request status
-//
-//	1. To fire, Send 0x10
-//  2. The motor keeps working now, keep sending 0x40 to ask for status (say, every 100~500ms)
-//	3. If 0x00 received, then the missile is not fired.
-//	4. If 0x10 received, them missile is fired.
-//	5. If the missile is fired, send 0x20 to stop it.
+//#pragma mark - c-enter
 //		
-//  Other launcher Responses - these are returned as bits and thus you need to check like "if (rbBuffer[0] & 0x01)" using Bitwise AND
-//  0x01 - all the way down
-//  0x02 - all the way up
-//  0x04 - all the way left
-//  0x08 - all the way right
-//  0x10 - fire has completed
-			//  			
-			//	The user has to use a USB Control Endpoint to send the command and to use the USB IN endpoint to read the status.
-			//
-			//     |  16  | 8 | 4 | 2 | 1 |
-			//     |------|---|---|---|---|
-			//     |   0  | 0 | 0 | 0 | 1 |    1 - Down
-			//     |   0  | 0 | 0 | 1 | 0 |    2 - Up
-			//     |   0  | 0 | 1 | 0 | 0 |    4 - Left
-			//     |   0  | 1 | 0 | 0 | 0 |    8 - Right
-			//     |   0  | 1 | 0 | 1 | 0 |   10 - Fire
-			//     |   1  | 0 | 1 | 0 | 0 |   20 - Stop
-			//
-			//     | Fire |RT |LT |UP |DN |
-			//
-			
-
-			// Lets see if we have reached the end of a travel direction
-			// If we have, we need to discontinue moving in that direction
-			// So we have likely received a request to move up for example, so lets cancel that.
-			rbBuffer[0] = 0x00;
-			kr = RocketBabyReadPipe(missileDevice, missileInterface, rbBuffer);
-			if (kr != kIOReturnSuccess)
-			{
-				if (debugCommands)
-					NSLog(@"USBMissileControl: ERROR returned from DreamCheekyReadPipe kr=(0x%08x)", kr);
-			} else
-			{	
-				if (debugCommands)
-					NSLog(@"USBMissileControl: return from RocketBabyReadPipe (0x%02x)", rbBuffer[0]);
-			}
-				
-//			Left		controlBits |= 1;
-//			Right		controlBits |= 2;
-//			Up			controlBits |= 4;
-//			Down		controlBits |= 8;
-//			Fire		controlBits |= 16;
-//			NSLog(@"USBMissileControl: controlBits %d", controlBits);
-
-			if (rbBuffer[0] & 0x01)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 8)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional down request");
-					controlBits = controlBits ^8;
-				}
-			} else 
-			if (rbBuffer[0] & 0x02)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 4)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional up request");
-					controlBits = controlBits ^4;
-				}
-			}
-			if (rbBuffer[0] & 0x04)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 1)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional left request");
-					controlBits = controlBits ^1;
-				}
-			} else 
-			if (rbBuffer[0] & 0x08)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 2)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional right request");
-					controlBits = controlBits ^2;
-				}
-			}
-			if (debugCommands)
-				NSLog(@"USBMissileControl: controlBits %d", controlBits);
-			
-			
-			// send the package - contains actual instruction
-			reqBuffer_RB[0] = 0x00; 
-			if (controlBits == 0)   // Launcher STOP (so if no command is sent, we instruct STOP)
-			{
-				reqBuffer_RB[0] = 0x20;
-			}
-			
-			// this launcher does not understand "Up & Left" type commands together. The software simulates it and will get the
-			// desired end result, however the launcher cannot drive 2 x servo motors at once using the command set available.
-			if (controlBits & 1)   // left
-			{
-				reqBuffer_RB[0] = 4;
-			}
-			if (controlBits & 2)   // right
-			{
-				reqBuffer_RB[0] = 8;
-			}
-			if (controlBits & 4)   // up
-			{
-				reqBuffer_RB[0] = 2;
-			}
-			if (controlBits & 8)   // down
-			{
-				reqBuffer_RB[0] = 1;
-			}
-
-
-			if ((controlBits & 16) || (controlBits & 128)) // Fire
-			{
-				reqBuffer_RB[0] = 0x10;
-				if (debugCommands)
-				{
-					NSLog(@"USBMissileControl: MissileControl - DreamCheeky Fire (or Prime) initiated");
-				}
-			}
-			
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = 0x09; 
-			devRequest.wValue = 0x0000200;
-			devRequest.wIndex = 0;
-			devRequest.wLength = 1;
-			devRequest.pData = reqBuffer_RB; 
-			if (debugCommands)
-			{
-				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-				NSLog(@"USBMissileControl: Rocket Baby command package (0x%02x) delivered", reqBuffer_RB[0]);
-				if( debugCommands && reqBuffer_RB[0] == 0x00)
-					NSLog(@"USBMissileControl: controlBits (0x%04x)", controlBits);
-			}
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (kr != kIOReturnSuccess)
-			{
-				if (kr == kIOReturnNoDevice)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-				} else
-				if (kr == kIOReturnNotOpen)
-				{
-					if (debugCommands) 
-						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-				} else
-				{
-					EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-				}
-			}
-									
-			if (controlBits & 16)
-			{
-				// Need to stop the fire sequence - otherwise it continues without stopping
-				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
-				//
-				int delayCounter;
-				for (delayCounter = 0; delayCounter < 500; delayCounter ++)
-				{
-					//[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
-					rbBuffer[0] = 0x00;
-					kr = RocketBabyReadPipe(missileDevice, missileInterface, rbBuffer);
-					if (kr != kIOReturnSuccess)
-					{
-						// error output has already been produced c/- RocketBabyReadPipe
-						break;
-					}
-					
-					if (rbBuffer[0] & 0x10)
-					{
-						// The 0x10 status doesn't always mean that firing has occurred, but it will be very close
-						// - wait at least 500ms before sending 0x20 after receiving 0x10
-						[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.500]];
-						
-						// Fire command completed
-						// send the third package - 0x20
-						reqBuffer_RB[0] = 0x20;
-						devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-						devRequest.bRequest = 0x09; 
-						devRequest.wValue = 0x0000200;
-						devRequest.wIndex = 0;
-						devRequest.wLength = 1;
-						devRequest.pData = reqBuffer_RB; 
-						if (debugCommands)
-						{
-							//NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-							//NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-							//NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-							//NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-							//NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-							NSLog(@"USBMissileControl: Rocket Baby command package (0x%02x) delivered", reqBuffer_RB[0]);
-						}
-						kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-						if (kr != kIOReturnSuccess)
-						{
-							if (kr == kIOReturnNoDevice)
-							{
-								if (debugCommands) 
-									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-							} else
-							if (kr == kIOReturnNotOpen)
-							{
-								if (debugCommands) 
-									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-							} else
-							{
-								EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-							}
-						}	
-						
-						break;
-					}
-
-				}
-				
-			}	
-			
-			if (controlBits & 128) // Prime Launcher
-			{
-				// Need to stop the prime sequence - otherwise it continues without stopping
-				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
-				//
-				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
-						
-				// Fire command completed
-				// send the third package - 0x20
-				reqBuffer_RB[0] = 0x20;
-				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-				devRequest.bRequest = 0x09; 
-				devRequest.wValue = 0x0000200;
-				devRequest.wIndex = 0;
-				devRequest.wLength = 1;
-				devRequest.pData = reqBuffer_RB; 
-				if (debugCommands)
-				{
-				//	NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-				//	NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-				//	NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-				//	NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-				//	NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-					NSLog(@"USBMissileControl: Rocket Baby command package (0x%02x) delivered", reqBuffer_RB[0]);
-				}
-				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-				if (kr != kIOReturnSuccess)
-				{
-					if (kr == kIOReturnNoDevice)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-					} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-				}	
-						
-			}
-			// ===========================================================================
-			// END OF USB Rocket Launcher - DreamCheeky II (Rocket Baby)
-			// ===========================================================================
-		}			
-
-		else 
-		//			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
-		//				[privateDataRef getusbProductID] == kUSBRocketProductID)
-		
-#pragma mark OICStorm
-		
-		if ([[privateDataRef getLauncherType] isEqualToString:@"OICStorm"])
-		{
-			
-			// This code is here because I need to know the launcher type so that the right launcher can be parked
-			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
-			if (controlBits & 32)  // Park
-			{
-				//NSLog(@"USBMissileControl: MissileControl - DreamCheeky Park");
-				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
-				[self DreamCheeky_Park];
-				return self;
-			}
-			
-			// ===========================================================================
-			// Control of USB Rocket Launcher - DreamCheeky OIC Storm
-			// ===========================================================================
-			if (debugCommands)
-			{
-				NSLog(@"USBMissileControl: -------------- new command instruction --------------");
-				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
-				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
-				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
-//				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
-				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
-			}
-			
-			// USBVendorID  = 2689 (0xa81)
-			// USBProductID = 1793 (0x701)
-			
-			// Control of the launcher works on a binary code - see the table below for an explanation
-			//
-			// Set up Packet - 21 09 00 02 00 00 00 00
-			//
-			// 0x01  - down
-			// 0x02  - up
-			// 0x04  - left
-			// 0x08  - right
-			// 0x10  - fire
-			// 0x20  - stop
-			// 0x40  - request status
-			//
-			//	1. To fire, Send 0x10
-			//  2. The motor keeps working now, keep sending 0x40 to ask for status (say, every 100~500ms)
-			//	3. If 0x00 received, then the missile is not fired.
-			//	4. If 0x10 received, them missile is fired.
-			//	5. If the missile is fired, send 0x20 to stop it.
-			//		
-			//  Other launcher Responses - these are returned as bits and thus you need to check like "if (rbBuffer[0] & 0x01)" using Bitwise AND
-			//  0x01 - all the way down
-			//  0x02 - all the way up
-			//  0x04 - all the way left
-			//  0x08 - all the way right
-			//  0x10 - fire has completed
-			//  			
-			//	The user has to use a USB Control Endpoint to send the command and to use the USB IN endpoint to read the status.
-			//
-			//     |  16  | 8 | 4 | 2 | 1 |
-			//     |------|---|---|---|---|
-			//     |   0  | 0 | 0 | 0 | 1 |    1 - Down
-			//     |   0  | 0 | 0 | 1 | 0 |    2 - Up
-			//     |   0  | 0 | 1 | 0 | 0 |    4 - Left
-			//     |   0  | 1 | 0 | 0 | 0 |    8 - Right
-			//     |   0  | 1 | 0 | 1 | 0 |   10 - Fire
-			//     |   1  | 0 | 1 | 0 | 0 |   20 - Stop
-			//
-			//     | Fire |RT |LT |UP |DN |
-			//
-			
-			
-			// Lets see if we have reached the end of a travel direction
-			// If we have, we need to discontinue moving in that direction
-			// So we have likely received a request to move up for example, so lets cancel that.
-			sbBuffer[0] = 0x00;
-			sbBuffer[1] = 0x00;
-//			kr = OICStormReadPipe(missileDevice, missileInterface, rbBuffer);
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"c-enter"])
+//		{
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self MissileLauncher_Park];
+//				return self;
+//			}
+//			
+//			/*
+//			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request START
+//			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
+//			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
+//			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
+//			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
+//			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
+//			 2007-06-21 21:33:12.297 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
+//			 
+//			 --> here's the reason the laser goes off, this is being called twice...
+//			 
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
+//			 2007-06-21 21:33:12.299 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
+//			 2007-06-21 21:33:12.300 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request FINISH
+//			 */
+//			
+//			
+//			// ===========================================================================
+//			// Control of USB Missile Launcher - c-enter
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//			
+//			/*
+//			 USB Information (hexadecimal values): 
+//			 Vendor Name: WinBond
+//			 "idVendor" = 0x416
+//			 "idProduct" = 0x9391
+//
+//			 Vendor ID: 1046
+//			 Product ID: 37777 
+//			 
+//			 Ignore this little table for now, I'm just trying to reverse engineer
+//			 what the launcher developers have done. not much help for up/left try activities
+//			 like the other launchers support.
+//			 |  16  | 8 | 4 | 2 | 1 |
+//			 |------|---|---|---|---|
+//			 |   0  | 1 | 0 | 1 | 0 |   10 - fire
+//			 |   0  | 1 | 0 | 1 | 1 |   11 - laser
+//			 |   0  | 1 | 1 | 0 | 0 |   12 - left
+//			 |   0  | 1 | 1 | 0 | 1 |   13 - right
+//			 |   0  | 1 | 1 | 1 | 0 |   14 - up
+//			 |   0  | 1 | 1 | 1 | 1 |   15 - down
+//			 |   1  | 0 | 1 | 0 | 0 |   20 - release
+//			 
+//			 Toy Command Bytes (hexadecimal values): 
+//			 Fire Missile  = 0x0a	10
+//			 Laser Toggle  = 0x0b	11
+//			 Move Left = 0x0c		12
+//			 Move Right = 0x0d		13
+//			 Move Up = 0x0e			14
+//			 Move Down  = 0x0f		15
+//			 Release = 0x14			20
+//			 
+//			 
+//			 This documentation from the supplier would appear to be WRONG!
+//			 Actually bytes 0 and 1 need to be filled followed by zeros in the remaining bytes up to 8.
+//			 This information was discovered by using SnoopyPro on a PC.
+//			 
+//			 Sending Toy Commands with Control Transfer (PC to Toy): 
+//			 Byte 0: 0 
+//			 Byte 1: toyCommandByte 
+//			 Byte 2: toyCommandByte 
+//			 
+//			 Example Toy Command with Control Transfer: Move Left 
+//			 Byte 0: 0 
+//			 Byte 1: 0x0c 
+//			 Byte 2: 0x0c  Send...  
+//			 
+//			 Byte 0: 0 
+//			 Byte 1: 0x14 
+//			 Byte 2: 0x14  Send...
+//			 */
+//			reqBuffer[0] = 0x5f;
+//			reqBuffer[1] = 0x60;
+//			if (controlBits & 1)
+//				reqBuffer[1] = 0x68;//left
+//			
+//			if (controlBits & 2)
+//				reqBuffer[1] = 0x64;//right
+//			
+//			if (controlBits & 4)
+//				reqBuffer[1] = 0xa2;//up
+//			
+//			if (controlBits & 8)
+//				reqBuffer[1] = 0xe1;//down
+//			
+//			if (controlBits & 16)
+//				reqBuffer[1] = 0x70;//fire
+//			
+//			//			if (controlBits & 64)
+//			//				reqBuffer[1] = 0x0b;//Laser Toggle
+//			
+//			//			if (reqBuffer[1] == 0)
+//			//			{
+//			//				reqBuffer[1] = 0x14;   // this is a guess. If I come back into this routine with a 0 controlBit
+//			//				//reqBuffer[1] = 0x14;   // then perhaps I should send a "stop" or in this case a "release" to the launcher?
+//			//			} else
+//			//			{
+//			//				reqBuffer[1] = reqBuffer[0];
+//			//			}
+//			reqBuffer[2] = 0xe0;
+//			reqBuffer[3] = 0xff;
+//			reqBuffer[4] = 0xfe;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = kUSBRqSetConfig; 
+//			devRequest.wValue = kUSBConfDesc; 
+//			devRequest.wIndex = 0; 
+//			devRequest.wLength = 5; 
+//			devRequest.pData = reqBuffer; 
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: c-enter reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
+//			}
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//			}
+//			
+//			//			if (controlBits & 64)  //Laser Toggle
+//			//			if ((controlBits & 16) || (controlBits & 64))
+//            if (controlBits & 16)
+//            {
+//                // After firing one missile, wait some seconds and send clear command.
+//                // Otherwise the launcher will keep on firing.
+//                int delayCounter;
+//				for (delayCounter = 0; delayCounter < 47; delayCounter ++)  // 4.7 seconds
+//				{
+//					[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
+//				}
+//                reqBuffer[0] = 0x5f;
+//                reqBuffer[1] = 0x60;
+//                reqBuffer[2] = 0xe0;
+//                reqBuffer[3] = 0xff;
+//                reqBuffer[4] = 0xfe;
+//                devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//                devRequest.bRequest = kUSBRqSetConfig; 
+//                devRequest.wValue = kUSBConfDesc; 
+//                devRequest.wIndex = 0; 
+//                devRequest.wLength = 5; 
+//                devRequest.pData = reqBuffer; 
+//                if (debugCommands)
+//                {
+//                    NSLog(@"USBMissileControl: c-enter reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
+//                }
+//                kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//                if (kr != kIOReturnSuccess)
+//                {
+//                    if (kr == kIOReturnNoDevice)
+//                    {
+//                        if (debugCommands) 
+//                            NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//                    } else
+//                        if (kr == kIOReturnNotOpen)
+//                        {
+//                            if (debugCommands) 
+//                                NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//                        } else
+//                        {
+//                            EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//                        }
+//                }
+//
+//            }
+//			//			} else
+//			//			{
+//			//				reqBuffer[0] = 0x5f; // release
+//			//				reqBuffer[1] = 0x60; // release
+//			//                reqBuffer[2] = 0xe0;
+//			//                reqBuffer[3] = 0xff;
+//			//                reqBuffer[4] = 0xfe;
+//			////				reqBuffer[5] = 0;
+//			////				reqBuffer[6] = 0;
+//			////				reqBuffer[7] = 0;
+//			//				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			//				devRequest.bRequest = kUSBRqSetConfig; 
+//			//				devRequest.wValue = kUSBConfDesc; 
+//			////				devRequest.wIndex = 0;  // Switched this to 1 after mail from Erik Mason - 1 May 2007
+//			//				devRequest.wIndex = 1;  // having this as 1 may cause a problem with the "release" command
+//			//										// Erik Mason reported that movement doesn't stop until launcher reaches end of travel
+//			//				devRequest.wLength = 5; 
+//			//				devRequest.pData = reqBuffer; 
+//			//				if (debugCommands)
+//			//				{
+//			//					NSLog(@"USBMissileControl: STRIKER II reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
+//			//				}
+//			//				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			//				if (kr != kIOReturnSuccess)
+//			//				{
+//			//					if (kr == kIOReturnNoDevice)
+//			//					{
+//			//						if (debugCommands) 
+//			//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//			//					} else
+//			//						if (kr == kIOReturnNotOpen)
+//			//						{
+//			//							if (debugCommands) 
+//			//								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//			//						} else
+//			//						{
+//			//							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//			//						}
+//			//				}
+//			//			}
+//			
+//			// ===========================================================================
+//			// END OF Control of USB Missile Launcher - c-enter
+//			// ===========================================================================
+//			
+//		}
+//		else
+//			//		if ([privateDataRef getusbVendorID] == kUSBMissileVendorID &&
+//			//			[privateDataRef getusbProductID] == kUSBMissileProductID)
+//
+//		
+//#pragma mark StrikerII
+//
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"StrikerII"])
+//		{
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self MissileLauncher_Park];
+//				return self;
+//			}
+//			
+//			/*
+//			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request START
+//			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
+//			 2007-06-21 21:33:12.295 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
+//			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
+//			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
+//			 2007-06-21 21:33:12.296 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
+//			 2007-06-21 21:33:12.297 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
+//			 
+//			 --> here's the reason the laser goes off, this is being called twice...
+//			 
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: launcherType = StrikerII
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBVendorID = 4400 (0x1130)
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: USBProductID = 514 (0x202)
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: controlBits 64
+//			 2007-06-21 21:33:12.298 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=11, reqBuffer[1]=11
+//			 2007-06-21 21:33:12.299 USB Missile Launcher NZ[14304] USBMissileControl: STRIKER II reqBuffer[0]=20, reqBuffer[1]=20
+//			 2007-06-21 21:33:12.300 USB Missile Launcher NZ[14304] controlLauncher: Laser Toggle Request FINISH
+//			 */
+//			
+//			
+//			// ===========================================================================
+//			// Control of USB Missile Launcher - Striker II
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//		
+///*
+//			USB Information (hexadecimal values): 
+//			Vendor ID: 1130 
+//			Product ID: 0202 
+//			
+//			Ignore this little table for now, I'm just trying to reverse engineer
+//			what the launcher developers have done. not much help for up/left try activities
+//			like the other launchers support.
+//			|  16  | 8 | 4 | 2 | 1 |
+//			|------|---|---|---|---|
+//			|   0  | 1 | 0 | 1 | 0 |   10 - fire
+//			|   0  | 1 | 0 | 1 | 1 |   11 - laser
+//			|   0  | 1 | 1 | 0 | 0 |   12 - left
+//			|   0  | 1 | 1 | 0 | 1 |   13 - right
+//			|   0  | 1 | 1 | 1 | 0 |   14 - up
+//			|   0  | 1 | 1 | 1 | 1 |   15 - down
+//			|   1  | 0 | 1 | 0 | 0 |   20 - release
+// 
+//			Toy Command Bytes (hexadecimal values): 
+//			Fire Missile  = 0x0a	10
+//			Laser Toggle  = 0x0b	11
+//			Move Left = 0x0c		12
+//			Move Right = 0x0d		13
+//			Move Up = 0x0e			14
+//			Move Down  = 0x0f		15
+//			Release = 0x14			20
+//
+// 
+//			This documentation from the supplier would appear to be WRONG!
+//			Actually bytes 0 and 1 need to be filled followed by zeros in the remaining bytes up to 8.
+//			This information was discovered by using SnoopyPro on a PC.
+// 
+//			Sending Toy Commands with Control Transfer (PC to Toy): 
+//			Byte 0: 0 
+//			Byte 1: toyCommandByte 
+//			Byte 2: toyCommandByte 
+//			
+//			Example Toy Command with Control Transfer: Move Left 
+//			Byte 0: 0 
+//			Byte 1: 0x0c 
+//			Byte 2: 0x0c  Send...  
+//			
+//			Byte 0: 0 
+//			Byte 1: 0x14 
+//			Byte 2: 0x14  Send...
+//*/
+//			reqBuffer[0] = 0;
+//			if (controlBits & 1)
+//				reqBuffer[0] = 0x0c;//left
+//
+//			if (controlBits & 2)
+//				reqBuffer[0] = 0x0d;//right
+//			
+//			if (controlBits & 4)
+//				reqBuffer[0] = 0x0e;//up
+//			
+//			if (controlBits & 8)
+//				reqBuffer[0] = 0x0f;//down
+//			
+//			if (controlBits & 16)
+//				reqBuffer[0] = 0x0a;//fire
+//
+//			if (controlBits & 64)
+//				reqBuffer[0] = 0x0b;//Laser Toggle
+//				
+//			if (reqBuffer[0] == 0)
+//			{
+//				reqBuffer[0] = 0x14;   // this is a guess. If I come back into this routine with a 0 controlBit
+//				reqBuffer[1] = 0x14;   // then perhaps I should send a "stop" or in this case a "release" to the launcher?
+//			} else
+//			{
+//				reqBuffer[1] = reqBuffer[0];
+//			}
+//			reqBuffer[2] = 0;
+//			reqBuffer[3] = 0;
+//			reqBuffer[4] = 0;
+//			reqBuffer[5] = 0;
+//			reqBuffer[6] = 0;
+//			reqBuffer[7] = 0;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = kUSBRqSetConfig; 
+//			devRequest.wValue = kUSBConfDesc; 
+//			devRequest.wIndex = 0; 
+//			devRequest.wLength = 8; 
+//			devRequest.pData = reqBuffer; 
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: STRIKER II reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
+//			}
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//			}
+//
+////			if (controlBits & 64)  //Laser Toggle
+////			if ((controlBits & 16) || (controlBits & 64))
+//			if (controlBits & 16)
+//			{
+//				// after the fire comand, we can't send the "release" to the launcher	
+//				// so, NO OPP
+//			} else
+//			{
+//				reqBuffer[0] = 0x14; // release
+//				reqBuffer[1] = 0x14; // release
+//				reqBuffer[2] = 0;
+//				reqBuffer[3] = 0;
+//				reqBuffer[4] = 0;
+//				reqBuffer[5] = 0;
+//				reqBuffer[6] = 0;
+//				reqBuffer[7] = 0;
+//				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//				devRequest.bRequest = kUSBRqSetConfig; 
+//				devRequest.wValue = kUSBConfDesc; 
+////				devRequest.wIndex = 0;  // Switched this to 1 after mail from Erik Mason - 1 May 2007
+//				devRequest.wIndex = 1;  // having this as 1 may cause a problem with the "release" command
+//										// Erik Mason reported that movement doesn't stop until launcher reaches end of travel
+//				devRequest.wLength = 8; 
+//				devRequest.pData = reqBuffer; 
+//				if (debugCommands)
+//				{
+//					NSLog(@"USBMissileControl: STRIKER II reqBuffer[0]=%d, reqBuffer[1]=%d", reqBuffer[0], reqBuffer[1]);
+//				}
+//				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//				if (kr != kIOReturnSuccess)
+//				{
+//					if (kr == kIOReturnNoDevice)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//					} else
+//						if (kr == kIOReturnNotOpen)
+//						{
+//							if (debugCommands) 
+//								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//						} else
+//						{
+//							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//						}
+//				}
+//			}
+//			
+//			// ===========================================================================
+//			// END OF Control of USB Missile Launcher - Striker II
+//			// ===========================================================================
+//			
+//		}
+//		else
+//		//		if ([privateDataRef getusbVendorID] == kUSBMissileVendorID &&
+//		//			[privateDataRef getusbProductID] == kUSBMissileProductID)
+//			
+//#pragma mark OrigLauncher
+//
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"OrigLauncher"])
+//		{
+//			
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self MissileLauncher_Park];
+//				return self;
+//			}
+//			
+//			// ===========================================================================
+//			// Control of USB Missile Launcher - Original Launcher
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//			
+//			reqBuffer[0] = 'U';
+//			reqBuffer[1] = 'S';
+//			reqBuffer[2] = 'B';
+//			reqBuffer[3] = 'C';
+//			reqBuffer[4] = 0;
+//			reqBuffer[5] = 0;
+//			reqBuffer[6] = 4;
+//			reqBuffer[7] = 0;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = kUSBRqSetConfig; 
+//			devRequest.wValue = kUSBConfDesc; 
+//			devRequest.wIndex = 1;
+//			devRequest.wLength = 8; 
+//			devRequest.pData = reqBuffer; 
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//			}
+//			
+//			reqBuffer[0] = 'U';
+//			reqBuffer[1] = 'S';
+//			reqBuffer[2] = 'B';
+//			reqBuffer[3] = 'C';
+//			reqBuffer[4] = 0;
+//			reqBuffer[5] = 64;
+//			reqBuffer[6] = 2;
+//			reqBuffer[7] = 0;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = kUSBRqSetConfig; 
+//			devRequest.wValue = kUSBConfDesc; 
+//			devRequest.wIndex = 1;
+//			devRequest.wLength = 8; 
+//			devRequest.pData = reqBuffer; 
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//			}
+//			
+//			reqBuffer[0] = 0;
+//			if (controlBits & 1)
+//				reqBuffer[1] = 1;//left
+//			else
+//				reqBuffer[1] = 0;
+//			
+//			if (controlBits & 2)
+//				reqBuffer[2] = 1;//right
+//			else
+//				reqBuffer[2] = 0;//right
+//				
+//			if (controlBits & 4)
+//				reqBuffer[3] = 1;//up
+//			else
+//				reqBuffer[3] = 0;//up
+//				
+//			if (controlBits & 8)
+//				reqBuffer[4] = 1;//down
+//			else
+//				reqBuffer[4] = 0;//down
+//				
+//			if (controlBits & 16)
+//				reqBuffer[5] = 1;//fire
+//			else
+//				reqBuffer[5] = 0;//fire
+//				
+//			reqBuffer[6] = 8;
+//			reqBuffer[7] = 8;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = kUSBRqSetConfig; 
+//			devRequest.wValue = kUSBConfDesc; 
+//			devRequest.wIndex = 0;
+//			devRequest.wLength = 64; 
+//			devRequest.pData = reqBuffer; 
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//			}
+//			
+//			// ===========================================================================
+//			// END OF Control of USB Missile Launcher
+//			// ===========================================================================
+//			
+//		}
+//		
+//		else 
+////			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
+////				[privateDataRef getusbProductID] == kUSBRocketProductID)
+//			
+//			// http://forum.codecall.net/visual-basic-programming/23869-programming-hardware-3.html
+//
+////			StrikerII (Grey) includes laser
+////			USB Vendor ID		0x1130	4400
+////			USB Product ID		0x0202	514
+//			
+////			Class MissileDevice:
+////			INITA     = (85, 83, 66, 67,  0,  0,  4,  0)
+////			INITB     = (85, 83, 66, 67,  0, 64,  2,  0)
+////			CMDFILL   = ( 8,  8,
+////						 0,  0,  0,  0,  0,  0,  0,  0,
+////						 0,  0,  0,  0,  0,  0,  0,  0,
+////						 0,  0,  0,  0,  0,  0,  0,  0,
+////						 0,  0,  0,  0,  0,  0,  0,  0,
+////						 0,  0,  0,  0,  0,  0,  0,  0,
+////						 0,  0,  0,  0,  0,  0,  0,  0,
+////						 0,  0,  0,  0,  0,  0,  0,  0)
+////			STOP      = ( 0,  0,  0,  0,  0,  0)
+////			LEFT      = ( 0,  1,  0,  0,  0,  0)
+////			RIGHT     = ( 0,  0,  1,  0,  0,  0)
+////			UP        = ( 0,  0,  0,  1,  0,  0)
+////			DOWN      = ( 0,  0,  0,  0,  1,  0)
+////			LEFTUP    = ( 0,  1,  0,  1,  0,  0)
+////			RIGHTUP   = ( 0,  0,  1,  1,  0,  0)
+////			LEFTDOWN  = ( 0,  1,  0,  0,  1,  0)
+////			RIGHTDOWN = ( 0,  0,  1,  0,  1,  0)
+////			FIRE      = ( 0,  0,  0,  0,  0,  1)
+////			
+////			def __init__(self, battery):
+////			try:
+////			self.dev=UsbDevice(0x1130, 0x0202, battery)
+////			self.dev.open()
+////			self.dev.handle.reset()
+////			except NoMissilesError, e:
+////			raise NoMissilesError()
+////			
+////			def move(self, direction):
+////			self.dev.handle.controlMsg(0x21, 0x09, self.INITA, 0x02, 0x01)
+////			self.dev.handle.controlMsg(0x21, 0x09, self.INITB, 0x02, 0x01)
+////			self.dev.handle.controlMsg(0x21, 0x09, direction+self.CMDFILL, 0x02, 0x01)
+//
+//			
+//			
+//			
+//			
+//#pragma mark Satzuma
+//
+////	Satzuma Missile launcher (actually Winbond Electronics Corp.)
+////	USB Vendor ID		0x416	1046
+////	USB Product ID		0x9391	37777
+//	
+// 
+//// STOP      = 0x0
+//// LEFT      = 0x8
+//// RIGHT     = 0x4
+//// UP        = 0x2
+//// DOWN      = 0x1
+//// LEFTUP    = LEFT + UP
+//// RIGHTUP   = RIGHT + UP
+//// LEFTDOWN  = LEFT + DOWN
+//// RIGHTDOWN = RIGHT + DOWN
+//// FIRE      = 0x10
+//
+//			
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"Satzuma"])
+//		{
+//			
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - MissileLauncher Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self MissileLauncher_Park];
+//				return self;
+//			}
+//			
+//			// ===========================================================================
+//			// Control of USB Missile Launcher - Original Launcher NOT CHANGED YET NOT CHANGED YET NOT CHANGED YET
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//			
+//			reqBuffer[0] = 0x5f;
+//			reqBuffer[1] = 0x00;
+//			reqBuffer[2] = 0xe0;
+//			reqBuffer[3] = 0xff;
+//			reqBuffer[4] = 0xfe;
+//			reqBuffer[5] = 0x0300;
+//			reqBuffer[6] = 0x00;
+//			reqBuffer[7] = 0x00;
+//			
+//			if (controlBits & 1)
+//				reqBuffer[1] = 0x08;//left
+//			
+//			if (controlBits & 2)
+//				reqBuffer[1] = 0x04;//right
+//			
+//			if (controlBits & 4)
+//				reqBuffer[1] = 0x02;//up
+//			
+//			if (controlBits & 8)
+//				reqBuffer[1] = 0x01;//down
+//			
+//			if (controlBits & 16)
+//				reqBuffer[1] = 0x10;//fire
+//			
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = kUSBRqSetConfig; 
+//			devRequest.wValue = kUSBConfDesc; 
+//			devRequest.wIndex = 0;
+//			devRequest.wLength = 5; 
+//			devRequest.pData = reqBuffer; 
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//			}
+//			
+//			// ===========================================================================
+//			// END OF Control of USB Missile Launcher
+//			// ===========================================================================
+//			
+//		}
+//	
+//		else 
+//				//			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
+//				//				[privateDataRef getusbProductID] == kUSBRocketProductID)
+//				
+//#pragma mark DreamRocket
+//			
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"DreamRocket"])
+//
+//		{
+//
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - DreamCheeky Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self DreamCheeky_Park];
+//				return self;
+//			}
+//			
+//			// ===========================================================================
+//			// Control of USB Rocket Launcher - DreamCheeky
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//				
+//			// Control of the launcher works on a binary code - see the table below for an explanation
+//			//
+//			//     |  16  | 8 | 4 | 2 | 1 |
+//			//     |------|---|---|---|---|
+//			//     |   0  | 0 | 0 | 0 | 1 |    1 - Up
+//			//     |   0  | 0 | 0 | 1 | 0 |    2 - Down
+//			//     |   0  | 0 | 0 | 1 | 1 |    3 - nothing
+//			//     |   0  | 0 | 1 | 0 | 0 |    4 - Left
+//			//     |   0  | 0 | 1 | 0 | 1 |    5 - Up / Left
+//			//     |   0  | 0 | 1 | 1 | 0 |    6 - Down / left
+//			//     |   0  | 0 | 1 | 1 | 1 |    7 - Slow left
+//			//     |   0  | 1 | 0 | 0 | 0 |    8 - Right
+//			//     |   0  | 1 | 0 | 0 | 1 |    9 - Up / Right
+//			//     |   0  | 1 | 0 | 1 | 0 |   10 - Down / Right
+//			//     |   0  | 1 | 0 | 1 | 1 |   11 - Slow Right
+//			//     |   0  | 1 | 1 | 0 | 0 |   12 - nothing
+//			//     |   0  | 1 | 1 | 0 | 1 |   13 - Slow Up
+//			//     |   0  | 1 | 1 | 1 | 0 |   14 - Slow Down
+//			//     |   0  | 1 | 1 | 1 | 1 |   15 - nothing
+//			//     |   1  | 0 | 0 | 0 | 0 |   16 - Fire
+//			//
+//			//     | Fire |RT |LT |DN |UP |
+//			//
+//			//		Thanks to Brandon Heyer for the following:
+//			//      the DreamCheeky Launcher will return the following codes
+//			//	
+//			//		00 04 00 00 00 00 00 00 - All the way left
+//			//		00 08 00 00 00 00 00 00 - All the way right
+//			//		40 00 00 00 00 00 00 00 - All the way down
+//			//		80 00 00 00 00 00 00 00 - All the way up 
+//			//		00 80 00 00 00 00 00 00 - Fire Has completed 
+//			//		00 84 00 00 00 00 00 00 - Fire Has completed and we're all the way left
+//			//		00 88 00 00 00 00 00 00 - Fire Has completed and we're all the way right
+//			
+//			//		They also OR together when you are in the corners, 
+//			//		I'd imagine cool patrol sequences (box, figure eight) could be made if these are analyzed while the turret moves. 
+//			//	Note the definition of the readbuffer (a definition of char doesn't cut the mustard Colonel!)
+//			//			UInt8						rBuffer[dreamCheekyMaxPacketSize];
+//
+//			// Lets see if we have reached the end of a travel direction
+//			// If we have, we need to discontinue moving in that direction
+//			// So we have likely received a request to move up for example, so lets cancel that.
+//			kr = DreamCheekyReadPipe(missileDevice, missileInterface, rBuffer);
 //			if (kr != kIOReturnSuccess)
 //			{
 //				if (debugCommands)
-//					NSLog(@"USBMissileControl: ERROR returned from OICStormReadPipe kr=(0x%08x)", kr);
+//					NSLog(@"USBMissileControl: ERROR returned from DreamCheekyReadPipe kr=(0x%08x)", kr);
 //			} else
 //			{	
 //				if (debugCommands)
-//					NSLog(@"USBMissileControl: return from OICStormReadPipe (0x%02x)", rbBuffer[0]);
+//					NSLog(@"USBMissileControl: return from DreamCheekyReadPipe (0x%02x) (0x%02x) ", rBuffer[0], rBuffer[1]);
 //			}
-			
-			//			Left		controlBits |= 1;
-			//			Right		controlBits |= 2;
-			//			Up			controlBits |= 4;
-			//			Down		controlBits |= 8;
-			//			Fire		controlBits |= 16;
-			//			NSLog(@"USBMissileControl: controlBits %d", controlBits);
-			
-			if (sbBuffer[1] & 0x01)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 8)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional down request");
-					controlBits = controlBits ^8;
-				}
-			} else 
-				if (sbBuffer[1] & 0x02)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-				{
-					if (controlBits & 4)
-					{
-						if (debugCommands)
-							NSLog(@"USBMissileControl: cancelling additional up request");
-						controlBits = controlBits ^4;
-					}
-				}
-			if (sbBuffer[1] & 0x04)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 1)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional left request");
-					controlBits = controlBits ^1;
-				}
-			} else 
-			if (sbBuffer[1] & 0x08)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
-			{
-				if (controlBits & 2)
-				{
-					if (debugCommands)
-						NSLog(@"USBMissileControl: cancelling additional right request");
-					controlBits = controlBits ^2;
-				}
-			}
+//				
+////			Left		controlBits |= 1;
+////			Right		controlBits |= 2;
+////			Up			controlBits |= 4;
+////			Down		controlBits |= 8;
+////			Fire		controlBits |= 16;
+////			NSLog(@"USBMissileControl: controlBits %d", controlBits);
+//
+//			if (rBuffer[0] == 0x40)
+//			{
+//				if (controlBits & 8)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional down request");
+//					controlBits = controlBits ^8;
+//				}
+//			} else 
+//			if (rBuffer[0] == 0x80)
+//			{
+//				if (controlBits & 4)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional up request");
+//					controlBits = controlBits ^4;
+//				}
+//			}
+//			if ((rBuffer[1] == 0x04) || (rBuffer[1] == 0x84)) // this command response can get mixed up with Fire
+//			{
+//				if (controlBits & 1)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional left request");
+//					controlBits = controlBits ^1;
+//				}
+//			} else 
+//			if ((rBuffer[1] == 0x08) || (rBuffer[1] == 0x88)) // this command response can get mixed up with Fire
+//			{
+//				if (controlBits & 2)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional right request");
+//					controlBits = controlBits ^2;
+//				}
+//			}
 //			if (debugCommands)
 //				NSLog(@"USBMissileControl: controlBits %d", controlBits);
-			
-			
-			// send the package - contains actual instruction
-			reqBuffer_RB[0] = 0x02;
-			reqBuffer_RB[1] = 0x00;
-			reqBuffer_RB[2] = 0x00;
-			reqBuffer_RB[3] = 0x00;
-			reqBuffer_RB[4] = 0x00;
-			reqBuffer_RB[5] = 0x00;
-			reqBuffer_RB[6] = 0x00;
-			reqBuffer_RB[7] = 0x00;
-			if (controlBits == 0)   // Launcher STOP (so if no command is sent, we instruct STOP)
-			{
-				reqBuffer_RB[1] = 0x20;
-			}
-			
-			// this launcher does not understand "Up & Left" type commands together. The software simulates it and will get the
-			// desired end result, however the launcher cannot drive 2 x servo motors at once using the command set available.
-			if (controlBits & 1)   // left
-			{
-				reqBuffer_RB[1] = 0x04;
-				if (debugCommands)
-					NSLog(@"USBMissileControl: controlBits %d - Left   <----------------", controlBits);
-			}
-			if (controlBits & 2)   // right
-			{
-				reqBuffer_RB[1] = 0x08;
-				if (debugCommands)
-					NSLog(@"USBMissileControl: controlBits %d - Right   <----------------", controlBits);
-			}
-			if (controlBits & 4)   // up
-			{
-				reqBuffer_RB[1] = 0x02;
-				if (debugCommands)
-					NSLog(@"USBMissileControl: controlBits %d - Up   <----------------", controlBits);
-			}
-			if (controlBits & 8)   // down
-			{
-				reqBuffer_RB[1] = 0x01;
-				if (debugCommands)
-					NSLog(@"USBMissileControl: controlBits %d - Down   <----------------", controlBits);
-			}
-			
-			
-			if ((controlBits & 16) || (controlBits & 128)) // Fire
-			{
-				reqBuffer_RB[1] = 0x10;
-				if (debugCommands)
-				{
-					NSLog(@"USBMissileControl: MissileControl: OIC Storm - Fire (or Prime) initiated");
-				}
-			}
-			
-			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
-			devRequest.bRequest = 0x09; 
-			devRequest.wValue = 0x0000200;
-			devRequest.wIndex = 0;
-			devRequest.wLength = 8;
-			devRequest.pData = reqBuffer_RB; 
-			if (debugCommands)
-			{
-				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-				NSLog(@"USBMissileControl: OIC Storm command package (0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x) delivered", reqBuffer_RB[0], reqBuffer_RB[1], reqBuffer_RB[2], reqBuffer_RB[3], reqBuffer_RB[4], reqBuffer_RB[5], reqBuffer_RB[6], reqBuffer_RB[7]);
-				if( debugCommands && reqBuffer_RB[0] == 0x02)
-					NSLog(@"USBMissileControl: controlBits (0x%04x)", controlBits);
-			}
-			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-			if (debugCommands)
-			{
-				if (kr != kIOReturnSuccess)
-				{
-					if (kr == kIOReturnNoDevice)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-					} else
-					if (kr == kIOReturnNotOpen)
-					{
-						if (debugCommands) 
-							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-					} else
-					{
-						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-					}
-				}
-			}
-			
+///*			
+//			// send the first package - NULL
+//			reqBuffer[0] = 0;
+//			reqBuffer[1] = 0;
+//			reqBuffer[2] = 0;
+//			reqBuffer[3] = 0;
+//			reqBuffer[4] = 0;
+//			reqBuffer[5] = 0;
+//			reqBuffer[6] = 0;
+//			reqBuffer[7] = 0;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = 0x09; 
+//			devRequest.wValue = 0x0000200;
+//			devRequest.wIndex = 0;
+//			devRequest.wLength = 1;
+//			devRequest.pData = reqBuffer; 
+//			if (debugCommands)
+//			{
+//				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//				NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
+//			}
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (debugCommands) 
+//			{
+//				if (kr != kIOReturnSuccess)
+//				{
+//					if (kr == kIOReturnNoDevice)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//					} else
+//						if (kr == kIOReturnNotOpen)
+//						{
+//							if (debugCommands) 
+//								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//						} else
+//						{
+//							NSLog(@"USBMissileControl: ERROR sending the first package - NULL");
+//							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//						}
+//				}
+//			}
+// 
+// */
+//			
+//			// send the second package - contains actual instruction
+//			reqBuffer[0] = 0x00;
+//			gBuffer[0] = 0x00;
+//			if (controlBits & 1)   // left
+//			{
+//				reqBuffer[0] |= 4;
+//				gBuffer[0]   |= 4;  // added for WritePipe support 27Jan2007
+//			}
+//			if (controlBits & 2)   // right
+//			{
+//				reqBuffer[0] |= 8;
+//				gBuffer[0]   |= 8;  // added for WritePipe support 27Jan2007
+//			}
+//			if (controlBits & 4)   // up
+//			{
+//				reqBuffer[0] |= 1;
+//				gBuffer[0]   |= 1;  // added for WritePipe support 27Jan2007
+//			}
+//			if (controlBits & 8)   // down
+//			{
+//				reqBuffer[0] |= 2;
+//				gBuffer[0]   |= 2;  // added for WritePipe support 27Jan2007
+//			}
+//			if ((controlBits & 16) || (controlBits & 128))  // Fire
+//			{
+//				reqBuffer[0] |= 16;
+//				gBuffer[0]   |= 16;  // added for WritePipe support 27Jan2007
+//				if (debugCommands)
+//				{
+//					NSLog(@"USBMissileControl: MissileControl - DreamCheeky Fire initiated");
+//				}
+//			}
+//			
+//			reqBuffer[1] = 0x00;
+//			reqBuffer[2] = 0x00;
+//			reqBuffer[3] = 0x00;
+//			reqBuffer[4] = 0x00;
+//			reqBuffer[5] = 0x00;
+//			reqBuffer[6] = 0x00;
+//			reqBuffer[7] = 0x00;
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = 0x09; 
+//			devRequest.wValue = 0x0000200;
+//			devRequest.wIndex = 0;
+//			devRequest.wLength = 1;
+//			devRequest.pData = reqBuffer; 
+//			if (debugCommands)
+//			{
+//				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//				NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
+//			}
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (debugCommands)
+//			{
+//				if (kr != kIOReturnSuccess)
+//				{
+//					if (kr == kIOReturnNoDevice)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//					} else
+//						if (kr == kIOReturnNotOpen)
+//						{
+//							if (debugCommands) 
+//								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//						} else
+//						{   // Error seems to be generated from this and I can't figure out why
+//							// USBMissileControl: EvaluateUSBErrorCode: kIOReturnOverrun (0xe00002e8) - There has been a data overrun.
+//							// It all seems to still work, so I'm going to ignore it.
+//							
+//						//	NSLog(@"USBMissileControl: ERROR delivering command package");
+//						//	EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//						}
+//				}
+//			}
+//						
 //			if (controlBits & 16)
 //			{
 //				// Need to stop the fire sequence - otherwise it continues without stopping
 //				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
 //				//
-//				
-//				int delayCounter;
-//				for (delayCounter = 0; delayCounter < 500; delayCounter ++)
-//				{
-//					//[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
-//					rbBuffer[0] = 0x00;
-//					rbBuffer[1] = 0x00;
+//				// readPipe: message: 00 00 00 00 00 00 00 00 
+//				// readPipe: message: 00 80 00 00 00 00 00 00 
+//				// readPipe: message: 00 00 00 00 00 00 00 00 
+//				//
+//				// byte #2 is the fire acknowledgement
 //
-//					kr = OICStormReadPipe(missileDevice, missileInterface, rbBuffer);
-//					if (kr != kIOReturnSuccess)
-//						break;
-//					
-//					if (kr == kIOReturnSuccess && rbBuffer[1] & 0x10)
+//				//[self DGWScheduleCancelLauncherCommand:5.500]; // this was the old code before the launcher feedback was being read
+//
+//				int delayCounter;
+//				for (delayCounter = 0; delayCounter < 70; delayCounter ++)
+//				{
+//					[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.100]];
+////					kr = DreamCheekyReadPipe(missileDevice, missileInterface, rBuffer);
+//					DreamCheekyReadPipe(missileDevice, missileInterface, rBuffer);
+//					if (rBuffer[1] >= 0x80)
 //					{
-//						// The 0x10 status doesn't always mean that firing has occurred, but it will be very close
-//						// - wait at least 500ms before sending 0x20 after receiving 0x10
-//						[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.500]];
-//						
+//						// The 0x80 status doesn't always mean that firing has occurred, but it will be very close
+//						// - wait at least 500ms before sending the NULL after receiving 0x80
+//						[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.000]];
 //						// Fire command completed
-//						// send the third package - 0x20
-//						reqBuffer_RB[0] = 0x02;
-//						reqBuffer_RB[1] = 0x20;
-//						reqBuffer_RB[2] = 0x00;
-//						reqBuffer_RB[3] = 0x00;
-//						reqBuffer_RB[4] = 0x00;
-//						reqBuffer_RB[5] = 0x00;
-//						reqBuffer_RB[6] = 0x00;
-//						reqBuffer_RB[7] = 0x00;
+//						// send the third package - NULL
+//						reqBuffer[0] = 0;
+//						reqBuffer[1] = 0;
+//						reqBuffer[2] = 0;
+//						reqBuffer[3] = 0;
+//						reqBuffer[4] = 0;
+//						reqBuffer[5] = 0;
+//						reqBuffer[6] = 0;
+//						reqBuffer[7] = 0;
 //						devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
 //						devRequest.bRequest = 0x09; 
 //						devRequest.wValue = 0x0000200;
 //						devRequest.wIndex = 0;
 //						devRequest.wLength = 8;
-//						devRequest.pData = reqBuffer_RB; 
+//						devRequest.pData = reqBuffer; 
 //						if (debugCommands)
 //						{
-//							//NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-//							//NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-//							//NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-//							//NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-//							//NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-//							NSLog(@"USBMissileControl: OIC Storm command package (0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x) delivered", reqBuffer_RB[0], reqBuffer_RB[1], reqBuffer_RB[2], reqBuffer_RB[3], reqBuffer_RB[4], reqBuffer_RB[5], reqBuffer_RB[6], reqBuffer_RB[7]);
+//							NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//							NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//							NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//							NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//							NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//							NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
 //						}
 //						kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
-//						
-//						if (kr != kIOReturnSuccess)
+//						if (debugCommands)
 //						{
-//							if (kr == kIOReturnNoDevice)
+//							if (kr != kIOReturnSuccess)
 //							{
-//								if (debugCommands) 
-//									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
-//							} else
-//							if (kr == kIOReturnNotOpen)
-//							{
-//								if (debugCommands) 
-//									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
-//							} else
-//							{
-//								EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
-//							}
-//						}	
+//								if (kr == kIOReturnNoDevice)
+//								{
+//									if (debugCommands) 
+//										NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//								} else
+//								if (kr == kIOReturnNotOpen)
+//								{
+//									if (debugCommands) 
+//										NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//								} else
+//								{
+//									EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//								}
+//							}	
+//						}
 //						
 //						break;
 //					}
-//					
+//
 //				}
 //				
-//			}	
-			
-//			if (controlBits & 128) // Prime Launcher
+//			}
+//
+//			if (controlBits & 128)
 //			{
 //				// Need to stop the fire sequence - otherwise it continues without stopping
-//				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
-//				//
-//				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
+//				// What we're trying to do here is prime the launcher for firing
+//				// So we don't actually want to FIRE
 //				
-//				// Fire command completed
-//				// send the third package - 0x20
-//				reqBuffer_RB[0] = 0x02;
-//				reqBuffer_RB[1] = 0x20;
-//				reqBuffer_RB[2] = 0x00;
-//				reqBuffer_RB[3] = 0x00;
-//				reqBuffer_RB[4] = 0x00;
-//				reqBuffer_RB[5] = 0x00;
-//				reqBuffer_RB[6] = 0x00;
-//				reqBuffer_RB[7] = 0x00;
+//				int delayCounter;
+//				for (delayCounter = 0; delayCounter < 35; delayCounter ++)  // 3.5 seconds
+//				{
+//					[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
+//				}
+//				
+//				// send a NULL package to shut things down.
+//				reqBuffer[0] = 0;
+//				reqBuffer[1] = 0;
+//				reqBuffer[2] = 0;
+//				reqBuffer[3] = 0;
+//				reqBuffer[4] = 0;
+//				reqBuffer[5] = 0;
+//				reqBuffer[6] = 0;
+//				reqBuffer[7] = 0;
 //				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
 //				devRequest.bRequest = 0x09; 
 //				devRequest.wValue = 0x0000200;
 //				devRequest.wIndex = 0;
 //				devRequest.wLength = 8;
-//				devRequest.pData = reqBuffer_RB; 
+//				devRequest.pData = reqBuffer; 
 //				if (debugCommands)
 //				{
-//					//	NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
-//					//	NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
-//					//	NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
-//					//	NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
-//					//	NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
-//					NSLog(@"USBMissileControl: OIC Storm command package (0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x) delivered", reqBuffer_RB[0], reqBuffer_RB[1], reqBuffer_RB[2], reqBuffer_RB[3], reqBuffer_RB[4], reqBuffer_RB[5], reqBuffer_RB[6], reqBuffer_RB[7]);
+//					NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//					NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//					NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//					NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//					NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//					NSLog(@"USBMissileControl: DreamCheeky command package (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x) (0x%02x)", reqBuffer[0], reqBuffer[1], reqBuffer[2], reqBuffer[3], reqBuffer[4], reqBuffer[5], reqBuffer[6], reqBuffer[7]);
 //				}
 //				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
 //				if (debugCommands)
@@ -3165,12 +2757,694 @@ void DeviceNotification( void *refCon,
 //						}
 //					}	
 //				}
-//				
+//			}			
+//			
+//			// ===========================================================================
+//			// END OF USB Rocket Launcher - DreamCheeky
+//			// ===========================================================================
+//		}			
+//
+//		else 
+////			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
+////				[privateDataRef getusbProductID] == kUSBRocketProductID)
+//			
+//#pragma mark DreamRocketII
+//			
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"DreamRocketII"])
+//		{
+//
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - DreamCheeky Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self DreamCheeky_Park];
+//				return self;
 //			}
-			// ===========================================================================
-			// END OF USB Rocket Launcher - DreamCheeky OIC Storm
-			// ===========================================================================
-		}
+//			
+//			// ===========================================================================
+//			// Control of USB Rocket Launcher - DreamCheeky II  (Rocket Baby)
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//			
+//			// USBVendorID  = 2689 (0xa81)
+//			// USBProductID = 1793 (0x701)
+//
+//			// Control of the launcher works on a binary code - see the table below for an explanation
+//			//
+//// Set up Packet - 21 09 00 02 00 00 00 00
+////
+//// 0x01  - down
+//// 0x02  - up
+//// 0x04  - left
+//// 0x08  - right
+//// 0x10  - fire
+//// 0x20  - stop
+//// 0x40  - request status
+////
+////	1. To fire, Send 0x10
+////  2. The motor keeps working now, keep sending 0x40 to ask for status (say, every 100~500ms)
+////	3. If 0x00 received, then the missile is not fired.
+////	4. If 0x10 received, them missile is fired.
+////	5. If the missile is fired, send 0x20 to stop it.
+////		
+////  Other launcher Responses - these are returned as bits and thus you need to check like "if (rbBuffer[0] & 0x01)" using Bitwise AND
+////  0x01 - all the way down
+////  0x02 - all the way up
+////  0x04 - all the way left
+////  0x08 - all the way right
+////  0x10 - fire has completed
+//			//  			
+//			//	The user has to use a USB Control Endpoint to send the command and to use the USB IN endpoint to read the status.
+//			//
+//			//     |  16  | 8 | 4 | 2 | 1 |
+//			//     |------|---|---|---|---|
+//			//     |   0  | 0 | 0 | 0 | 1 |    1 - Down
+//			//     |   0  | 0 | 0 | 1 | 0 |    2 - Up
+//			//     |   0  | 0 | 1 | 0 | 0 |    4 - Left
+//			//     |   0  | 1 | 0 | 0 | 0 |    8 - Right
+//			//     |   0  | 1 | 0 | 1 | 0 |   10 - Fire
+//			//     |   1  | 0 | 1 | 0 | 0 |   20 - Stop
+//			//
+//			//     | Fire |RT |LT |UP |DN |
+//			//
+//			
+//
+//			// Lets see if we have reached the end of a travel direction
+//			// If we have, we need to discontinue moving in that direction
+//			// So we have likely received a request to move up for example, so lets cancel that.
+//			rbBuffer[0] = 0x00;
+//			kr = RocketBabyReadPipe(missileDevice, missileInterface, rbBuffer);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (debugCommands)
+//					NSLog(@"USBMissileControl: ERROR returned from DreamCheekyReadPipe kr=(0x%08x)", kr);
+//			} else
+//			{	
+//				if (debugCommands)
+//					NSLog(@"USBMissileControl: return from RocketBabyReadPipe (0x%02x)", rbBuffer[0]);
+//			}
+//				
+////			Left		controlBits |= 1;
+////			Right		controlBits |= 2;
+////			Up			controlBits |= 4;
+////			Down		controlBits |= 8;
+////			Fire		controlBits |= 16;
+////			NSLog(@"USBMissileControl: controlBits %d", controlBits);
+//
+//			if (rbBuffer[0] & 0x01)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 8)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional down request");
+//					controlBits = controlBits ^8;
+//				}
+//			} else 
+//			if (rbBuffer[0] & 0x02)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 4)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional up request");
+//					controlBits = controlBits ^4;
+//				}
+//			}
+//			if (rbBuffer[0] & 0x04)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 1)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional left request");
+//					controlBits = controlBits ^1;
+//				}
+//			} else 
+//			if (rbBuffer[0] & 0x08)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 2)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional right request");
+//					controlBits = controlBits ^2;
+//				}
+//			}
+//			if (debugCommands)
+//				NSLog(@"USBMissileControl: controlBits %d", controlBits);
+//			
+//			
+//			// send the package - contains actual instruction
+//			reqBuffer_RB[0] = 0x00; 
+//			if (controlBits == 0)   // Launcher STOP (so if no command is sent, we instruct STOP)
+//			{
+//				reqBuffer_RB[0] = 0x20;
+//			}
+//			
+//			// this launcher does not understand "Up & Left" type commands together. The software simulates it and will get the
+//			// desired end result, however the launcher cannot drive 2 x servo motors at once using the command set available.
+//			if (controlBits & 1)   // left
+//			{
+//				reqBuffer_RB[0] = 4;
+//			}
+//			if (controlBits & 2)   // right
+//			{
+//				reqBuffer_RB[0] = 8;
+//			}
+//			if (controlBits & 4)   // up
+//			{
+//				reqBuffer_RB[0] = 2;
+//			}
+//			if (controlBits & 8)   // down
+//			{
+//				reqBuffer_RB[0] = 1;
+//			}
+//
+//
+//			if ((controlBits & 16) || (controlBits & 128)) // Fire
+//			{
+//				reqBuffer_RB[0] = 0x10;
+//				if (debugCommands)
+//				{
+//					NSLog(@"USBMissileControl: MissileControl - DreamCheeky Fire (or Prime) initiated");
+//				}
+//			}
+//			
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = 0x09; 
+//			devRequest.wValue = 0x0000200;
+//			devRequest.wIndex = 0;
+//			devRequest.wLength = 1;
+//			devRequest.pData = reqBuffer_RB; 
+//			if (debugCommands)
+//			{
+//				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//				NSLog(@"USBMissileControl: Rocket Baby command package (0x%02x) delivered", reqBuffer_RB[0]);
+//				if( debugCommands && reqBuffer_RB[0] == 0x00)
+//					NSLog(@"USBMissileControl: controlBits (0x%04x)", controlBits);
+//			}
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (kr != kIOReturnSuccess)
+//			{
+//				if (kr == kIOReturnNoDevice)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//				} else
+//				if (kr == kIOReturnNotOpen)
+//				{
+//					if (debugCommands) 
+//						NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//				} else
+//				{
+//					EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//				}
+//			}
+//									
+//			if (controlBits & 16)
+//			{
+//				// Need to stop the fire sequence - otherwise it continues without stopping
+//				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
+//				//
+//				int delayCounter;
+//				for (delayCounter = 0; delayCounter < 500; delayCounter ++)
+//				{
+//					//[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
+//					rbBuffer[0] = 0x00;
+//					kr = RocketBabyReadPipe(missileDevice, missileInterface, rbBuffer);
+//					if (kr != kIOReturnSuccess)
+//					{
+//						// error output has already been produced c/- RocketBabyReadPipe
+//						break;
+//					}
+//					
+//					if (rbBuffer[0] & 0x10)
+//					{
+//						// The 0x10 status doesn't always mean that firing has occurred, but it will be very close
+//						// - wait at least 500ms before sending 0x20 after receiving 0x10
+//						[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.500]];
+//						
+//						// Fire command completed
+//						// send the third package - 0x20
+//						reqBuffer_RB[0] = 0x20;
+//						devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//						devRequest.bRequest = 0x09; 
+//						devRequest.wValue = 0x0000200;
+//						devRequest.wIndex = 0;
+//						devRequest.wLength = 1;
+//						devRequest.pData = reqBuffer_RB; 
+//						if (debugCommands)
+//						{
+//							//NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//							//NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//							//NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//							//NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//							//NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//							NSLog(@"USBMissileControl: Rocket Baby command package (0x%02x) delivered", reqBuffer_RB[0]);
+//						}
+//						kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//						if (kr != kIOReturnSuccess)
+//						{
+//							if (kr == kIOReturnNoDevice)
+//							{
+//								if (debugCommands) 
+//									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//							} else
+//							if (kr == kIOReturnNotOpen)
+//							{
+//								if (debugCommands) 
+//									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//							} else
+//							{
+//								EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//							}
+//						}	
+//						
+//						break;
+//					}
+//
+//				}
+//				
+//			}	
+//			
+//			if (controlBits & 128) // Prime Launcher
+//			{
+//				// Need to stop the prime sequence - otherwise it continues without stopping
+//				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
+//				//
+//				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
+//						
+//				// Fire command completed
+//				// send the third package - 0x20
+//				reqBuffer_RB[0] = 0x20;
+//				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//				devRequest.bRequest = 0x09; 
+//				devRequest.wValue = 0x0000200;
+//				devRequest.wIndex = 0;
+//				devRequest.wLength = 1;
+//				devRequest.pData = reqBuffer_RB; 
+//				if (debugCommands)
+//				{
+//				//	NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//				//	NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//				//	NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//				//	NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//				//	NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//					NSLog(@"USBMissileControl: Rocket Baby command package (0x%02x) delivered", reqBuffer_RB[0]);
+//				}
+//				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//				if (kr != kIOReturnSuccess)
+//				{
+//					if (kr == kIOReturnNoDevice)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//					} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//				}	
+//						
+//			}
+//			// ===========================================================================
+//			// END OF USB Rocket Launcher - DreamCheeky II (Rocket Baby)
+//			// ===========================================================================
+//		}			
+//
+//		else
+		//			if ([privateDataRef getusbVendorID] == kUSBRocketVendorID &&
+		//				[privateDataRef getusbProductID] == kUSBRocketProductID)
+		
+#pragma mark OICStorm
+		
+//		if ([[privateDataRef getLauncherType] isEqualToString:@"OICStorm"])
+//		{
+//			
+//			// This code is here because I need to know the launcher type so that the right launcher can be parked
+//			// So this procedure ends up being call again by the procedure that is being called, i.e. MissileLauncher_Park
+//			if (controlBits & 32)  // Park
+//			{
+//				//NSLog(@"USBMissileControl: MissileControl - DreamCheeky Park");
+//				// controlBits = 0;  // we're outa here, so don't need to worry about setting the controlBits
+//				[self DreamCheeky_Park];
+//				return self;
+//			}
+//			
+//			// ===========================================================================
+//			// Control of USB Rocket Launcher - DreamCheeky OIC Storm
+//			// ===========================================================================
+//			if (debugCommands)
+//			{
+//				NSLog(@"USBMissileControl: -------------- new command instruction --------------");
+//				NSLog(@"USBMissileControl: launcherType = %@", [privateDataRef getLauncherType]);
+//				NSLog(@"USBMissileControl: USBVendorID  = %d (0x%d)", (int)[privateDataRef getusbVendorID], (int)[privateDataRef getusbVendorID]);
+//				NSLog(@"USBMissileControl: USBProductID = %d (0x%d)", (int)[privateDataRef getusbProductID], (int)[privateDataRef getusbProductID]);
+////				NSLog(@"USBMissileControl: device       = (0x%x)", [privateDataRef deviceInterface]);
+//				NSLog(@"USBMissileControl: controlBits  = %d", controlBits);
+//			}
+//			
+//			// USBVendorID  = 2689 (0xa81)
+//			// USBProductID = 1793 (0x701)
+//			
+//			// Control of the launcher works on a binary code - see the table below for an explanation
+//			//
+//			// Set up Packet - 21 09 00 02 00 00 00 00
+//			//
+//			// 0x01  - down
+//			// 0x02  - up
+//			// 0x04  - left
+//			// 0x08  - right
+//			// 0x10  - fire
+//			// 0x20  - stop
+//			// 0x40  - request status
+//			//
+//			//	1. To fire, Send 0x10
+//			//  2. The motor keeps working now, keep sending 0x40 to ask for status (say, every 100~500ms)
+//			//	3. If 0x00 received, then the missile is not fired.
+//			//	4. If 0x10 received, them missile is fired.
+//			//	5. If the missile is fired, send 0x20 to stop it.
+//			//		
+//			//  Other launcher Responses - these are returned as bits and thus you need to check like "if (rbBuffer[0] & 0x01)" using Bitwise AND
+//			//  0x01 - all the way down
+//			//  0x02 - all the way up
+//			//  0x04 - all the way left
+//			//  0x08 - all the way right
+//			//  0x10 - fire has completed
+//			//  			
+//			//	The user has to use a USB Control Endpoint to send the command and to use the USB IN endpoint to read the status.
+//			//
+//			//     |  16  | 8 | 4 | 2 | 1 |
+//			//     |------|---|---|---|---|
+//			//     |   0  | 0 | 0 | 0 | 1 |    1 - Down
+//			//     |   0  | 0 | 0 | 1 | 0 |    2 - Up
+//			//     |   0  | 0 | 1 | 0 | 0 |    4 - Left
+//			//     |   0  | 1 | 0 | 0 | 0 |    8 - Right
+//			//     |   0  | 1 | 0 | 1 | 0 |   10 - Fire
+//			//     |   1  | 0 | 1 | 0 | 0 |   20 - Stop
+//			//
+//			//     | Fire |RT |LT |UP |DN |
+//			//
+//			
+//			
+//			// Lets see if we have reached the end of a travel direction
+//			// If we have, we need to discontinue moving in that direction
+//			// So we have likely received a request to move up for example, so lets cancel that.
+//			sbBuffer[0] = 0x00;
+//			sbBuffer[1] = 0x00;
+////			kr = OICStormReadPipe(missileDevice, missileInterface, rbBuffer);
+////			if (kr != kIOReturnSuccess)
+////			{
+////				if (debugCommands)
+////					NSLog(@"USBMissileControl: ERROR returned from OICStormReadPipe kr=(0x%08x)", kr);
+////			} else
+////			{	
+////				if (debugCommands)
+////					NSLog(@"USBMissileControl: return from OICStormReadPipe (0x%02x)", rbBuffer[0]);
+////			}
+//			
+//			//			Left		controlBits |= 1;
+//			//			Right		controlBits |= 2;
+//			//			Up			controlBits |= 4;
+//			//			Down		controlBits |= 8;
+//			//			Fire		controlBits |= 16;
+//			//			NSLog(@"USBMissileControl: controlBits %d", controlBits);
+//			
+//			if (sbBuffer[1] & 0x01)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 8)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional down request");
+//					controlBits = controlBits ^8;
+//				}
+//			} else 
+//				if (sbBuffer[1] & 0x02)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//				{
+//					if (controlBits & 4)
+//					{
+//						if (debugCommands)
+//							NSLog(@"USBMissileControl: cancelling additional up request");
+//						controlBits = controlBits ^4;
+//					}
+//				}
+//			if (sbBuffer[1] & 0x04)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 1)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional left request");
+//					controlBits = controlBits ^1;
+//				}
+//			} else 
+//			if (sbBuffer[1] & 0x08)  // Bitwise AND -- http://en.wikipedia.org/wiki/Operators_in_C_and_C_Plus_Plus
+//			{
+//				if (controlBits & 2)
+//				{
+//					if (debugCommands)
+//						NSLog(@"USBMissileControl: cancelling additional right request");
+//					controlBits = controlBits ^2;
+//				}
+//			}
+////			if (debugCommands)
+////				NSLog(@"USBMissileControl: controlBits %d", controlBits);
+//			
+//			
+//			// send the package - contains actual instruction
+//			reqBuffer_RB[0] = 0x02;
+//			reqBuffer_RB[1] = 0x00;
+//			reqBuffer_RB[2] = 0x00;
+//			reqBuffer_RB[3] = 0x00;
+//			reqBuffer_RB[4] = 0x00;
+//			reqBuffer_RB[5] = 0x00;
+//			reqBuffer_RB[6] = 0x00;
+//			reqBuffer_RB[7] = 0x00;
+//			if (controlBits == 0)   // Launcher STOP (so if no command is sent, we instruct STOP)
+//			{
+//				reqBuffer_RB[1] = 0x20;
+//			}
+//			
+//			// this launcher does not understand "Up & Left" type commands together. The software simulates it and will get the
+//			// desired end result, however the launcher cannot drive 2 x servo motors at once using the command set available.
+//			if (controlBits & 1)   // left
+//			{
+//				reqBuffer_RB[1] = 0x04;
+//				if (debugCommands)
+//					NSLog(@"USBMissileControl: controlBits %d - Left   <----------------", controlBits);
+//			}
+//			if (controlBits & 2)   // right
+//			{
+//				reqBuffer_RB[1] = 0x08;
+//				if (debugCommands)
+//					NSLog(@"USBMissileControl: controlBits %d - Right   <----------------", controlBits);
+//			}
+//			if (controlBits & 4)   // up
+//			{
+//				reqBuffer_RB[1] = 0x02;
+//				if (debugCommands)
+//					NSLog(@"USBMissileControl: controlBits %d - Up   <----------------", controlBits);
+//			}
+//			if (controlBits & 8)   // down
+//			{
+//				reqBuffer_RB[1] = 0x01;
+//				if (debugCommands)
+//					NSLog(@"USBMissileControl: controlBits %d - Down   <----------------", controlBits);
+//			}
+//			
+//			
+//			if ((controlBits & 16) || (controlBits & 128)) // Fire
+//			{
+//				reqBuffer_RB[1] = 0x10;
+//				if (debugCommands)
+//				{
+//					NSLog(@"USBMissileControl: MissileControl: OIC Storm - Fire (or Prime) initiated");
+//				}
+//			}
+//			
+//			devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+//			devRequest.bRequest = 0x09; 
+//			devRequest.wValue = 0x0000200;
+//			devRequest.wIndex = 0;
+//			devRequest.wLength = 8;
+//			devRequest.pData = reqBuffer_RB; 
+//			if (debugCommands)
+//			{
+//				NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+//				NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+//				NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+//				NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+//				NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+//				NSLog(@"USBMissileControl: OIC Storm command package (0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x) delivered", reqBuffer_RB[0], reqBuffer_RB[1], reqBuffer_RB[2], reqBuffer_RB[3], reqBuffer_RB[4], reqBuffer_RB[5], reqBuffer_RB[6], reqBuffer_RB[7]);
+//				if( debugCommands && reqBuffer_RB[0] == 0x02)
+//					NSLog(@"USBMissileControl: controlBits (0x%04x)", controlBits);
+//			}
+//			kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+//			if (debugCommands)
+//			{
+//				if (kr != kIOReturnSuccess)
+//				{
+//					if (kr == kIOReturnNoDevice)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+//					} else
+//					if (kr == kIOReturnNotOpen)
+//					{
+//						if (debugCommands) 
+//							NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+//					} else
+//					{
+//						EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+//					}
+//				}
+//			}
+//			
+////			if (controlBits & 16)
+////			{
+////				// Need to stop the fire sequence - otherwise it continues without stopping
+////				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
+////				//
+////				
+////				int delayCounter;
+////				for (delayCounter = 0; delayCounter < 500; delayCounter ++)
+////				{
+////					//[NSThread sleepUntilDate:[[NSDate alloc]initWithTimeIntervalSinceNow:0.100]];
+////					rbBuffer[0] = 0x00;
+////					rbBuffer[1] = 0x00;
+////
+////					kr = OICStormReadPipe(missileDevice, missileInterface, rbBuffer);
+////					if (kr != kIOReturnSuccess)
+////						break;
+////					
+////					if (kr == kIOReturnSuccess && rbBuffer[1] & 0x10)
+////					{
+////						// The 0x10 status doesn't always mean that firing has occurred, but it will be very close
+////						// - wait at least 500ms before sending 0x20 after receiving 0x10
+////						[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.500]];
+////						
+////						// Fire command completed
+////						// send the third package - 0x20
+////						reqBuffer_RB[0] = 0x02;
+////						reqBuffer_RB[1] = 0x20;
+////						reqBuffer_RB[2] = 0x00;
+////						reqBuffer_RB[3] = 0x00;
+////						reqBuffer_RB[4] = 0x00;
+////						reqBuffer_RB[5] = 0x00;
+////						reqBuffer_RB[6] = 0x00;
+////						reqBuffer_RB[7] = 0x00;
+////						devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+////						devRequest.bRequest = 0x09; 
+////						devRequest.wValue = 0x0000200;
+////						devRequest.wIndex = 0;
+////						devRequest.wLength = 8;
+////						devRequest.pData = reqBuffer_RB; 
+////						if (debugCommands)
+////						{
+////							//NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+////							//NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+////							//NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+////							//NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+////							//NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+////							NSLog(@"USBMissileControl: OIC Storm command package (0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x) delivered", reqBuffer_RB[0], reqBuffer_RB[1], reqBuffer_RB[2], reqBuffer_RB[3], reqBuffer_RB[4], reqBuffer_RB[5], reqBuffer_RB[6], reqBuffer_RB[7]);
+////						}
+////						kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+////						
+////						if (kr != kIOReturnSuccess)
+////						{
+////							if (kr == kIOReturnNoDevice)
+////							{
+////								if (debugCommands) 
+////									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+////							} else
+////							if (kr == kIOReturnNotOpen)
+////							{
+////								if (debugCommands) 
+////									NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+////							} else
+////							{
+////								EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+////							}
+////						}	
+////						
+////						break;
+////					}
+////					
+////				}
+////				
+////			}	
+//			
+////			if (controlBits & 128) // Prime Launcher
+////			{
+////				// Need to stop the fire sequence - otherwise it continues without stopping
+////				// if we read (or look for feedback from the launcher) it will tell us when the fire has completed
+////				//
+////				[NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
+////				
+////				// Fire command completed
+////				// send the third package - 0x20
+////				reqBuffer_RB[0] = 0x02;
+////				reqBuffer_RB[1] = 0x20;
+////				reqBuffer_RB[2] = 0x00;
+////				reqBuffer_RB[3] = 0x00;
+////				reqBuffer_RB[4] = 0x00;
+////				reqBuffer_RB[5] = 0x00;
+////				reqBuffer_RB[6] = 0x00;
+////				reqBuffer_RB[7] = 0x00;
+////				devRequest.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBClass, kUSBInterface); 
+////				devRequest.bRequest = 0x09; 
+////				devRequest.wValue = 0x0000200;
+////				devRequest.wIndex = 0;
+////				devRequest.wLength = 8;
+////				devRequest.pData = reqBuffer_RB; 
+////				if (debugCommands)
+////				{
+////					//	NSLog(@"  devRequest.bmRequestType %x", devRequest.bmRequestType);
+////					//	NSLog(@"  devRequest.bRequest      %x", devRequest.bRequest);
+////					//	NSLog(@"  devRequest.wValue        %x", devRequest.wValue);
+////					//	NSLog(@"  devRequest.wIndex        %x", devRequest.wIndex);
+////					//	NSLog(@"  devRequest.wLength       %x", devRequest.wLength);
+////					NSLog(@"USBMissileControl: OIC Storm command package (0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x) delivered", reqBuffer_RB[0], reqBuffer_RB[1], reqBuffer_RB[2], reqBuffer_RB[3], reqBuffer_RB[4], reqBuffer_RB[5], reqBuffer_RB[6], reqBuffer_RB[7]);
+////				}
+////				kr = (*missileDevice)->DeviceRequest(missileDevice, &devRequest);
+////				if (debugCommands)
+////				{
+////					if (kr != kIOReturnSuccess)
+////					{
+////						if (kr == kIOReturnNoDevice)
+////						{
+////							if (debugCommands) 
+////								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNoDevice", [privateDataRef getLauncherType]);
+////						} else
+////						if (kr == kIOReturnNotOpen)
+////						{
+////							if (debugCommands) 
+////								NSLog(@"USBMissileControl: %@ IOReturn: kIOReturnNotOpen", [privateDataRef getLauncherType]);
+////						} else
+////						{
+////							EvaluateUSBErrorCode(missileDevice, missileInterface, kr);
+////						}
+////					}	
+////				}
+////				
+////			}
+//			// ===========================================================================
+//			// END OF USB Rocket Launcher - DreamCheeky OIC Storm
+//			// ===========================================================================
+//		}
 		
 	} // for loop - number of items in launcherDevice array
 		
@@ -3949,26 +4223,23 @@ void ClearStalledPipe(IOUSBInterfaceInterface183 **missileInterface_param)
 	NSUInteger numItems = [launcherDevice count];
 	for (i = 0; i < numItems; i++)
 	{
-//		privateDataRef = [[[USBLauncher alloc] init] retain];
-//		privateDataRef = [[USBLauncher alloc] init];
 		privateDataRef = [launcherDevice objectAtIndex: i];
 		missileDevice = [privateDataRef deviceInterface];
 		(*missileDevice)->USBDeviceClose(missileDevice);
 		(*missileDevice)->Release(missileDevice);
 		[launcherDevice removeObjectAtIndex: i];
-//		[privateDataRef release];
 	}
 	
 	return self;
 }
 
-- (id)controlLauncher:(NSNumber*)code;
+- (id)controlLauncher:(NSNumber *)code;
 {
 	int				launcherRequest = [code intValue];
 	UInt8			controls;
 	Boolean			debugCommands;
 	
-	NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults * prefs = [NSUserDefaults standardUserDefaults];
 	debugCommands = [prefs floatForKey:@"debugCommands"];
 	
 	controls = 0;
@@ -4060,9 +4331,9 @@ void ClearStalledPipe(IOUSBInterfaceInterface183 **missileInterface_param)
 			[self MissileControl:controls];
 			break;
 		}
-		case launcherLaserToggle:
+		case launcherLaserToggleON:
 		{
-			controls |= 64;
+			controls |= 0x40;
 			if (debugCommands)
 				NSLog(@"USBMissileControl: controlLauncher: Laser Toggle Request START");
 			[self MissileControl:controls];
@@ -4070,6 +4341,16 @@ void ClearStalledPipe(IOUSBInterfaceInterface183 **missileInterface_param)
 				NSLog(@"USBMissileControl: controlLauncher: Laser Toggle Request FINISH");
 			break;
 		}
+        case launcherLaserToggleOFF:
+        {
+            controls |= 0x80;
+            if (debugCommands)
+                NSLog(@"USBMissileControl: controlLauncher: Laser Toggle Request START");
+            [self MissileControl:controls];
+            if (debugCommands)
+                NSLog(@"USBMissileControl: controlLauncher: Laser Toggle Request FINISH");
+            break;
+        }
 		case launcherPrime:
 		{
 			controls |= 128;

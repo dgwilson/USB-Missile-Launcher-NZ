@@ -33,9 +33,13 @@ enum {
 	
     self = [super init];
 
-	unsigned major, minor, bugFix;
-    [self getSystemVersionMajor:&major minor:&minor bugFix:&bugFix];
-    NSLog(@"OS Version - %u.%u.%u", major, minor, bugFix);
+//	unsigned major, minor, bugFix;
+//    [self getSystemVersionMajor:&major minor:&minor bugFix:&bugFix];
+//    NSLog(@"OS Version - %u.%u.%u", major, minor, bugFix);
+    
+    if ( SystemVersionCheck() < 10 ) // < 10.10
+        NSLog(@"%@ Operating System version < 10.10", NSStringFromSelector(_cmd));
+    
 	NSString *currVersionNumber = [[[NSBundle bundleForClass:[self class]] infoDictionary] objectForKey:@"CFBundleVersion"];
 	NSLog(@"Application release >%@<", currVersionNumber);
 
@@ -171,10 +175,22 @@ enum {
 
 #pragma mark - system version
 
+NSInteger SystemVersionCheck(void)
+{
+    NSLog(@"OS Version - %@", [[NSProcessInfo processInfo] operatingSystemVersionString]);
+    
+    NSArray *myarr = [[[NSProcessInfo processInfo] operatingSystemVersionString] componentsSeparatedByString:@" "];
+    NSArray *majorMinorBugFix = [myarr[1] componentsSeparatedByString:@"."];
+    return [majorMinorBugFix[1] integerValue];   // e.g. major[0] = 10, minor[1] = 9, bugfix[2] = 4. This would return 9.
+}
+
 - (void)getSystemVersionMajor:(unsigned *)major
                         minor:(unsigned *)minor
                        bugFix:(unsigned *)bugFix;
 {
+    //TODO: fix this
+    // 2017-05-08 20:18:38.265558+1200 USB Missile Launcher NZ[3556:895507] WARNING: The Gestalt selector gestaltSystemVersion is returning 10.9.4 instead of 10.12.4. This is not a bug in Gestalt -- it is a documented limitation. Use NSProcessInfo's operatingSystemVersion property to get correct system version number.
+    
     OSErr err;
     SInt32 systemVersion, versionMajor, versionMinor, versionBugFix;
     if ((err = Gestalt(gestaltSystemVersion, &systemVersion)) != noErr) goto fail;

@@ -145,6 +145,7 @@
                 </subviews>
             </view>
             <connections>
+                <outlet property="btn_lazerButton" destination="636" id="gYs-0U-Yao"/>
                 <outlet property="buttonControlPanel" destination="357" id="826"/>
                 <outlet property="delegate" destination="436" id="1036"/>
                 <outlet property="launcherMessage" destination="347" id="824"/>
