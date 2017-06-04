@@ -121,7 +121,7 @@
 		E0D7B3001EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D7B2FF1EBEE72700A5A2AC /* USBLauncher_DreamRocketII.m */; };
 		E0E055B60AE07DD500ABBF6F /* MissileLauncher_shooting_72.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E055B50AE07DD500ABBF6F /* MissileLauncher_shooting_72.png */; };
 		E0E326010A3C26D200A4F1ED /* MissileLauncher.icns in Resources */ = {isa = PBXBuildFile; fileRef = E0E326000A3C26D200A4F1ED /* MissileLauncher.icns */; };
-		E0E54EAC1EE38346000CE596 /* Background-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E54EAB1EE38346000CE596 /* Background-Bottom.png */; };
+		E0E54EAD1EE38523000CE596 /* Background-Bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E0E54EAB1EE38346000CE596 /* Background-Bottom.png */; };
 		E0E902950ACFA7FB008C30AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902940ACFA7FB008C30AC /* QuartzCore.framework */; };
 		E0E902990ACFA81B008C30AC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E902980ACFA81B008C30AC /* OpenGL.framework */; };
 		E0E9029D0ACFA833008C30AC /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E9029C0ACFA833008C30AC /* CoreAudioKit.framework */; };
@@ -1056,7 +1056,7 @@
 				E04F624D0B2A94F000CFF2B8 /* DreamCheeky_Launcher.psd in Resources */,
 				E03780460BAC873B00724518 /* Localizable.strings in Resources */,
 				E04940450BC99FA900B71710 /* USB Missile Launcher NZ.sdef in Resources */,
-				E0E54EAC1EE38346000CE596 /* Background-Bottom.png in Resources */,
+				E0E54EAD1EE38523000CE596 /* Background-Bottom.png in Resources */,
 				E0FF2A1D12F01C9C006E9C54 /* Black Button.psd in Resources */,
 				E0A2E3BE12F3F22200F8C4F4 /* Background-Top.png in Resources */,
 				E0A2E3C412F3F91200F8C4F4 /* FireButton.psd in Resources */,

@@ -17,6 +17,14 @@ The following command can be entered in the terminal to disable the camera funct
 defaults write com.david.USBMissileLauncherNZ cameraDisabled -boolean YES
 
 
+https://developer.apple.com/library/content/qa/qa1940/_index.html
+https://stackoverflow.com/questions/39652867/code-sign-error-in-macos-sierra-xcode-8-resource-fork-finder-information-or
+
+Search for com.apple.FinderInfo and clear this attributes for all files. You can do it like this
+xattr -c <filename>
+
+
+
 =============
 KEXT
 =============
