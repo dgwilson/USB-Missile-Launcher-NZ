@@ -64,7 +64,7 @@ static io_iterator_t			gAddedIter = 0;
     //
     kr = IOMasterPort(bootstrap_port, &masterPort);
     if (kr || !masterPort)
-        return NO;
+        return nil;
 
     // Create a notification port and add its run loop event source to our run loop
     // This is how async notifications get set up.
@@ -83,7 +83,7 @@ static io_iterator_t			gAddedIter = 0;
     if (!matchingDict1)
 	{
 		printf("Matching dictionary error.\n");
-		return NO;    
+		return nil;
 	}
 
 	// usage1	  = kHIDUsage_GD_Joystick;
@@ -109,7 +109,7 @@ static io_iterator_t			gAddedIter = 0;
                                           );
 
     if ( kr != kIOReturnSuccess )
-        return NO;
+        return nil;
         
     HIDDeviceAdded( NULL, gAddedIter );
 	
@@ -120,7 +120,7 @@ static io_iterator_t			gAddedIter = 0;
     if (!matchingDict2)
 	{
 		printf("Matching dictionary error.\n");
-		return NO;    
+		return nil;    
 	}
 	
 	// usage2	  = kHIDUsage_GD_GamePad
@@ -146,7 +146,7 @@ static io_iterator_t			gAddedIter = 0;
                                           );
 	
     if ( kr != kIOReturnSuccess )
-        return NO;
+        return nil;
 	
     HIDDeviceAdded( NULL, gAddedIter );
 	

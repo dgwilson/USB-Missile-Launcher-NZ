@@ -380,11 +380,54 @@
 {
 	if (record) {
 		// Record to a temporary file, which the user will relocate when recording is finished
-		char *tempNameBytes = tempnam([NSTemporaryDirectory() fileSystemRepresentation], "AVRecorder_");
-		NSString *tempName = [[NSString alloc] initWithBytesNoCopy:tempNameBytes length:strlen(tempNameBytes) encoding:NSUTF8StringEncoding freeWhenDone:YES];
-		
-		[[self movieFileOutput] startRecordingToOutputFileURL:[NSURL fileURLWithPath:[tempName stringByAppendingPathExtension:@"mov"]]
-											recordingDelegate:self];
+        
+        NSString *fileName = [NSString stringWithFormat:@"%@_%@", [[NSProcessInfo processInfo] globallyUniqueString], @"AVRecoder_.mov"];
+        NSURL *fileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:fileName]];
+        
+        [[self movieFileOutput] startRecordingToOutputFileURL:fileURL
+                                            recordingDelegate:self];
+        
+        
+        
+        
+        // char *tempNameBytes = tempnam([NSTemporaryDirectory() fileSystemRepresentation], "AVRecorder_");
+        // char    *tempnam(const char *__dir, const char *__prefix) __DARWIN_ALIAS(tempnam);
+        
+//        NSString * templateNameString = [NSString stringWithFormat:@"%s%@", [NSTemporaryDirectory() fileSystemRepresentation], @"AVRecorder_XXXXXX.mov"];
+//
+//        // convert to char
+//        char * utf8String;
+//        utf8String = malloc([templateNameString length]+1);
+//        strcpy(utf8String, [templateNameString UTF8String]);
+//
+//        size_t len = strlen(utf8String) + 1;
+//        char *newThing;
+//        newThing = malloc(sizeof(char) * len);
+//
+//        memcpy(newThing, utf8String, len);
+//
+////        int tempNameBytesInt = mkostemps(newThing, 4, O_APPEND);
+//        int tempNameBytesInt = mkstemps(newThing, 4);   // suffix length
+//        if (tempNameBytesInt == -1)
+//        {
+//            NSLog(@"%@ - There was a problemw with the call to mkstemps - FileName: %s", NSStringFromSelector(_cmd), newThing);
+//        }
+//        NSString *tempName = [[NSString alloc] initWithBytesNoCopy:newThing length:len encoding:NSUTF8StringEncoding freeWhenDone:YES];
+//
+//
+////        char * templateName = [templateNameString cStringUsingEncoding:NSASCIIStringEncoding];
+////        char *tempNameBytes = mkstemp(templateName);
+////        // int     mkstemp(char *);
+////
+////        NSString *tempName = [[NSString alloc] initWithBytesNoCopy:tempNameBytes length:strlen(tempNameBytes) encoding:NSUTF8StringEncoding freeWhenDone:YES];
+//
+////        [[self movieFileOutput] startRecordingToOutputFileURL:[NSURL fileURLWithPath:[tempName stringByAppendingPathExtension:@"mov"]]
+////                                            recordingDelegate:self];
+//        [[self movieFileOutput] startRecordingToOutputFileURL:[NSURL fileURLWithPath:tempName]
+//                                            recordingDelegate:self];
+//        NSLog(@"%@ - TempFile - FileName: %@", NSStringFromSelector(_cmd), tempName);
+//        free(utf8String);
+////        free(newThing);
 	} else {
 		[[self movieFileOutput] stopRecording];
 	}

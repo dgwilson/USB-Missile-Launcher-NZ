@@ -10,6 +10,7 @@
 //#import "VideoDebugMacros.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <AVFoundation/AVFoundation.h>
+#import "Reachability.h"
 
 #define kDefaultRecordPath		@"~/Desktop/USB Missile Launcher NZ.mov"
 
@@ -18,6 +19,16 @@ enum {
 		kStringType,
 		kPeriodType
 };
+
+@interface AppController ()
+{
+    Reachability* hostReach;
+    Reachability* internetReach;
+    Reachability* wifiReach;
+    
+    BOOL hostIsReachable;
+}
+@end
 
 @implementation AppController
 
@@ -29,10 +40,28 @@ enum {
 
 - (id)init
 {
-	bool	b_kext_Present;
-	
+//    bool    b_kext_Present;
+    
     self = [super init];
-
+    
+    
+#pragma mark - Reachability
+    
+    hostIsReachable = FALSE;
+    //Change the host name here to change the server your monitoring
+    hostReach = [Reachability reachabilityWithHostName: @"homepages.paradise.net.nz"];
+    [hostReach startNotifier];
+    
+    internetReach = [Reachability reachabilityForInternetConnection];
+    [internetReach startNotifier];
+    
+    wifiReach = [Reachability reachabilityForLocalWiFi];
+    [wifiReach startNotifier];
+    
+    
+#pragma mark - Application Version Check
+    
+    
 //	unsigned major, minor, bugFix;
 //    [self getSystemVersionMajor:&major minor:&minor bugFix:&bugFix];
 //    NSLog(@"OS Version - %u.%u.%u", major, minor, bugFix);
@@ -387,21 +416,6 @@ fail:
 {
 	[self checkVersion:FALSE];
 }
-
-// Check and see if our host is actually up. Note the imported framework.
-- (BOOL)isHostReachable 
-{
-    const char *host = "homepages.paradise.net.nz";
-    BOOL isValid, result = 0;
-    SCNetworkConnectionFlags flags = 0;
-    isValid = SCNetworkCheckReachabilityByName(host, &flags);
-    if (isValid && ((flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired))) 
-    {
-        result = YES;
-    }
-    return result;
-}
-
 
 /*________________________________________________________________________________________
 */
@@ -796,6 +810,48 @@ fail:
     }
 }
 
+#pragma mark - Reachability
+
+- (void)validateNetworkReachability:(Reachability*) curReach
+{
+    
+    //    NotReachable = 0,
+    //    ReachableViaWiFi,
+    //    ReachableViaWWAN
+    
+    NetworkStatus netStatus = [curReach currentReachabilityStatus];
+    if (netStatus == NotReachable)
+    {
+        NSLog(@"%@ : Access Not Available.", NSStringFromSelector(_cmd));
+        //        UIAlertView *networkAccessError = [[UIAlertView alloc] initWithTitle:@"Network Access Not Available" message:@"This application requires network access. Please check to ensure Airplane mode is Off, that you have celular coverage or a WiFi network connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        //        [networkAccessError show];
+        //        [networkAccessError release];
+    }
+    
+    if (netStatus == ReachableViaWiFi)
+    {
+        hostIsReachable = TRUE;
+    }
+    
+    if (netStatus == ReachableViaWWAN)
+    {
+        hostIsReachable = TRUE;
+    }
+    
+}
+
+// Check and see if our host is actually up. Note the imported framework.
+- (BOOL)isHostReachable
+{
+    return hostIsReachable;
+}
+
+//Called by Reachability whenever status changes.
+- (void)reachabilityChanged:(NSNotification *)notification
+{
+    Reachability* curReach = [notification object];
+    [self validateNetworkReachability: curReach];
+}
 
 #pragma mark - AppleScript stuff
 

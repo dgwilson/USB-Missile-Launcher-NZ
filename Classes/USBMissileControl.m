@@ -70,8 +70,8 @@ FRIENDS to help Debug
 //================================================================================================
 //
 static IONotificationPortRef	gNotifyPort;
-static io_iterator_t			gAddedRocketIter;
-static io_iterator_t			gAddedMissileIter;
+//static io_iterator_t            gAddedRocketIter;
+//static io_iterator_t            gAddedMissileIter;
 static CFRunLoopRef				gRunLoop;
 
 NSMutableArray			*launcherDevice;
@@ -121,14 +121,14 @@ static char							gBuffer[8];
 	kern_return_t			kr;
 	mach_port_t				masterPort = 0;					// requires <mach/mach.h>
 //	kern_return_t			err;
-	CFMutableDictionaryRef 	matchingDictionary1 = 0;		// requires <IOKit/IOKitLib.h>
-	CFMutableDictionaryRef 	matchingDictionary2 = 0;		// requires <IOKit/IOKitLib.h>
-	CFMutableDictionaryRef 	matchingDictionary3 = 0;		// requires <IOKit/IOKitLib.h>
+//    CFMutableDictionaryRef     matchingDictionary1 = 0;        // requires <IOKit/IOKitLib.h>
+//    CFMutableDictionaryRef     matchingDictionary2 = 0;        // requires <IOKit/IOKitLib.h>
+//    CFMutableDictionaryRef     matchingDictionary3 = 0;        // requires <IOKit/IOKitLib.h>
 //	SInt32					usbRocketVendor    = kUSBRocketVendorID;
 //	SInt32					usbRocketProduct   = kUSBRocketProductID;
 //	SInt32					usbMissileVendor   = kUSBMissileVendorID;
 //	SInt32					usbMissileProduct  = kUSBMissileProductID;
-	CFNumberRef				numberRef;
+//    CFNumberRef                numberRef;
 	CFRunLoopSourceRef      runLoopSource;
 	
 	self = [super init];
@@ -190,7 +190,7 @@ static char							gBuffer[8];
 		if (kr || !masterPort)
 		{
 			NSLog(@"USBMissileControl: could not create master port, err = %08x", kr);
-			return NO;
+			return nil;
 		}
 		//NSLog(@"Looking for devices matching vendor ID=%ld and product ID=%ld", usbVendor, usbProduct);
 
@@ -1512,18 +1512,18 @@ void DeviceNotification( void *refCon,
 
 - (id)MissileControl:(UInt8)controlBits;
 {
-	IOUSBDevRequest				devRequest;
-	UInt8						reqBuffer[8];
-	UInt8						reqBuffer_RB[8];
-	USBLauncher					*privateDataRef;
+//    IOUSBDevRequest                devRequest;
+//    UInt8                        reqBuffer[8];
+//    UInt8                        reqBuffer_RB[8];
+    USBLauncher                    *privateDataRef;
 	int							launcherDeviceNum;
 	IOUSBDeviceInterface        **missileDevice;
     IOUSBInterfaceInterface183		**missileInterface;
-	UInt8						rBuffer[dreamCheekyMaxPacketSize];
-	UInt8						rbBuffer[rocketBabyMaxPacketSize]; // Rocket Baby
-	UInt8						sbBuffer[OICSTORMMaxPacketSize]; // OICStorm
+//    UInt8                        rBuffer[dreamCheekyMaxPacketSize];
+//    UInt8                        rbBuffer[rocketBabyMaxPacketSize]; // Rocket Baby
+//    UInt8                        sbBuffer[OICSTORMMaxPacketSize]; // OICStorm
 //	char						wBuffer[dreamCheekyMaxPacketSize];
-	IOReturn                    kr;
+//    IOReturn                    kr;
 //    UInt32                      bytesRead;
 	Boolean						debugCommands;
 
@@ -4211,7 +4211,7 @@ void ClearStalledPipe(IOUSBInterfaceInterface183 **missileInterface_param)
 
 - (void)DGWAbortLaunch:(NSTimer *)timer;
 {
-	[self controlLauncher:launcherStop];
+	[self controlLauncher:[NSNumber numberWithInteger:launcherStop]];
 }
 
 - (id)ReleaseMissileLauncher

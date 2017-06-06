@@ -396,7 +396,7 @@
 - (void)DGWtimerReached:(NSTimer *)inTimer;
 {
 //	NSLog(@"DGWTimerReached - sending launcher stop command");
-	[USBLauncherControl controlLauncher:launcherStop];
+	[USBLauncherControl controlLauncher:[NSNumber numberWithInteger:launcherStop]];
 	[timer invalidate];
 	timer = nil;
 	timerDurationFromAppleScript = 0.25;
@@ -624,7 +624,7 @@
 		[self LauncherDisabledMessage];
 	} else {
 		[launcherMessage setStringValue:NSLocalizedString(@"Abort activated - command termination in progress", nil)];
-		[USBLauncherControl controlLauncher:launcherStop];
+		[USBLauncherControl controlLauncher:[NSNumber numberWithInteger:launcherStop]];
 		[self finishCommandInProgress];
 	}
 }

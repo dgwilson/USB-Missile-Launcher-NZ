@@ -51,7 +51,6 @@
 		E032E93314B5A3B3001D7460 /* JoystickPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E032E8BE14B5A0D3001D7460 /* JoystickPrefs.preferencePane */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E032E93414B5A3BA001D7460 /* LauncherPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E032E8E614B5A1AE001D7460 /* LauncherPrefs.preferencePane */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E032E93514B5A3C3001D7460 /* SoundPrefs.preferencePane in CopyFiles */ = {isa = PBXBuildFile; fileRef = E032E90F14B5A243001D7460 /* SoundPrefs.preferencePane */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		E032E93614B5A3CA001D7460 /* USB Missile Launcher All Drivers.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = E00F94C814B59B0300E206F0 /* USB Missile Launcher All Drivers.kext */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E03780460BAC873B00724518 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E03780450BAC873B00724518 /* Localizable.strings */; };
 		E04940450BC99FA900B71710 /* USB Missile Launcher NZ.sdef in Resources */ = {isa = PBXBuildFile; fileRef = E04940440BC99FA900B71710 /* USB Missile Launcher NZ.sdef */; };
 		E04944630BCCDB7200B71710 /* ASAbort.m in Sources */ = {isa = PBXBuildFile; fileRef = E04944590BCCDB7200B71710 /* ASAbort.m */; };
@@ -74,6 +73,7 @@
 		E06407A714B6C05F0034B2D7 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = E06407A514B6BF3B0034B2D7 /* Mail.app */; };
 		E06B2952131653CA0060C13B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06B2950131653CA0060C13B /* MainMenu.xib */; };
 		E07C7DFD1EC3218D00B2C42F /* usbHIDDeviceElements.m in Sources */ = {isa = PBXBuildFile; fileRef = E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */; };
+		E07FDE291EE64519000C8E94 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E07FDE271EE644A5000C8E94 /* Reachability.m */; };
 		E0926EAE0AECA57500DE43FF /* Help in Resources */ = {isa = PBXBuildFile; fileRef = E0926EAA0AECA57500DE43FF /* Help */; };
 		E093214B0A7A357600B16B0F /* Fire3.psd in Resources */ = {isa = PBXBuildFile; fileRef = E093214A0A7A357600B16B0F /* Fire3.psd */; };
 		E09321590A7A382F00B16B0F /* Fire.psd in Resources */ = {isa = PBXBuildFile; fileRef = E09321580A7A382F00B16B0F /* Fire.psd */; };
@@ -194,7 +194,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				E032E93614B5A3CA001D7460 /* USB Missile Launcher All Drivers.kext in CopyFiles */,
 				E032E93514B5A3C3001D7460 /* SoundPrefs.preferencePane in CopyFiles */,
 				E032E93414B5A3BA001D7460 /* LauncherPrefs.preferencePane in CopyFiles */,
 				E032E93314B5A3B3001D7460 /* JoystickPrefs.preferencePane in CopyFiles */,
@@ -307,6 +306,8 @@
 		E06B2951131653CA0060C13B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E07C7DFB1EC3218D00B2C42F /* usbHIDDeviceElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usbHIDDeviceElements.h; sourceTree = "<group>"; };
 		E07C7DFC1EC3218D00B2C42F /* usbHIDDeviceElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = usbHIDDeviceElements.m; sourceTree = "<group>"; };
+		E07FDE271EE644A5000C8E94 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Classes/Reachability.m; sourceTree = "<group>"; };
+		E07FDE281EE644A5000C8E94 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Classes/Reachability.h; sourceTree = "<group>"; };
 		E0926EAA0AECA57500DE43FF /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Help; path = Resources/Help; sourceTree = "<group>"; };
 		E093214A0A7A357600B16B0F /* Fire3.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fire3.psd; path = Resources/Fire3.psd; sourceTree = "<group>"; };
 		E09321580A7A382F00B16B0F /* Fire.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fire.psd; path = Resources/Fire.psd; sourceTree = "<group>"; };
@@ -469,6 +470,8 @@
 				E0CD12FC168400A4002C2B3C /* AVRecorderDocument.m */,
 				E0163E850DC3499500C6EBEE /* VideoWindow.h */,
 				E0163E860DC3499500C6EBEE /* VideoWindow.m */,
+				E07FDE281EE644A5000C8E94 /* Reachability.h */,
+				E07FDE271EE644A5000C8E94 /* Reachability.m */,
 				E006E4B90A44206500A77A11 /* AppController.h */,
 				E006E4BA0A44206500A77A11 /* AppController.m */,
 				E0C1347F0A3D79F20054CD82 /* MissileResponder.h */,
@@ -999,7 +1002,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "David G. Wilson";
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
@@ -1195,6 +1198,7 @@
 				E006E4BB0A44206500A77A11 /* AppController.m in Sources */,
 				E0D7B2E51EBEA55C00A5A2AC /* USBLauncher_DreamCheeky_OIC_Storm.m in Sources */,
 				E02CDEF70A7C4DFF00379BE0 /* USBLauncher.m in Sources */,
+				E07FDE291EE64519000C8E94 /* Reachability.m in Sources */,
 				E04B421C0B747C8D00603C52 /* USBJoyStickControl.m in Sources */,
 				E0D7B2ED1EBECBFB00A5A2AC /* IOHIDElement_.c in Sources */,
 				E04944630BCCDB7200B71710 /* ASAbort.m in Sources */,
@@ -1392,12 +1396,18 @@
 				APPLICATION_VERSION = "1.9.0b1 build 167";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1428,12 +1438,18 @@
 				APPLICATION_VERSION = "1.9.0b1 build 167";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1481,7 +1497,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				INFOPLIST_FILE = "USB Missile Launcher All Drivers/USB Missile Launcher All Drivers-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULE_NAME = nz.org.mactcp.USB_Missile_Launcher_All_Drivers;
 				MODULE_START = USB_Missile_Launcher_All_Drivers_start;
 				MODULE_STOP = USB_Missile_Launcher_All_Drivers_stop;
@@ -1512,7 +1528,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				INFOPLIST_FILE = "USB Missile Launcher All Drivers/USB Missile Launcher All Drivers-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MODULE_NAME = nz.org.mactcp.USB_Missile_Launcher_All_Drivers;
 				MODULE_START = USB_Missile_Launcher_All_Drivers_start;
 				MODULE_STOP = USB_Missile_Launcher_All_Drivers_stop;

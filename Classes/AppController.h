@@ -17,6 +17,7 @@
 	NSTextField *                   mMessagesField;
 	NSButton	*                   videoWindowButton;
 	bool                            bVideoAdded;
+    
 }
 
 @property (nonatomic, retain) AVRecorderDocument *			videoDocument;
