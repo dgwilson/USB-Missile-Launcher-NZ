@@ -3,9 +3,8 @@ USB Missile Launcher NZ
 
 Author:
 David G. Wilson
-dgwilson@paradise.net.nz
+dgwilson65@gmail.com
 http://dgwilson.wordpress.com
-http://homepages.paradise.net.nz/dgwilson
 
 Description:
 USB Missile Launcher NZ can be used to control a USB Missile Launcher and the DreamCheeky Rocket Launcher. Perform covert operations from your desk. Fire missiles at passing colleagues. Strap a camera on top of the Launcher and record the video of your covert operations.
