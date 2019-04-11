@@ -1,0 +1,2489 @@
+total 824
+drwxr-xr-x  50 dgwilson  staff   1700  4 Jun 12:07 .
+drwxr-xr-x@ 57 dgwilson  staff   1938  6 May 14:21 ..
+	com.apple.FinderInfo	   32 
+-rw-r--r--@  1 dgwilson  staff  12292  4 Jun 12:07 .DS_Store
+	com.apple.FinderInfo	   32 
+drwxr-xr-x  15 dgwilson  staff    510  4 Jun 11:53 .git
+-rw-r--r--@  1 dgwilson  staff   4178  6 May 12:35 AVRecorderDocument.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  121 
+-rw-r--r--@  1 dgwilson  staff  20219  6 May 12:37 AVRecorderDocument.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  169 
+-rw-r--r--   1 dgwilson  staff  64482 24 Jul  2011 AVRecorderDocument.xib
+-rw-r--r--@  1 dgwilson  staff   6741  6 May 20:45 AboutWindow.xib
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  105 
+-rw-r--r--@  1 dgwilson  staff    684  6 Jan  2012 AboutWindowController.h
+	com.apple.TextEncoding	   15 
+-rw-r--r--@  1 dgwilson  staff   1733  6 May 12:20 AboutWindowController.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff   3246 24 Apr  2008 Change APPLICATION_VERSION.scpt
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	  356 
+drwxr-xr-x  34 dgwilson  staff   1156  4 Jun 11:37 Classes
+drwxr-xr-x   6 dgwilson  staff    204 21 Dec  2012 ClassesVideo
+-rw-r--r--@  1 dgwilson  staff  38894  4 Jun 11:35 Credits.rtf
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  169 
+drwxr-xr-x   7 dgwilson  staff    238 11 May 20:00 English.lproj
+drwxr-xr-x@ 11 dgwilson  staff    374  6 May 12:13 GeneralPrefs
+	com.apple.FinderInfo	   32 
+drwxr-xr-x   7 dgwilson  staff    238  3 Jan  2012 German.lproj
+-rwxr-xr-x@  1 dgwilson  admin  19543  7 Jun  2013 IOHIDDevice_.c
+	com.apple.quarantine	   57 
+-rwxr-xr-x@  1 dgwilson  admin  13684  7 Jun  2013 IOHIDDevice_.h
+	com.apple.quarantine	   57 
+-rwxr-xr-x@  1 dgwilson  admin  18899  7 Jun  2013 IOHIDElement_.c
+	com.apple.quarantine	   57 
+-rwxr-xr-x@  1 dgwilson  admin  12070  7 Jun  2013 IOHIDElement_.h
+	com.apple.quarantine	   57 
+-rwxr-xr-x@  1 dgwilson  admin   2924  7 Jun  2013 IOHIDLib_.h
+	com.apple.quarantine	   57 
+-rw-r--r--@  1 dgwilson  staff   1586 26 Apr 21:41 Info.plist
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  121 
+	com.apple.xcode.PlistType	   53 
+drwxr-xr-x@ 10 dgwilson  staff    340  6 May 12:13 JoystickPrefs
+	com.apple.FinderInfo	   32 
+drwxr-xr-x@ 11 dgwilson  staff    374  6 May 12:13 LauncherPrefs
+	com.apple.FinderInfo	   32 
+-rw-r--r--@  1 dgwilson  staff   2444  6 May 14:04 README.TXT
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  121 
+drwxr-xr-x  36 dgwilson  staff   1224  4 Jun 12:02 Resources
+-rw-r--r--@  1 dgwilson  staff   1561  6 Jan  2012 ShellTask.h
+	com.apple.TextEncoding	   11 
+-rw-r--r--@  1 dgwilson  staff   2519  6 May 12:24 ShellTask.m
+	com.apple.TextEncoding	   11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+drwxr-xr-x@ 10 dgwilson  staff    340  6 May 12:13 SoundPrefs
+	com.apple.FinderInfo	   32 
+drwxr-xr-x@  8 dgwilson  staff    272 25 Apr 20:30 USB Missile Launcher All Drivers
+	com.apple.FinderInfo	   32 
+drwxr-xr-x   3 dgwilson  staff    102 12 Jan  2012 USB Missile Launcher All Drivers 2
+drwxr-xr-x@  7 dgwilson  staff    238  4 Jun 12:00 USB Missile Launcher NZ.xcodeproj
+	LastUpgradeCheck	    4 
+-rw-r--r--@  1 dgwilson  staff    292  7 May 17:13 USBLauncher_C_Enter.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  105 
+-rw-r--r--@  1 dgwilson  staff  12449  7 May 17:12 USBLauncher_C_Enter.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  105 
+-rw-r--r--@  1 dgwilson  staff    320  7 May 13:27 USBLauncher_DreamCheeky_OIC_Storm.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff  16826 11 May 20:30 USBLauncher_DreamCheeky_OIC_Storm.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  409 
+-rw-r--r--@  1 dgwilson  staff    300  7 May 17:31 USBLauncher_DreamRocket.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff  21939 10 May 21:02 USBLauncher_DreamRocket.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	 1401 
+-rw-r--r--@  1 dgwilson  staff    304  7 May 17:30 USBLauncher_DreamRocketII.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff  21802 11 May 18:59 USBLauncher_DreamRocketII.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  937 
+-rw-r--r--@  1 dgwilson  staff    302  7 May 17:31 USBLauncher_OrigLauncher.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff   9892 11 May 19:25 USBLauncher_OrigLauncher.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  169 
+-rw-r--r--@  1 dgwilson  staff    292  7 May 17:31 USBLauncher_Satzuma.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff   5195  7 May 17:41 USBLauncher_Satzuma.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  121 
+-rw-r--r--@  1 dgwilson  staff    296  7 May 17:13 USBLauncher_StrikerII.h
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+-rw-r--r--@  1 dgwilson  staff  10438  7 May 17:21 USBLauncher_StrikerII.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  169 
+-rw-r--r--   1 dgwilson  staff      0  4 Jun 12:07 dgwFinderinfo.txt
+-rw-r--r--@  1 dgwilson  staff    520  9 Jun  2011 usbHIDDeviceElements.h
+	com.apple.TextEncoding	   15 
+-rw-r--r--@  1 dgwilson  staff    655 10 May 22:40 usbHIDDeviceElements.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  105 
+
+./.git:
+total 88
+drwxr-xr-x   15 dgwilson  staff    510  4 Jun 11:53 .
+drwxr-xr-x   50 dgwilson  staff   1700  4 Jun 12:07 ..
+-rw-r--r--    1 dgwilson  staff     72  4 Jun 11:53 COMMIT_EDITMSG
+-rw-r--r--    1 dgwilson  staff      0 25 May  2015 FETCH_HEAD
+-rw-r--r--    1 dgwilson  staff     23 24 May  2015 HEAD
+-rw-r--r--    1 dgwilson  staff     41 24 May  2015 ORIG_HEAD
+-rw-r--r--    1 dgwilson  staff    325 24 May  2015 config
+-rw-r--r--    1 dgwilson  staff     73 24 May  2015 description
+drwxr-xr-x   11 dgwilson  staff    374 24 May  2015 hooks
+-rw-r--r--    1 dgwilson  staff  23865  4 Jun 11:53 index
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 info
+drwxr--r--    4 dgwilson  staff    136 24 May  2015 lfs
+drwxr-xr-x    4 dgwilson  staff    136 24 May  2015 logs
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 objects
+drwxr-xr-x    5 dgwilson  staff    170 24 May  2015 refs
+
+./.git/hooks:
+total 80
+drwxr-xr-x  11 dgwilson  staff   374 24 May  2015 .
+drwxr-xr-x  15 dgwilson  staff   510  4 Jun 11:53 ..
+-rwxr-xr-x   1 dgwilson  staff   452 24 May  2015 applypatch-msg.sample
+-rwxr-xr-x   1 dgwilson  staff   896 24 May  2015 commit-msg.sample
+-rwxr-xr-x   1 dgwilson  staff   189 24 May  2015 post-update.sample
+-rwxr-xr-x   1 dgwilson  staff   398 24 May  2015 pre-applypatch.sample
+-rwxr-xr-x   1 dgwilson  staff  1642 24 May  2015 pre-commit.sample
+-rwxr-xr-x   1 dgwilson  staff  1352 24 May  2015 pre-push.sample
+-rwxr-xr-x   1 dgwilson  staff  4951 24 May  2015 pre-rebase.sample
+-rwxr-xr-x   1 dgwilson  staff  1239 24 May  2015 prepare-commit-msg.sample
+-rwxr-xr-x   1 dgwilson  staff  3611 24 May  2015 update.sample
+
+./.git/info:
+total 8
+drwxr-xr-x   3 dgwilson  staff  102 24 May  2015 .
+drwxr-xr-x  15 dgwilson  staff  510  4 Jun 11:53 ..
+-rw-r--r--   1 dgwilson  staff  240 24 May  2015 exclude
+
+./.git/lfs:
+total 0
+drwxr--r--   4 dgwilson  staff  136 24 May  2015 .
+drwxr-xr-x  15 dgwilson  staff  510  4 Jun 11:53 ..
+drwxr--r--   3 dgwilson  staff  102 24 May  2015 objects
+drwxr--r--   2 dgwilson  staff   68 24 May  2015 tmp
+
+./.git/lfs/objects:
+total 0
+drwxr--r--  3 dgwilson  staff  102 24 May  2015 .
+drwxr--r--  4 dgwilson  staff  136 24 May  2015 ..
+drwxr--r--  2 dgwilson  staff   68 24 May  2015 logs
+
+./.git/lfs/objects/logs:
+total 0
+drwxr--r--  2 dgwilson  staff   68 24 May  2015 .
+drwxr--r--  3 dgwilson  staff  102 24 May  2015 ..
+
+./.git/lfs/tmp:
+total 0
+drwxr--r--  2 dgwilson  staff   68 24 May  2015 .
+drwxr--r--  4 dgwilson  staff  136 24 May  2015 ..
+
+./.git/logs:
+total 8
+drwxr-xr-x   4 dgwilson  staff   136 24 May  2015 .
+drwxr-xr-x  15 dgwilson  staff   510  4 Jun 11:53 ..
+-rw-r--r--   1 dgwilson  staff  1676  4 Jun 11:53 HEAD
+drwxr-xr-x   4 dgwilson  staff   136 24 May  2015 refs
+
+./.git/logs/refs:
+total 0
+drwxr-xr-x  4 dgwilson  staff  136 24 May  2015 .
+drwxr-xr-x  4 dgwilson  staff  136 24 May  2015 ..
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 heads
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 remotes
+
+./.git/logs/refs/heads:
+total 8
+drwxr-xr-x  3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  4 dgwilson  staff   136 24 May  2015 ..
+-rw-r--r--  1 dgwilson  staff  1676  4 Jun 11:53 master
+
+./.git/logs/refs/remotes:
+total 0
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 .
+drwxr-xr-x  4 dgwilson  staff  136 24 May  2015 ..
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 origin
+
+./.git/logs/refs/remotes/origin:
+total 8
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 .
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 ..
+-rw-r--r--  1 dgwilson  staff  154 24 May  2015 master
+
+./.git/objects:
+total 0
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 .
+drwxr-xr-x   15 dgwilson  staff   510  4 Jun 11:53 ..
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 00
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 01
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 02
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 03
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 04
+drwxr-xr-x    6 dgwilson  staff   204  4 Jun 11:51 05
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 06
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 07
+drwxr-xr-x    5 dgwilson  staff   170  6 May 14:39 0a
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 0b
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 0c
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 0e
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 0f
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 10
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 11
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 12
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:23 14
+drwxr-xr-x    5 dgwilson  staff   170  6 May 14:39 15
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 16
+drwxr-xr-x    5 dgwilson  staff   170  7 May 11:41 17
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 18
+drwxr-xr-x    6 dgwilson  staff   204 25 Apr 22:30 1a
+drwxr-xr-x    3 dgwilson  staff   102  7 May 11:41 1b
+drwxr-xr-x    6 dgwilson  staff   204 26 Apr 21:43 1c
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 1d
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 1e
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:24 22
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 24
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 26
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 28
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 29
+drwxr-xr-x    4 dgwilson  staff   136 26 Apr 21:43 2a
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 2b
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:24 2c
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 2d
+drwxr-xr-x    4 dgwilson  staff   136 10 May 22:23 2e
+drwxr-xr-x    5 dgwilson  staff   170 24 May  2015 30
+drwxr-xr-x    6 dgwilson  staff   204  6 May 14:39 31
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 33
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 34
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 35
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 36
+drwxr-xr-x    5 dgwilson  staff   170 26 Apr 21:43 37
+drwxr-xr-x    6 dgwilson  staff   204  4 Jun 11:22 38
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 39
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 3a
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 3b
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:08 3c
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 3d
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 3f
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 40
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 41
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 42
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 43
+drwxr-xr-x    3 dgwilson  staff   102  7 May 12:44 44
+drwxr-xr-x    7 dgwilson  staff   238  6 May 14:39 45
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 46
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 47
+drwxr-xr-x    6 dgwilson  staff   204 26 Apr 21:43 48
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 49
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 4a
+drwxr-xr-x    6 dgwilson  staff   204 24 May  2015 4b
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:08 4c
+drwxr-xr-x    5 dgwilson  staff   170 24 May  2015 4d
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 4e
+drwxr-xr-x    6 dgwilson  staff   204  6 May 14:39 4f
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 50
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 51
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 52
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 54
+drwxr-xr-x    5 dgwilson  staff   170 25 Apr 22:30 55
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 56
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 5a
+drwxr-xr-x    5 dgwilson  staff   170 26 Apr 21:43 5b
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 5d
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 5e
+drwxr-xr-x    6 dgwilson  staff   204  4 Jun 11:51 60
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 61
+drwxr-xr-x    5 dgwilson  staff   170 24 May  2015 62
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 63
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:51 64
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:53 65
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 66
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 68
+drwxr-xr-x    5 dgwilson  staff   170  7 May 11:41 6c
+drwxr-xr-x    3 dgwilson  staff   102  7 May 17:23 6d
+drwxr-xr-x    7 dgwilson  staff   238 26 Apr 21:43 6e
+drwxr-xr-x    6 dgwilson  staff   204 25 Apr 22:30 6f
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 70
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 71
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:52 73
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 76
+drwxr-xr-x    7 dgwilson  staff   238  7 May 17:23 78
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 7b
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 7c
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 7d
+drwxr-xr-x    6 dgwilson  staff   204  6 May 14:39 7e
+drwxr-xr-x    5 dgwilson  staff   170 25 Apr 22:30 7f
+drwxr-xr-x    5 dgwilson  staff   170 24 May  2015 81
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 82
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:51 83
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 84
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 85
+drwxr-xr-x    7 dgwilson  staff   238  4 Jun 11:53 87
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 88
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 89
+drwxr-xr-x    5 dgwilson  staff   170  7 May 11:41 8a
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 8c
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 8d
+drwxr-xr-x    6 dgwilson  staff   204 26 Apr 21:43 8e
+drwxr-xr-x    5 dgwilson  staff   170 24 May  2015 90
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 91
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 92
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 93
+drwxr-xr-x    5 dgwilson  staff   170 24 May  2015 94
+drwxr-xr-x    6 dgwilson  staff   204 24 May  2015 95
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 96
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 98
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 99
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 9a
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 9b
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 9c
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 9d
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:51 9f
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 a0
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 a2
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 a3
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 a4
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:24 a6
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 a8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 a9
+drwxr-xr-x    5 dgwilson  staff   170  6 May 14:39 aa
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:53 ab
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 ac
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 ae
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 af
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 b0
+drwxr-xr-x    5 dgwilson  staff   170 26 Apr 21:43 b1
+drwxr-xr-x    3 dgwilson  staff   102  7 May 11:41 b2
+drwxr-xr-x    6 dgwilson  staff   204  7 May 12:44 b3
+drwxr-xr-x    3 dgwilson  staff   102  7 May 15:28 b7
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 b8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 b9
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:51 bb
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 bd
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 bf
+drwxr-xr-x    3 dgwilson  staff   102  7 May 11:41 c0
+drwxr-xr-x    6 dgwilson  staff   204  7 May 11:41 c1
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 c2
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 c6
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 c7
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 ca
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 cb
+drwxr-xr-x    7 dgwilson  staff   238 26 Apr 21:43 cd
+drwxr-xr-x    6 dgwilson  staff   204 25 Apr 22:30 ce
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 cf
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 d0
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 d1
+drwxr-xr-x    4 dgwilson  staff   136 26 Apr 21:43 d3
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 d4
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 d5
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 d7
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:51 d8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 db
+drwxr-xr-x    7 dgwilson  staff   238  4 Jun 11:22 dc
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 dd
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 de
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 df
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:23 e0
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 e1
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 e2
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 e4
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 e5
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:51 e6
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 e7
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:51 e8
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:13 e9
+drwxr-xr-x    5 dgwilson  staff   170 25 Apr 22:30 ea
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 eb
+drwxr-xr-x    5 dgwilson  staff   170  6 May 14:39 ec
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 ed
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 ee
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 ef
+drwxr-xr-x    7 dgwilson  staff   238  4 Jun 11:22 f1
+drwxr-xr-x    4 dgwilson  staff   136 26 Apr 21:43 f2
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 f3
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 f4
+drwxr-xr-x    7 dgwilson  staff   238  4 Jun 11:51 f5
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 f6
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 f7
+drwxr-xr-x    6 dgwilson  staff   204  7 May 11:41 f8
+drwxr-xr-x    4 dgwilson  staff   136  7 May 15:28 f9
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 fd
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 ff
+drwxr-xr-x    2 dgwilson  staff    68 24 May  2015 info
+drwxr-xr-x    2 dgwilson  staff    68 24 May  2015 pack
+
+./.git/objects/00:
+total 48
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  24441 24 May  2015 adf305885d53fba40a8b204ff513345b437bbf
+
+./.git/objects/01:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   664 26 Apr 21:43 68eaeceb39045c6083cfdb2859fe5b0c09cde5
+-r--r--r--    1 dgwilson  staff  3328  4 Jun 11:22 b42f958a0c78b3433a82ba7fde1f2bf4bb88d1
+
+./.git/objects/02:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    61 25 Apr 22:30 37597b848a1890bb30ba0ff4102f8107cafdcb
+
+./.git/objects/03:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   401 24 May  2015 accb137697e87552aaf7ed6dbfa87e5eaa7282
+-r--r--r--    1 dgwilson  staff   806  7 May 11:41 fdcbf76d87f4fcf6f203867c4d0a36db21bd0c
+
+./.git/objects/04:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  2953 24 May  2015 f165d8d8e0c6431ca280c91638f0f148e16f3a
+
+./.git/objects/05:
+total 40
+drwxr-xr-x    6 dgwilson  staff   204  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   518 25 Apr 22:30 0ef76c118db70aec08df2432220f43c854ab12
+-r--r--r--    1 dgwilson  staff    90 24 May  2015 301bc253830381195ba116901612a8e115bfa7
+-r--r--r--    1 dgwilson  staff  1012  4 Jun 11:51 b02a76431a2333bbe4a15204065b11f489e947
+-r--r--r--    1 dgwilson  staff  6683 26 Apr 21:43 d2f054814e1738641966e5eeff0b06679d9af7
+
+./.git/objects/06:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   283 24 May  2015 0b077aa041cdd48c598016dd063f825974f1d5
+-r--r--r--    1 dgwilson  staff   309 24 May  2015 8507c92cc3c85b708761429b4e50dc6ea27892
+
+./.git/objects/07:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   801  4 Jun 11:22 e4f7b4896b1202dbf9ec6f899446cfce655b68
+
+./.git/objects/0a:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   371 24 May  2015 272d81cbb717be8f564d2a00cfae3f1e5b7daf
+-r--r--r--    1 dgwilson  staff  2436  6 May 14:39 6a9678e892e10049e805be7338721f2932af70
+-r--r--r--    1 dgwilson  staff   596  6 May 14:39 87aba0631242394a7bcf159cb30f51fd993d51
+
+./.git/objects/0b:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   701 24 May  2015 b167e8099c6ec377ef2f946c6125e43efd9ef9
+-r--r--r--    1 dgwilson  staff  1491 24 May  2015 d07fe93d86a40777527cad58b2124e2ab6febf
+
+./.git/objects/0c:
+total 32
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   794 25 Apr 22:30 476eda4d4484fde8dc4d7ddbf8466e258c57b5
+-r--r--r--    1 dgwilson  staff  9794 24 May  2015 738bcf9fae036102f2e65b3a288ea675e1ef4d
+
+./.git/objects/0e:
+total 32
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  15900 24 May  2015 8c9b81ba4ca3eecf829a7749ed3d356ef1cb98
+
+./.git/objects/0f:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  13148 24 May  2015 15bfadbcce13c5155a3b10606d2da92746e188
+-r--r--r--    1 dgwilson  staff    918  6 May 14:39 29a372906f5870424629b364855b60bf621ab6
+
+./.git/objects/10:
+total 32
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  15387 24 May  2015 a400d017e07d673873574c53ecd8ea2494efcc
+
+./.git/objects/11:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  6217  6 May 14:39 b7bc4fa68dded3b42a23f39dc01793b1bf0af4
+-r--r--r--    1 dgwilson  staff    63  4 Jun 11:53 c50a7dced478f6e5fcb80d44b650e6e976766c
+
+./.git/objects/12:
+total 64
+drwxr-xr-x    4 dgwilson  staff    136  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  27715 24 May  2015 2e5089d428863146148dd9fda92be6cea18354
+-r--r--r--    1 dgwilson  staff   1834  7 May 11:41 70654526bba1a039f82829b8bbd84bc8286a89
+
+./.git/objects/14:
+total 32
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:23 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   277 24 May  2015 35bafbbac876d124dc580a4b7aa507e2b7d9af
+-r--r--r--    1 dgwilson  staff   177  7 May 17:23 609e7e4331e0cc41599df59ef7b74fc86d66f3
+-r--r--r--    1 dgwilson  staff  7265 24 May  2015 6ea64b419ac1095111f092936c0d2c0ed9dfc8
+
+./.git/objects/15:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   808  6 May 14:39 423aa8ddf359aa22c791f7dbf1bc05814b3f9f
+-r--r--r--    1 dgwilson  staff   853 24 May  2015 4300f6fd211e55cf617da6385b4ddcaf0cb274
+-r--r--r--    1 dgwilson  staff   871 24 May  2015 df91bbc8d937d444d7575e93d27d98e87427f6
+
+./.git/objects/16:
+total 48
+drwxr-xr-x    4 dgwilson  staff    136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  16989 24 May  2015 ea3d8f5a21ce2f3e138f7377898a9660bd2844
+-r--r--r--    1 dgwilson  staff   1916 24 May  2015 eec85dbda41e7844933a1377203a24f5186ffe
+
+./.git/objects/17:
+total 88
+drwxr-xr-x    5 dgwilson  staff    170  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  35004  7 May 11:41 2a0aed2768ffa89b0255c976acf6215f5c4794
+-r--r--r--    1 dgwilson  staff    711 24 May  2015 2f60fb47478922954f579ee3fac3bb722d10de
+-r--r--r--    1 dgwilson  staff    232 24 May  2015 d1f1f92d14e65ce0aae29563c5dbeaa7cfc71a
+
+./.git/objects/18:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   310  6 May 14:39 11ddb428f3514a3b40dec4affbb24b2f60872c
+-r--r--r--    1 dgwilson  staff  5476 24 May  2015 2ba9fd3a61cc7846790eafd953794bbcd48aa5
+
+./.git/objects/1a:
+total 80
+drwxr-xr-x    6 dgwilson  staff    204 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   7462 24 May  2015 3a0f82abfb76472d39ff3d3e7fab29168a04e1
+-r--r--r--    1 dgwilson  staff  23280 24 May  2015 a9561c21a2bd761a278c8383d773d857a46ee5
+-r--r--r--    1 dgwilson  staff    102 25 Apr 22:30 ed7e9e3d819df238340ce845db8503565e3d1e
+-r--r--r--    1 dgwilson  staff    259 24 May  2015 f55b3e766e8e19bfe1cbb39a2565e8032807ae
+
+./.git/objects/1b:
+total 240
+drwxr-xr-x    3 dgwilson  staff     102  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  121994  7 May 11:41 8f632f46efc2ef53044bb47ab9317458120735
+
+./.git/objects/1c:
+total 176
+drwxr-xr-x    6 dgwilson  staff    204 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    497 26 Apr 21:43 0103e6d8b125371b69d416ba3132ba394d9da6
+-r--r--r--    1 dgwilson  staff    594 24 May  2015 41b9383d63f2ca22d27d59ba03cc43c3212b86
+-r--r--r--    1 dgwilson  staff  63893 24 May  2015 6252ebcf84271396865ba4d61474e9a5a64507
+-r--r--r--    1 dgwilson  staff  15814 24 May  2015 fe7977e34acf625f9c9a29c011f4f20d85cb85
+
+./.git/objects/1d:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   721 24 May  2015 00b75246905db3fe8dffb9a28d0265b1cfaaee
+
+./.git/objects/1e:
+total 16
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  5049 24 May  2015 d1be48ee4a87c35606f1a56b7a3540f5d01d86
+
+./.git/objects/22:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:24 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   716  6 May 14:39 332a6c5461468f1c53d0778cd3e7bccb82d1de
+-r--r--r--    1 dgwilson  staff   179  7 May 17:24 7acce79ee19dafb7fb0768af0092f8fa166314
+
+./.git/objects/24:
+total 32
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  5266  7 May 11:41 1f6e639ab62790c01302723b54b31f0a2f19a4
+-r--r--r--    1 dgwilson  staff  8005  7 May 11:41 90c6ba23750c0d331650ee99ae7c4fc95ff407
+
+./.git/objects/26:
+total 24
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  10439 24 May  2015 5a855dd33d604b06add399dcc9a5fe0104047f
+
+./.git/objects/28:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   217  4 Jun 11:22 412d5546cd1df27139784e829f5caac6947a9d
+-r--r--r--    1 dgwilson  staff   785  6 May 14:39 b485e9cba3a13db098b732fec82749e48ed971
+
+./.git/objects/29:
+total 424
+drwxr-xr-x    3 dgwilson  staff     102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  215794 24 May  2015 74b2b17019fb2d0087c2bee8ae281fb45d87da
+
+./.git/objects/2a:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   309 26 Apr 21:43 02ff36ec80bffe690812eed7a805c6c312703b
+-r--r--r--    1 dgwilson  staff   163 25 Apr 22:30 a2a34529bdc2f9c2b279ffa26009d7fd96414a
+
+./.git/objects/2b:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   228 24 May  2015 3391c56de2275fbbffe215c6bd25911f0a3533
+
+./.git/objects/2c:
+total 32
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:24 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   177  7 May 17:24 3629e1d434531af220051a53cf4c7ae92f942e
+-r--r--r--    1 dgwilson  staff  6484 24 May  2015 c0be4335a22a2c95661f9a2873def21e981b9a
+-r--r--r--    1 dgwilson  staff   228 26 Apr 21:43 cc7a402a5c8e2894435a2996b3404f85aff707
+
+./.git/objects/2d:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    62  4 Jun 11:22 6ccb30804bf3e8c5dfbf25524842a1b5593cda
+-r--r--r--    1 dgwilson  staff  3409  4 Jun 11:22 9cfa8f6894334ddde5743e880d97faad43d2ca
+-r--r--r--    1 dgwilson  staff   205 24 May  2015 e7554c61619437cc35f2e051807045e13093ef
+
+./.git/objects/2e:
+total 248
+drwxr-xr-x    4 dgwilson  staff     136 10 May 22:23 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff     369 10 May 22:23 44fc66844fc79b9f6766f9670727227f4efdb7
+-r--r--r--    1 dgwilson  staff  119536  6 May 14:39 e680396112d1f73b4c9fd14133c9b710cd9304
+
+./.git/objects/30:
+total 56
+drwxr-xr-x    5 dgwilson  staff    170 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    148 24 May  2015 3294438d77991dad2e18c7bbbecf7f38457e5f
+-r--r--r--    1 dgwilson  staff   1402 24 May  2015 d3d069e786cfa9222a825c0a9df5d079755a03
+-r--r--r--    1 dgwilson  staff  17524 24 May  2015 f561971a11270adf0d5bcb8f4381af47ff091e
+
+./.git/objects/31:
+total 32
+drwxr-xr-x    6 dgwilson  staff   204  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    95 25 Apr 22:30 01c71d626d4f67cf9a3cdf099507a598fffd01
+-r--r--r--    1 dgwilson  staff   178  6 May 14:39 404e2a48125e394d25dba0f061013ab811ebe5
+-r--r--r--    1 dgwilson  staff  1159 24 May  2015 98145e4e74424c4b10767c12ed391db4a1ba2a
+-r--r--r--    1 dgwilson  staff  1013 25 Apr 22:30 dc9df5223d0da58106c8dd74121d44b4ad96cf
+
+./.git/objects/33:
+total 2288
+drwxr-xr-x    4 dgwilson  staff      136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff     6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1167087 24 May  2015 2f10e82f03a53d2d27585acb6f2aa50582ea37
+-r--r--r--    1 dgwilson  staff     1128 25 Apr 22:30 f3c950015772ced6f1069ebe8581234828797c
+
+./.git/objects/34:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   228 25 Apr 22:30 962b11df0d80ed6dfa610086b0688d9ae0cbed
+-r--r--r--    1 dgwilson  staff  2877  4 Jun 11:22 a07cd4bc5955df677e2313d110469a9ab5c9cd
+
+./.git/objects/35:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   200  6 May 14:39 3f6775c36f32fbdc296c336c53bdfd54f1f6ec
+-r--r--r--    1 dgwilson  staff  1124 24 May  2015 d5317dcf205b286fb98da75f6163111e5c82af
+
+./.git/objects/36:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   708 24 May  2015 1ffc34cff99507eeb69d69ad9d5925311612ab
+-r--r--r--    1 dgwilson  staff   227  4 Jun 11:22 22d63daf7f7ac65126341fddd75ca271f56ab7
+-r--r--r--    1 dgwilson  staff   802  6 May 14:39 932060c1761ff97382e2cc55d39d9bccc08433
+
+./.git/objects/37:
+total 288
+drwxr-xr-x    5 dgwilson  staff     170 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   13246 26 Apr 21:43 318dd9765f89c6e316f02b3c27d7f7c11e1532
+-r--r--r--    1 dgwilson  staff  124088 24 May  2015 58d7df2c4fec7d1c426c622e68697067c787a7
+-r--r--r--    1 dgwilson  staff     495 26 Apr 21:43 59c814954ef6e0f2adcd5663293b982b068fb1
+
+./.git/objects/38:
+total 32
+drwxr-xr-x    6 dgwilson  staff   204  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   311 25 Apr 22:30 0db880279fb56cf4f6c926c715ed2d837f4cd9
+-r--r--r--    1 dgwilson  staff  2179 24 May  2015 540057781cdc38c942aceade4e897ff5bb031a
+-r--r--r--    1 dgwilson  staff   113 24 May  2015 75b13fbbd7b69df6a03c8ceb13ec15898beb47
+-r--r--r--    1 dgwilson  staff  1609  4 Jun 11:22 8949d5ea1f8127ee1d7f32e7dfca47f117f2d0
+
+./.git/objects/39:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  5804  4 Jun 11:22 7a27b436d4783061a98051634de41923d1a244
+-r--r--r--    1 dgwilson  staff  1114  6 May 14:39 b26edf914b5f9a4e0cb41dd287c5828be063fd
+
+./.git/objects/3a:
+total 24
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  11600 24 May  2015 f03ad24ac69ca9960137e5eb78c6b581a2dcf9
+
+./.git/objects/3b:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   311 24 May  2015 cec0252cd974d5f00f3e9894524a98d5840982
+
+./.git/objects/3c:
+total 32
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:08 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   176  7 May 17:08 8f25ce0a3f634ae58c2b070f520f46a9266e7c
+-r--r--r--    1 dgwilson  staff   835 24 May  2015 c241e8f04db15775a4179ac06021dc92663a6d
+-r--r--r--    1 dgwilson  staff  4882  6 May 14:39 d269145071936b3925229cdf2a9ba110f43841
+
+./.git/objects/3d:
+total 32
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  2633  4 Jun 11:22 98b0b2fbc8a94e09d110fb9b93c7fab6934ac2
+-r--r--r--    1 dgwilson  staff   341  4 Jun 11:22 a0c1fe62fc82990c631a19fc0abfaf9f6f76fa
+-r--r--r--    1 dgwilson  staff  5268  4 Jun 11:22 f634fe8361a5724bd5cb129925e72aff2eea8f
+
+./.git/objects/3f:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   200 26 Apr 21:43 53f0fc0db417a7e4607719a2782e9cc28d667a
+
+./.git/objects/40:
+total 128
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  63803 24 May  2015 7cddcc77645b74c9a33948b1b1ad923e9bbd66
+
+./.git/objects/41:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   135 24 May  2015 4b4557f599720cb08b459d06c0a136f3a1988e
+-r--r--r--    1 dgwilson  staff  7580 24 May  2015 fd14628db9a8a0ab21f7184ce79f83cb6440e3
+
+./.git/objects/42:
+total 24
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  8399  4 Jun 11:22 5e02e6da229640302d4a7cc486d25caf3ca0e7
+
+./.git/objects/43:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  7473 24 May  2015 84fa89f7ea5067cde9c555eb35eb899e2260e7
+-r--r--r--    1 dgwilson  staff   217  4 Jun 11:22 f5edb5df98e28f2b4485b136f887cc6b1fbf26
+
+./.git/objects/44:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  7 May 12:44 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   187  7 May 12:44 9b35422ced0d1fef114a8d9295ca667ae6cf27
+
+./.git/objects/45:
+total 416
+drwxr-xr-x    7 dgwilson  staff     238  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff     309  6 May 14:39 17e9fe709fdc64fb42673b2156af1ea563644a
+-r--r--r--    1 dgwilson  staff    5865 24 May  2015 9739318b6793617ae31831daf878f48d3763e5
+-r--r--r--    1 dgwilson  staff   70539 24 May  2015 cd28e423a77b3285ae0bb925870f9746aa8160
+-r--r--r--    1 dgwilson  staff  115950 24 May  2015 eafcd01414acf5a4de9d378441987f4cbc086b
+-r--r--r--    1 dgwilson  staff    6297 26 Apr 21:43 f8d0ba5cab5388bce53fec6dcd7d75d76a9478
+
+./.git/objects/46:
+total 80
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  38224 24 May  2015 ef1030a2a63d5303da883bcd76e451911d903e
+
+./.git/objects/47:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    61 24 May  2015 7b28ff8f86a3158a71c4934fbd3a2456717d7a
+-r--r--r--    1 dgwilson  staff   116  4 Jun 11:53 dd6b8069c0a6975fcabed69d845bbca59bca71
+
+./.git/objects/48:
+total 328
+drwxr-xr-x    6 dgwilson  staff     204 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff     975 24 May  2015 3fc7bbd66882c8e6b85e888b5652cd69f738cc
+-r--r--r--    1 dgwilson  staff     117 24 May  2015 722bf798a20e545230941b6bbb73339c2cab13
+-r--r--r--    1 dgwilson  staff    1013 26 Apr 21:43 b76b9ca751e487324fbc04466e6bee47cd11ff
+-r--r--r--    1 dgwilson  staff  155239 24 May  2015 fbb9fa393d94c577cebe8e33100f2aceebf285
+
+./.git/objects/49:
+total 192
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  95067 24 May  2015 6824a022027cd6a5d7d6f807230206c9bb0f2c
+
+./.git/objects/4a:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   200 25 Apr 22:30 1b4ce05caaa1be699b51f0b37109c35f9bcadb
+
+./.git/objects/4b:
+total 40
+drwxr-xr-x    6 dgwilson  staff   204 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  7958 24 May  2015 2b8d8f6299c1c11973a4f238d2455644148871
+-r--r--r--    1 dgwilson  staff   746 24 May  2015 91b2581d4384b9e1fbed2279edfa4ed8726e52
+-r--r--r--    1 dgwilson  staff   403 24 May  2015 cd3fdabc192eb2ecf9314fc2de9d00af28e65a
+-r--r--r--    1 dgwilson  staff   195 24 May  2015 e90d20752d98465a37d601b051a7f6e01de9fa
+
+./.git/objects/4c:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170  7 May 17:08 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   174  7 May 17:08 011317ef6e043dfe919a32142300543cbc25c5
+-r--r--r--    1 dgwilson  staff   510 24 May  2015 70a0c835d842f26df4e4399b462289a2720f54
+-r--r--r--    1 dgwilson  staff   664 25 Apr 22:30 91db9abcbc5bc4e816e9307b9537ada6881dda
+
+./.git/objects/4d:
+total 48
+drwxr-xr-x    5 dgwilson  staff    170 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    135 24 May  2015 168e6580c7eb5edc15b2253bf4249a46ae89e8
+-r--r--r--    1 dgwilson  staff  15339 24 May  2015 903f0fca0e9348fad428e9346ed5f8638c1df4
+-r--r--r--    1 dgwilson  staff    308 24 May  2015 c2897a08204dd80e1e403ae77c542de7e1c3da
+
+./.git/objects/4e:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    62  6 May 14:39 7eddb8e946051620b80ec501003f18d8a86a7d
+
+./.git/objects/4f:
+total 64
+drwxr-xr-x    6 dgwilson  staff    204  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   1225 25 Apr 22:30 a31390661807a5efc001c68c93f1781e920b02
+-r--r--r--    1 dgwilson  staff   4889 24 May  2015 b1e4e7e58cbf04067d4019e646a6bcafed4b20
+-r--r--r--    1 dgwilson  staff  16155  6 May 14:39 d132f77e4d5c2bcd403010c676c75096ba89b1
+-r--r--r--    1 dgwilson  staff   1884 24 May  2015 dd798368901cec9eb294db93ad0c6500e71f47
+
+./.git/objects/50:
+total 1256
+drwxr-xr-x    4 dgwilson  staff     136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff      97 25 Apr 22:30 1242a1214b8a714125c8eed60e17f1f37ba7e1
+-r--r--r--    1 dgwilson  staff  636481 24 May  2015 948dacbba4d47facf1d9a37ff042763a49f31e
+
+./.git/objects/51:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1226 26 Apr 21:43 10c9599d34db85295ba2ee63a16b222110ff91
+
+./.git/objects/52:
+total 40
+drwxr-xr-x    5 dgwilson  staff    170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   1142 24 May  2015 81ed47c9c558d3ec7c305a071d7b7d24425ee3
+-r--r--r--    1 dgwilson  staff  10170 24 May  2015 d76ff120549649a60dca1beeaaab53f6804e83
+-r--r--r--    1 dgwilson  staff    218  4 Jun 11:22 ff46a5a0ae6c6ccc11f9a1bd32479839f2c81c
+
+./.git/objects/54:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   2680 24 May  2015 0ebce8baf8b50256fb3c99c7b71591d528ec33
+-r--r--r--    1 dgwilson  staff  16052 25 Apr 22:30 3c477a7c8865ea88728f7c4ba7190789b6538d
+
+./.git/objects/55:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   605 24 May  2015 04474b5de4c930b56db171428617488166cedc
+-r--r--r--    1 dgwilson  staff   246 24 May  2015 118475ac2691c3a24cfd5b2f22688fe2406266
+-r--r--r--    1 dgwilson  staff   497 25 Apr 22:30 2515d287377e4250342f7ae0fa67adc0f81a70
+
+./.git/objects/56:
+total 56
+drwxr-xr-x    5 dgwilson  staff    170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  17581  4 Jun 11:22 1cb2371c42eef5af5325a7e2916134f44d9dcf
+-r--r--r--    1 dgwilson  staff   1011  4 Jun 11:22 4b8b333a76c9adff7fababa55526a5d6b46be4
+-r--r--r--    1 dgwilson  staff    498 25 Apr 22:30 fce85473fa4dbbdd98d983db02f5353c18145a
+
+./.git/objects/5a:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   497 26 Apr 21:43 a97d67c8e9f06e3cd29b1aa8e8771c943e0977
+
+./.git/objects/5b:
+total 32
+drwxr-xr-x    5 dgwilson  staff   170 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  3118 24 May  2015 00c07e6afff532d6b4b79127820bf36cff0e28
+-r--r--r--    1 dgwilson  staff  2467 26 Apr 21:43 070e48ab03cc18c92860ee1b2808aabb6043cf
+-r--r--r--    1 dgwilson  staff  7632 25 Apr 22:30 897036631490264b166aa5eb3966e465e565fa
+
+./.git/objects/5d:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   481 24 May  2015 581848368ba99ffa163786f8a06f8574b04a2f
+
+./.git/objects/5e:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1861  4 Jun 11:22 42261fbe219f00be6f34678599c1b4d0001aa2
+-r--r--r--    1 dgwilson  staff   315  4 Jun 11:22 b0604e76950c3b0a7b0265d6678fba4a434a4b
+
+./.git/objects/60:
+total 32
+drwxr-xr-x    6 dgwilson  staff   204  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1431  4 Jun 11:22 6e0aa32571c40233e54721144af8f302da055d
+-r--r--r--    1 dgwilson  staff   179  7 May 17:24 783f174a53e3cef8a07377947adc25511663dc
+-r--r--r--    1 dgwilson  staff  1159 24 May  2015 cdd305bd289bc685be4f9b034deaff16e4c642
+-r--r--r--    1 dgwilson  staff   117  4 Jun 11:51 fb471da8473c0069dc98dfe9e539fd4d155fba
+
+./.git/objects/61:
+total 16
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  8192 24 May  2015 ab53ee272ea44aa259ef32def7a8f29a45c11e
+
+./.git/objects/62:
+total 168
+drwxr-xr-x    5 dgwilson  staff    170 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  37627 24 May  2015 1faa9f4b9db4b21c10c2d65bb080d2722d9810
+-r--r--r--    1 dgwilson  staff  39285 24 May  2015 7c6c7fedcabe632e228026229273a5f32e06c4
+-r--r--r--    1 dgwilson  staff   3747 24 May  2015 bf3198e8aa6f6e52e85cc58d288b6679776a1c
+
+./.git/objects/63:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1385 24 May  2015 a386e0c42106cdc8bae923fcf1a448b6c4c9dd
+
+./.git/objects/64:
+total 240
+drwxr-xr-x    3 dgwilson  staff     102  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  121497  4 Jun 11:51 f1fc967ad8910906b807e31ba6d2dbd772003c
+
+./.git/objects/65:
+total 64
+drwxr-xr-x    5 dgwilson  staff    170  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  17720  4 Jun 11:53 432afeb06aef7445bc1d4f86c036b3e5e3ae60
+-r--r--r--    1 dgwilson  staff    224 25 Apr 22:30 4dc257510afd378ef157eb98103693bb8256c9
+-r--r--r--    1 dgwilson  staff   5992 24 May  2015 cfce5c6fa7348906d5ed7bcba0871afdb8b081
+
+./.git/objects/66:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    67 25 Apr 22:30 6b6c092c50ba54cef591403e8ab7b95e582854
+
+./.git/objects/68:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   810 24 May  2015 de46cf0c1b86de724185131b1e08867879ce34
+
+./.git/objects/6c:
+total 104
+drwxr-xr-x    5 dgwilson  staff    170  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    116  7 May 11:41 a4bbb47d899a4c4882bac5b3459ffbfe95290c
+-r--r--r--    1 dgwilson  staff  41999 24 May  2015 c81b91f9b024d1b9699b0df1e1fec62367d5b5
+-r--r--r--    1 dgwilson  staff    102 24 May  2015 f40fb34e0eca6b6e61af2119b67f44f38ab93f
+
+./.git/objects/6d:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  7 May 17:23 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   174  7 May 17:23 2bd8f92d9299f4ca180554cbf6d3a399a941d9
+
+./.git/objects/6e:
+total 296
+drwxr-xr-x    7 dgwilson  staff    238 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  21919 24 May  2015 b0c1afeb3e036cdedbba659aa93c1a0f7bca65
+-r--r--r--    1 dgwilson  staff     62 26 Apr 21:43 b0d830dbbf4acda4925954da39886d8043bca1
+-r--r--r--    1 dgwilson  staff  17928 24 May  2015 bd2d39acfca3a16aad758c28e3e2a48435b18a
+-r--r--r--    1 dgwilson  staff   1277 24 May  2015 cb6442b93b12d257aaa4e4f6a642096bbb8a72
+-r--r--r--    1 dgwilson  staff  95496 24 May  2015 db6043e0c12f1354dec2020868797eda3cc114
+
+./.git/objects/6f:
+total 32
+drwxr-xr-x    6 dgwilson  staff   204 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   374 24 May  2015 20853854cb3ba880f9ec4656ab43954cf6f0bf
+-r--r--r--    1 dgwilson  staff   331 25 Apr 22:30 3d76e89d47a5293e4fc0884ba73c3d676e29c9
+-r--r--r--    1 dgwilson  staff   312 24 May  2015 880af61b3ccfcfa42379b286a8484048e95230
+-r--r--r--    1 dgwilson  staff   199 25 Apr 22:30 fee40a2f9b830c0fd2cca7508ca7bda7c9c6e9
+
+./.git/objects/70:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   710 24 May  2015 df4d0780aac767fac98288f4ffe2c292bf00dc
+-r--r--r--    1 dgwilson  staff   258 24 May  2015 fbe24009f563608ab6a6fb9b84c14bafe371d0
+
+./.git/objects/71:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   289 24 May  2015 0739748e03658a729722eafe83deb7cd91424b
+-r--r--r--    1 dgwilson  staff  1109 25 Apr 22:30 0e6078539208dcb670b1116af24ebc6e42c88c
+
+./.git/objects/73:
+total 216
+drwxr-xr-x    4 dgwilson  staff    136  4 Jun 11:52 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  28553 24 May  2015 16dbee94333733c016716ff0320434f19eb410
+-r--r--r--    1 dgwilson  staff  81076  4 Jun 11:53 689d2021c89f596fe073fc80a1ca61bc63c0b7
+
+./.git/objects/76:
+total 96
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  46041 24 May  2015 052a65e3c1c85873d329ee50c0d08df4fe337d
+
+./.git/objects/78:
+total 88
+drwxr-xr-x    7 dgwilson  staff    238  7 May 17:23 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  23666 24 May  2015 3455bc474b92eedca70fbafa698d8a30d44701
+-r--r--r--    1 dgwilson  staff    175  7 May 17:23 850d17436c563baf295300d6be181d84e17c10
+-r--r--r--    1 dgwilson  staff    509 24 May  2015 9851e4564855e9cb2b2b5dbe75135fd6d5a33c
+-r--r--r--    1 dgwilson  staff   5427  7 May 11:41 b14875162ce8e64f9e953e36b3d0e76469d9bb
+-r--r--r--    1 dgwilson  staff     63 24 May  2015 e9028b01b6529fdcde2f4711e2a13b0970ddb9
+
+./.git/objects/7b:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1443  4 Jun 11:22 16f5895923f69454fab4d199783f79d8cc87d4
+
+./.git/objects/7c:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   4089  4 Jun 11:22 d8603047642078007d5057738306132213be4f
+-r--r--r--    1 dgwilson  staff  16242 26 Apr 21:43 dd899dfb48ad9ee08539461296207b6cca5f7c
+
+./.git/objects/7d:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1003  7 May 11:41 647c051c6a21028d1d9f75083a1afff90f13a2
+-r--r--r--    1 dgwilson  staff   312 25 Apr 22:30 fc7e128f5d76ae1d5c9a322817b98c26add639
+
+./.git/objects/7e:
+total 216
+drwxr-xr-x    6 dgwilson  staff    204  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  16763 24 May  2015 186f55084efe5778aecdca4b41615139a9578b
+-r--r--r--    1 dgwilson  staff  58319 24 May  2015 4ac07d1129bdeb05d030c1cb04c04d80b0f5a0
+-r--r--r--    1 dgwilson  staff   1349  6 May 14:39 5084dd486a1ac366975fad4084af71895e748c
+-r--r--r--    1 dgwilson  staff  22188 24 May  2015 ddeccb8962121d224aba1d70f705dee0ca9432
+
+./.git/objects/7f:
+total 80
+drwxr-xr-x    5 dgwilson  staff    170 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  31143 25 Apr 22:30 1e6214ce9ddda79d31c9a552f536464dec7b15
+-r--r--r--    1 dgwilson  staff   2305 24 May  2015 32d6a278e03118f0706122d3631bac2391aaa7
+-r--r--r--    1 dgwilson  staff    375 24 May  2015 80fa723895159389f79ec299bc86140e01a10e
+
+./.git/objects/81:
+total 304
+drwxr-xr-x    5 dgwilson  staff     170 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  132805 24 May  2015 259ae2412d015b43a8557506fa6b39d22800b0
+-r--r--r--    1 dgwilson  staff   16189 24 May  2015 aa4b836562abe5245cabfe15ef5e3da5aa3360
+-r--r--r--    1 dgwilson  staff    3889 24 May  2015 b011db78e489a4912a189daef9258eb8ca2fc6
+
+./.git/objects/82:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   500 25 Apr 22:30 4fb615b80b1a1b6b67698e957bbd404cc11368
+-r--r--r--    1 dgwilson  staff  2258 24 May  2015 cf5246cadcbdbeed2ce240a5fd40b2b2db2ac3
+
+./.git/objects/83:
+total 24
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  8538  4 Jun 11:51 9f215d5511a87a828afa9119fda6c4baedf7f1
+
+./.git/objects/84:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    83 25 Apr 22:30 7d05dad3c718377436107ec35b4aad8890a4db
+-r--r--r--    1 dgwilson  staff   161 25 Apr 22:30 a3b9cd65134e9d50635355b469c60f6eb6431f
+
+./.git/objects/85:
+total 80
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  38053 24 May  2015 d549ad66fbf900ad77df9df704902b7fc6dd26
+
+./.git/objects/87:
+total 160
+drwxr-xr-x    7 dgwilson  staff    238  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  30190 24 May  2015 6d9e0b8ed1d9d5d0566ec8bec9a3b4bdfd28e3
+-r--r--r--    1 dgwilson  staff   1254  6 May 14:39 71c7dfef05dbf513c983bb4d5437a4b230216f
+-r--r--r--    1 dgwilson  staff    163  4 Jun 11:53 7b44b9a16efdb99a208341be47119e45d5038d
+-r--r--r--    1 dgwilson  staff    312  6 May 14:39 997dda5169bfa5a540517d912f18cbc00941b7
+-r--r--r--    1 dgwilson  staff  33630 24 May  2015 9f22e64f3eff53ae814c9ddf06379371fb19b1
+
+./.git/objects/88:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   504 24 May  2015 8067537e3aa6dede37a1ba5cf286a1039cff86
+-r--r--r--    1 dgwilson  staff   259 25 Apr 22:30 9079c50d5dd6c64493e907b334ba5b0857e183
+
+./.git/objects/89:
+total 88
+drwxr-xr-x    4 dgwilson  staff    136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  37012 24 May  2015 480950241abdb208dffe9bec95b9c0aaf7eb53
+-r--r--r--    1 dgwilson  staff   2207 24 May  2015 9b3373f876bd534534c5181ee7249dc91ecc91
+
+./.git/objects/8a:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   789  7 May 11:41 7d07cc79335062f757c99f87157a007ed6df48
+-r--r--r--    1 dgwilson  staff    62 25 Apr 22:30 834c682b04185643c7bb460e3df4a3bbca7f3b
+-r--r--r--    1 dgwilson  staff  2102 24 May  2015 f9b20d32055df217f0655bdd8b5b1e81fc5824
+
+./.git/objects/8c:
+total 80
+drwxr-xr-x    4 dgwilson  staff    136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  33710 25 Apr 22:30 0f8ed332dc497edcb1e3be515767fca81070b7
+-r--r--r--    1 dgwilson  staff   1128  4 Jun 11:53 2cd0322b425e180faddda1a85ece09d49995c0
+
+./.git/objects/8d:
+total 24
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  8537 24 May  2015 ae8fc188f496b9080fc41da28cadb3533c6993
+
+./.git/objects/8e:
+total 32
+drwxr-xr-x    6 dgwilson  staff   204 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   178 25 Apr 22:30 06e24cd74bd9a324ff00f93ba1a631e4af1206
+-r--r--r--    1 dgwilson  staff   951 24 May  2015 702aaf37a899ee492aa76073bfbbf8627c96dc
+-r--r--r--    1 dgwilson  staff   809 26 Apr 21:43 9d0e9057395210596c796abe8504bafabd28b2
+-r--r--r--    1 dgwilson  staff   283 24 May  2015 f4ad105dc557720aeaf4e62d8761edc5b60a16
+
+./.git/objects/90:
+total 232
+drwxr-xr-x    5 dgwilson  staff     170 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff     134 24 May  2015 38966b7eeccc2b3c26e9adfe65360446e7aec1
+-r--r--r--    1 dgwilson  staff     285 24 May  2015 46d028c7db60e45915f63ad49e35671793837d
+-r--r--r--    1 dgwilson  staff  106891 24 May  2015 d4738146c777d3420412f2b1dc9695847dc8f8
+
+./.git/objects/91:
+total 112
+drwxr-xr-x    4 dgwilson  staff    136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  11864 24 May  2015 1494db38a3d5adfcfd1956b68664c266f34490
+-r--r--r--    1 dgwilson  staff  41933 24 May  2015 69f5b35479b053f8fa5233370c5277a6514f7a
+
+./.git/objects/92:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   117  6 May 14:39 6b6f5edbb487cd3e68b32add24505e470bf928
+
+./.git/objects/93:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   117 26 Apr 21:43 e604d8c5a58c02cbbbf2021c00d470322553a6
+
+./.git/objects/94:
+total 48
+drwxr-xr-x    5 dgwilson  staff    170 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  15672 24 May  2015 080963858093571f59e18bec0ff7dd7d0a7a26
+-r--r--r--    1 dgwilson  staff    238 24 May  2015 1c1aa472b5ef4992e0033276e0be90c7cc5e19
+-r--r--r--    1 dgwilson  staff    193 24 May  2015 e8932c157f67ef3ff1611a2e32674393c948c0
+
+./.git/objects/95:
+total 40
+drwxr-xr-x    6 dgwilson  staff   204 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   234 25 Apr 22:30 3c43de5b4cc98aad18d9bfe425d4a5cd8ae44f
+-r--r--r--    1 dgwilson  staff   708 24 May  2015 b0ed8c07651968d80dc7a8a74743c8cdf3232c
+-r--r--r--    1 dgwilson  staff  6400 24 May  2015 c2329117d2c2f2863c025e5f4e1acf25798a55
+-r--r--r--    1 dgwilson  staff   158 24 May  2015 d15cd36f3f88fec09d92620f4ff3fc9e6bc1cd
+
+./.git/objects/96:
+total 296
+drwxr-xr-x    5 dgwilson  staff     170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  130010  4 Jun 11:22 59a8b69f241dff1ce86346500d70944381e78b
+-r--r--r--    1 dgwilson  staff   15331 24 May  2015 679ec4cc451234394d3efee2d303ca4237a5a7
+-r--r--r--    1 dgwilson  staff     545 24 May  2015 ac9f65619e9c47da544fc18ba5d8da2e739808
+
+./.git/objects/98:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   508 24 May  2015 4d6a08de8bdc90f5dad45a45e48bf334b1da09
+-r--r--r--    1 dgwilson  staff  6410 24 May  2015 7d7a297e1c462183a1bb515dbfc985621fed19
+
+./.git/objects/99:
+total 96
+drwxr-xr-x    5 dgwilson  staff    170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff     63 25 Apr 22:30 7d5059402f628c57ff5196da1dde91268404e7
+-r--r--r--    1 dgwilson  staff  37597  4 Jun 11:22 80bae4560a5411a452ac176edf2316d553bc83
+-r--r--r--    1 dgwilson  staff   1129 24 May  2015 8c1f375f8c9d8c51fc8eb034e36a1f06befe30
+
+./.git/objects/9a:
+total 192
+drwxr-xr-x    4 dgwilson  staff    136 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    788 24 May  2015 60b83c9641c94bb8077f6022cace04bf0bd99c
+-r--r--r--    1 dgwilson  staff  92483 24 May  2015 f8ba409420cd95e528f3a59a5d2c519503f5e0
+
+./.git/objects/9b:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   709  6 May 14:39 463971180d8d55a8b1fee099e1740efdc1137f
+
+./.git/objects/9c:
+total 400
+drwxr-xr-x    5 dgwilson  staff     170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff     102  4 Jun 11:22 0c03917518f85edceb2884f41d4e0cc06e2d11
+-r--r--r--    1 dgwilson  staff  185574 24 May  2015 6682645d6057e4171b8aa0fd1cf956480a2559
+-r--r--r--    1 dgwilson  staff    8298 24 May  2015 76cf312fbc883567ee115c7ebe611f4942fd77
+
+./.git/objects/9d:
+total 120
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  59995 24 May  2015 4cfac867fdea78e1e928e5ee5992bc8f7c5f5b
+
+./.git/objects/9f:
+total 88
+drwxr-xr-x    5 dgwilson  staff    170  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   6625  6 May 14:39 49774d4ca91681a045327eb41c8c198aa08c8c
+-r--r--r--    1 dgwilson  staff    200  4 Jun 11:51 5f6213999879375b472052f32a31a549401ae6
+-r--r--r--    1 dgwilson  staff  30802 24 May  2015 922e1d3e7da4653fa2de6613473288fb0ce11b
+
+./.git/objects/a0:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   178 26 Apr 21:43 cf1c0bf8fed80dba059da5ec9500e8f468872f
+
+./.git/objects/a2:
+total 72
+drwxr-xr-x    4 dgwilson  staff    136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  30187  6 May 14:39 875b7fc4b3e89d8915dba67bc267167f6bbc89
+-r--r--r--    1 dgwilson  staff    652 24 May  2015 9c3a6e7044f9d17f15fd2a46e8706d1b3d2fca
+
+./.git/objects/a3:
+total 72
+drwxr-xr-x    3 dgwilson  staff    102  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  34195  6 May 14:39 f8eca11a2a145b8ad8aec8e16593d160c72c9c
+
+./.git/objects/a4:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   252 24 May  2015 3e95521e8a680afd0300bf4eefa33f848d18bd
+-r--r--r--    1 dgwilson  staff   216  4 Jun 11:22 829d8d88db05d343dfb4dc017d8ce08c073cb4
+
+./.git/objects/a6:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136  7 May 17:24 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    181  7 May 17:24 64ee787fc9b7ff21e2db5f501f98de68ff5f87
+-r--r--r--    1 dgwilson  staff  15857 24 May  2015 c5b47e5c00d87a4a338f4dee905e7b4b1eb18d
+
+./.git/objects/a8:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   308 25 Apr 22:30 eba0ec2c7a1b84b7f962f1e18505af9efc7e65
+
+./.git/objects/a9:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  2172 24 May  2015 110fbfcbd767346e0ceb5d4bb9d8021388f1cb
+
+./.git/objects/aa:
+total 64
+drwxr-xr-x    5 dgwilson  staff    170  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   1083  6 May 14:39 3b5e32c653892a5e14f604db116c84005aa982
+-r--r--r--    1 dgwilson  staff  23538 24 May  2015 4704fadbce27d200b700a78f65ad2d9f3b714c
+-r--r--r--    1 dgwilson  staff    125 25 Apr 22:30 bf4bf5a04089c4f7268fefe6bb269b07772ec1
+
+./.git/objects/ab:
+total 256
+drwxr-xr-x    5 dgwilson  staff     170  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff    6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  121353  4 Jun 11:53 5128502b3c1c1b33d384d0122429206e8027b3
+-r--r--r--    1 dgwilson  staff     312  6 May 14:39 a523d5f606da55f4a58fbb815fe07cf7a1e966
+-r--r--r--    1 dgwilson  staff     178  4 Jun 11:22 c39879077685f2afd3be8bb91aee21dd114e29
+
+./.git/objects/ac:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   2210 25 Apr 22:30 1aeceada6b67ed484e142431ac998dd6e46d58
+-r--r--r--    1 dgwilson  staff  15830 24 May  2015 4d45c4294fe441d3e280bbfd244ff963232711
+
+./.git/objects/ae:
+total 40
+drwxr-xr-x    5 dgwilson  staff   170  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  6715  4 Jun 11:22 2a3f29c1cfb28ca7fca1c62e62e6ce9e96a590
+-r--r--r--    1 dgwilson  staff  8182  4 Jun 11:22 9edd12dfa242d2880bf4d2fd4b4a95b09d9571
+-r--r--r--    1 dgwilson  staff   179  7 May 17:13 f9b961b567ec5bad45db8644fa5b5b85cc8b8d
+
+./.git/objects/af:
+total 40
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  18370 24 May  2015 9b6a25e8cf32d4217d98eca3ccfed0174b3779
+
+./.git/objects/b0:
+total 72
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  34357 24 May  2015 ecdb101ae7b554c171d57461e7f8ca53e11e17
+
+./.git/objects/b1:
+total 24
+drwxr-xr-x    5 dgwilson  staff   170 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   791 25 Apr 22:30 04b530b327b25aeafad46e407bb9266600de1a
+-r--r--r--    1 dgwilson  staff   498 26 Apr 21:43 18a713cb6edf1dad613d2f254f06ee6b9f4e58
+-r--r--r--    1 dgwilson  staff   117 25 Apr 22:30 a3bceff6c1fac018e7633a99ada6b27536583f
+
+./.git/objects/b2:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    63  7 May 11:41 35d6a8f3a445159c88e3cd0bac3c1149b9d094
+
+./.git/objects/b3:
+total 176
+drwxr-xr-x    6 dgwilson  staff    204  7 May 12:44 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    184  7 May 12:44 0f66725c1d28770a29714ec6c32c72a2fb2cae
+-r--r--r--    1 dgwilson  staff    799  6 May 14:39 476ab2c85f137c136aa62b860c4c31cf8c485f
+-r--r--r--    1 dgwilson  staff  32784 24 May  2015 64aa958204080278a1bf303bb8799d650ffdc7
+-r--r--r--    1 dgwilson  staff  41906 24 May  2015 780f357d3d58fcda6cb8046874808ad4bfef0f
+
+./.git/objects/b7:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  7 May 15:28 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  2663  4 Jun 11:22 152cde5fc0a233cd2c7303a1d6fe435dd9f984
+
+./.git/objects/b8:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  14522 24 May  2015 7c382593b4103686df0772ee532d2dcd9b1cc4
+-r--r--r--    1 dgwilson  staff   2042  4 Jun 11:22 d312bdcf4b59b0265f56c354506629e5c222de
+
+./.git/objects/b9:
+total 7384
+drwxr-xr-x    3 dgwilson  staff      102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff     6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  3778227 24 May  2015 a4e42a57c1f72bdafb3cd7236d82ce630cb4a1
+
+./.git/objects/bb:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    62  4 Jun 11:51 2fad5f404d9dab342e77f8cbbcc8b656e9251e
+
+./.git/objects/bd:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   708 24 May  2015 f8f95ff740b807393f409b3f2884f43c7e0eeb
+
+./.git/objects/bf:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   241 24 May  2015 ffcfe01a447c543aefcc4490edb5b84ef9ec46
+
+./.git/objects/c0:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   200  7 May 11:41 49132c6ae0dda9f1a1ffe1bc22839d001eaad3
+
+./.git/objects/c1:
+total 304
+drwxr-xr-x    6 dgwilson  staff    204  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  13267  6 May 14:39 0c2ad4e40ae9e003939f3288f1896124e0d1a2
+-r--r--r--    1 dgwilson  staff    649  7 May 11:41 6731461e1dabf5f2f17b1e011a8647252e8917
+-r--r--r--    1 dgwilson  staff  49708 24 May  2015 70b4372bf8851c69b2d3e3c670ee4889257174
+-r--r--r--    1 dgwilson  staff  77828 24 May  2015 fa16856d50fadfe4a41a144ce6828496eead10
+
+./.git/objects/c2:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   313 25 Apr 22:30 2247eeded9cdfaab721d47369ce75808e0fae2
+
+./.git/objects/c6:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   164 25 Apr 22:30 6693e593eda19fec3064af67acf009ea73cad3
+-r--r--r--    1 dgwilson  staff  7616  6 May 14:39 8ff80e3eabcf5fcebfd92ed5742e89dc455194
+
+./.git/objects/c7:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   311 26 Apr 21:43 6c3a6319529e14a62879fccd5c55758a11ad61
+
+./.git/objects/ca:
+total 64
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  29497 24 May  2015 8ce44b3edc443cd431cfe0d509ef27fbad7f3f
+
+./.git/objects/cb:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   932 25 Apr 22:30 2c5d7e246e3b243e6a3774d1659b9c992ad292
+
+./.git/objects/cd:
+total 40
+drwxr-xr-x    7 dgwilson  staff   238 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   301 24 May  2015 1adbdc3b6bbdbbe314a4ac7282599461e4033c
+-r--r--r--    1 dgwilson  staff   313 26 Apr 21:43 2e79ba1f1f3cf9565174027d32eee1876a132a
+-r--r--r--    1 dgwilson  staff   809 24 May  2015 3a9a4d41c1a2dca729b750f87978f455638f6d
+-r--r--r--    1 dgwilson  staff   614 24 May  2015 6b5873050a6a12f33d1c2b9e2ddfcf93bb3135
+-r--r--r--    1 dgwilson  staff   224 24 May  2015 ff5638021219ffa16b2793979dc2e3132bb6ee
+
+./.git/objects/ce:
+total 96
+drwxr-xr-x    6 dgwilson  staff    204 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  27404 24 May  2015 00248e2ef2aac1a2ab081b0fd5ce2a7132d0ce
+-r--r--r--    1 dgwilson  staff   4891 25 Apr 22:30 0a423cc30396fc29d7596e6a818fa49a100f84
+-r--r--r--    1 dgwilson  staff    194 25 Apr 22:30 4cc013c40c78c66f745db86424a6b8e4308694
+-r--r--r--    1 dgwilson  staff   4653 24 May  2015 e7d47dc6e3da9b848cbfa8ab986c4ba82d9ef9
+
+./.git/objects/cf:
+total 16
+drwxr-xr-x    3 dgwilson  staff   102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  6632 26 Apr 21:43 3f65ca6e5720da14bc404cc9cbac001aef4df1
+
+./.git/objects/d0:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   226 24 May  2015 76a4fdd690bf40b96e8110824cee7affc8bd12
+-r--r--r--    1 dgwilson  staff   279  7 May 11:41 fbac86edd5d4b6b3607764e9d1d02b0e6c49fb
+
+./.git/objects/d1:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    62 24 May  2015 5e4b6a2d27f5c5ad9a168359c2194543708adc
+
+./.git/objects/d3:
+total 56
+drwxr-xr-x    4 dgwilson  staff    136 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    102 26 Apr 21:43 23fc7eda9d70a719ce427f46551ec52024c5ef
+-r--r--r--    1 dgwilson  staff  22651 24 May  2015 6bde21080db62fa24ac9c8bfa6f01584a5ebf0
+
+./.git/objects/d4:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   234  4 Jun 11:53 5e29a23e17ecc0d5ef7db41c109e67bfb44698
+-r--r--r--    1 dgwilson  staff   200  4 Jun 11:22 e5e665de69963d0055fa9191bd6002a683032e
+
+./.git/objects/d5:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   792 25 Apr 22:30 b1b3d3471c41a7db7ba6ec1b0a435ea409df5a
+
+./.git/objects/d7:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1104  4 Jun 11:22 3b019d29d0e26640bf963f4c0a1d705b65aa4f
+
+./.git/objects/d8:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   163 25 Apr 22:30 44be712d412510259de9863b2e489b44f9bb4e
+-r--r--r--    1 dgwilson  staff  1445  4 Jun 11:51 ae95fa2bda8240849578d3a471a28073c94622
+
+./.git/objects/db:
+total 16
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  6219 24 May  2015 bbe7196cbd71e3dd054d6084bd35740af8636e
+
+./.git/objects/dc:
+total 48
+drwxr-xr-x    7 dgwilson  staff   238  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   222 26 Apr 21:43 2955bfdb360eb5641e2ddcad3f6bc87b2d4de2
+-r--r--r--    1 dgwilson  staff  1005  4 Jun 11:22 4fde145761ec6135b5b22394a503776e8a5693
+-r--r--r--    1 dgwilson  staff   375 26 Apr 21:43 5ba483d8419cb92637c0aa9221969fd02f64f7
+-r--r--r--    1 dgwilson  staff  5515 24 May  2015 7b2545a5041f0aa146b74510be34666f5a61ba
+-r--r--r--    1 dgwilson  staff  1901  6 May 14:39 db432ae2eef2657ca908fb662b95f5198462dd
+
+./.git/objects/dd:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   102  6 May 14:39 e0e76a8f888504ccac9053f37fbd07f8666ee0
+
+./.git/objects/de:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   137 25 Apr 22:30 039dd5f6b254acc69d3fa26dc62765cfbb59df
+
+./.git/objects/df:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   135 24 May  2015 93a444a5929b2e1dcabdf410fc365beb0da78e
+
+./.git/objects/e0:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:23 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   178  7 May 17:23 53423935f25209ebc3342403ac9dc958849af2
+-r--r--r--    1 dgwilson  staff   255 24 May  2015 c132ba85681f0de9a577e7714ae9671b5f061f
+
+./.git/objects/e1:
+total 56
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  27182 24 May  2015 aecdd8005b287269609db2fa3f93569cd6f202
+
+./.git/objects/e2:
+total 64
+drwxr-xr-x    4 dgwilson  staff    136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    499 25 Apr 22:30 0719029e23bed2b92eb5380c53bd45eeabaaa9
+-r--r--r--    1 dgwilson  staff  25849 24 May  2015 906e8dfa24dc36f32d45bdc8c79357eb31ca3a
+
+./.git/objects/e4:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   201  4 Jun 11:53 4e4af65edd9733c30d3a7c579c2535f7c6f09f
+-r--r--r--    1 dgwilson  staff   791 25 Apr 22:30 65b10580457b8e20ad7fc2f8c7caefb6af0aed
+
+./.git/objects/e5:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1799 24 May  2015 9c2be9603e4b963f55f25f8f5f79b010882335
+-r--r--r--    1 dgwilson  staff   954  6 May 14:39 e930d2d76d001bf312fa25f38f527089f140cd
+
+./.git/objects/e6:
+total 56
+drwxr-xr-x    5 dgwilson  staff    170  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  17714  4 Jun 11:51 5f7081512151eee086a983e2324ffd616fdd7a
+-r--r--r--    1 dgwilson  staff    200 24 May  2015 df981eeab2846699e3ccd5064bbab413c519e7
+-r--r--r--    1 dgwilson  staff    791 24 May  2015 ed4ab2c184f00e9653c8dff41cdbf14555e2b6
+
+./.git/objects/e7:
+total 88
+drwxr-xr-x    3 dgwilson  staff    102 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  42968 26 Apr 21:43 d763f05e14c8d9e0d0c5dc0fe3ff5de2b8a5c0
+
+./.git/objects/e8:
+total 40
+drwxr-xr-x    4 dgwilson  staff    136  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  13439  4 Jun 11:51 87d420d72216a88a2843c5fd3bbee4419ae8e8
+-r--r--r--    1 dgwilson  staff    222  4 Jun 11:22 da0d65b7903ca2b7aaa682b720d115bb11c2ca
+
+./.git/objects/e9:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 17:13 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   176  7 May 17:13 0f0d4e52ac0b48cf24b6c99ea5675408caae9e
+-r--r--r--    1 dgwilson  staff   222  6 May 14:39 7b4cab49105aa8add7b95079167f57ff730375
+
+./.git/objects/ea:
+total 40
+drwxr-xr-x    5 dgwilson  staff   170 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  9801 25 Apr 22:30 4eaba36312ef687ac435ca4100c747337e2a9b
+-r--r--r--    1 dgwilson  staff   811 25 Apr 22:30 bda159b3bd0b855019746eff57f8615e85adc2
+-r--r--r--    1 dgwilson  staff   282 25 Apr 22:30 cd5a928059228b4e2f68e39b8d207050980f36
+
+./.git/objects/eb:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    96 25 Apr 22:30 e617b3a41f7ac38896a31ecfb5eb75a2863437
+
+./.git/objects/ec:
+total 120
+drwxr-xr-x    5 dgwilson  staff    170  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   1010  6 May 14:39 b3697429dc596b3ce16777d17d9d55ffb0759b
+-r--r--r--    1 dgwilson  staff  52548 24 May  2015 b42cedb5848c6318429970ab0d52c12f7d7b69
+-r--r--r--    1 dgwilson  staff    988 24 May  2015 c3170d8c2d3d4ce1b95539929ecd05b86fb783
+
+./.git/objects/ed:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   215 24 May  2015 65f8d14a9e1b3c09eb8104569f6d9cda090bc4
+
+./.git/objects/ee:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1171 24 May  2015 a65d6bed84d557f4c90a5dba2a0af4facb717e
+
+./.git/objects/ef:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136 25 Apr 22:30 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff    95 25 Apr 22:30 b265dc8e516b626f17c177a47f58e6600580ee
+-r--r--r--    1 dgwilson  staff  6486 25 Apr 22:30 bd19f0a305aa64e2c88086b51430850e415b48
+
+./.git/objects/f1:
+total 160
+drwxr-xr-x    7 dgwilson  staff    238  4 Jun 11:22 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  50220 24 May  2015 2782a0462165d45e7b691a1663d3b428f41cd1
+-r--r--r--    1 dgwilson  staff    199  4 Jun 11:22 2e95cb49116afa7ac13143ca0b4dcf6e871f88
+-r--r--r--    1 dgwilson  staff    103  7 May 11:41 461c4ca6248e94e7612e03e2c3d87b274bd36c
+-r--r--r--    1 dgwilson  staff  14045 24 May  2015 8f5a7f81c8a48f094b1f10561c9120dc469719
+-r--r--r--    1 dgwilson  staff    117  4 Jun 11:22 ade018cce21a40e3d2ce08161579ac6282d93d
+
+./.git/objects/f2:
+total 80
+drwxr-xr-x    4 dgwilson  staff    136 26 Apr 21:43 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  34153 24 May  2015 a42e3df003f29759a9e2615e9238cafe0967cd
+-r--r--r--    1 dgwilson  staff    312 26 Apr 21:43 f810afefd3f6ab791a8a9456e53ea28802cc98
+
+./.git/objects/f3:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   525 24 May  2015 85fe6ec0e8ca453f0629d62739975bfe6eb83a
+-r--r--r--    1 dgwilson  staff   102  4 Jun 11:53 e1b2a1b75fed79e1e9a6a9cdf9c6e65ed85cee
+
+./.git/objects/f4:
+total 32
+drwxr-xr-x    3 dgwilson  staff    102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  15200 24 May  2015 759a70b5bfb0903ef67aa2d983cc31d5b8d4d4
+
+./.git/objects/f5:
+total 80
+drwxr-xr-x    7 dgwilson  staff    238  4 Jun 11:51 .
+drwxr-xr-x  198 dgwilson  staff   6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  22625 24 May  2015 0d4669727b38160b2ac02756f3005a4eea77be
+-r--r--r--    1 dgwilson  staff    223  4 Jun 11:51 1b611073409350c7c9cbdd4cb6c69ff62fe85c
+-r--r--r--    1 dgwilson  staff    219  4 Jun 11:22 56fbe8aa8d23b078660db0e271b6fdbc6698c5
+-r--r--r--    1 dgwilson  staff    991  7 May 11:41 e94eaee090155e35422a9ad5ea0ed448dd3738
+-r--r--r--    1 dgwilson  staff    102  4 Jun 11:51 ef4cbad2e13e2462acec64294bbeb5a61c37ee
+
+./.git/objects/f6:
+total 24
+drwxr-xr-x    4 dgwilson  staff   136  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1015 24 May  2015 6a4bf23588d5f3efbb2482002ee990142f9acc
+-r--r--r--    1 dgwilson  staff  6689  6 May 14:39 6e45479c6b94ffd2f4b7dea595ecd3e4e5d957
+
+./.git/objects/f7:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   313 24 May  2015 0a7ec6355544f8d6ea6187f7eb9302bb18a7b1
+
+./.git/objects/f8:
+total 48
+drwxr-xr-x    6 dgwilson  staff   204  7 May 11:41 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff   605  7 May 11:41 00584707e7ae787f0e4e7c923de9f4659c43ca
+-r--r--r--    1 dgwilson  staff   790 25 Apr 22:30 05291b1060d8b6221cf07113fa776818b3bfe6
+-r--r--r--    1 dgwilson  staff  7986  7 May 11:41 2b7f33a392b881846ff10389d2fd424b660ca3
+-r--r--r--    1 dgwilson  staff  7002 24 May  2015 ec17280a54ab6a62ac024a55acd444b35e159e
+
+./.git/objects/f9:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  7 May 15:28 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  3565  4 Jun 11:22 59f486c8d98387323ddef2bf2b5342bb44c20b
+-r--r--r--    1 dgwilson  staff   707 24 May  2015 687667fbc2f4ce45dd357c43364f2f942a103b
+
+./.git/objects/fd:
+total 16
+drwxr-xr-x    4 dgwilson  staff   136  4 Jun 11:53 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  1445  4 Jun 11:53 750ab8e697156b47a4cb4494be480b1d00d9c3
+-r--r--r--    1 dgwilson  staff    83 24 May  2015 ddc5ea21d15bdd8496b9fdfa049cc4d0550347
+
+./.git/objects/ff:
+total 8
+drwxr-xr-x    3 dgwilson  staff   102  6 May 14:39 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+-r--r--r--    1 dgwilson  staff  2078  6 May 14:39 3da8e76506dced7c4e4fadad515f6ee2f2358c
+
+./.git/objects/info:
+total 0
+drwxr-xr-x    2 dgwilson  staff    68 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+
+./.git/objects/pack:
+total 0
+drwxr-xr-x    2 dgwilson  staff    68 24 May  2015 .
+drwxr-xr-x  198 dgwilson  staff  6732  4 Jun 11:53 ..
+
+./.git/refs:
+total 0
+drwxr-xr-x   5 dgwilson  staff  170 24 May  2015 .
+drwxr-xr-x  15 dgwilson  staff  510  4 Jun 11:53 ..
+drwxr-xr-x   3 dgwilson  staff  102  4 Jun 11:53 heads
+drwxr-xr-x   3 dgwilson  staff  102 24 May  2015 remotes
+drwxr-xr-x   2 dgwilson  staff   68 24 May  2015 tags
+
+./.git/refs/heads:
+total 8
+drwxr-xr-x  3 dgwilson  staff  102  4 Jun 11:53 .
+drwxr-xr-x  5 dgwilson  staff  170 24 May  2015 ..
+-rw-r--r--  1 dgwilson  staff   41  4 Jun 11:53 master
+
+./.git/refs/remotes:
+total 0
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 .
+drwxr-xr-x  5 dgwilson  staff  170 24 May  2015 ..
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 origin
+
+./.git/refs/remotes/origin:
+total 8
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 .
+drwxr-xr-x  3 dgwilson  staff  102 24 May  2015 ..
+-rw-r--r--  1 dgwilson  staff   41 24 May  2015 master
+
+./.git/refs/tags:
+total 0
+drwxr-xr-x  2 dgwilson  staff   68 24 May  2015 .
+drwxr-xr-x  5 dgwilson  staff  170 24 May  2015 ..
+
+./Classes:
+total 1768
+drwxr-xr-x  34 dgwilson  staff    1156  4 Jun 11:37 .
+drwxr-xr-x  50 dgwilson  staff    1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff   15364 21 Dec  2012 .DS_Store
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff    1557  6 May 19:47 AppController.h
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   121 
+-rw-r--r--@  1 dgwilson  staff   32515  4 Jun 11:37 AppController.m
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   585 
+drwxr-xr-x  11 dgwilson  staff     374 25 Apr 21:24 AppleScript Support
+-rw-rw-r--@  1 dgwilson  staff   30125 26 May  2011 AsyncSocket.h
+	com.apple.TextEncoding	    15 
+-rw-rw-r--@  1 dgwilson  staff  123951  6 May 12:31 AsyncSocket.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   153 
+-rw-r--r--@  1 dgwilson  staff    1439 21 Dec  2012 FeedbackWindowController.h
+	com.apple.TextEncoding	    11 
+-rw-r--r--@  1 dgwilson  staff   17060  6 May 19:57 FeedbackWindowController.m
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   121 
+-rw-rw-r--   1 dgwilson  staff    1966  4 Nov  2008 MTMessage.h
+-rw-rw-r--@  1 dgwilson  staff    2394  6 May 12:18 MTMessage.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	    89 
+-rw-rw-r--   1 dgwilson  staff    2534  4 Nov  2008 MTMessageBroker.h
+-rw-rw-r--@  1 dgwilson  staff    5265  6 May 12:21 MTMessageBroker.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	    89 
+-rw-r--r--@  1 dgwilson  staff     239  1 May  2008 MissileControlView.h
+	com.apple.TextEncoding	    15 
+-rw-r--r--@  1 dgwilson  staff    1693  6 May 12:15 MissileControlView.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	    89 
+-rw-r--r--@  1 dgwilson  staff    3300 11 May 19:57 MissileResponder.h
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   281 
+-rw-r--r--@  1 dgwilson  staff   40249 11 May 20:02 MissileResponder.m
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   521 
+-rw-r--r--@  1 dgwilson  staff     844 12 Jun  2006 MissileView.h
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff    3868 12 Jun  2006 MissileView.m
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff    1641 21 Dec  2012 SS_PreferencePaneProtocol.h
+	com.apple.TextEncoding	    11 
+-rw-r--r--@  1 dgwilson  staff    2325 21 Dec  2012 SS_PrefsController.h
+	com.apple.TextEncoding	    11 
+-rw-r--r--@  1 dgwilson  staff   18596  6 May 19:46 SS_PrefsController.m
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   169 
+-rw-r--r--@  1 dgwilson  staff     400 25 Apr 20:27 USB Missile Launcher NZ_Prefix.pch
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   121 
+-rw-r--r--@  1 dgwilson  staff    2850  5 May 17:57 USBJoyStickControl.h
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	    89 
+-rw-r--r--@  1 dgwilson  staff   46441 25 Apr 21:24 USBJoyStickControl.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   105 
+-rw-r--r--@  1 dgwilson  staff    2144 10 May 22:44 USBLauncher.h
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   361 
+-rw-r--r--@  1 dgwilson  staff    5845 11 May 18:32 USBLauncher.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   537 
+-rw-r--r--@  1 dgwilson  staff    2916 11 May 19:52 USBMissileControl.h
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   137 
+-rw-r--r--@  1 dgwilson  staff  180524 11 May 20:29 USBMissileControl.m
+	com.apple.TextEncoding	    11 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  2249 
+-rw-r--r--@  1 dgwilson  staff  120906 15 Dec  2007 USBMissileControl_20071214.m
+	com.apple.FinderInfo	    32 
+	com.apple.TextEncoding	    11 
+	com.macromates.caret	    26 
+-rw-r--r--@  1 dgwilson  staff  163100  6 Jan  2012 USBMissileControl_c-enter_hold.m
+	com.apple.TextEncoding	    11 
+-rw-r--r--@  1 dgwilson  staff     269 24 Apr  2008 main.m
+	com.apple.FinderInfo	    32 
+	com.apple.TextEncoding	    15 
+-rw-r--r--   1 dgwilson  staff    6729 26 May  2011 ssPrefs backup.zip
+
+./Classes/AppleScript Support:
+total 88
+drwxr-xr-x  11 dgwilson  staff   374 25 Apr 21:24 .
+drwxr-xr-x  34 dgwilson  staff  1156  4 Jun 11:37 ..
+-rw-r--r--@  1 dgwilson  staff  6148 21 Dec  2012 .DS_Store
+	com.apple.FinderInfo	  32 
+-rw-r--r--   1 dgwilson  staff   290 15 Apr  2007 ASAbort.h
+-rw-r--r--   1 dgwilson  staff   395 15 Apr  2007 ASAbort.m
+-rw-r--r--   1 dgwilson  staff   288 15 Apr  2007 ASFire.h
+-rw-r--r--   1 dgwilson  staff   391 15 Apr  2007 ASFire.m
+-rw-r--r--   1 dgwilson  staff   306 28 Apr  2007 ASMoveParameter.h
+-rw-r--r--@  1 dgwilson  staff  7917 25 Apr 21:24 ASMoveParameter.m
+	com.apple.TextEncoding	  15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	 105 
+-rw-r--r--   1 dgwilson  staff   299 15 Apr  2007 ASToggleLock.h
+-rw-r--r--   1 dgwilson  staff   415 15 Apr  2007 ASToggleLock.m
+
+./ClassesVideo:
+total 32
+drwxr-xr-x   6 dgwilson  staff   204 21 Dec  2012 .
+drwxr-xr-x  50 dgwilson  staff  1700  4 Jun 12:07 ..
+drwxrwxrwx   2 dgwilson  staff    68 21 Dec  2012 SeqGrab
+-rwxrwxrwx@  1 dgwilson  staff  7137  2 Jun  2005 VideoDebugMacros.h
+	com.apple.FinderInfo	  32 
+-rw-r--r--@  1 dgwilson  staff   227 26 Apr  2008 VideoWindow.h
+	com.apple.TextEncoding	  15 
+-rw-r--r--@  1 dgwilson  staff   578 21 Dec  2012 VideoWindow.m
+	com.apple.TextEncoding	  15 
+
+./ClassesVideo/SeqGrab:
+total 0
+drwxrwxrwx  2 dgwilson  staff   68 21 Dec  2012 .
+drwxr-xr-x  6 dgwilson  staff  204 21 Dec  2012 ..
+
+./English.lproj:
+total 136
+drwxr-xr-x   7 dgwilson  staff    238 11 May 20:00 .
+drwxr-xr-x  50 dgwilson  staff   1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff   6148  6 May 14:19 .DS_Store
+	com.apple.FinderInfo	   32 
+-rw-r--r--@  1 dgwilson  staff   7546 14 Mar  2009 Localizable.strings
+	com.apple.TextEncoding	   10 
+	com.macromates.caret	   24 
+drwxr-xr-x   5 dgwilson  staff    170 24 Feb  2011 MainMenu.nib
+-rw-r--r--@  1 dgwilson  staff  45263 11 May 20:00 MainMenu.xib
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  169 
+-rw-r--r--@  1 dgwilson  staff    586 19 Jun  2009 delete_InfoPlist.strings_me
+	com.apple.FinderInfo	   32 
+	com.apple.TextEncoding	   10 
+
+./English.lproj/MainMenu.nib:
+total 512
+drwxr-xr-x  5 dgwilson  staff     170 24 Feb  2011 .
+drwxr-xr-x  7 dgwilson  staff     238 11 May 20:00 ..
+-rw-r--r--  1 dgwilson  staff    8986  1 May  2008 CautionFire.tiff
+-rw-r--r--  1 dgwilson  staff  201596 24 Feb  2011 designable.nib
+-rw-r--r--  1 dgwilson  staff   42648 24 Feb  2011 keyedobjects.nib
+
+./GeneralPrefs:
+total 64
+drwxr-xr-x@ 11 dgwilson  staff   374  6 May 12:13 .
+	com.apple.FinderInfo	  32 
+drwxr-xr-x  50 dgwilson  staff  1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff  6148  6 Jan  2012 .DS_Store
+	com.apple.FinderInfo	  32 
+-rw-r--r--@  1 dgwilson  staff   391  8 Apr  2007 GeneralController.h
+	com.apple.FinderInfo	  32 
+-rw-r--r--@  1 dgwilson  staff  1779  6 May 12:13 GeneralController.m
+	com.apple.TextEncoding	  15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	 121 
+drwxr-xr-x   4 dgwilson  staff   136  6 Jan  2012 GeneralPaneView.nib
+-rw-r--r--   1 dgwilson  staff  1151 26 Apr 21:11 GeneralPrefs-Info.plist
+-rw-r--r--@  1 dgwilson  staff   152  5 Jan  2012 GeneralPrefs-Prefix.pch
+	com.apple.TextEncoding	  15 
+-rw-rw-r--   1 dgwilson  staff  3484 18 Nov  2011 GeneralPrefs.tiff
+-rw-r--r--@  1 dgwilson  staff  1717 28 Jun  2003 SS_PreferencePaneProtocol.h
+	com.apple.FinderInfo	  32 
+drwxr-xr-x   3 dgwilson  staff   102  5 Jan  2012 en.lproj
+
+./GeneralPrefs/GeneralPaneView.nib:
+total 112
+drwxr-xr-x   4 dgwilson  staff    136  6 Jan  2012 .
+drwxr-xr-x@ 11 dgwilson  staff    374  6 May 12:13 ..
+	com.apple.FinderInfo	   32 
+-rw-r--r--   1 dgwilson  staff  43649  6 Jan  2012 designable.nib
+-rw-r--r--   1 dgwilson  staff   9782  6 Jan  2012 keyedobjects.nib
+
+./GeneralPrefs/en.lproj:
+total 8
+drwxr-xr-x   3 dgwilson  staff  102  5 Jan  2012 .
+drwxr-xr-x@ 11 dgwilson  staff  374  6 May 12:13 ..
+	com.apple.FinderInfo	 32 
+-rw-r--r--@  1 dgwilson  staff   45  5 Jan  2012 InfoPlist.strings
+	com.apple.TextEncoding	 15 
+
+./German.lproj:
+total 40
+drwxr-xr-x   7 dgwilson  staff   238  3 Jan  2012 .
+drwxr-xr-x  50 dgwilson  staff  1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff  6148  3 Jan  2012 .DS_Store
+	com.apple.FinderInfo	  32 
+-rw-r--r--   1 dgwilson  staff   762 14 Mar  2007 InfoPlist.strings
+-rw-r--r--@  1 dgwilson  staff  7652 26 Apr  2008 Localizable.strings
+	com.apple.TextEncoding	  10 
+	com.macromates.caret	  25 
+drwxr-xr-x   6 dgwilson  staff   204 27 Apr  2007 MainMenu.nib
+drwxr-xr-x   6 dgwilson  staff   204 15 Mar  2007 MainMenu~.nib
+
+./German.lproj/MainMenu.nib:
+total 112
+drwxr-xr-x  6 dgwilson  staff    204 27 Apr  2007 .
+drwxr-xr-x  7 dgwilson  staff    238  3 Jan  2012 ..
+-rw-r--r--  1 dgwilson  staff   8986 27 Apr  2007 CautionFire.tiff
+-rw-r--r--  1 dgwilson  staff   2511 27 Apr  2007 classes.nib
+-rw-r--r--  1 dgwilson  staff    818 27 Apr  2007 info.nib
+-rw-r--r--  1 dgwilson  staff  33506 27 Apr  2007 keyedobjects.nib
+
+./German.lproj/MainMenu~.nib:
+total 112
+drwxr-xr-x  6 dgwilson  staff    204 15 Mar  2007 .
+drwxr-xr-x  7 dgwilson  staff    238  3 Jan  2012 ..
+-rw-r--r--  1 dgwilson  staff   8986 15 Mar  2007 CautionFire.tiff
+-rw-r--r--  1 dgwilson  staff   2511 15 Mar  2007 classes.nib
+-rw-r--r--  1 dgwilson  staff    817 15 Mar  2007 info.nib
+-rw-r--r--  1 dgwilson  staff  33505 15 Mar  2007 keyedobjects.nib
+
+./JoystickPrefs:
+total 216
+drwxr-xr-x@ 10 dgwilson  staff    340  6 May 12:13 .
+	com.apple.FinderInfo	   32 
+drwxr-xr-x  50 dgwilson  staff   1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff    400 11 Feb  2007 JoystickController.h
+	com.apple.FinderInfo	   32 
+-rw-r--r--@  1 dgwilson  staff   1990  6 May 12:13 JoystickController.m
+	com.apple.TextEncoding	   15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  121 
+drwxr-xr-x   4 dgwilson  staff    136  6 Jan  2012 JoystickPaneView.nib
+-rw-r--r--   1 dgwilson  staff   1156 26 Apr 21:11 JoystickPrefs-Info.plist
+-rw-r--r--@  1 dgwilson  staff    154  5 Jan  2012 JoystickPrefs-Prefix.pch
+	com.apple.TextEncoding	   15 
+-rw-r--r--@  1 dgwilson  staff  53608 14 Feb  2007 JoystickPrefs.tiff
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	30004 
+-rw-r--r--@  1 dgwilson  staff   1717 28 Jun  2003 SS_PreferencePaneProtocol.h
+	com.apple.FinderInfo	   32 
+drwxr-xr-x   3 dgwilson  staff    102  5 Jan  2012 en.lproj
+
+./JoystickPrefs/JoystickPaneView.nib:
+total 144
+drwxr-xr-x   4 dgwilson  staff    136  6 Jan  2012 .
+drwxr-xr-x@ 10 dgwilson  staff    340  6 May 12:13 ..
+	com.apple.FinderInfo	   32 
+-rw-r--r--   1 dgwilson  staff  53045  6 Jan  2012 designable.nib
+-rw-r--r--   1 dgwilson  staff  17479  6 Jan  2012 keyedobjects.nib
+
+./JoystickPrefs/en.lproj:
+total 8
+drwxr-xr-x   3 dgwilson  staff  102  5 Jan  2012 .
+drwxr-xr-x@ 10 dgwilson  staff  340  6 May 12:13 ..
+	com.apple.FinderInfo	 32 
+-rw-r--r--@  1 dgwilson  staff   45  5 Jan  2012 InfoPlist.strings
+	com.apple.TextEncoding	 15 
+
+./LauncherPrefs:
+total 384
+drwxr-xr-x@ 11 dgwilson  staff     374  6 May 12:13 .
+	com.apple.FinderInfo	    32 
+drwxr-xr-x  50 dgwilson  staff    1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff    6148  5 Jan  2012 .DS_Store
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff     663 13 Feb  2007 LauncherController.h
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff    4561  6 May 12:13 LauncherController.m
+	com.apple.TextEncoding	    15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   121 
+drwxr-xr-x   4 dgwilson  staff     136  6 Jan  2012 LauncherPaneView.nib
+-rw-r--r--   1 dgwilson  staff    1156 26 Apr 21:11 LauncherPrefs-Info.plist
+-rw-r--r--@  1 dgwilson  staff     154  5 Jan  2012 LauncherPrefs-Prefix.pch
+	com.apple.TextEncoding	    15 
+-rw-r--r--@  1 dgwilson  staff  116932 14 Feb  2007 LauncherPrefs.tiff
+	com.apple.FinderInfo	    32 
+	com.apple.ResourceFork	 41819 
+-rw-r--r--@  1 dgwilson  staff    1717 28 Jun  2003 SS_PreferencePaneProtocol.h
+	com.apple.FinderInfo	    32 
+drwxr-xr-x   3 dgwilson  staff     102  5 Jan  2012 en.lproj
+
+./LauncherPrefs/LauncherPaneView.nib:
+total 160
+drwxr-xr-x   4 dgwilson  staff    136  6 Jan  2012 .
+drwxr-xr-x@ 11 dgwilson  staff    374  6 May 12:13 ..
+	com.apple.FinderInfo	   32 
+-rw-r--r--   1 dgwilson  staff  63263  6 Jan  2012 designable.nib
+-rw-r--r--   1 dgwilson  staff  13081  6 Jan  2012 keyedobjects.nib
+
+./LauncherPrefs/en.lproj:
+total 8
+drwxr-xr-x   3 dgwilson  staff  102  5 Jan  2012 .
+drwxr-xr-x@ 11 dgwilson  staff  374  6 May 12:13 ..
+	com.apple.FinderInfo	 32 
+-rw-r--r--@  1 dgwilson  staff   45  5 Jan  2012 InfoPlist.strings
+	com.apple.TextEncoding	 15 
+
+./Resources:
+total 17688
+drwxr-xr-x  36 dgwilson  staff     1224  4 Jun 12:02 .
+drwxr-xr-x  50 dgwilson  staff     1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff    12292  4 Jun 11:49 .DS_Store
+	com.apple.FinderInfo	     32 
+drwx------@ 20 dgwilson  staff      680 24 Feb  2011 Button UI
+	com.apple.quarantine	     70 
+-rw-r--r--@  1 dgwilson  staff    53663 14 Jun  2006 Caution.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  39450 
+-rw-r--r--@  1 dgwilson  staff     3760 14 Jun  2006 CautionBarrier.jpeg
+	com.apple.FinderInfo	     32 
+-rw-r--r--@  1 dgwilson  staff     3306 14 Jun  2006 CautionDigg.jpeg
+	com.apple.FinderInfo	     32 
+-rw-r--r--@  1 dgwilson  staff    31762 14 Jun  2006 CautionFire.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  25811 
+drwxr-xr-x   8 dgwilson  staff      272  4 Jun 12:01 DreamCheeky Graphics
+-rw-r--r--@  1 dgwilson  staff   116111 20 Mar  2011 DreamCheeky IOC Launcher No Shadow.icns
+	com.apple.FinderInfo	     32 
+	NSStoreType	     14 
+	NSStoreUUID	     36 
+-rw-r--r--@  1 dgwilson  staff   148479 20 Mar  2011 DreamCheeky IOC Launcher No Shadow.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  64858 
+-rw-r--r--@  1 dgwilson  staff    59958 13 Mar  2011 DreamCheeky IOC Launcher.png
+	com.apple.metadata:kMDItemWhereFroms	    222 
+-rw-r--r--@  1 dgwilson  staff   152658  9 Dec  2006 DreamCheeky_Launcher.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  45127 
+-rw-r--r--   1 dgwilson  staff    47663  7 Jan  2012 FeedbackWindow.xib
+-rw-r--r--@  1 dgwilson  staff    89319 28 Jul  2006 Fire Origional.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  38377 
+-rw-r--r--@  1 dgwilson  staff    28875 28 Jul  2006 Fire.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  25145 
+-rw-r--r--@  1 dgwilson  staff    97625 28 Jul  2006 Fire3 Origional.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  41227 
+-rw-r--r--@  1 dgwilson  staff    29742 28 Jul  2006 Fire3.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  25727 
+drwxr-xr-x   8 dgwilson  staff      272 14 Mar  2011 Graphics
+-rw-r--r--@  1 dgwilson  staff    41967 13 Mar  2011 Gun SIght 6.png
+	com.apple.metadata:kMDItemWhereFroms	    222 
+	com.apple.quarantine	     70 
+-rw-r--r--@  1 dgwilson  staff   227855 11 Oct  2006 Gun Sight 3.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  30568 
+-rw-r--r--@  1 dgwilson  staff   364848 13 Oct  2006 Gun Sight 5a Input Image.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  32886 
+-rw-r--r--@  1 dgwilson  staff   108927 13 Oct  2006 Gun Sight 5a Mask.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  30725 
+-rw-r--r--@  1 dgwilson  staff  1430874 14 Mar  2011 Gun Sight 5b Input Image.psd
+	com.apple.metadata:kMDItemWhereFroms	    244 
+-rw-r--r--@  1 dgwilson  staff   285854 14 Mar  2011 Gun Sight 5b Mask.psd
+	com.apple.metadata:kMDItemWhereFroms	    244 
+	com.apple.quarantine	     70 
+drwxr-xr-x   8 dgwilson  staff      272 11 Mar  2007 Help
+-rw-r--r--@  1 dgwilson  staff   195788 23 Jun  2008 MSN_Launcher.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  43957 
+-rw-r--r--@  1 dgwilson  staff    55314 14 Jun  2006 MissileLauncher.icns
+	com.apple.FinderInfo	     32 
+-rw-r--r--@  1 dgwilson  staff   252120  4 Jun 12:02 MissileLauncher_shooting_72.png
+	com.apple.FinderInfo	     32 
+	com.apple.metadata:_kMDItemUserTags	     42 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	     89 
+	com.apple.quarantine	     22 
+-rw-r--r--   1 dgwilson  staff  3780993 15 Jun  2010 Nevigate.png
+-rw-r--r--@  1 dgwilson  staff    53435 20 Aug  2006 Nuclear Silo Launch Klaxon.mp3
+	com.apple.FinderInfo	     32 
+-rw-r--r--@  1 dgwilson  staff    55702 14 Jun  2006 RocketLaunch.wav
+	com.apple.FinderInfo	     32 
+-rw-r--r--@  1 dgwilson  staff   636268 25 Jul  2011 Storm (mac ver.)-icon.zip
+	com.apple.metadata:kMDItemWhereFroms	    178 
+	com.apple.quarantine	     70 
+-rw-rw-r--@  1 dgwilson  staff     3345 28 Apr  2007 USB Missile Launcher NZ.sdef
+	com.apple.FinderInfo	     32 
+	com.macromates.caret	     25 
+-rw-r--r--@  1 dgwilson  staff    25504 24 Mar  2006 USBMissileLauncher.jpg
+	com.apple.FinderInfo	     32 
+-rw-r--r--@  1 dgwilson  staff    75038 14 Jun  2006 USBMissileLauncher.psd
+	com.apple.FinderInfo	     32 
+	com.apple.ResourceFork	  42442 
+
+./Resources/Button UI:
+total 3208
+drwx------@ 20 dgwilson  staff    680 24 Feb  2011 .
+	com.apple.quarantine	   70 
+drwxr-xr-x  36 dgwilson  staff   1224  4 Jun 12:02 ..
+-rw-r--r--@  1 dgwilson  staff  46712 24 Feb  2011 background-down-left.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22840 
+-rw-r--r--@  1 dgwilson  staff  46759 24 Feb  2011 background-down-right.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22868 
+-rw-r--r--@  1 dgwilson  staff  90561 24 Feb  2011 background-down.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	42372 
+-rw-r--r--@  1 dgwilson  staff  44352 24 Feb  2011 background-fire.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	21767 
+-rw-r--r--@  1 dgwilson  staff  68982 24 Feb  2011 background-left.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	31963 
+-rw-r--r--@  1 dgwilson  staff  76695 24 Feb  2011 background-right.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	32290 
+-rw-r--r--@  1 dgwilson  staff  46333 24 Feb  2011 background-up-left.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22858 
+-rw-r--r--@  1 dgwilson  staff  46245 24 Feb  2011 background-up-right.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22848 
+-rw-r--r--@  1 dgwilson  staff  61342 24 Feb  2011 background-up.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	28581 
+-rw-r--r--@  1 dgwilson  staff  45164 24 Feb  2011 foreground-down-left.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22329 
+-rw-r--r--@  1 dgwilson  staff  45130 24 Feb  2011 foreground-down-right.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22332 
+-rw-r--r--@  1 dgwilson  staff  94678 24 Feb  2011 foreground-down.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	44864 
+-rw-r--r--@  1 dgwilson  staff  48263 24 Feb  2011 foreground-fire.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	23725 
+-rw-r--r--@  1 dgwilson  staff  71846 24 Feb  2011 foreground-left.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	33000 
+-rw-r--r--@  1 dgwilson  staff  79212 24 Feb  2011 foreground-right.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	32838 
+-rw-r--r--@  1 dgwilson  staff  45045 24 Feb  2011 foreground-up-left.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22264 
+-rw-r--r--@  1 dgwilson  staff  45142 24 Feb  2011 foreground-up-right.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	22339 
+-rw-r--r--@  1 dgwilson  staff  63129 24 Feb  2011 foreground-up.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	29049 
+
+./Resources/DreamCheeky Graphics:
+total 840
+drwxr-xr-x   8 dgwilson  staff    272  4 Jun 12:01 .
+drwxr-xr-x  36 dgwilson  staff   1224  4 Jun 12:02 ..
+-rw-r--r--@  1 dgwilson  staff   6148  5 Jan  2012 .DS_Store
+	com.apple.FinderInfo	   32 
+-rw-r--r--@  1 dgwilson  staff  64764 29 Jan  2011 Background-Bottom with resource fork.png
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	68057 
+	com.apple.quarantine	   22 
+-rw-r--r--@  1 dgwilson  staff  81187  4 Jun 11:54 Background-Bottom.png
+	com.apple.FinderInfo	   32 
+	com.apple.metadata:_kMDItemUserTags	   42 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+	com.apple.quarantine	   22 
+-rw-r--r--@  1 dgwilson  staff  50915  4 Jun 12:01 Background-Top.png
+	com.apple.FinderInfo	   32 
+	com.apple.metadata:_kMDItemUserTags	   42 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	   89 
+	com.apple.quarantine	   22 
+-rw-r--r--@  1 dgwilson  staff  47893 29 Jan  2011 Btn-Down.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	28012 
+-rw-r--r--@  1 dgwilson  staff  43069 29 Jan  2011 FireButton.psd
+	com.apple.FinderInfo	   32 
+	com.apple.ResourceFork	27298 
+
+./Resources/Graphics:
+total 2216
+drwxr-xr-x   8 dgwilson  staff     272 14 Mar  2011 .
+drwxr-xr-x  36 dgwilson  staff    1224  4 Jun 12:02 ..
+-rw-r--r--@  1 dgwilson  staff    6148 14 Mar  2011 .DS_Store
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff   23422 26 Jan  2011 Black Button.psd
+	com.apple.FinderInfo	    32 
+	com.apple.ResourceFork	 20234 
+-rw-r--r--@  1 dgwilson  staff   92638 26 Jan  2011 Storm (mac ver.)-background-1.png
+	com.apple.metadata:kMDItemWhereFroms	   243 
+	com.apple.quarantine	    70 
+-rw-r--r--@  1 dgwilson  staff   78036 26 Jan  2011 Storm (mac ver.)-background.png
+	com.apple.metadata:kMDItemWhereFroms	   243 
+-rw-r--r--@  1 dgwilson  staff  763802 26 Jan  2011 Storm (mac ver.)-background.psd
+	com.apple.FinderInfo	    32 
+	com.apple.ResourceFork	 39618 
+-rw-r--r--@  1 dgwilson  staff   95693 26 Jan  2011 Storm (mac ver.)-foreground.png
+	com.apple.metadata:kMDItemWhereFroms	   243 
+	com.apple.quarantine	    70 
+
+./Resources/Help:
+total 120
+drwxr-xr-x   8 dgwilson  staff    272 11 Mar  2007 .
+drwxr-xr-x  36 dgwilson  staff   1224  4 Jun 12:02 ..
+-rw-r--r--@  1 dgwilson  staff   6148  6 May 14:19 .DS_Store
+	com.apple.FinderInfo	   32 
+-rw-r--r--@  1 dgwilson  staff   8633 25 Oct  2006 Controlling the USB Missile Launcher NZ software.html
+	com.apple.FinderInfo	   32 
+-rw-r--r--   1 dgwilson  staff  25288 11 Mar  2007 Help.helpindex
+-rw-r--r--@  1 dgwilson  staff   2985 11 Mar  2007 Troubleshooting.html
+	com.apple.FinderInfo	   32 
+	com.macromates.caret	   25 
+drwxr-xr-x  10 dgwilson  staff    340 30 Dec  2006 images
+-rw-r--r--@  1 dgwilson  staff   4205 11 Mar  2007 index.html
+	com.apple.FinderInfo	   32 
+	com.macromates.caret	   26 
+
+./Resources/Help/images:
+total 1096
+drwxr-xr-x  10 dgwilson  staff     340 30 Dec  2006 .
+drwxr-xr-x   8 dgwilson  staff     272 11 Mar  2007 ..
+-rw-r--r--@  1 dgwilson  staff   23858 24 Oct  2006 Missile Launcher - Camera Window.jpeg
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff   30425 23 Oct  2006 Missile Launcher - Controls.jpeg
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff   32704 23 Oct  2006 Missile Launcher - Feedback Window.jpeg
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff   61583 23 Oct  2006 Missile Launcher - Main Window.jpeg
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff   26079 23 Oct  2006 Missile Launcher - Preferences General.jpeg
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff   57319 23 Oct  2006 Missile Launcher - Preferences Sound.jpeg
+	com.apple.FinderInfo	    32 
+-rw-r--r--@  1 dgwilson  staff  215706 14 Oct  2006 MissileLauncher_shooting_72.png
+	com.apple.FinderInfo	    32 
+	com.apple.ResourceFork	 72043 
+-rw-r--r--@  1 dgwilson  staff   25504 24 Mar  2006 USBMissileLauncher.jpg
+	com.apple.FinderInfo	    32 
+
+./SoundPrefs:
+total 64
+drwxr-xr-x@ 10 dgwilson  staff   340  6 May 12:13 .
+	com.apple.FinderInfo	  32 
+drwxr-xr-x  50 dgwilson  staff  1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff  1717 28 Jun  2003 SS_PreferencePaneProtocol.h
+	com.apple.FinderInfo	  32 
+-rw-r--r--@  1 dgwilson  staff   854 26 Apr 19:22 SoundController.h
+	com.apple.TextEncoding	  15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	  89 
+-rw-r--r--@  1 dgwilson  staff  9548  6 May 12:13 SoundController.m
+	com.apple.TextEncoding	  15 
+	com.apple.metadata:kMDLabel_uxcxe7pxex3x27bfspuhslxoae	 185 
+drwxr-xr-x   4 dgwilson  staff   136  6 Jan  2012 SoundPaneView.nib
+-rw-r--r--   1 dgwilson  staff  1146 26 Apr 21:11 SoundPrefs-Info.plist
+-rw-r--r--@  1 dgwilson  staff   148  5 Jan  2012 SoundPrefs-Prefix.pch
+	com.apple.TextEncoding	  15 
+-rw-r--r--@  1 dgwilson  staff  2214 31 Jan  2006 SoundPrefs.tiff
+	com.apple.FinderInfo	  32 
+drwxr-xr-x   3 dgwilson  staff   102  5 Jan  2012 en.lproj
+
+./SoundPrefs/SoundPaneView.nib:
+total 104
+drwxr-xr-x   4 dgwilson  staff    136  6 Jan  2012 .
+drwxr-xr-x@ 10 dgwilson  staff    340  6 May 12:13 ..
+	com.apple.FinderInfo	   32 
+-rw-r--r--   1 dgwilson  staff  40131  6 Jan  2012 designable.nib
+-rw-r--r--   1 dgwilson  staff  10659  6 Jan  2012 keyedobjects.nib
+
+./SoundPrefs/en.lproj:
+total 8
+drwxr-xr-x   3 dgwilson  staff  102  5 Jan  2012 .
+drwxr-xr-x@ 10 dgwilson  staff  340  6 May 12:13 ..
+	com.apple.FinderInfo	 32 
+-rw-r--r--@  1 dgwilson  staff   45  5 Jan  2012 InfoPlist.strings
+	com.apple.TextEncoding	 15 
+
+./USB Missile Launcher All Drivers:
+total 80
+drwxr-xr-x@  8 dgwilson  staff   272 25 Apr 20:30 .
+	com.apple.FinderInfo	  32 
+drwxr-xr-x  50 dgwilson  staff  1700  4 Jun 12:07 ..
+-rw-r--r--@  1 dgwilson  staff  6148 12 Jan  2012 .DS_Store
+	com.apple.FinderInfo	  32 
+-rw-r--r--@  1 dgwilson  staff  8914 12 Jan  2012 USB Missile Launcher All Drivers-Info Copy.plist
+	com.apple.FinderInfo	  32 
+	com.apple.xcode.PlistType	  53 
+-rw-r--r--   1 dgwilson  staff  8896 26 Apr 21:11 USB Missile Launcher All Drivers-Info.plist
+-rw-r--r--@  1 dgwilson  staff   144  5 Jan  2012 USB Missile Launcher All Drivers-Prefix.pch
+	com.apple.TextEncoding	  15 
+-rw-r--r--@  1 dgwilson  staff   596 12 Jan  2012 USB_Missile_Launcher_All_Drivers.c
+	com.apple.TextEncoding	  15 
+drwxr-xr-x   3 dgwilson  staff   102  5 Jan  2012 en.lproj
+
+./USB Missile Launcher All Drivers/en.lproj:
+total 8
+drwxr-xr-x  3 dgwilson  staff  102  5 Jan  2012 .
+drwxr-xr-x@ 8 dgwilson  staff  272 25 Apr 20:30 ..
+	com.apple.FinderInfo	 32 
+-rw-r--r--@ 1 dgwilson  staff   45  5 Jan  2012 InfoPlist.strings
+	com.apple.TextEncoding	 15 
+
+./USB Missile Launcher All Drivers 2:
+total 0
+drwxr-xr-x   3 dgwilson  staff   102 12 Jan  2012 .
+drwxr-xr-x  50 dgwilson  staff  1700  4 Jun 12:07 ..
+drwxr-xr-x   2 dgwilson  staff    68 12 Jan  2012 en.lproj
+
+./USB Missile Launcher All Drivers 2/en.lproj:
+total 0
+drwxr-xr-x  2 dgwilson  staff   68 12 Jan  2012 .
+drwxr-xr-x  3 dgwilson  staff  102 12 Jan  2012 ..
+
+./USB Missile Launcher NZ.xcodeproj:
+total 368
+drwxr-xr-x@  7 dgwilson  staff     238  4 Jun 12:00 .
+	LastUpgradeCheck	     4 
+drwxr-xr-x  50 dgwilson  staff    1700  4 Jun 12:07 ..
+-rw-r--r--   1 dgwilson  staff   41914 29 Jan  2011 dgwilson.mode1v3
+-rw-r--r--   1 dgwilson  staff   25612 29 Jan  2011 dgwilson.pbxuser
+-rw-r--r--   1 dgwilson  staff  113735  4 Jun 12:00 project.pbxproj
+drwxr-xr-x   4 dgwilson  staff     136 12 Feb  2011 project.xcworkspace
+drwxr-xr-x   3 dgwilson  staff     102 12 Feb  2011 xcuserdata
+
+./USB Missile Launcher NZ.xcodeproj/project.xcworkspace:
+total 8
+drwxr-xr-x  4 dgwilson  staff  136 12 Feb  2011 .
+drwxr-xr-x@ 7 dgwilson  staff  238  4 Jun 12:00 ..
+	LastUpgradeCheck	  4 
+-rw-r--r--  1 dgwilson  staff  168 12 Feb  2011 contents.xcworkspacedata
+drwxr-xr-x  3 dgwilson  staff  102 12 Feb  2011 xcuserdata
+
+./USB Missile Launcher NZ.xcodeproj/project.xcworkspace/xcuserdata:
+total 0
+drwxr-xr-x  3 dgwilson  staff  102 12 Feb  2011 .
+drwxr-xr-x  4 dgwilson  staff  136 12 Feb  2011 ..
+drwxr-xr-x  4 dgwilson  staff  136  4 Jun 12:03 dgwilson.xcuserdatad
+
+./USB Missile Launcher NZ.xcodeproj/project.xcworkspace/xcuserdata/dgwilson.xcuserdatad:
+total 768
+drwxr-xr-x  4 dgwilson  staff     136  4 Jun 12:03 .
+drwxr-xr-x  3 dgwilson  staff     102 12 Feb  2011 ..
+-rw-r--r--  1 dgwilson  staff  385352  4 Jun 12:03 UserInterfaceState.xcuserstate
+-rw-r--r--  1 dgwilson  staff     333 21 Dec  2012 WorkspaceSettings.xcsettings
+
+./USB Missile Launcher NZ.xcodeproj/xcuserdata:
+total 0
+drwxr-xr-x  3 dgwilson  staff  102 12 Feb  2011 .
+drwxr-xr-x@ 7 dgwilson  staff  238  4 Jun 12:00 ..
+	LastUpgradeCheck	  4 
+drwxr-xr-x  4 dgwilson  staff  136 12 Feb  2011 dgwilson.xcuserdatad
+
+./USB Missile Launcher NZ.xcodeproj/xcuserdata/dgwilson.xcuserdatad:
+total 0
+drwxr-xr-x  4 dgwilson  staff  136 12 Feb  2011 .
+drwxr-xr-x  3 dgwilson  staff  102 12 Feb  2011 ..
+drwxr-xr-x  4 dgwilson  staff  136 11 May 18:23 xcdebugger
+drwxr-xr-x  9 dgwilson  staff  306 25 Apr 20:30 xcschemes
+
+./USB Missile Launcher NZ.xcodeproj/xcuserdata/dgwilson.xcuserdatad/xcdebugger:
+total 16
+drwxr-xr-x  4 dgwilson  staff  136 11 May 18:23 .
+drwxr-xr-x  4 dgwilson  staff  136 12 Feb  2011 ..
+-rw-r--r--  1 dgwilson  staff   91 21 Dec  2012 Breakpoints.xcbkptlist
+-rw-r--r--  1 dgwilson  staff  472 11 May 18:23 Breakpoints_v2.xcbkptlist
+
+./USB Missile Launcher NZ.xcodeproj/xcuserdata/dgwilson.xcuserdatad/xcschemes:
+total 56
+drwxr-xr-x  9 dgwilson  staff   306 25 Apr 20:30 .
+drwxr-xr-x  4 dgwilson  staff   136 12 Feb  2011 ..
+-rw-r--r--  1 dgwilson  staff  2547 25 Apr 20:30 GeneralPrefs.xcscheme
+-rw-r--r--  1 dgwilson  staff  2551 25 Apr 20:30 JoystickPrefs.xcscheme
+-rw-r--r--  1 dgwilson  staff  2551 25 Apr 20:30 LauncherPrefs.xcscheme
+-rw-r--r--  1 dgwilson  staff  2539 25 Apr 20:30 SoundPrefs.xcscheme
+-rw-r--r--  1 dgwilson  staff  2607 25 Apr 20:30 USB Missile Launcher All Drivers.xcscheme
+-rw-r--r--  1 dgwilson  staff  3768 25 Apr 20:30 USB Missile Launcher NZ.xcscheme
+-rw-r--r--  1 dgwilson  staff  1565 12 Jan  2012 xcschememanagement.plist
